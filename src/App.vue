@@ -19,7 +19,7 @@
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/todos`)
       const data = await response.json();
-      tasks.value = data.map((task)=> task.title)
+      tasks.value = data.map((task)=> task.title).slice(0,5)
     } catch (error) {
       console.log("Error fetching tasks")
     }
