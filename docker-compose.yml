@@ -1,0 +1,18 @@
+services:
+
+  backend:
+    build: ./services/fastapi
+    ports:
+      - 5000:5000
+    volumes:
+      - ./services/fastapi:/app
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 5000
+
+  frontend:
+    build: ./services/vue-vite
+    volumes:
+      - './services/vue-vite:/app'
+      - '/app/node_modules'
+    ports: 
+      - 5173:5173
+    command: yarn vite
