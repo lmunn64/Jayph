@@ -1,0 +1,936 @@
+{
+  "data": [
+    {
+      "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+      "name": "Riverfront Retreat",
+      "public_name": "Riverfront Retreat",
+      "picture": "https://cdn2.thecatapi.com/images/mt5.jpg",
+      "address": {
+        "number": "97",
+        "street": "River Lane",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "97 River Lane, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Relax by the water in this cozy retreat.",
+      "summary": "Relax by the water in this cozy retreat.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 8,
+        "bedrooms": 3,
+        "beds": 4,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 4
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-1",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Waterfront"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Riverfront Retreat with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "RiverfrontRetreat_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "f93a95fa-4ae0-4d3b-b9a7-a64916d83b47",
+      "name": "Bluffside Escape",
+      "public_name": "Bluffside Escape",
+      "picture": "https://cdn2.thecatapi.com/images/2oo.jpg",
+      "address": {
+        "number": "31",
+        "street": "Bluff View Rd",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "31 Bluff View Rd, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Modern luxury above the Mississippi.",
+      "summary": "Modern luxury above the Mississippi.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 9,
+        "bedrooms": 4,
+        "beds": 4,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 4
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-2",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Luxury"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "f93a95fa-4ae0-4d3b-b9a7-a64916d83b47",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Bluffside Escape with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "BluffsideEscape_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "2c7a6af3-b748-4e0d-a21a-3105b9383bfa",
+      "name": "Downtown Artist Loft",
+      "public_name": "Downtown Artist Loft",
+      "picture": "https://cdn2.thecatapi.com/images/9r2.jpg",
+      "address": {
+        "number": "86",
+        "street": "Main Street",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "86 Main Street, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Creative space with exposed brick downtown.",
+      "summary": "Creative space with exposed brick downtown.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 8,
+        "bedrooms": 4,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 2
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-3",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Urban"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "2c7a6af3-b748-4e0d-a21a-3105b9383bfa",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Downtown Artist Loft with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "DowntownArtistLoft_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "68604eb2-9158-4bf9-a04a-047620a07e85",
+      "name": "Lakeside Cottage",
+      "public_name": "Lakeside Cottage",
+      "picture": "https://cdn2.thecatapi.com/images/bpc.jpg",
+      "address": {
+        "number": "65",
+        "street": "Lakeside Dr",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "65 Lakeside Dr, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Peaceful cottage steps from the lake.",
+      "summary": "Peaceful cottage steps from the lake.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 5,
+        "bedrooms": 2,
+        "beds": 4,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 4
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-4",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Lakefront"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "68604eb2-9158-4bf9-a04a-047620a07e85",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Lakeside Cottage with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "LakesideCottage_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "0872df28-f18a-432c-b2c0-b615cebce6cf",
+      "name": "Sunset Ridge Bungalow",
+      "public_name": "Sunset Ridge Bungalow",
+      "picture": "https://cdn2.thecatapi.com/images/a3v.jpg",
+      "address": {
+        "number": "44",
+        "street": "Sunset Blvd",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "44 Sunset Blvd, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Bungalow with epic sunset views.",
+      "summary": "Bungalow with epic sunset views.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 9,
+        "bedrooms": 4,
+        "beds": 3,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 3
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-5",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Sunset"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "0872df28-f18a-432c-b2c0-b615cebce6cf",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Sunset Ridge Bungalow with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "SunsetRidgeBungalow_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "5cf6710a-c415-42f2-8e17-fdbfea26d73e",
+      "name": "Garden View Guesthouse",
+      "public_name": "Garden View Guesthouse",
+      "picture": "https://cdn2.thecatapi.com/images/c4t.jpg",
+      "address": {
+        "number": "41",
+        "street": "Garden Path",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "41 Garden Path, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Tranquil guesthouse surrounded by blooms.",
+      "summary": "Tranquil guesthouse surrounded by blooms.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 10,
+        "bedrooms": 4,
+        "beds": 2,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 2
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-6",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Quiet"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "5cf6710a-c415-42f2-8e17-fdbfea26d73e",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Garden View Guesthouse with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "GardenViewGuesthouse_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    },
+    {
+      "id": "41653e11-2c83-48e0-9683-ad3447380d27",
+      "name": "Woodland Hideaway",
+      "public_name": "Woodland Hideaway",
+      "picture": "https://cdn2.thecatapi.com/images/w2b.jpg",
+      "address": {
+        "number": "20",
+        "street": "Forest Rd",
+        "city": "Fountain City",
+        "state": "WI",
+        "country": "USA",
+        "postcode": "54629",
+        "coordinates": {
+          "latitude": 44.12,
+          "longitude": -91.68
+        },
+        "display": "20 Forest Rd, Fountain City, WI 54629, USA"
+      },
+      "timezone": "-0600",
+      "listed": true,
+      "amenities": [],
+      "description": "Private escape deep in the woods.",
+      "summary": "Private escape deep in the woods.",
+      "check-in": "15:00",
+      "check-out": "11:00",
+      "currency": "USD",
+      "capacity": {
+        "max": 2,
+        "bedrooms": 1,
+        "beds": 4,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "queen",
+          "quantity": 4
+        }
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "airbnb",
+          "platform_id": "listing-7",
+          "platform_name": "Airbnb",
+          "platform_email": "info@airbnb.com"
+        }
+      ],
+      "tags": [
+        "Secluded"
+      ],
+      "property_type": "house",
+      "room_type": "entire_place",
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": "41653e11-2c83-48e0-9683-ad3447380d27",
+        "children": [],
+        "siblings": []
+      },
+      "bookings": {
+        "booking_policies": {
+          "cancellation": [],
+          "payment_terms": {
+            "status": "manual",
+            "description": [],
+            "grace_period": "24 hours"
+          }
+        },
+        "listing_markups": [],
+        "security_deposits": [],
+        "occupancy_based_rules": {
+          "guests_included": 2,
+          "extra_guest_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 2000,
+              "formatted": "$20.00"
+            }
+          },
+          "pet_fee": {
+            "type": "fixed",
+            "value": {
+              "amount": 1500,
+              "formatted": "$15.00"
+            }
+          }
+        },
+        "fees": [
+          {
+            "name": "cleaning_fee",
+            "type": "fixed",
+            "value": {
+              "amount": 5000,
+              "formatted": "$50.00"
+            }
+          }
+        ],
+        "discounts": [
+          {
+            "name": "weekly",
+            "type": "percent",
+            "value": 10
+          },
+          {
+            "name": "monthly",
+            "type": "percent",
+            "value": 15
+          }
+        ]
+      },
+      "details": {
+        "space_overview": "Woodland Hideaway with full kitchen and WiFi.",
+        "guest_access": "Entire property.",
+        "house_manual": "Available in guestbook.",
+        "other_details": "Pets must be approved.",
+        "additional_rules": "No parties or loud music after 10 PM.",
+        "neighborhood_description": "Quiet, friendly neighborhood.",
+        "getting_around": "Car recommended.",
+        "wifi_name": "WoodlandHideaway_WIFI",
+        "wifi_password": "stayforyourtrip"
+      },
+      "user": {
+        "id": "user-001",
+        "email": "host@fountaincitystays.com",
+        "name": "Aunt Jane"
+      }
+    }
+  ],
+  "links": {
+    "first": "https://public.api.hospitable.com/v2/properties?page=1",
+    "last": "https://public.api.hospitable.com/v2/properties?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "path": "https://public.api.hospitable.com/v2/properties",
+    "per_page": 10,
+    "to": 7,
+    "total": 7
+  }
+}
