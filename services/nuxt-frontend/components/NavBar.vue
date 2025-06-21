@@ -5,7 +5,7 @@
 <template>
   <header class="navbar">
     <NuxtLink to="/">
-        <img src="/logo.png" alt="Logo" style="height:60px;" />
+        <img src="/logo.png" alt="Logo" style="height:120px;" />
     </NuxtLink>
     <nav class="nav-links">
         <NuxtLink to="/">Home</NuxtLink> |
@@ -23,7 +23,7 @@
    height: 60px;
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-evenly;
    padding: 1rem 2rem;
    background-color: #f4f4f4;
    z-index: 1000;

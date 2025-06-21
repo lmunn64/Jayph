@@ -1,5 +1,23 @@
-<script setup>
+<script setup lang = 'ts'>
     const thumbnail = "https://media.tenor.com/P4HGr5rklqYAAAAM/spongebob.gif";
+
+    interface Props {
+        title : string
+        img_src: string
+        description: string
+        guests: number
+        bedrooms: number
+        bathrooms: number
+    }
+
+    const props = withDefaults(defineProps<Props>(), {
+        img_src: thumbnail
+    })
+    console.log(props.img_src)
+
+    function setDefaultImage(event: Event){
+        (event.target as HTMLImageElement).src = thumbnail
+    }
 </script>
 
     <!-- Need:
@@ -13,11 +31,11 @@
 <template>
     <div class="card">
         <div class="thumbnail-wrapper">
-            <img :src="thumbnail" alt="thumbnail" class="thumbnail" />
+            <img :src="props.img_src" alt="thumbnail" class="thumbnail" @error = "setDefaultImage"/>
         </div>
         <div class="content">
-            <h3>Title</h3>
-            <p>Description</p>
+            <h3>{{props.title}}</h3>
+            <p>{{props.description}}</p>
         </div>
     </div>
 </template>
