@@ -69,7 +69,7 @@
 
     <h2>Reviews</h2>
     <!-- TODO: FORMAT REVIEWS -->
-    <ReviewCard />
+    <ReviewContainer />
 
 
    <!-- Properties components-->
