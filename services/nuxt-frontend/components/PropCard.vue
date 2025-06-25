@@ -10,9 +10,8 @@
         bathrooms: number
     }
 
-    const props = withDefaults(defineProps<Props>(), {
-        img_src: thumbnail
-    })
+    const props = defineProps<Props>()
+    
     console.log(props.img_src)
 
     function setDefaultImage(event: Event){

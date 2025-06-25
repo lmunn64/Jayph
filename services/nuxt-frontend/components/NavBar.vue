@@ -3,15 +3,18 @@
 </script>
 
 <template>
-  <header class="navbar">
-    <NuxtLink to="/">
-        <img src="/logo.png" alt="Logo" style="height:120px;" />
-    </NuxtLink>
-    <nav class="nav-links">
-        <NuxtLink to="/">Home</NuxtLink> |
-        <NuxtLink to="/about">About</NuxtLink>
-     </nav>
-  </header>
+   <div class = 'nav'>
+      <header class="navbar">
+         <NuxtLink to="/">
+            <img src="/logo.png" alt="Logo" style="height:80px;" />
+         </NuxtLink>
+         <nav class="nav-links">
+            <NuxtLink to="/">Home</NuxtLink> |
+            <NuxtLink to="/about">About</NuxtLink>
+         </nav>
+      </header>
+   </div>
+
 </template>
 
 <style scoped>
@@ -27,6 +30,9 @@
    padding: 1rem 2rem;
    background-color: #f4f4f4;
    z-index: 1000;
+}
+.nav {
+  padding-top: 80px;
 }
 
 </style>

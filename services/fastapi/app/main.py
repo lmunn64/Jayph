@@ -27,7 +27,7 @@ class Capacity(BaseModel):
     max: int
     bedrooms: int
     beds: int
-    bathrooms: int
+    bathrooms: float
 
 # model for the rules of the house
 class HouseRules(BaseModel): 
@@ -51,7 +51,7 @@ class Property(BaseModel):
 # NEW
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
