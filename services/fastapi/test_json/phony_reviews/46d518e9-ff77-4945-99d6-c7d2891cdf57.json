@@ -1,0 +1,354 @@
+{
+  "data": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "The view of the water was absolutely breathtaking! We spent hours just sitting by the window watching the river flow by. The sound of the river was so relaxing and helped us sleep like babies.",
+        "response": "Thank you so much for staying with us! We're delighted you enjoyed the peaceful river views."
+      },
+      "private": {
+        "feedback": "",
+        "detailed_ratings": [
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": "Everything was spotless and well-maintained."
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": "Property matched the description perfectly."
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Host was responsive and helpful."
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": "Great location for our needs."
+          },
+          {
+            "type": "check_in",
+            "rating": 5,
+            "comment": "Check-in process was smooth and easy."
+          },
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": "Good value for the price point."
+          }
+        ]
+      },
+      "responded_at": "2024-02-15T16:30:00Z",
+      "reviewed_at": "2024-02-15T10:00:00Z",
+      "can_respond": true,
+      "guest": {
+        "first_name": "Sarah",
+        "last_name": "Johnson",
+        "language": "en"
+      },
+      "reservation": {
+        "id": "res-001-riverfront",
+        "code": "RES001RF",
+        "check_in": "2024-02-12T15:00:00Z",
+        "check_out": "2024-02-15T11:00:00Z"
+      },
+      "property": {
+        "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "name": "Riverfront Retreat",
+        "public_name": "Riverfront Retreat"
+      },
+      "listing": {
+        "platform": "airbnb",
+        "platform_id": "listing-1"
+      }
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "platform": "airbnb",
+      "public": {
+        "rating": 4,
+        "review": "Beautiful waterfront property. We enjoyed morning coffee on the deck watching the sunrise over the water. The kitchen was well-equipped with everything needed to prepare meals.",
+        "response": "So happy you enjoyed the sunrise views! Thank you for choosing our retreat."
+      },
+      "private": {
+        "feedback": "The WiFi was a bit slow in the evenings.",
+        "detailed_ratings": [
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": "Everything was spotless and well-maintained."
+          },
+          {
+            "type": "accuracy",
+            "rating": 4,
+            "comment": "Property matched the description perfectly."
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Host was responsive and helpful."
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": "Great location for our needs."
+          },
+          {
+            "type": "check_in",
+            "rating": 4,
+            "comment": "Check-in process was smooth and easy."
+          },
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": "Good value for the price point."
+          }
+        ]
+      },
+      "responded_at": "2024-01-22T14:15:00Z",
+      "reviewed_at": "2024-01-22T09:30:00Z",
+      "can_respond": true,
+      "guest": {
+        "first_name": "Mike",
+        "last_name": "Chen",
+        "language": "en"
+      },
+      "reservation": {
+        "id": "res-002-riverfront",
+        "code": "RES002RF",
+        "check_in": "2024-01-19T15:00:00Z",
+        "check_out": "2024-01-22T11:00:00Z"
+      },
+      "property": {
+        "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "name": "Riverfront Retreat",
+        "public_name": "Riverfront Retreat"
+      },
+      "listing": {
+        "platform": "airbnb",
+        "platform_id": "listing-1"
+      }
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "The river access was amazing - we were able to kayak right from the property! Clean, comfortable, and exactly as described. Would definitely stay again!",
+        "response": "Wonderful to hear you enjoyed the kayaking! Thanks for being such great guests."
+      },
+      "private": {
+        "feedback": "",
+        "detailed_ratings": [
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": "Everything was spotless and well-maintained."
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": "Property matched the description perfectly."
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Host was responsive and helpful."
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": "Great location for our needs."
+          },
+          {
+            "type": "check_in",
+            "rating": 5,
+            "comment": "Check-in process was smooth and easy."
+          },
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": "Good value for the price point."
+          }
+        ]
+      },
+      "responded_at": "2023-12-10T12:45:00Z",
+      "reviewed_at": "2023-12-10T08:20:00Z",
+      "can_respond": true,
+      "guest": {
+        "first_name": "Emily",
+        "last_name": "Rodriguez",
+        "language": "en"
+      },
+      "reservation": {
+        "id": "res-003-riverfront",
+        "code": "RES003RF",
+        "check_in": "2023-12-07T15:00:00Z",
+        "check_out": "2023-12-10T11:00:00Z"
+      },
+      "property": {
+        "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "name": "Riverfront Retreat",
+        "public_name": "Riverfront Retreat"
+      },
+      "listing": {
+        "platform": "airbnb",
+        "platform_id": "listing-1"
+      }
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440004",
+      "platform": "airbnb",
+      "public": {
+        "rating": 4,
+        "review": "Stunning water views from every room. The kids loved skipping stones by the riverbank. Host was very responsive and helpful throughout our stay.",
+        "response": ""
+      },
+      "private": {
+        "feedback": "Could use a few more towels for larger groups.",
+        "detailed_ratings": [
+          {
+            "type": "cleanliness",
+            "rating": 4,
+            "comment": "Everything was spotless and well-maintained."
+          },
+          {
+            "type": "accuracy",
+            "rating": 4,
+            "comment": "Property matched the description perfectly."
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Host was responsive and helpful."
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": "Great location for our needs."
+          },
+          {
+            "type": "check_in",
+            "rating": 4,
+            "comment": "Check-in process was smooth and easy."
+          },
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": "Good value for the price point."
+          }
+        ]
+      },
+      "responded_at": null,
+      "reviewed_at": "2023-11-05T14:30:00Z",
+      "can_respond": true,
+      "guest": {
+        "first_name": "David",
+        "last_name": "Wilson",
+        "language": "en"
+      },
+      "reservation": {
+        "id": "res-004-riverfront",
+        "code": "RES004RF",
+        "check_in": "2023-11-02T15:00:00Z",
+        "check_out": "2023-11-05T11:00:00Z"
+      },
+      "property": {
+        "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "name": "Riverfront Retreat",
+        "public_name": "Riverfront Retreat"
+      },
+      "listing": {
+        "platform": "airbnb",
+        "platform_id": "listing-1"
+      }
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440005",
+      "platform": "airbnb",
+      "public": {
+        "rating": 3,
+        "review": "Nice location by the water, though the property could use some updates. The river views made up for the minor issues we encountered.",
+        "response": "Thank you for the feedback! We're always working to improve our guests' experience."
+      },
+      "private": {
+        "feedback": "The air conditioning took a while to cool down the space.",
+        "detailed_ratings": [
+          {
+            "type": "cleanliness",
+            "rating": 3,
+            "comment": "Generally clean with minor issues."
+          },
+          {
+            "type": "accuracy",
+            "rating": 3,
+            "comment": "Property matched the description perfectly."
+          },
+          {
+            "type": "communication",
+            "rating": 4,
+            "comment": "Host was responsive and helpful."
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": "Great location for our needs."
+          },
+          {
+            "type": "check_in",
+            "rating": 3,
+            "comment": "Check-in process was smooth and easy."
+          },
+          {
+            "type": "value",
+            "rating": 3,
+            "comment": "Good value for the price point."
+          }
+        ]
+      },
+      "responded_at": "2023-09-18T11:20:00Z",
+      "reviewed_at": "2023-09-18T07:45:00Z",
+      "can_respond": true,
+      "guest": {
+        "first_name": "Lisa",
+        "last_name": "Thompson",
+        "language": "en"
+      },
+      "reservation": {
+        "id": "res-005-riverfront",
+        "code": "RES005RF",
+        "check_in": "2023-09-15T15:00:00Z",
+        "check_out": "2023-09-18T11:00:00Z"
+      },
+      "property": {
+        "id": "46d518e9-ff77-4945-99d6-c7d2891cdf57",
+        "name": "Riverfront Retreat",
+        "public_name": "Riverfront Retreat"
+      },
+      "listing": {
+        "platform": "airbnb",
+        "platform_id": "listing-1"
+      }
+    }
+  ],
+  "links": {
+    "first": "https://public.api.hospitable.com/v2/reviews?page=1&property_id=46d518e9-ff77-4945-99d6-c7d2891cdf57",
+    "last": "https://public.api.hospitable.com/v2/reviews?page=1&property_id=46d518e9-ff77-4945-99d6-c7d2891cdf57",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "path": "https://public.api.hospitable.com/v2/reviews?property_id=46d518e9-ff77-4945-99d6-c7d2891cdf57",
+    "per_page": 10,
+    "to": 5,
+    "total": 5
+  }
+}

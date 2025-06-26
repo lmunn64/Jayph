@@ -12,6 +12,12 @@ app = FastAPI()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 test_json_path = os.path.join(BASE_DIR, 'test_json', 'phony_properties.json')
 
+# model for a review
+class Review(BaseModel):
+    id: str
+    platform: str
+    review: str
+    rating: int
 
 # model for the address of a listing
 class Address(BaseModel):
@@ -53,7 +59,8 @@ class Image(BaseModel):
 
 properties_cache = {
     'all_properties': None,
-    'property_images' : Dict[str, List[Image]]
+    'property_images' : Dict[str, List[Image]],
+    'property_reviews' : Dict[str, List[Review]]
 }
 
 # NEW
@@ -119,3 +126,24 @@ def get_images(uuid: str):
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
     return images
 
+@app.get('/properties/{uuid}/reviews', response_model=List[Review])
+def get_images(uuid: str):
+    if uuid in properties_cache.get('property_reviews', {}):
+        print("returning cached property reviews")
+        return properties_cache.get('property_reviews')[uuid]
+    json_file = uuid + '.json'
+    review_path = os.path.join(BASE_DIR, 'test_json', 'phony_reviews', json_file)
+    if not os.path.exists(review_path):
+        return {'error' : "File not found"}
+    with open(review_path) as file:
+        content = json.load(file)
+    try:
+        images = [Review(
+            id = item.get('id'),
+            review= item.get('public').get('review'),
+            rating= item.get('public').get('rating'),
+            platform= item.get('platform')
+        ) for item in content.get('data')]
+    except ValidationError as e:
+        raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
+    return images
