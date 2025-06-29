@@ -10,14 +10,16 @@
 </script>
 
 <template>
-    <h2>Our Properties</h2>
+    <h1>Our Properties</h1>
+    <h2>Kansas City</h2>
     <div class="card-grid">
         <PropCard v-for = "(property, index) in props.properties" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
     </div>
+    <h2>Branson</h2>
 </template>
 
 <style scoped>
-h2, h3 {
+h1, h2, h3 {
     text-align: center;
 }
 .card-grid {

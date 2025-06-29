@@ -9,8 +9,10 @@
             <img src="/logo.png" alt="Logo" style="height:80px;" />
          </NuxtLink>
          <nav class="nav-links">
-            <NuxtLink to="/">Home</NuxtLink> |
+            <NuxtLink to="/">Home</NuxtLink> 
             <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink to="/faq">FAQ</NuxtLink> 
+            <NuxtLink to="/blog">Blog</NuxtLink>
          </nav>
       </header>
    </div>
@@ -27,12 +29,23 @@
    display: flex;
    align-items: center;
    justify-content: space-evenly;
-   padding: 1rem 2rem;
-   background-color: #f4f4f4;
+   padding: 1rem 1rem;
+   background-color: var(--primary-color);
    z-index: 1000;
 }
 .nav {
   padding-top: 80px;
+}
+a {
+   color: var(--text-color-light);
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: underline;
+}
+.nav-links {
+   display: flex;
+   gap: 2rem;
 }
 
 </style>

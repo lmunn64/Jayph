@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>About</h1>
+    <h1>Frequently Asked Questions</h1>
 </template>
 
 <style scoped>

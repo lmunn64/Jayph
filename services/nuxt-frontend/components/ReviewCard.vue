@@ -58,7 +58,9 @@
             <img class="avatar" :src="default_avatar" alt="Profile Picture" @error = "setDefaultImage" />
             <div class="header-info">
                 <h3> John Doe </h3>
-                <p>☆☆☆☆☆</p>
+                <div class="rating-row">
+                    <FontAwesomeIcon icon="star" v-for="n in 5" :key="n"/>
+                </div>
             </div>
         </div>
         <div class="review-info">
@@ -86,7 +88,7 @@
 
 <style scoped>
     .card {
-        background-color: white;
+        background-color: var(--bg-color);
         width: 650px;
     }
     .header {
@@ -108,6 +110,11 @@
         height: 48px;
         border-radius: 50%;   
         object-fit: cover;    
+    }
+    .rating-row {
+        display: flex;
+        gap: 6px;
+        align-items: center;
     }
     .review-info {
         padding-inline: 12px;

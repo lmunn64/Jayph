@@ -3,6 +3,7 @@
 </script>
 
 <template>
+    <h1> Reviews </h1>
     <div class="card-grid">
         <ReviewCard />
         <ReviewCard />
@@ -10,6 +11,9 @@
 </template>
 
 <style scoped>
+    h1 {
+        text-align: center;
+    }
     .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

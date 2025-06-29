@@ -36,6 +36,12 @@
             <h3>{{props.title}}</h3>
             <p>{{props.description}}</p>
         </div>
+        <div class="ammenities">
+            <p> <font-awesome-icon icon="user" /> Guests {{ props.guests }} </p>
+            <p>  <font-awesome-icon icon="bed" /> Bedrooms {{ props.bedrooms }} </p>
+            <p>  <font-awesome-icon icon="bath" /> Bathrooms {{ props.bathrooms }} </p>
+            
+        </div>
     </div>
 </template>
 
@@ -48,6 +54,9 @@
   border: 1px solid #e2e2e2;
   overflow: hidden;
 }
+.card:hover .thumbnail{
+    transform: scale(1.1);
+}
 .thumbnail-wrapper {
     height: 350px;
     overflow: hidden;
@@ -59,10 +68,13 @@
   display: block;
   transition: transform 0.2s ease;
 }
-.thumbnail:hover {
-    transform: scale(1.1);
-}
+
 .content {
     padding-inline: 1rem;
+}
+.ammenities {
+    padding-inline: 1rem;
+    display: flex;
+    gap: 40px;
 }
 </style>

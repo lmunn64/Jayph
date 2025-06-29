@@ -52,28 +52,14 @@
 </script>
 
 <template>
-  <!-- Navigation Bar -->
-  <div>
+  <div>  
+    <!-- Hero component -->
+    <HeroContainer />
 
-    <NavBar />    
- 
-    <h1>Welcome to Jayph homepage.</h1>
- 
-  <!-- Hero component -->
-
-    <!-- TODO -->
-    <Hero />
-  
-
-  <!-- Reviews components -->
-
-    <h2>Reviews</h2>
-    <!-- TODO: FORMAT REVIEWS -->
+    <!-- Reviews components -->
     <ReviewContainer />
 
-
-   <!-- Properties components-->
-
+    <!-- Properties components-->
     <PropContainer :properties= "state.properties"/>
 
   </div>
