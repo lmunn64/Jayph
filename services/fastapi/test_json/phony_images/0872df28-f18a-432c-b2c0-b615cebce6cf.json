@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "url": "https://cdn2.thecatapi.com/images/a3v.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/a3v.jpg",
+      "caption": "Bungalow entrance glowing at golden hour.",
+      "order": 0,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/3ds.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/3ds.jpg",
+      "caption": "Sunset views from the living room.",
+      "order": 1,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/d8f.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/d8f.jpg",
+      "caption": "Fully stocked kitchen with backyard access.",
+      "order": 2,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/x3j.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/x3j.jpg",
+      "caption": "Rustic bedroom with window bench.",
+      "order": 3,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/91p.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/91p.jpg",
+      "caption": "Terrace perfect for evening wine.",
+      "order": 4,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/fn3.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/fn3.jpg",
+      "caption": "Bright and airy bathroom.",
+      "order": 5,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/jks.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/jks.jpg",
+      "caption": "Bungalow at sunset from the yard.",
+      "order": 6,
+      "last_updated_at": "2023-05-19T00:00:00.000000Z"
+    }
+  ]
+}

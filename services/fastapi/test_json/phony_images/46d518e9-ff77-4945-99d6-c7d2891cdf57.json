@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "url": "https://cdn2.thecatapi.com/images/mt5.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/mt5.jpg",
+      "caption": "Main view of Riverfront Retreat from the dock.",
+      "order": 0,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/4qo.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/4qo.jpg",
+      "caption": "Cozy living room overlooking the river.",
+      "order": 1,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/5lu.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/5lu.jpg",
+      "caption": "Bright kitchen with modern appliances.",
+      "order": 2,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/8un.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/8un.jpg",
+      "caption": "Master bedroom with river view.",
+      "order": 3,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/b1c.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/b1c.jpg",
+      "caption": "Deck with seating area.",
+      "order": 4,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/e35.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/e35.jpg",
+      "caption": "Bathroom with rainfall shower.",
+      "order": 5,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    },
+    {
+      "url": "https://cdn2.thecatapi.com/images/4hh.jpg",
+      "thumbnail_url": "https://cdn2.thecatapi.com/images/4hh.jpg",
+      "caption": "Firepit and outdoor space at sunset.",
+      "order": 6,
+      "last_updated_at": "2023-05-15T00:00:00.000000Z"
+    }
+  ]
+}
