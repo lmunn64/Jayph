@@ -8,7 +8,7 @@
     })
 
     const { data: properties } = await useAsyncData('properties', () =>
-        $fetch('http://localhost:5000/properties')
+        $fetch('http://localhost:8000/properties')
     )
 
     onMounted(() => {

@@ -1,0 +1,760 @@
+{
+  "data": [
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/bSfTTVaspOBBxvphyjBYCD4bPrmfwJEBrXl1QnCm.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/1vZJD8BIFuIsfsI6JJO1Kaaa3chmW02Zr0NWiGgb.jpg",
+      "caption": "Relax around the fire after a long day out at Silver Dollar City & Branson Landing!",
+      "order": 0,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/YFsDtzXnB1eNUFPJND2MpJ1WbWR2rRAVexFbNLZ0.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/BrVr55PlY4kNRLbuPQ2eLe7eOZnQXVe1bO7TdQVM.jpg",
+      "caption": "Plenty of room downstairs to spread out & enjoy shuffleboard, Atari & Movies on Roku!",
+      "order": 1,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/fDIMhEwgoeo8vpHgXKAdIcWpH7sYgF0van3Pz5fo.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/bCakiBtZNNniL7KyLFCfVXZB8lQillZbP34CxJ65.jpg",
+      "caption": "Sand Volleyball, Playground & Pool at the Pavilion",
+      "order": 2,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/gtafc1r3sXlFn1Rswv4ZdBz9cRVsHQBJDR9KCB1c.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/yJYh37lxWRCfj3TMRMZ7IoDVOidT8WqjWiciIL4S.jpg",
+      "caption": "",
+      "order": 3,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/xNEevMvke37R9qhd7ECqSu3T0iALnWNbBTufRRbQ.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/AtIbElx3YJAnY6jZwVUZJ9BzD5YCDq4SwBDo9mFk.jpg",
+      "caption": "",
+      "order": 4,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/DYlJt4Bv5sgMGFqQDpEgXFKfKZTVYcAP7cG2Uolv.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Wbl0jKv7LvMAgwswRN6pdVDPoSX48Sw9r3k2yXXC.jpg",
+      "caption": "Bedroom #2 - Queen, Main Level",
+      "order": 5,
+      "last_updated_at": "2023-02-04T01:31:01Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/C147l8jONz0r9FSmhEMcQFycgJ9JzIEQLtobSEcA.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/omZl2mjpMkujQJ4lRduiz1j0CILZu5QuhANrKzVj.jpg",
+      "caption": "",
+      "order": 6,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/3I1p661K433Td12Js5BzMFnJU6mLHL9OVthVDzmF.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/rAW4sHtFLE9JhqcdOc30qug1hG1aaYJUtV4zeVz5.jpg",
+      "caption": "",
+      "order": 7,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/nSdM5Nz14oST5LNrSZTIYTzbrs9XDA0HkV0YxFUN.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/zLl9tFhUBolDXELJWoqy0zuhLkLRYsl9g3awt0M3.jpg",
+      "caption": "",
+      "order": 8,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/rl4DcgLDw2tTm2zIYYRRqTxmShfPQo8szUi4aMnA.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/nygACV8kDrIEW4zBbUE0spq8OqHFDSTVoF25vtNm.jpg",
+      "caption": "",
+      "order": 9,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/6csBu9xfqgeoF1MA9gVHAlifSjaufSDMkdZrFE45.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/jxGEgTSSO9G57viM175n6elPrhAi1LUGG27vAfNv.jpg",
+      "caption": "Main level living room",
+      "order": 10,
+      "last_updated_at": "2025-05-15T17:53:35Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/j9atxdQqvOWHFu2e3No5Ycpj8JhDPHQj8uqyAM7J.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/agm6d13qSJ3aSGaR5P4OwzMFMg9JRgGecL2ynsQb.jpg",
+      "caption": "",
+      "order": 11,
+      "last_updated_at": "2025-06-05T21:10:19Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/5joi9W7Q3S1iC7Q2byHdLFRI8tBVBNLAP2vJzljq.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/gpROSBlm2y0F2t7yWFfs1A2oEf9UK8KFYCmiTyOf.jpg",
+      "caption": "",
+      "order": 12,
+      "last_updated_at": "2025-06-05T21:10:19Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/W3vHuqog5XTXKkpftCVH7QO783T4R4fmvdK3dik1.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/h0MPemJLJkIih0fEe4Zc3qOo8DXjTd8p0FJPoUzB.jpg",
+      "caption": "Relax at the Club House Pool. Have lunch at the Grille next door!",
+      "order": 13,
+      "last_updated_at": "2023-02-04T01:31:50Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/5I9WPXtwMIKUKXZLVtl57FyXQtxExVKbQfSMunkF.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/hYryoWCqqv76pDj5yNRAmaJnOr0COWPZO5Ox5vRF.jpg",
+      "caption": "",
+      "order": 14,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/q7EewFBMnukUpaPYNxFJssgzxRhUWXWjIb9ey1nb.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/xZ8nnOdlyGeYbVnYukmO4gJ5YtemZPzDnjOMIPKB.jpg",
+      "caption": "Large, spacious kitchen - with room for several people to help at once!",
+      "order": 15,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/xMsRIEMg0LTKQxwXRD7QR4IrtFEDAEa65BDOB6fi.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/D3ioxzkysaMeHPwcYni2Gj1ZT1EVBb4shtA0UiVU.jpg",
+      "caption": "",
+      "order": 16,
+      "last_updated_at": "2025-06-05T21:10:19Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/aN41V7QTQj4quSEb1Gu41AOJ5mLu9YlqM38wBcWK.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/SobGXGwQvIJRDFYPeF9P2lGivj4fj7Bbvv46jrV1.jpg",
+      "caption": "",
+      "order": 17,
+      "last_updated_at": "2023-02-04T01:32:16Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/Q7dEyFfb96oIrdGzy5qDhHYD7SZc6xZEoee3pLQP.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/feM0r6yLWTmT7QQk48EAfEUH30GLHvq5WWxMDnOW.jpg",
+      "caption": "",
+      "order": 18,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/hR7expdLpuv4e8doRh53vvNtUmwI5i3Rk4rM2teP.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/QqjObwYLriTJdZJ3gKi7AMwCaK7F8AnlRSnhOrfU.jpg",
+      "caption": "",
+      "order": 19,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/Hr9VmiwC8RdVW2oHhB34mC1BfWYiXyHQ8966QSIr.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/LBiVcbVjUkbotwVB7WVpeuuh6rEkMTLvyusPlazU.jpg",
+      "caption": "",
+      "order": 20,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/XEZTYaqh2gxPh4yhvAG4Dv9oYtTyL9deRLcTBErm.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/5zpI68R0shSaPWGCPpVyd7lcfWmip6jpnJv6x3Hj.jpg",
+      "caption": "",
+      "order": 21,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/Vvc7SYEtUgesXG6MNAu2KOLexf8X0aDAE0vDmEm2.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/kwVz18rGBfpxi6qBpbzFcHOFK8lN8KA2hIJPTcsK.jpg",
+      "caption": "",
+      "order": 22,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/yBIbCeHjUJUDfNyBgSeq9whge9wa9xC6gHMbZZig.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Un4sps2yvk5G5COXj31i2HEqDr0fS8KY2qr8M7Am.jpg",
+      "caption": "",
+      "order": 23,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/iMkPrilCQ83VkXs8Jqy39KfRG3aXLgoBTp4fdmj3.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/UsjqLRsH4gp8iSJHMSEeu4IbbXgkuY5cP9tDo2JZ.jpg",
+      "caption": "",
+      "order": 24,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/bMf22r0CjYt88fsDgBfpwnLazqe6YgpVPQFmaRbz.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/T4wDjuBNbAyS1ka18X03gryPPsjrUoQeRwQWflRp.jpg",
+      "caption": "",
+      "order": 25,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/p3aJecqbD10bLX8rxD0qO1LlNuDdQ55d37rH3U7a.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/E1BBLHx6gkpUpENfm1RHaPR12zNcS9sOHOAWTfgw.jpg",
+      "caption": "",
+      "order": 26,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/uaP1j1kHuJFWQ6T7jVe3QLRsWkIl4DMvo0VstTWP.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/zIxdOHenrPoPjIA8dPJxCUCEV5h6jLPlFCaWWY8X.jpg",
+      "caption": "",
+      "order": 27,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/FY21rP05n74Fw44HtoekBbYV7NKTpLfUEAY815F4.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/sbd1TF1PO8gNN4eG5rAbw9eTfWwiL7Q3XYpppKM5.jpg",
+      "caption": "Atari with 200 retro games!  Wireless Joysticks",
+      "order": 28,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/M4r4NYGlocMWdKg4PWKl7yZiQird2RXsA3T3puu1.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/JWQsFCwRF6yTHJXMCAeK9VVv6dVXJdf41cNjNN3a.jpg",
+      "caption": "Atari with 200 retro games!  Wireless Joysticks",
+      "order": 29,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/zpUPA0UQ0Q6ZV06gu3o2MfHcKSJ1cFRCtyMsJvU4.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/bNWMTxzXHV2RrUa9yPLgtx0zfBgoDp2ILMopAvhE.jpg",
+      "caption": "",
+      "order": 30,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/uvJOdTeqffxZ8nwYF51by4DaCPQaM3e8srCgsDoa.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/xAmmxMcRujPgUmcXnVZCCkfrKp1FttHFa7t8JZxV.jpg",
+      "caption": "",
+      "order": 31,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/m2nDo3K0yDz94XbpM22Bt10pcNMbYxuLWvFnbm2L.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/mBxHSIPEeVwxHLPFzGC3LI2KYDevR7TNJcf6AqQg.jpg",
+      "caption": "",
+      "order": 32,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/vb3ttFpyya3RbfAUpafb4G7O6leYESzVeetqPUTk.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/nI5VAQhSYETfHdQ4npSISvd573MffceZ7HUHyg7q.jpg",
+      "caption": "",
+      "order": 33,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/O1GfzotoUK3PKS6J14kf472LGi9LhshgUEUlGrv2.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/yWbFViE1kNQzAwFTwaxrRom4ReEoPfqKgm5BOGg8.jpg",
+      "caption": "",
+      "order": 34,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/DMs0xqzp0UTIfE2XFFNURwVfZTPJheOPIb4O9pOa.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/eBJL6mv0IMiatE5a4lhkXUGnz6iNqrVEElOkIVT8.jpg",
+      "caption": "",
+      "order": 35,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/8V0Ozm5UVpHYJdPsRyviDCotkuDANoq7RcBHeKe2.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/wc9fvfllblgR4iDHjlLDQre4nJ0yMSrNRV9hFyKV.jpg",
+      "caption": "",
+      "order": 36,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/x9hKJ31w8Cge030ayNxN1VQxdnAAxdyZm73l6a3s.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Jih9ZeDCNkNMNWOXUrRwIUMT3YYdhh3Y4f6Ol6K1.jpg",
+      "caption": "Enjoy a variety of games with friends & family",
+      "order": 37,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/dhyd85T1k3qlk9sVcxHMU1BfuCi9qCPsWG66Bdhp.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/XRGOZvP8Qt3NF2Y0DvvdfAMupbPOLUZ8GXKroSeb.jpg",
+      "caption": "",
+      "order": 38,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/OUXx10iD6nRuHGFnz4XIQGtAA8cCyfLridKv8YqL.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/6OtBADuol6Puh2PcubQrwsWk7p7MFHw7kHaugGmf.jpg",
+      "caption": "",
+      "order": 39,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/ZagtBKgsBStNn6wGf1B2PubHsNclcNczUOaSMSDC.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/j1IcjYwSt5aycOrCOvXmES7Nn7eBg5cCMQQrySyX.jpg",
+      "caption": "",
+      "order": 40,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/vIQ1XZPX2oUGjYuxXyGMuNBLsRjr7u5pKSSVKIW2.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/7GwCaAkagqKvB7ghhnAxyYaaqlL0HjFmBbBlq0VV.jpg",
+      "caption": "",
+      "order": 41,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/At1Sy7ZwgmDERgLq7SCUYTT8I9T0uI0kVa5N0PUG.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/KotYFfD0mfhFhaaFwDi7WVAvRXKfrZFkWZqFyBlh.jpg",
+      "caption": "",
+      "order": 42,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/XDgiIxhkMkbSZJbMp4jBPO8jZ8xuOHPPK7cTrMOm.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Txo2zHkyCOI6QK0QyfCswVRLL8XPDudNo4DwXt0S.jpg",
+      "caption": "",
+      "order": 43,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/KamNrmP47da2b6d7FjBIh8nSGdUVkyo7vEyyQVRL.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/xi8TJEX3lTsNIYZ1nP4fHdfoGcGEwNov4w7M9Ci7.jpg",
+      "caption": "",
+      "order": 44,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/HnBv2YiSIxZeOVHr4sIDVl2WWx2pdtfhyTGCJrCn.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ILaVC2JWd0mDh5GGoJlA68RULT5kVA4LdX5wpOjZ.jpg",
+      "caption": "",
+      "order": 45,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/xEUxpNIr5FTF2cMgHHqbeQZeSw7ffvsPtLcKoRvp.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/IuMpUEvkm43LM7fQhFVjk33swUmYcfoGNynAs6pZ.jpg",
+      "caption": "",
+      "order": 46,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/e6WgzOyGI7864dCe35BVoT9nyRT5D1llfXfgq98o.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/9WwfsSOCKIkLWQKLYANxP6XPTENgS9YV8uGxaSLY.jpg",
+      "caption": "Main level Master Bedroom with en suite - King bed",
+      "order": 47,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/lPOIIAZyKNZtLzfHCJCMo1R5WD7gsHxB3MiSihGH.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Mw3glEl3u8ljh0IkgsFdNKAJ8Oysa0iFjetSyFYA.jpg",
+      "caption": "",
+      "order": 48,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/EQwuwbscszohekElv3rKtwYAWqCiNGz4JkDKYwmc.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/TqZbkUqLSY5Sndid0eglSXJbkw3rzR5PLyhLF8bI.jpg",
+      "caption": "",
+      "order": 49,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/OO9rzYlPE7Jfa77uBjDblU625xhJvR7Gc0mN119b.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/RF4VRZheincqiBsWtFGHmSbRKNOH0KvUZIU191bS.jpg",
+      "caption": "Bedroom #4 - 2 Queens, Lower level",
+      "order": 50,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/GAf3RlEHl9px6ya7rmiWVOJn3OpKCGA0oIQRUzDb.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/HE59fa9XuTyqIQVk5w5POYd0Yth31EVjefbbnC9Z.jpg",
+      "caption": "",
+      "order": 51,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/gq7cRDBrCWJHPQ78yBJijYO6kVK1VZfUhoUDzDgv.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/5ZgcAWyPf9XwNEPkxCxHXM2yvKgDOb6k1vEeq4OR.jpg",
+      "caption": "",
+      "order": 52,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/fOnVySFxDnFe5wjyi95qV8u6pQZP2Le0xE0T48Jx.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ZuXzeg43ILVHt14RS9mK2qg7D3lVCKNDt6QmmGIM.jpg",
+      "caption": "",
+      "order": 53,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/Q52qT4eteIn6MaBthMeT6bxWvPQHnUd5om84ZV4d.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/6PYMOFsxtkpITrO3xt0FLIybbTfocAoNL5bM9YrT.jpg",
+      "caption": "",
+      "order": 54,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/D8exc9ddojTUqud7LPQoztErg9yn7M9wQREumzHy.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/1BXKEt5EpwjHlFpEJRvWPjgNlcOoQTGYyWr6jsAC.jpg",
+      "caption": "",
+      "order": 55,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/AU1sDnoruLK0AzX8atArblyaxlGU5n6e9FEhBlw1.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/1v8zmKCNGUSMJ9YrBqHneWh6UdquSA85sxCQEV7W.jpg",
+      "caption": "",
+      "order": 56,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/5tAEjJ7ANKfDV2ptps1aqvJrXyvUoRNWdsb4eLBM.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/3z6oXh5qsk9neFggUjT4ZC5oH2BFqBmIl11ofJRh.jpg",
+      "caption": "",
+      "order": 57,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/R6hOsB8sZ4UeOExDXOPfM9GnZTNekNj0YCVTZ17Q.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/RWk1JJn0FtYU6HmBw2hcVAlfqniWePcd3iktkgRD.jpg",
+      "caption": "",
+      "order": 58,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/LlQtVHfUKFzx3r8e1BAa62ZmD1JwQ4vYtqD2wXpn.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/eEKqqZLUlUKyIDBO62nQJ9GNHSiJB4HvtmJyrS0O.jpg",
+      "caption": "",
+      "order": 59,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/EVWt3t4IgRDYKU0iH4d5vtbyXRfqbrSEiMLpoDOZ.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/i5iFmR914slLqndzk5HKhDLcFQsrJnYq49wD5QLe.jpg",
+      "caption": "",
+      "order": 60,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/hA18Hx6XxgGiDP7I3LaQG70JKLZjXgWq1tFpbsM7.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/bbwIP4OwgdvyDukJHhTmlQ8Z8eCPv0PqKpVUKa5O.jpg",
+      "caption": "",
+      "order": 61,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/z62rJHlHM3dvTHjd4qE0SDmaqqaMdX3b31d9tT0L.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/swTfKW1Ln6JvKigvFGR0B4NyHvqMYHkV2PlKQwYl.jpg",
+      "caption": "",
+      "order": 62,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/XWTx50ljK4zGKvqOC8Nzv4kNs7Hz77BzRbdzY9dX.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/GAwqD2eBySVRK4SAC9ED16aEuQjEseZuQry4im72.jpg",
+      "caption": "",
+      "order": 63,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/dyBHK6F4z0JMltbzu36X2efX6Fj3vYXsjzHwrxfC.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/OtoPsnUQgmKRmfkW6ZwAqlV1I1SU8EPBY44LeFIZ.jpg",
+      "caption": "",
+      "order": 64,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/iNrLyC8TZr2xrdQnkKSyJ9zi1zamJqk2VYqubebP.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/S8YAfo4duY7ROZQjdj8juEol5mhJ5AaKsOTDo8c8.jpg",
+      "caption": "",
+      "order": 65,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/4JT9XICUY3BT9bJcGbnhPnHRh8gr9ivgcdXgnftk.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/pNDipPA1G3lSDH8guAcGdjWS29xfS8W17W2PANPE.jpg",
+      "caption": "",
+      "order": 66,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/GNswipaMVZc2EtjM4DvIdOPJP2elz7iAE3KmMgxq.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/d8wHkG53zV1xsFqaK3VcaFp2OeRdFyryBdkrgWGf.jpg",
+      "caption": "",
+      "order": 67,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/DpDBYu5H0OFFPeiaeWOKQtQh3mlA9XrppQkQXJAc.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/BZ5KwWCedlTWYDTmszMG1Lrzt7fHQQ8q1GKlM4hh.jpg",
+      "caption": "",
+      "order": 68,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/3mzVjCqQoCATHtYIDSAYGIC9blHrFXuiXIQmopLq.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ydGnAPgmhhckMJOw4JXESO157Qey7PxrqZw70xtM.jpg",
+      "caption": "",
+      "order": 69,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/TtBCAGGkHAPFLwKiVcD0Gv1M2mxvjok01HNrLZ3u.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/pk4Tdr3XSFBsm9LUkiJgHvAwSu06vvpUBIzWe6AS.jpg",
+      "caption": "",
+      "order": 70,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/UMGOmkLf0yvUOIFU89SpvxzAw4MwKcF6nLD3ylx8.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Ew4mqfOCJisy5DVq6BpKMDxXIruLB8jk14CeeINb.jpg",
+      "caption": "",
+      "order": 71,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/b2VLDadmttMlP58GwgndvrsZZAjdZ4dUaFREWPxo.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/O2egdgCn6vhcoB7DVoF64Fgwmjy7ALNU6xyPxhU8.jpg",
+      "caption": "",
+      "order": 72,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/zebstamkE5ktHvNUGEkMiyqe5dOf9HNrRZ5yu2x6.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/huc6n55429wQJGXNFYe9YnjANQ6p03igR54iE2Zu.jpg",
+      "caption": "",
+      "order": 73,
+      "last_updated_at": "2025-06-02T02:11:42Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/b9nRoSX44mhbZE5uczr8vMFuR97kVmLAlKHZPSkR.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ZbV4Rw1geZvjtSVl9ZCfCIpBXgul4pgZBudoo1HZ.jpg",
+      "caption": "",
+      "order": 74,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/P2Jjd01xRznW6iJlqx9op49JY2R2AR1zqPkSVFTH.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/wnFTLcQLYFhCXGqhnedn0j6PGhAU0y85f2bzzrYw.jpg",
+      "caption": "",
+      "order": 75,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/6I5tAEpOson4hFoC2QGbKUo7fSabBLauKPM3ukJM.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ADIxTKblxjfNxk2XyBBsI6QpSnjE7VUmAQXxeB85.jpg",
+      "caption": "",
+      "order": 76,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/ZwvhuBzasIC7WJDchHZfjuJ9tdDxQtzGRxIQv3vv.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/WKY7absroooDJ4hEqkUOj4dS1CuQZ0oosOgU0weA.jpg",
+      "caption": "",
+      "order": 77,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/7js65R8ElVeO3EESZHfgfl8288MmN3WG0cMVMXcc.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/lK6czPvC1cSGnfNHtO9OxN9dMGmaWxkyaU9htyC2.jpg",
+      "caption": "",
+      "order": 78,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/E7pOP30zEoLjScu9sdBlP4Ph0gA05BfKVe1gW1gL.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/8orzi95Q7XkXmdUOPPM44eFsfiGyxm9e1FwL8mKa.jpg",
+      "caption": "",
+      "order": 79,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/xJjjNizPWPDDPgdhSPQcqN47RcUoBbboohzLOwph.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/zNG9QNV913mrDgqWCiCXB7pGIZt6ntQfxti3OZo6.jpg",
+      "caption": "",
+      "order": 80,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/FvqhoT1bJYjfzU8Mr0ZRMLT2WkWPx3HKvLBW7CtB.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/XmxYGBHbmSID67D9diBbERhlKCtJ3lnL0vVDRMK9.jpg",
+      "caption": "",
+      "order": 81,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/PoPo25I37LEbTRtHCvomvWy9LwyU95Kp3XeHG88w.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/qg3UIOv1iulCt9BN2CjV8J6JBDvOPwHVZ1gHbJE6.jpg",
+      "caption": "",
+      "order": 82,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/YnlteRkvVO2kmYpS2zY31JORNyvVUN1xuvpDTtsB.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/GcpXqD3nrVsgvehtQEADSJsyCNjdiFH7VMDkofzQ.jpg",
+      "caption": "",
+      "order": 83,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/8CXT2Nzi9mHeGyFe9GoIsOTJ5aVy6rWcQhVjMNxZ.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/J56Uf8Q6g73nEHYDzne5uNLL7G3HtGSEkHsQiMbI.jpg",
+      "caption": "",
+      "order": 84,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/LEZ251gSlGeYJY3xsGExuIU4VQh5Vv2WThGmRRY6.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/NlJZX6jevuGtLAA40ZiYczKhy4Zb5WBlmh4ZqzfS.jpg",
+      "caption": "",
+      "order": 85,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/TsVTbQ79uIEG0cVNE3LSYRJOeQLUAV0ORlLNf1K2.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/rUrpUwAu4S0qavKRTcV0vs9BaqXGziX2nwTTtoHM.jpg",
+      "caption": "",
+      "order": 86,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/LQnC1dlVzdvl4nawOhVkfWARBdCyLVsbJtZiseDv.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/R6tyhw1ZhP8PN1B6MYmU8lWdJIfskH0IVqExzQTI.jpg",
+      "caption": "",
+      "order": 87,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/kM8LfbRiJbbZgPqW0rABiPfJr5KxcKgjRhQhN5NB.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/eMDcoFCaY8ekL4tUntuKAXDaPj3doWcVnsKQuWwP.jpg",
+      "caption": "",
+      "order": 88,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/uhKAUDc3XtG1ijO79K7rFnDD4w934WaEqXgIx1kh.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/jvph8yiGTKmnSGPXAZut6JxKJARVOEhCYbZYQyX3.jpg",
+      "caption": "",
+      "order": 89,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/076ZSZHGLkirnL0Z4YXSTyDSpHNMReOW7aosEfzU.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ZFl4Aaand1Wsld8xHg2zL4JnsrOYXW8cqMkO4iAL.jpg",
+      "caption": "",
+      "order": 90,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/Jwaxi5pmLzZ3FEQqz2RPbHnTSNBWphW3w3PG1aOP.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/opkmoezS3IkJ2xzeV1Hto2Be9hIJg4P47EVqTRv6.jpg",
+      "caption": "",
+      "order": 91,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/r5L4uyPPBUyMyf8p9H6jkCL3sR8zd30S8b49D63S.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/hZolREMxRce9mCeW1CJRiRSm5QU7Q19Nsj5xHCGo.jpg",
+      "caption": "",
+      "order": 92,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/2t2lzuYQaY0d4hyLitU6MWPMFzA7CpywJBDVlbLQ.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/bDybaxyPxR23vJ5aCEYhpCKtnBwMkt4oHNEIs8NX.jpg",
+      "caption": "",
+      "order": 93,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/qKCRmojv5w53DooGjYwj65LmVKAHsboc6wg3ffX0.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/3nFJFNjXZicjkdbvSCDCGe9oX0i0DtGZP2Lz2Avh.jpg",
+      "caption": "",
+      "order": 94,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/TsH5cEhfjYbrXjBtzGbFydW1abzyyPkgRxBWzKl8.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/yQa90UybIBQwFH2qBgsWN4I2IMOxhhrvlzVcVihI.jpg",
+      "caption": "",
+      "order": 95,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/9qXpgCb10fs50v5R4LxTbmLQmEejmPOBMEj3OSiC.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/MKdNnz2UhA1tcEZCg6Ay2E9ICJk1EkVylLjR87j5.jpg",
+      "caption": "",
+      "order": 96,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/pAFalphRIfinGAf8AoNt6avcHH7jlMIjOlCL8sm0.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/cEKdG7VA89G15YVrWuldFJ25QeRfL5phOvmkVdyo.jpg",
+      "caption": "",
+      "order": 97,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/kEj36W2DkS52yfQEheGdIHCwyuMI41OxvnvcYlKl.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/KLIa8h4xoACFG73WzHOg7chUBD40rHRhLcBQKwfY.jpg",
+      "caption": "",
+      "order": 98,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/8lliFLKTdgtT1ROjoSM7dAlnxveN2wXRGF54RSu7.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/WQpnEHsHGeIs31UTkaLUAO16krm7sAoTPpr2botA.jpg",
+      "caption": "",
+      "order": 99,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/vhn4dEcCwvWLuE1zRtPUHdzLiaRT1EmOph5Z1ZsC.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/2UxcDeyhllIAqvtHfKULiMrmFtW1c8Bpcbbn6k7v.jpg",
+      "caption": "",
+      "order": 100,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/A4oyTXxZizqqDFjfhbhqqCRixbvarBAs7kIb932l.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/2ncdMePFe1cxXzyTR3zNeRcx0SCb2ANlhMACBTPO.jpg",
+      "caption": "",
+      "order": 101,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/SeRJHNbrBHJt7OJDJQ5MJuiPVVsXEO4KYgIjUuic.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/Esr28h3HzHQ1pS6jh8LpsI1P05fSyYGbouwU1m8b.jpg",
+      "caption": "",
+      "order": 102,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/fSYTYhmuDt8gu2qeN28wZ4eCQZd7gTcpK0r15e9y.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/iraoRsVm8j48yNj2KSYYt8bgD3KYSQ21idFDJJSy.jpg",
+      "caption": "",
+      "order": 103,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/vmZy3s2K8tNsO7YkvdXtFjOcA9FO1mNzTjgtCNYI.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/zQy3s5LxgbxQeSvTHRCQqUKL6AYWu1zQ3othjD4W.jpg",
+      "caption": "",
+      "order": 104,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/kez5zAFEfJZrLrhzjqO8HdIWoD4N17mUrdE7rRws.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/ODE21AQe6SfxgH403aisBIW89QOpjtreRn2zs1Cv.jpg",
+      "caption": "",
+      "order": 105,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/3l7qBSy0vZP1n6XoDI9hAdpWgolu6JkYLgDfGQiL.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/qkwl7S7xUeQ8fcGDYszLPmTM58dtGo8eDmt1SWmp.jpg",
+      "caption": "",
+      "order": 106,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    },
+    {
+      "url": "https://assets.hospitable.com/property_images/964588/i8gLwSOrZfoLcrx8aZXOekhMbwFa6Z0U1y7cqov8.jpg",
+      "thumbnail_url": "https://assets.hospitable.com/property_images/964588/jvvKsWH3MCV3Jr0nMfbwVrjpIEdc0mlwBY1REQy4.jpg",
+      "caption": "",
+      "order": 107,
+      "last_updated_at": "2025-06-06T16:04:27Z"
+    }
+  ]
+}
