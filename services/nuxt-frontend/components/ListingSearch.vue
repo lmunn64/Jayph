@@ -1,9 +1,19 @@
+<!-- 
+    Component for listing search function
+    Contains:
+        - Location button for city filtering
+        - Date selection button for stay length
+        - Guest selection for # people staying
+        - Each option displayed in dropdown menu
+-->
+
 <script setup lang="ts">
 
 const showDropdown1 = ref(false)
 const showDropdown2 = ref(false)
 const showDropdown3 = ref(false)
 
+// close all other dropdowns when one is opened
 function toggleDropdown(index: number) {
   showDropdown1.value = index === 1 ? !showDropdown1.value : false
   showDropdown2.value = index === 2 ? !showDropdown2.value : false

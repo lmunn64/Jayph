@@ -1,3 +1,8 @@
+<!-- 
+    Hero component for use on front page
+    contains slideshow for a hardcoded image array with flavor text
+-->
+
 <script setup lang="ts">
     const images = [
         'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80', // mountain lake
@@ -14,6 +19,8 @@
 
 <template>
     <div class="hero">
+      
+    <!-- slideshow element -->
     <div class="slideshow">
       <img
         v-for="(img, index) in images"
@@ -25,8 +32,10 @@
       />
     </div>
 
+    <!-- shadow gradient for increased text visibility -->
     <div class="gradient-overlay"></div>
 
+    <!-- flavor text to display over slideshow -->
     <div class="hero-overlay">
       <h1 class="hero-title">Welcome to Fountain City Stays!</h1>
       <p class="hero-subtitle">Our spaces are designed with you in mind. We wish to provide an atmosphere that makes you smile. </p>

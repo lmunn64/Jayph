@@ -1,3 +1,13 @@
+<!-- 
+    Hero component for property pages
+    Contains:
+        - slideshow with text heading
+        - 'see all photos' button
+          - when clicked, displays photos in grid style
+          - selecting a photo from this grid will allow for manual
+            scrolling with image previews at the bottom
+-->
+
 <script setup lang="ts">
     const images = [
   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
@@ -29,7 +39,7 @@
     onMounted(() => {
         setInterval(() => {
             currentIndex.value = (currentIndex.value + 1) % images.length
-        }, 5000) // Change image every 5 seconds
+        }, 5000) // Change image every 5 seconds, loop to start
     })
 
     function openGallery(){
@@ -57,6 +67,7 @@
 
 <template>
     <div class="hero">
+        <!-- slideshow element -->
         <div class="slideshow">
         <img
             v-for="(img, index) in images"
@@ -68,12 +79,16 @@
         />
         </div>
 
+        <!-- gradient overlay for text visibility -->
+        <div class="gradient-overlay"></div>
+
         <div class="hero-overlay">
         <h1 class="hero-title">Welcome to [PROPERTY]!</h1>
         </div>
 
         <button class="see-photos-btn" @click="openGallery">See all photos</button>
 
+        <!-- gallery display -->
         <div v-if="showGallery" class="modal" @click.self="closeAllModals">
         <div class="gallery-grid">
             <img
@@ -86,12 +101,14 @@
         </div>
         </div>
 
+        <!-- modal slideshow -->
         <div v-if="showSlideshow" class="modal slideshow-modal" @click.self="closeAllModals">
             <img :src="images[slideshowIndex]" class="slideshow-image" />
             <button class="nav left" @click="prevSlide">‹</button>
             <button class="nav right" @click="nextSlide">›</button>
             <button class="close" @click="closeAllModals">×</button>
 
+            <!-- image previews at bottom of slideshow -->
             <div class="thumbnail-strip">
                 <img
                     v-for="(img, index) in images"
@@ -135,6 +152,15 @@
     .hero-image.active {
     opacity: 1;
     z-index: 1;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.650), transparent);
+      z-index: 2;
     }
 
     .hero-overlay {

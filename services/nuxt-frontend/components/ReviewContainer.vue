@@ -1,3 +1,9 @@
+<!-- 
+    review container component (deprecated)
+    previous implementation of reviews before
+    ReviewCarousel.vue
+-->
+
 <script lang="ts">
 
 </script>

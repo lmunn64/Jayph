@@ -1,3 +1,12 @@
+<!-- 
+    Property card component; displays quick-access info on properties
+    Contains:
+        - property thumbnail
+        - title
+        - location
+        - #guest, bedrooms, bathrooms
+        - clicking card will redirect to property page -->
+
 <script setup lang = 'ts'>
     const thumbnail = "https://media.tenor.com/P4HGr5rklqYAAAAM/spongebob.gif";
 
@@ -21,17 +30,10 @@
     }
 </script>
 
-    <!-- Need:
-     Thumbnail
-     Title
-     Location
-     #Guests
-     #Bedrooms
-     #Bathrooms -->
-
 <template>
     <div class="card">
         <div class="thumbnail-wrapper">
+            <!-- sets image as 'thumbnail' if it is invalid -->
             <img :src="props.img_src" alt="thumbnail" class="thumbnail" @error = "setDefaultImage"/>
         </div>
         <div class="content">
@@ -53,8 +55,13 @@
   margin: 0 auto;
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid #e2e2e2;
+  border: 2px solid #e2e2e2;
   overflow: hidden;
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+.card:hover {
+    border: 2px solid var(--accent-color);
 }
 .card:hover .thumbnail{
     transform: scale(1.05);
@@ -72,7 +79,8 @@
 }
 
 .content {
-    padding-inline: 1rem;
+    padding: 0 1rem;
+    gap: 0px;
 }
 .amenities {
     padding-inline: 1rem;

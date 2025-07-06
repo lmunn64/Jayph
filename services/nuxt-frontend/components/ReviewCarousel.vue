@@ -1,3 +1,11 @@
+<!-- 
+    Review Carousel component
+    contains:
+        - API fetch for review data
+        - displays review cards in horizontally scrolling list
+        - focuses on center review, shrinks prev and next
+        - list loops back to start
+-->
 <script setup lang="ts">
 
 import type { Review } from "~/types/property"
@@ -18,7 +26,7 @@ onMounted(() => {
         name: "el.name",
         img_src: el.img_src ?? "",
         date: "el.responded_at",
-        platform: el.platform,
+        platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
         review_content: el.review,
         rating: el.rating
       })
@@ -26,7 +34,7 @@ onMounted(() => {
     state.isLoading = false
   }
   else {
-    console.error('Could not grab reviews')
+    console.error('Could not fetch review data')
   }
 })
 

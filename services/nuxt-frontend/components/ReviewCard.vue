@@ -1,3 +1,13 @@
+<!-- 
+    Review card component
+    contains:
+        - name
+        - rating (default: 5)
+        - date of review
+        - provider (ex. airbnb)
+        - review content
+-->
+
 <script setup lang="ts">
     const default_avatar = "https://styles.redditmedia.com/t5_8ajl6g/styles/communityIcon_ootntw58i8ue1.png"
     import type { Review } from "~/types/property"
@@ -43,6 +53,7 @@
                 > 
                     {{ review.review_content }}
             </p>
+            <!-- if more than 3 lines, will show 'read more' button -->
             <button v-if="showToggle" @click="expanded = !expanded" class="toggle-btn">
                 {{ expanded ? "Show less" : "Read more" }}
             </button>
@@ -74,13 +85,6 @@
             </button>
         </div>
     </div> -->
-    <!-- NEED:
-     Name
-     Profile Picture
-     Rating
-     Date of Review
-     Review Content
-     Source of Review (e.g. AirBnB) -->
 </template>
 
 <style scoped>
@@ -131,10 +135,10 @@
     }
 
     .toggle-btn {
-        margin-top: 4px;
+        /* margin-top: 4px; */
         background: none;
         border: none;
-        color: #7d7d7d;
+        color: var(--accent-color);
         cursor: pointer;
         padding: 0;
     }

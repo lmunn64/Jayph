@@ -1,3 +1,6 @@
+<!-- 
+    Container component for front page hero
+-->
 <script>
 
 </script>

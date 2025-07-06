@@ -1,3 +1,9 @@
+<!-- 
+ Footer component
+ includes copyright text and hyperlinks (not yet implemented)
+ to about page, contact information, and privacy policy info
+-->
+
 <script setup lang="ts">
 
 </script>

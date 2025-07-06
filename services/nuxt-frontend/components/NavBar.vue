@@ -1,3 +1,13 @@
+<!-- 
+      Navigation bar component
+      Contains:
+         - Logo linked to home page
+         - NuxtLinks for each additional page
+            - home
+            - about
+            - faq
+            - blog
+-->
 <script>
 
 </script>
