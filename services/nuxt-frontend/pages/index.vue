@@ -8,7 +8,7 @@
     })
 
     const { data: properties } = await useAsyncData('properties', () =>
-        $fetch('http://localhost:5000/properties')
+        $fetch('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/properties')
     )
 
     onMounted(() => {
@@ -42,6 +42,7 @@
                     capacity : cap,
                     house_rules : hr
                 }
+                console.log(el.id)
                 state.properties.push(prop)
             })
             state.isLoading = false
@@ -49,18 +50,23 @@
             console.error('Unexpected response from server')
         }
     })
+
 </script>
 
 <template>
-  <div>  
+  <div class="wrapper">  
     <!-- Hero component -->
     <HeroContainer />
 
-    <!-- Reviews components -->
-    <ReviewContainer />
-
+    <!-- Listing Search -->
+    <!-- <ListingSearch /> -->
+    
     <!-- Properties components-->
     <PropContainer :properties= "state.properties"/>
+
+    <!-- Reviews components -->
+
+    <ReviewCarousel />
 
   </div>
 </template>
@@ -70,6 +76,12 @@
 h1, h2, p {
   text-align: center;
 }
-
+.wrapper {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
 
 </style>

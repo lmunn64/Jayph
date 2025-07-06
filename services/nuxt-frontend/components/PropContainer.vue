@@ -7,15 +7,29 @@
     }
 
     const props = defineProps<Props>()
+    const selectedLocation = ref('Kansas City')
+
+    const filteredProperties = computed(() => {
+      return props.properties.filter(p => p.address.city === selectedLocation.value)
+    })
 </script>
 
 <template>
     <h1>Our Properties</h1>
-    <h2>Kansas City</h2>
-    <div class="card-grid">
-        <PropCard v-for = "(property, index) in props.properties" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
+    <div class="filter-buttons">
+      <button
+        :class="{ active: selectedLocation === 'Kansas City' }"
+        @click="selectedLocation = 'Kansas City'"
+      >Kansas City</button>
+
+      <button
+        :class="{ active: selectedLocation === 'Branson West' }"
+        @click="selectedLocation = 'Branson West'"
+      >Branson West</button>
     </div>
-    <h2>Branson</h2>
+    <div class="card-grid">
+        <PropCard v-for = "(property, index) in filteredProperties" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :city = "property.address.city" :state = "property.address.state" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
+    </div>
 </template>
 
 <style scoped>
@@ -24,23 +38,21 @@ h1, h2, h3 {
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 650px));
   justify-content: center;
+  gap: 2rem;
   padding: 0 20px;
   box-sizing: border-box;
-  max-width: calc(650px * 2 + 2rem + 2rem + 2rem);
+  max-width: 1400px;
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 .card-grid > * {
-  width: min(650px, 100%);
-  min-width: 300px; /* don't shrink below 300px */ 
-  max-width: 100%;
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 /* One card per row if zoomed enough */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .card-grid {
     grid-template-columns: 1fr;
     max-width: 100%;
@@ -49,5 +61,26 @@ h1, h2, h3 {
   .card-grid > * {
     width: 100%;
   }
+}
+.filter-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 40vw;
+  margin-bottom: 1.5rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color, #ccc);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: var(--accent-color, #007BFF);
+  color: white;
+  border-color: var(--accent-color, #007BFF);
 }
 </style>

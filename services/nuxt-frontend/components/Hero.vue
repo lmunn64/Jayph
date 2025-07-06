@@ -25,6 +25,8 @@
       />
     </div>
 
+    <div class="gradient-overlay"></div>
+
     <div class="hero-overlay">
       <h1 class="hero-title">Welcome to Fountain City Stays!</h1>
       <p class="hero-subtitle">Our spaces are designed with you in mind. We wish to provide an atmosphere that makes you smile. </p>
@@ -62,7 +64,14 @@
     opacity: 1;
     z-index: 1;
     }
-
+    .gradient-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.650), transparent);
+      z-index: 2;
+    }
     .hero-overlay {
     position: relative;
     z-index: 2;

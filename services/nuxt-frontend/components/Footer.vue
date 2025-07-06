@@ -5,7 +5,7 @@
 <template>
     <footer class="footer">
          <div class="container">
-            <p>© 2025 Fountain City Stays.  Come enjoy the inspired touches that make your stay unique & memorable. We look forward to hosting you. .</p>
+            <p>© 2025 Fountain City Stays.  Come enjoy the inspired touches that make your stay unique & memorable. We look forward to hosting you.</p>
             <nav class="footer-nav">
                 <a href="/about">About</a> |
                 <a href="/contact">Contact</a> |
