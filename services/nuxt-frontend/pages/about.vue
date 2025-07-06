@@ -1,5 +1,12 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-    <section>
-        <p>This is the about page</p>
-    </section>
+  <h1>About</h1>
+  <PropHero />
 </template>
+
+<style scoped>
+
+</style>
