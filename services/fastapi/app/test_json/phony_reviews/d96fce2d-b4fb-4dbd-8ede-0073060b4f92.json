@@ -1,0 +1,1221 @@
+{
+  "data": [
+    {
+      "id": "8fdf51a2-bc46-4a74-93ee-b6558ee6af98",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Super responsive host.   Everything was as listed!",
+        "response": "Thanks so much, Justin! I’m glad our vacation home was just as expected and that you felt well taken care of. Would love to host you and your group again next time you’re in Branson West.  Thanks for being great guests!"
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Quickest response times ever!"
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-06-12T14:34:18+00:00",
+      "responded_at": "2025-06-12T14:36:26+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "ffb2438d-5d34-4daf-abe3-357c8b24ee84",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Awesome place to stay! Had an awesome trip and host was very friendly and easy to work with! Definitely will be back!",
+        "response": "Thanks for the wonderful feedback, Kevin! I’m glad you and your group had a great time!  Than you for being great guests! Looking forward to hosting you all again in the future."
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-06-01T23:50:09+00:00",
+      "responded_at": "2025-06-04T20:51:25+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "699be6e8-c247-4269-9b61-bbae15221a88",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "It was a good experience and Jaymi was really a nice host!! Definitely recommend for a trip with friends !",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-26T01:04:31+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "1efea3ac-d20b-4c43-b716-20f857ba138b",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Very nice place in a great location! The owner is very communicative as well! 5/5 stars!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you for being a great host!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-22T22:13:13+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "5b347a54-dafc-431a-9edc-4c88836b2e1c",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a school group of 12 people that included 7 kids. We all had wonderful places to sleep. The game room was a big hit for the kids. The screened-in patio off the kitchen was a peaceful place to be. We had everything we needed and more. Silver Dollar City was just down the road and it took less than 10 minutes to get there. We would definitely stay there again. I would recommend this place to anyone traveling to Branson.",
+        "response": "Thank you, Sara! Sounds like there was a little something for everyone - I’m so glad everyone enjoyed the home, game room, and screened-in patio and proximity to Silver Dollar City. It was a pleasure hosting you all, thank you for being wonderful guests!"
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-12T04:22:25+00:00",
+      "responded_at": "2025-05-27T17:56:50+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "7a691ff8-763d-4ed7-8726-379dc86168e7",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Everything as described and it was a wonderful experience i love i will definitely get it again!",
+        "response": "Thank you for your kind review, Mohammad! I’m glad our vacation_home met your expectations and that you and your group had a wonderful stay. We’d love to host you all again next time you visit Branson West!"
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-04T19:43:45+00:00",
+      "responded_at": "2025-05-04T19:45:11+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "5b02a0da-2388-477a-9e9f-18629c5cb3db",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Beautiful home that had everything you need. Spacious, quiet, cozy, home where the adults can relax while the kids play. Host was great answered any questions in a timely manner and made sure we had everything we needed with instructions before arrival. Would highly recommend and will return!",
+        "response": "Thrilled to hear you and your crew felt right at home in our vacation_home and enjoyed the space while the kids played. Looking forward to welcoming you all back on your next Branson adventure! And really appreciate your recommending us!! It means a lot - so thank you"
+      },
+      "private": {
+        "feedback": "The home was beautiful,  thank you for the opportunity! Was very clean the kids loved the game room as did the adults. My house hold felt at home as the painting on the wall in the room looked just like our frenchy! We appreciate everything! I’m a travel agent after experiencing the home and how easy you made everything for us I’ll definitely recommend!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-20T21:55:19+00:00",
+      "responded_at": "2025-04-23T16:09:10+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "5792c3d7-18f3-4442-81a4-e914898a734b",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "great host and easy to communicate. her place was just like the pictures. it was really nice and clean. will book again in the future.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-13T23:48:07+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "5f68164d-66c7-4707-b711-e361c6c47856",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a group of 13 which included 6 kids. Not a single time throughout our 4 night stay did our kids complain of being bored! This place had so much to do to keep not only the kids entertained, but the adults as well! The host was always quick to respond as well which is greatly appreciative. The place had everything we needed and more.",
+        "response": "Thank you, Brittany! I’m so glad your group enjoyed all the house had to offer!  I LOVE hearing your kids were so entertained they didn't get bored! (that's a big win in todays world!) And I'm glad you benefited from the convenience to Silver Dollar City - it's a great location.  We look forward to hosting you again!\nJaymi"
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-01T15:06:31+00:00",
+      "responded_at": "2025-05-27T17:53:12+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "f9218a1b-bfa2-4e84-8cf3-aaa20419fc8c",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Loved it! We will be booking again!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-28T15:02:17+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "c8d11f95-f046-4ab3-8baa-e473c0a72fac",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had our first annual Ohana vacation! Jaymi was a kind and proactive host! The house was HUGE and comfortable! We even took a few days just to hangout there and play in the game room and had pool tournaments! A great back area where our kids ran around and had fun together! We will definitely be back to stay again! Thank you Jaymi!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-24T15:42:55+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "a9aefe6c-cf49-4f27-9c89-069715171621",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "The house was absolutely beautiful!  I loved the western decor — the boots throughout the house were so cute!  Everything was super clean,  the house was stocked well, and the host was responsive to all needs. The house is huge, and allowed our family to spread out and enjoy some down time. Now for the best part….the entertainment!  The game room was amazing!! It provided hours and hours of fun for our family!  The popcorn machine was a hit!  The vibe was so relaxed, the room was decorated in a 90’s theme with an Atari. The pool table downstairs was the best. We enjoyed pool tournaments every night for the entire week we stayed. The downstairs had plenty of seating for a large crowd to hang out while competing. There was a balcony on the top floor where we enjoyed a few meals enclosed in a patio and there was an outdoor patio where I enjoyed reading my book with a fabulous view. We come for basketball nationals every year from Texas and we will definitely rent this house again! Thanks!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-17T15:15:19+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "f0dde39d-4b91-4c82-9c72-74b30a6dba7d",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "An excellent place to stay, especially for big group events and Jaymi is a great host! Very responsive and communicative. No complaints from me",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-01T00:24:14+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "e68731cb-b79f-4665-a562-898e07c86212",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Great location near Silver Dollar City. Many summer amenities we couldn’t use.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 4,
+            "comment": "Location is perfect!"
+          }
+        ]
+      },
+      "reviewed_at": "2025-01-11T18:54:44+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "f728bb50-e330-4c3a-abcc-bbcaa03b0f0b",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "The space was perfect for us! It had enough room for all of us to be comfortable. It was very homey with lots for the kids to do!",
+        "response": null
+      },
+      "private": {
+        "feedback": "We had a great visit. Thank you!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-01-03T19:35:57+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "630e160a-6763-4555-865f-475f25037101",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Home was very nice, great view, amenities were as described. Clean and nicely decorated. Host was very helpful. Would be happy to stay again.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you for a wonderful weekend. \nZac and Maggie Larrimer",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-10T00:40:16+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "0402de1a-30d9-4e86-a918-745fc7662bf3",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a wonderful time and it fit the needs of our group perfectly! There were so many fun activities in the house and in the area!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you for all the provided games!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-02T16:15:49+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "dad86c9e-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "It was a great place for our family to go and spend some time together.  Our family celebrated Christmas by being all together for the first time in a few years.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-11-18T01:43:50+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "c9dd03db-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "This place was beautiful, clean, beds were comfortable.  There was lots to do.  The place was just perfect! As I told the host.  My only complaint is I wish we could have stayed longer lol.  Book it!  You won’t be disappointed!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-10-22T15:07:41+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "c9d4b17d-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We loved our stay here. I would highly recommend staying here especially if you have teens. The pool table was a huge hit.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you so much for our stay. We loved the house and enjoyed the pool table.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-10-19T19:36:10+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "bdfb8338-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a great stay! our check in was easy. Jayme was responsive with our questions.  We will return!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thanks Jayme.  I would possibly get rid of carpet in upstairs bedroom (stains). Also, power wah upstairs patio (stains on concrete).",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-09-28T11:32:26+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "bdb34052-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Our stay went very well, loved the location and locked gate of the resort.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-09-27T17:52:01+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "b24ec06e-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We enjoyed the stay! Responsive and well communicated host! Simple check in and check out instructions. Lots of beds and open floor concept.",
+        "response": null
+      },
+      "private": {
+        "feedback": "The lock to the patio upstairs is missing so it’s just an open space.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": "Super simple!"
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-09-04T15:58:07+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "9e0f8703-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi's place was everything we expected. I would definitely stay again if ever back in Branson. My family and I enjoyed our stay. Definitely recommend Cowboy Corral with Jaymi.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-07-23T17:58:17+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "95458cee-accf-11ef-b88f-12c2b6e0cd20",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was very helpful and her home was absolutely stunning!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-06-24T19:38:34+00:00",
+      "responded_at": null,
+      "can_respond": true
+    }
+  ],
+  "links": {
+    "first": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=1",
+    "last": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=3",
+    "prev": null,
+    "next": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 3,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=2",
+        "label": "2",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=3",
+        "label": "3",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews?page=2",
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "http://public.api.hospitable.com/v2/properties/d96fce2d-b4fb-4dbd-8ede-0073060b4f92/reviews",
+    "per_page": 25,
+    "to": 25,
+    "total": 53
+  }
+}

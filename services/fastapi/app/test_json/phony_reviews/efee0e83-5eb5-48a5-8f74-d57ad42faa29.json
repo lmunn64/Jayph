@@ -1,0 +1,1236 @@
+{
+  "data": [
+    {
+      "id": "247b6f0d-8e5f-45b0-8e07-0b020567e84c",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Great little place in a great community. Really enjoyed walking my dog through the neighborhood",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-06-21T15:22:58+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "cad100df-5e1e-4427-8942-782b39898b90",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "This was a great place to stay close to everything! Thank you for the wonderful accommodations and communication throughout our stay as well.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-06-14T21:52:12+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "18296baf-f42d-43c0-aead-80a9132f2a0e",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi and the place were both lovely!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-25T15:30:54+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "725a0c0a-e3a3-4c5b-9de1-e1f3fb938118",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Definitely recommend staying at Stonebridge\nBeautiful location with pools, restaurant, golf course, pickleball/tennis court.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Jaymi we enjoyed our stay! Thank you for the hospitality!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-13T15:03:35+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "02e24495-37e8-4702-b13b-7f506b0f9c2e",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was extremely responsive and was two steps ahead of any question we might have. Very comfortable and clean.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thanks again.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-05-01T21:01:14+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "5e7103f1-9338-43ec-a346-808b0cd66c80",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Just had a quick stay but thoroughly enjoyed Jaymi’s place!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-30T21:21:29+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "fe212e6d-cae3-480a-a7cf-6f06512db082",
+      "platform": "airbnb",
+      "public": {
+        "rating": 4,
+        "review": "The balcony view was super pretty, and the bed was super comfy! I would recommend staying here it was very nice!!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-20T19:27:45+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "fe462409-f5ac-482e-85cf-daf746b30761",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We really enjoyed our stay at Jaymi’s place!  The bed was comfortable and the view from the balcony was pretty and peaceful! It was perfect for a quiet weekend getaway!",
+        "response": "Thank you, Sarah, for your kind words. I'm glad you and your husband enjoyed the comfort and peaceful view from our condominium. Hope to host you both again soon!"
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-14T20:35:22+00:00",
+      "responded_at": "2025-04-23T16:10:32+00:00",
+      "can_respond": false
+    },
+    {
+      "id": "d0eaca6d-5c01-4bfb-89cb-87f42ca4dbb5",
+      "platform": "airbnb",
+      "public": {
+        "rating": 4,
+        "review": "Very nice area proximal to the attractions yet not in the middle of the crowds.",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-13T11:42:12+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "3065a98f-9962-4aa2-8cef-46cb007b1c9b",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Great little place to stay in Branson. Beautiful gated, secure area! Looked exactly like the photos. Clean. Well kept. Would recommend! Easy check in.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you! We enjoyed our stay.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-04-01T16:58:26+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "ef0baac0-35dd-40bd-85df-8fddac010f87",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi’s place was exactly as described. We felt right at home,  very safe and quiet area. Awesome instruction and a breeze to get in the condo. We definitely would stay again.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Jaymi,\n\nSorry things have been a little hectic this last week. We wanted to thank you for providing a clean, safe and quiet place to stay. We look forward to staying again in the future. We just completed a review of your place. \n\nThanks, \nJason",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-30T21:38:05+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "04ca6459-ded8-4d3d-ac87-f68737c01055",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a great time! It was very cozy and comfortable. The area was nice with lots of amenities! Jaymi was amazing with responding and making sure we had everything we needed for our stay!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-28T23:12:58+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "ec4126b1-187c-43fe-940e-fa0ca8d351de",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Beautifully decorated and very clean condo.  Looked exactly like the pictures and description was accurate. Very secure, gated community.  Jaymi was professional/personal  and quick to respond.  Highly recommend and we plan to return!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-26T22:05:39+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "b22a09fd-1f3e-4dd7-8d01-4e133173d350",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "I would definitely stay here again. The bed was extremely comfortable and the view was great. We loved the peaceful location !!",
+        "response": null
+      },
+      "private": {
+        "feedback": "LOVED the area and the decor is perfect.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-24T22:53:31+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "30fda6e1-b090-4711-a6ab-44cfae40ba48",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Neat and tidy condo in a beautiful setting overlooking part of the golf course. This place is close to the local attractions and we enjoyed the stay with our small puppy. Our host was very communicative and provided helpful recommendations. Look forward to visiting again.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thanks Jaymi, we loved your cute and tidy place. Enjoyed our stay and will visit again sometime soon.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-19T13:02:14+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "a935ed4f-d41d-49cb-87d1-d696e90fff09",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "I had a fantastic stay at this cute apartment! The decor was vibrant and fun, creating a welcoming atmosphere. It came with all the amenities we needed for a quick getaway, and the balcony was a lovely bonus. Perfectly suited our needs—highly recommend for a short stay!",
+        "response": null
+      },
+      "private": {
+        "feedback": "I hope this message finds you well. I wanted to take a moment to thank you for hosting us during our recent stay. We truly enjoyed the accommodations and the location.\n\nHowever, I wanted to bring to your attention an issue we encountered with the TV. It appears that there were logins left on the main TV, which prevented us from accessing Netflix. We found ourselves stuck on a credit card payment page and couldn’t navigate past it, so we ended up watching shows on our laptop instead.\n\nI thought it might be helpful to let you know, as clearing previous logins could enhance the experience for future guests.\n\nThank you again for your hospitality!\n\nBest regards,  \nHeather Baker",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-09T22:47:14+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "c472ec91-85e9-4b32-8239-84a6eba45c35",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "This was a perfect place for 2! Very clean and in a great location. Would definitely stay again!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-08T16:07:10+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "ab6c0fab-1acd-469b-a69b-7170a9ed2d44",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "We had a wonderful stay here! Jaymi’s place was exactly as described and perfect for a valentine weekend get away. Checkin was super easy, and it was a beautiful drive from the gate of the resort to the condo. She provided local recommendations of things to do and very clear instructions on checking in with the resort. I would absolutely recommend staying here to anyone!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you so much for the wonderful stay! We had a great time.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-02-16T23:26:38+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "bdd643b1-4e5e-4c6a-b236-cf0798b26e8d",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Cozy, comfortable bed and setting. Water view from the bedroom and deck. Jaymi was very attentive, and made sure that my stay was just right!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-02-11T18:56:44+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "200fd0da-7fcb-4226-87e5-bbb610cd86cc",
+      "platform": "airbnb",
+      "public": {
+        "rating": 4,
+        "review": "My husband and I spent two nights, we had a great time. Jaymi gave great directions on how to check in, getting to the room, and how to get into the room. The room looked like the pictures. Being on the middle floor you could hear the upstairs neighbors, but it didn’t bother us too much. I did notice some wear and tear on the door to the bedroom, and a green chair in the bedroom. But overall the furniture was in good condition and my husband said he slept well on the bed. I do feel like the bathroom could have been cleaned better. Upon our arrival I notice hair in the shower, smudges on the mirror, and the tub/sink faucets and tub jets were not cleaned well there were some water stains and rusts. Overall for the price we would stay here again! Being so close to SDC was a perk. Jaymi was also a great hosts! I enjoyed her detailed messages about the resort and Branson in general.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Jaymi, thank you for a great stay. I did want to let you know I took pictures of what I saw in the bathroom. Besides the cleanliness of the bathroom we really enjoyed our stay and the condo. It was nice to get away with my husband for the weekend and we would definitely book with you again. Take care! \n\n-The Crawford’s",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 3,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 4,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-30T05:48:51+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "598a7f23-d149-4cbd-b289-68aa438671e1",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Very fast responses and professional",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-24T18:56:28+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "e1abab53-7617-4508-a8a7-4490d42b3e9e",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was a great host! Beautiful place to stay in a quiet community!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-10T18:53:17+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "66ac466c-2dfc-40a9-8924-d5054077e3d2",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Very nice stay",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-06T17:04:15+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "f3cc133f-cc02-4ed3-9e4d-201e8e4c106b",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "This place was great and fit my little family for a small getaway in the woods! Location was beautiful and it was a quick little drive to all the action. Def recommend",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you so much! We had such a great stay and it’s a cute place! You have decorated great.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-12-03T16:16:49+00:00",
+      "responded_at": null,
+      "can_respond": true
+    },
+    {
+      "id": "313fa1c2-47b2-4485-8aab-3db5541d8b55",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was amazing! Always quick to respond and helpful. Beautifully decorated and cozy!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2024-11-26T01:28:19+00:00",
+      "responded_at": null,
+      "can_respond": true
+    }
+  ],
+  "links": {
+    "first": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=1",
+    "last": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=6",
+    "prev": null,
+    "next": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 6,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=2",
+        "label": "2",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=3",
+        "label": "3",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=4",
+        "label": "4",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=5",
+        "label": "5",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=6",
+        "label": "6",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews?page=2",
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "http://public.api.hospitable.com/v2/properties/efee0e83-5eb5-48a5-8f74-d57ad42faa29/reviews",
+    "per_page": 25,
+    "to": 25,
+    "total": 127
+  }
+}
