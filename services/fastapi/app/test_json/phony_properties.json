@@ -1,0 +1,1666 @@
+{
+  "data": [
+    {
+      "id": "d90a7eb9-36e3-4a8e-b908-8106c30dc073",
+      "name": "Relaxing Moroccan BOHO 3bdrm in Midtown",
+      "public_name": "Relaxing Moroccan BOHO 3bdrm in Midtown",
+      "picture": "https://a0.muscache.com/im/pictures/c398d66b-fd50-471b-95a2-a7df52dab57b.jpg?aki_policy=small",
+      "address": {
+        "number": "Apt 1",
+        "street": "4037 Warwick Boulevard",
+        "city": "Kansas City",
+        "state": "MO",
+        "postcode": "64111",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "39.05273056",
+          "longitude": "-94.58366394"
+        },
+        "display": "Apt 1, 4037 Warwick Boulevard, Kansas City, MO, 64111, US"
+      },
+      "timezone": "-0500",
+      "listed": false,
+      "currency": "USD",
+      "summary": "Large space - Fantastic location! Walking distance to many KC amenities:\n* 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)\n* 10 min walk to Westport\n* 3 min drive to the Plaza\n* 10 min drive to Downtown, Sprint Center & Convention Center\n* 2 blocks from Starbucks\n* 3 blocks from The Roasterie & Quick Trip Gas station\n\nNo LOCALS without GREAT reviews allowed.",
+      "description": "Large space - Fantastic location! Walking distance to many KC amenities:\n* 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)\n* 10 min walk to Westport\n* 3 min drive to the Plaza\n* 10 min drive to Downtown, Sprint Center & Convention Center\n* 2 blocks from Starbucks\n* 3 blocks from The Roasterie & Quick Trip Gas station\n\nNo LOCALS without GREAT reviews allowed.\n\nThis Relaxing Moroccan Boho Apartment was inspired by my trip to Morocco a few years back.  Love the bright colors & intricate patterns used & attempted to recreate here.  This first floor apartment is well laid out with a great open space to mingle between the Living & Dining Rooms.  A full service kitchen with newer appliances are available as well as laundry.  Feel free to relax in the rocker on the front porch - sip an evening cocktail with friends before heading out for a night in KC!  You have access to a back porch as well.\n\nOne of my favorite things about Kansas City are its old glorious buildings - which is why I fell in love with this 1900 Victorian charmer.  This home has seen a lot in it's 100+ years, including being converted into 4 separate apartments\n\nCoffee (& sugar & creamer) is provided, or take a short walk to Starbucks just 2 blocks away - or our local favorite, the Roasterie.  Log in to your personal TV apps on the Roku TV.  G. Fiber is the fastest internet in town.\n\nFor ideas on restaurants, night life & KC attractions while you're in town, check out my GUIDEBOOK online - a printed copy is also available in the home.\n\nLooking forward to seeing you soon!\nJaymi\n\nKeyless entry using a code for the lock on the front door.  Will be provided a day or two before your arrival.\n\nI am a pretty hands off host, knowing you've come to KC to visit with other folks & not me :)  Always available for questions & area suggestions!\n\nSouthmoreland is such a great neighborhood.  So close to so many things - the Art Institute, the Plaza, Westport, Downtown, a Starbucks 2 blocks away, the Nelson Atkins Museum.  It's even worth walking the neighborhood to see all the beautiful old homes!\n\nWestport also has some shops, restaurants & antique stores.\n\nUber is super easy and can wisk you home after a night on the town. Buses run regularly down Main St which is 2 blocks away.  They can get you anywhere!  Also soon to be a stop on the new streetcar line connecting Downtown to the Plaza!  It's currently running from Downtown to the River Market - a great (& free!) way to explore some of Kansas City.  Park/Uber to Union Station - and hop on the streetcar there! (free wifi)\n\nUber is approx $30 and 30min from the airport.\n\nThere is plenty of off-street parking in the side lot - able to accommodate a moving van and more than one car if you have it. Looking forward to your stay!  Welcome & enjoy.\n\nPETS:\nCats & Dogs that don't bark are welcome. I must be respectful of the neighbors so cannot have barkers. There is a one-time pet fee of $25.",
+      "checkin": "16:00",
+      "checkout": "11:00",
+      "amenities": [
+        "ac",
+        "bathtub",
+        "bed_linens",
+        "carbon_monoxide_detector",
+        "cleaning_before_checkout",
+        "coffee_maker",
+        "cooking_basics",
+        "dishes_and_silverware",
+        "dryer",
+        "essentials",
+        "first_aid_kit",
+        "free_parking",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "hot_water",
+        "iron",
+        "kitchen",
+        "long_term_stays_allowed",
+        "microwave",
+        "private_entrance",
+        "private_living_room",
+        "refrigerator",
+        "shampoo",
+        "smoke_detector",
+        "street_parking",
+        "tv",
+        "washer",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 7,
+        "bedrooms": 3,
+        "beds": 4,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "single_bed",
+              "quantity": 2
+            }
+          ]
+        }
+      ],
+      "property_type": "apartment",
+      "room_type": "Entire Home",
+      "tags": [],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "gvr",
+          "platform_id": "03b8110f-f13f-5c89-a750-24964e6ea10a",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "24099066",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    },
+    {
+      "id": "c3980b2a-403c-4689-b52b-7a3013e403d4",
+      "name": "DUPLEX 9 & 11",
+      "public_name": "Reunion-Ready! Sleeps 40- Near Silver Dollar City",
+      "picture": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6Njg4MzQyNTg1NTMzOTg2NTkw/original/7704e083-32f3-413e-af65-ced51443be08.jpeg?aki_policy=small",
+      "address": {
+        "street": "9 Bogey Lane",
+        "city": "Branson West",
+        "state": "MO",
+        "postcode": "65737",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "36.68444610",
+          "longitude": "-93.31539930"
+        },
+        "display": "9 Bogey Lane, Branson West, MO, 65737, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Escape to this spacious 12-bed duplex in StoneBridge Resort - perfect for family reunions, corporate retreats & group vacations! \n\nYour Large Group (sleeps 40) will love being together while having plenty of room to spread out with 2 Living Rooms - 2 Rec rooms - 2 Screened-in Porches - 2 Open Patios & a Private Game Room!\n\n▪ 5min to Silver Dollar City\n▪ Walk to pool #1 - one of 3 pools in the resort (MemDay-LaborDay)\n▪ GOLF on site (fees apply)\n▪ Pickleball, Tennis, V-Ball, B-Ball\n▪ Great views!",
+      "description": "Escape to this spacious 12-bed duplex in StoneBridge Resort - perfect for family reunions, corporate retreats & group vacations! \n\nYour Large Group (sleeps 40) will love being together while having plenty of room to spread out with 2 Living Rooms - 2 Rec rooms - 2 Screened-in Porches - 2 Open Patios & a Private Game Room!\n\n▪ 5min to Silver Dollar City\n▪ Walk to pool #1 - one of 3 pools in the resort (MemDay-LaborDay)\n▪ GOLF on site (fees apply)\n▪ Pickleball, Tennis, V-Ball, B-Ball\n▪ Great views!\n\nWelcome to your ideal retreat for large gatherings! Our expansive duplex at 11 Bogey Lane, Branson West, MO, offers unparalleled accommodations and amenities, making it perfect for family reunions, corporate retreats, and group vacations.\n\nProperty Highlights:\n\t• Spacious Accommodations: Each side of the duplex features 6 bedrooms, comfortably sleeping up to 20 guests per side. Rent both units together to host up to 40 guests, ensuring ample space for everyone.\n\t• Entertainment Galore: Enjoy two living rooms, two recreation rooms, two screened-in porches, and two open patios. The game room (NEW 2025!) & rec rooms are equipped with a POOL TABLE, 2 SHUFFLEBOARDS, AIR HOCKEY, ARCADE & PINBALL games, Retro ATARI games, SKEEBALL, TODDLER PLAY AREA, board games, CORN HOLE and more, providing endless fun for all ages!\n\nResort Amenities: \nLocated within the prestigious & gated StoneBridge Resort, guests have access to:\n\t\t○ Swimming Pools: Three large community pools, with one just a 2-minute walk away (open Memorial Day through Labor Day).\n\t\t○ Golf: On-site at the Ledgestone Championship Golf Course, renowned as one of the best public courses in Branson (fees apply).\n\t\t○ Sports Facilities: Pickleball, Tennis, Sand Volleyball, Basketball courts, 3 Playgrounds & a Fitness Center. Equipment rental available.\n\t\t○ Fishing: Catch & Release Fishing at Fox Lake - in the resort - just a 5 min drive.  Rent poles from the Welcome Center.\n\t\t○ Dining: An on-site restaurant at the Country Club offers tasty & affordable meals with scenic views - just a 5 min drive.\n \nPrime Location: \n\t\t○ Just a 5-minute drive to Silver Dollar City, a premier 1880s-themed amusement park featuring thrilling rides, live shows, and festivals. \n\t\t○ The property backs onto Ledgestone Championship Golf Course (fees apply)\n\t\t○ Near Table Rock Lake, offering a plethora of water activities including swimming & boating.  \n\t\t○ Stonebridge is a quiet escape -  just 15 minutes from the Strip where you can visit fantastic museums and attractions for the whole family, as well as live music shows, magic shows & shopping.\n\nNearby Attractions and Activities:\n\t• Table Rock Lake: Engage in boating, fishing, swimming, and water sports. The lake is known for its clear waters and is a haven for anglers and water enthusiasts. \n\t• Lake Taneycomo: Famous for trout fishing, this lake also offers kayaking and scenic boat tours. \n\t• Branson Jet Boats: Experience an exhilarating boat ride on Lake Taneycomo, combining high-speed maneuvers with sightseeing. \n\t• Moonshine Beach: A sandy shoreline on Table Rock Lake, perfect for swimming, picnicking, and relaxation. \n\nUpcoming Festivals and Events:\nBranson hosts numerous events throughout the year. Here are some highlights:\n\t• Spring Exposition (April 10 - May 12, 2025): A brand-new festival at Silver Dollar City featuring new shows, flavors, and attractions. \n\t• Bluegrass & BBQ (May 14 - 26, 2025): Enjoy performances by top bluegrass artists and savor mouthwatering barbecue at Silver Dollar City. \n\t• Branson Elvis Festival (May 2 - 4, 2025): Celebrate the King of Rock 'n' Roll with tribute artists and special events at the Pepsi Legends Theater. \n\t• Southern Gospel Picnic (August 21 - September 1, 2025): A gathering of renowned Southern gospel artists combined with delicious southern-style cuisine. \n\t• Harvest Festival (September 12 - October 26, 2025): Featuring thousands of illuminated pumpkins, crafts, and live entertainment at Silver Dollar City. \n\nParking and Accessibility:\n\t• Parking: The property accommodates up to 6 cars, with additional overflow parking available nearby.\n\t• Resort Fee: A $5 per vehicle per night fee is collected by StoneBridge Resort at check-in.\n\t• Note: The resort does not permit bus, boat, RV, jet ski, or trailer parking. Please consult local marinas for alternative parking options.\n\nWhere you'll Sleep:\n9 Bogey (Cowboy side w/pool table): \nUPSTAIRS: \n\t• BDRM 1: 1 King bed w/en suite master bathroom \n\t• BDRM 2: 1 Queen \n\t• BDRM 3: 1 King \n\t• Living Room: 1 Queen Sofa Bed\n\nDOWNSTAIRS: \n\t• BDRM 4: 2 Queen Beds \n\t• BDRM 5: 1 King; bunk beds: Twin over Queen \n\t• BDRM 6: 'bonus' room through Bdrm5: 2 twin beds \n\t• Living Room: 1 Queen Sofa Bed\n\n11 Bogey (Americana side w/toddler play area): \nUPSTAIRS: \n\t• BDRM 1: 1 King bed w/en suite master bathroom \n\t• BDRM 2: 1 Queen \n\t• BDRM 3: 1 Queen \n\t• Living Room: 1 Queen Sofa Bed\n\nDOWNSTAIRS: \n\t• BDRM 4: 2 Queen Beds \n\t• BDRM 5: 2 Queen Beds \n\t• BDRM 6: 'bonus' room through Bdrm5: 1 Queen \n\t• Living Room: 1 Queen Sofa Bed\n\nWhether you're planning a family reunion, a corporate retreat, or a group vacation, our property at 9 & 11 Bogey Lane offers the perfect blend of comfort, entertainment, and proximity to Branson's top attractions. Book your stay today and create unforgettable memories!\n\nYou have access to RESORT AMENITITES with your included amenity pass:\n▪  3 on-site pools (MemDay-LaborDay)\n▪  3 Pickleball & Tennis courts \n▪  3 Playgrounds \n▪  Fitness Center \n▪  Basketball Court \n▪  Sand Volleyball Court\n▪  Catch & Release Fishing\n▪  Paved Walking Path around the Lake\n▪  Clubhouse Restaurant - affordable - great patio!\n▪  Golf at Ledgestone - greens fees not included\n\nReach out anytime!  Feel free to message me through the AirBnB app should you have any questions - please let me know if anything needs attention.  Happy to help where I can & ensure you & your group have a 5 star vacation getaway!\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Bus, Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.\n\nOnsite Parking for 6-7 cars.  Overflow parking available 1 block away. Street parking is not allowed.",
+      "checkin": "16:00",
+      "checkout": "10:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "arcade_machine",
+        "baking_sheet",
+        "barbeque_utensils",
+        "bathtub",
+        "bbq_area",
+        "bed_linens",
+        "blender",
+        "board_games",
+        "body_soap",
+        "books",
+        "carbon_monoxide_detector",
+        "ceiling_fan",
+        "childrens_books_and_toys",
+        "childrens_dinnerware",
+        "cleaning_products",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "crib",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "essentials",
+        "extra_pillows_and_blankets",
+        "fireplace",
+        "fire_extinguisher",
+        "first_aid_kit",
+        "freezer",
+        "free_parking",
+        "game_console",
+        "garden_or_backyard",
+        "gym",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "high_chair",
+        "hot_water",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "life_size_games",
+        "long_term_stays_allowed",
+        "microwave",
+        "mini_fridge",
+        "outdoor_seating",
+        "oven",
+        "pack_n_play_travel_crib",
+        "patio",
+        "patio_or_belcony",
+        "playground",
+        "pool",
+        "pool_table",
+        "portable_fans",
+        "private_entrance",
+        "private_living_room",
+        "refrigerator",
+        "resort_access",
+        "room_darkening_shades",
+        "shampoo",
+        "shower_gel",
+        "smoke_detector",
+        "stair_gates",
+        "stove",
+        "theme_room",
+        "toaster",
+        "tv",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 40,
+        "bedrooms": 12,
+        "beds": 21,
+        "bathrooms": 6
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "living_room",
+          "beds": [
+            {
+              "type": "sofa_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            },
+            {
+              "type": "double_bed",
+              "quantity": 1
+            },
+            {
+              "type": "single_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "living_room",
+          "beds": [
+            {
+              "type": "sofa_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "living_room",
+          "beds": [
+            {
+              "type": "sofa_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "living_room",
+          "beds": [
+            {
+              "type": "sofa_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "vacation_home",
+      "room_type": "Entire Home",
+      "tags": [
+        "Branson",
+        "Branson West",
+        "Silver Dollar City",
+        "Table Rock Lake",
+        "Stonebridge Resort",
+        "where to stay",
+        "Vacation"
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2961907.3533947",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "manual",
+          "platform_id": "b3629684-bbbe-53a8-9b84-e0a2e0fab5bd",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "6a8fefe6-0dd0-5d24-9ae4-74c5beec92e0",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "688342585533986590",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "parent",
+        "parent": null,
+        "children": [
+          "a7376e4e-748e-4b95-a9c1-9a830a708cab",
+          "d96fce2d-b4fb-4dbd-8ede-0073060b4f92"
+        ],
+        "siblings": []
+      }
+    },
+    {
+      "id": "efee0e83-5eb5-48a5-8f74-d57ad42faa29",
+      "name": "Golf 10",
+      "public_name": "Couples Condo Retreat on Golf Course - 8min to SDC",
+      "picture": "https://media.vrbo.com/lodging/85000000/84070000/84062500/84062489/cc4b83d9.c9.jpg",
+      "address": {
+        "number": "10",
+        "street": "1001 Golf Drive",
+        "city": "Branson West",
+        "state": "MO",
+        "postcode": "65737",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "36.68557376",
+          "longitude": "-93.31508381"
+        },
+        "display": "10, 1001 Golf Drive, Branson West, MO, 65737, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "It's time to get away!  This King Bedroom escape is just what you need to reset.  Relaxing patio overlooks the 12th hole of Ledgestone Golf Course in Stonebridge Resort.  \n▪ One of 3 pools in the resort is just a few steps outside your door\n▪ Play a round of golf on site at the Ledgestone Championship Golf Course - the best public golf course in Branson  \n▪ On-site restaurant - great patio with great views!\n▪ Street Level Condo - No Stairs!!\n▪ 5 minutes to Silver Dollar City",
+      "description": "It's time to get away!  This King Bedroom escape is just what you need to reset.  Relaxing patio overlooks the 12th hole of Ledgestone Golf Course in Stonebridge Resort.  \n▪ One of 3 pools in the resort is just a few steps outside your door\n▪ Play a round of golf on site at the Ledgestone Championship Golf Course - the best public golf course in Branson  \n▪ On-site restaurant - great patio with great views!\n▪ Street Level Condo - No Stairs!!\n▪ 5 minutes to Silver Dollar City\n\nThis is a street level condo - so NO STAIRS!  Roll your luggage right in :).  You'll walk in to the living room with a kitchenette - equipped with sink, microwave & mini-fridge, as well as dishes & drinkware.   The bedroom is in the back of the space and has access to the balcony, which is great to relax & maybe see some golfers getting in a game :)\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Bus, Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.\n\nYou have access to resort amenities with your included amenity pass:\n▪  3 on-site pools \n▪  3 Tennis courts \n▪  3 Playgrounds \n▪  Fitness Center \n▪  Basketball court \n▪  Sand Volleyball Court\n▪  Catch & release Fishing\n▪  Paved Walking Path around the Lake\n▪  Clubhouse restaurant - affordable - great patio!\n▪  Golf at Ledgestone - greens fees not included\n\nI am not onsite, though I typically respond within a few minutes to help with whatever questions or concerns you may have.\n\nStonebridge Resort - Just a few minutes North of Silver Dollar City - yet away from the hustle and bustle of Branson.  Convenient to area attractions.\n\nStonebridge guests can enjoy all of the resorts amenities including 3 pools, tennis courts, Golf at Ledgestone Golf Course (Fees apply), Basketball and more.\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.",
+      "checkin": "16:00",
+      "checkout": "10:00",
+      "amenities": [
+        "ac",
+        "bathtub",
+        "bbq_area",
+        "bed_linens",
+        "body_soap",
+        "ceiling_fan",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "dining_table",
+        "disabled_parking_spot",
+        "dishes_and_silverware",
+        "essentials",
+        "exercise_equipment",
+        "extra_pillows_and_blankets",
+        "first_aid_kit",
+        "freezer",
+        "free_parking",
+        "gym",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "home_step_free_access",
+        "hot_water",
+        "iron",
+        "keurig_coffee_machine",
+        "kitchenette",
+        "long_term_stays_allowed",
+        "microwave",
+        "mini_fridge",
+        "outdoor_seating",
+        "paid_parking_on_premises",
+        "patio",
+        "patio_or_belcony",
+        "playground",
+        "pool",
+        "portable_fans",
+        "private_entrance",
+        "refrigerator",
+        "resort_access",
+        "room_darkening_shades",
+        "shampoo",
+        "shower_gel",
+        "single_level_home",
+        "smoke_detector",
+        "tv",
+        "wardrobe_or_closet",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 3,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "room_details": [],
+      "property_type": "condominium",
+      "room_type": "Entire Home",
+      "tags": [],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2980779.3552819",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "booking",
+          "platform_id": "916976001",
+          "platform_name": "Couples Condo Retreat Overlooking Golf Course",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "e1cfdbab-3fb5-5365-b9ad-c051b34ebf0d",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "direct",
+          "platform_id": "fa5829e2-c326-5c01-baa4-a1e66f47ec3d",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "664379177226170416",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    },
+    {
+      "id": "cfa6a066-72e8-4a24-a1e4-e48273983344",
+      "name": "Unit 3",
+      "public_name": "Cozy Midcentury 2bd in Midtown KC",
+      "picture": "https://media.vrbo.com/lodging/84000000/83770000/83760700/83760660/w1011h683x6y0-b33b9bf1.c9.jpg",
+      "address": {
+        "number": "Apt 3",
+        "street": "4037 Warwick Boulevard",
+        "city": "Kansas City",
+        "state": "MO",
+        "postcode": "64111",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "39.05267334",
+          "longitude": "-94.58361053"
+        },
+        "display": "Apt 3, 4037 Warwick Boulevard, Kansas City, MO, 64111, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Very cozy & homey apartment- Fantastic location! Walking distance to many KC amenities:\n- 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)\n- 10 min walk to Westport\n- 3 min drive to the Plaza\n- 10 min drive to Downtown, Sprint Center & Convention Center\n- 2 blocks from Starbucks\n- 2 blocks from the Roasterie\n\nNO LOCALS without GREAT reviews allowed\n\nNOTE:  Dining Chairs have been switched out - updated photos coming.",
+      "description": "Very cozy & homey apartment- Fantastic location! Walking distance to many KC amenities:\n- 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)\n- 10 min walk to Westport\n- 3 min drive to the Plaza\n- 10 min drive to Downtown, Sprint Center & Convention Center\n- 2 blocks from Starbucks\n- 2 blocks from the Roasterie\n\nNO LOCALS without GREAT reviews allowed\n\nNOTE:  Dining Chairs have been switched out - updated photos coming.\n\nOne of my favorite things about Kansas City are its old glorious buildings - which is why I fell in love with this 1900 Victorian charmer.  This home has seen a lot in it's 100+ years, including being converted into 4 separate apartments.  Your Cozy Midcentury 2 bedroom is on the 3rd floor.  Once you enter the space, you get to smile and settle in - you're in your home away from home.  Welcome & relax.\n\nI've scoured every antique store in the state to create an authentic mid-century space - focused on peace & comfort.  Enjoy high end bedding & towels.  You'll find a fully equipped kitchen to meet your cooking & entertaining needs.  Coffee (& sugar & creamer) is provided, or take a short walk to Starbucks just 2 blocks away, or our local favorite - the Roasterie.  Cable is provided, including access to 100's of channels & movies (just leave cash if you download a movie to rent).  There are also DVDs & board games under the tv for your entertainment.  G. Fiber Internet available - the fastest in town. \n\nIf you're here for work - there's a desk in the second bedroom for your use - right under the skylight so you can brainstorm with the clouds :)\n\nFor ideas on restaurants, night life & KC attractions while you're in town, check out my GUIDEBOOK online - a printed copy is also available in the home.\n\nYou access this space through the side door.  When facing the home, follow the sidewalk around to the left.  You will see the red door on the North side of the building.  Unit 3 is located at the TOP of the stairwell.\n\nI am a pretty hands off host, knowing you've come to KC to visit with other folks & not me :)  Always available for questions & area suggestions!\n\nSouthmoreland is such a great neighborhood.  So close to so many things - the Art Institute, the Plaza, Westport, Downtown, a Starbucks 2 blocks away, the Nelson Atkins Museum.  It's even worth walking the neighborhood to see all the beautiful old homes!\nWestport also has some shops, restaurants & antique stores.\n\nUber is super easy and can wisk you home after a night on the town. Buses run regularly down Main St which is 2 blocks away.  They can get you anywhere!  Also soon to be a stop on the new streetcar line connecting Downtown to the Plaza!  It's currently running from Downtown to the River Market - a great (& free!) way to explore some of Kansas City.  Park/Uber to Union Station - and hop on the streetcar there! (free wifi)\n\nUber is approx $30 and 30min from the airport.\n\nThere is plenty of off-street parking in the side lot - able to accommodate a moving van and more than one car if you have it. \n\nACCESS:\nThis is a 3rd floor apartment, accessed through the old & narrow butlers stairwell.  \n\nPETS:\nCats & Dogs that don't bark are welcome. We must be respectful of the neighbors so cannot have barkers. There is a one-time pet fee of $50.  You must clear your pets with me beforehand.\n\nPARTIES/GATHERINGS/GUESTS:\nKansas City takes gatherings VERY SERIOUSLY.  All guests must be pre-approved by host.  All guests must leave before 10pm.\n\nGUEST VERIFICATION:\nYou may be asked for additional verification",
+      "checkin": "16:00",
+      "checkout": "11:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "bbq_area",
+        "carbon_monoxide_detector",
+        "coffee_maker",
+        "cooking_basics",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "essentials",
+        "fire_extinguisher",
+        "free_parking",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "hot_water",
+        "internet",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "microwave",
+        "outdoor_seating",
+        "oven",
+        "refrigerator",
+        "shampoo",
+        "smoke_detector",
+        "stove",
+        "street_parking",
+        "tv",
+        "twenty_four_hour_checkin",
+        "washer",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "apartment",
+      "room_type": "Entire Home",
+      "tags": [
+        "Unit 3"
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2962225.3534265",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "081fbe7b-6776-52ce-ae6d-6c5d97a840ef",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "11187136",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    },
+    {
+      "id": "a3048ba9-bbca-4d7b-96ca-36ffd0ae4674",
+      "name": "Unit 2",
+      "public_name": "Boutique Apartment Stay in a Refurbished Victorian Home",
+      "picture": "https://a0.muscache.com/im/pictures/7a55ffc6-d547-438d-86c1-a4f28538ecfa.jpg?aki_policy=small",
+      "address": {
+        "number": "#2",
+        "street": "4037 Warwick Boulevard",
+        "city": "Kansas City",
+        "state": "MO",
+        "postcode": "64111",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "39.05266571",
+          "longitude": "-94.58379364"
+        },
+        "display": "#2, 4037 Warwick Boulevard, Kansas City, MO, 64111, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Built in 1900, this charming Victorian Home was converted to apartments & has been thoughtfully renovated to showcase its historic bones. Whitewashed walls highlight high, beamed ceilings, while the decor fuses antique and modern pieces with eclectic art.  This Midtown getaway is a refreshing and beautiful escape from the ordinary hotel.  \n\nFor ideas on restaurants, night life & KC attractions while you're in town, I'll send you a map of my favorites!\n\nNo LOCALS without GREAT reviews allowed.",
+      "description": "Built in 1900, this charming Victorian Home was converted to apartments & has been thoughtfully renovated to showcase its historic bones. Whitewashed walls highlight high, beamed ceilings, while the decor fuses antique and modern pieces with eclectic art.  This Midtown getaway is a refreshing and beautiful escape from the ordinary hotel.  \n\nFor ideas on restaurants, night life & KC attractions while you're in town, I'll send you a map of my favorites!\n\nNo LOCALS without GREAT reviews allowed.\n\nOne of my favorite things about Kansas City are its old buildings & glorious architecture - which is why I fell in love with this 1900 Victorian charmer.  This home has seen a lot in it's 100+ years, including being converted into 4 separate apartments. \n\nThis Midtown getaway is a happy, refreshing and beautiful escape from the ordinary hotel.  Tall ceilings, fun touches and a clean palette create an inviting & refreshing space.  \n\nYour Shabby Chic 2 bedroom is on the 2nd floor - accessible only by stairs.  You'll find a fully equipped kitchen for all of your cooking & entertaining needs.  Coffee, sugar & creamer are provided (or several local coffee shops are close by!).  Access your own TV apps through the Roku Smart TV.   Fiber Internet available - the fastest in town. \n\nIf you're here for work - there's a desk in the second bedroom for your use.\n\nYou'll be provided a smartlock code.  You'll share a stairwell with one other apartment.  The outside door is to remained locked.\nYou access this space through the side door.  When facing the home, follow the sidewalk around to the left.  You will see the red door on the North side of the building.  Unit 2 is the Green Door on the second floor.\n\nFeel free to message me through the app.  I also live in the building so am often available if needed.\n\nSouthmoreland is a historic neighborhood lined with old Victorian homes much like this one. The apartment is just four blocks away from art museums like Nelson-Atkins, Kemper, and the Art Institute, a 5 minute drive to the Plaza & Westport and a 10 minute drive to downtown Kansas City.\n\nUber is super easy and can wisk you home after a night on the town. Buses run regularly down Main St which is 2 blocks away.  They can get you anywhere!  Also soon to be a stop on the new streetcar line connecting Downtown to the Plaza!  It's currently running from Downtown to the River Market - a great (& free!) way to explore some of Kansas City.  Park/Uber to Union Station - and hop on the streetcar there! (free wifi)\n\nUber is approx $45 and 30min from the airport.\n\nThere is plenty of off-street parking in the side lot - able to accommodate a moving van and more than one car if you have it. This is a 2nd floor apartment, accessed through the old butlers stairwell on the side of the home.  \n\nPETS:\nCats & Dogs that don't bark are welcome. I must be respectful of the neighbors so cannot have barkers. Camp Bow-wow is a few blocks away if you have a dog that barks a lot.  There is a one-time pet fee.  Please include your pet on your reservation.",
+      "checkin": "16:00",
+      "checkout": "11:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "baking_sheet",
+        "bathroom_essentials",
+        "bath_towel",
+        "bbq_area",
+        "bedroom_comforts",
+        "bed_linens",
+        "body_soap",
+        "carbon_monoxide_detector",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "essentials",
+        "extra_pillows_and_blankets",
+        "fire_extinguisher",
+        "fire_pit",
+        "first_aid_kit",
+        "formal_dining_area",
+        "freezer",
+        "free_parking",
+        "full_kitchen",
+        "garden_or_backyard",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "hot_water",
+        "internet",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "laundromat_nearby",
+        "long_term_stays_allowed",
+        "microwave",
+        "netflix",
+        "outdoor_parking",
+        "outdoor_seating",
+        "oven",
+        "portable_fans",
+        "private_entrance",
+        "refrigerator",
+        "room_darkening_shades",
+        "shampoo",
+        "shower_gel",
+        "smart_tv",
+        "smoke_detector",
+        "stove",
+        "street_parking",
+        "toaster",
+        "toilet_paper",
+        "tv",
+        "twenty_four_hour_checkin",
+        "walk_in_shower",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 5,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            },
+            {
+              "type": "couch_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "apartment",
+      "room_type": "Entire Home",
+      "tags": [
+        "Midtown Plaza Westport Downtown Nelson Southmoreland Hyde Park Victorian  Antique Home"
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2962226.3534266",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "booking",
+          "platform_id": "916995201",
+          "platform_name": "Boutique Apartment in 1905 Victorian Home - Plaza - Westport",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "manual",
+          "platform_id": "fccf5e9b-48f4-520f-b870-ceb5474b4a8c",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "dfb6af12-fab0-5e85-8555-ccf6c7f84ca9",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "direct",
+          "platform_id": "027a6f37-dd92-58e2-9594-9a831c8f7fa3",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "7492570",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    },
+    {
+      "id": "a7376e4e-748e-4b95-a9c1-9a830a708cab",
+      "name": "Bogey 11",
+      "public_name": "Family Reunion- Sleeps 20!  8 min to SDC! Pools!",
+      "picture": "https://media.vrbo.com/lodging/84000000/83370000/83368200/83368194/ecd8f676.c9.jpg",
+      "address": {
+        "street": "11 Bogey Lane",
+        "city": "Branson West",
+        "state": "MO",
+        "postcode": "65737",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "36.68435146",
+          "longitude": "-93.31521939"
+        },
+        "display": "11 Bogey Lane, Branson West, MO, 65737, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Your Large Group will love being together in this LARGE RETREAT in Stonebridge (Sleeps 20).    Keep the kids entertained downstairs while you relax with the adults in the upstairs living room.  \n\n▪ Walk 2 min to the pool - one of 3 POOLS in the resort (Mem.Day - Labor Day)\n▪ GOLF on site at the LEDGESTONE Golf Course - the best public golf course in Branson  (fees apply)\n▪ Tennis, Basketball, Sand Volleyball\n▪ FISHING\n▪ On-site BAR & RESTAURANT - great patio!\n▪ 5 min to SILVER DOLLAR CITY",
+      "description": "Your Large Group will love being together in this LARGE RETREAT in Stonebridge (Sleeps 20).    Keep the kids entertained downstairs while you relax with the adults in the upstairs living room.  \n\n▪ Walk 2 min to the pool - one of 3 POOLS in the resort (Mem.Day - Labor Day)\n▪ GOLF on site at the LEDGESTONE Golf Course - the best public golf course in Branson  (fees apply)\n▪ Tennis, Basketball, Sand Volleyball\n▪ FISHING\n▪ On-site BAR & RESTAURANT - great patio!\n▪ 5 min to SILVER DOLLAR CITY\n\nThis Vacation Home offers nearly 3500 sq ft of space for your large group to relax & enjoy an escape from the chaos of life. After a great nights sleep (it's so peaceful here without the hub-bub of the city!) - start your day with a great cup of coffee on the screened in porch.\n▪ 1 King, 7 Queen,  2 Queen Sofa\n▪ TVs in every room\n▪ Wifi throughout home\n▪ Atari, Shuffleboard, Board Games, Giant Connect 4\n▪ BBQ grill\n▪ Screened in porch upstairs - gorgeous view!\n▪ Outdoor patio downstairs\n\nLARGE KITCHEN:\n▪ Big Popcorn Machine\n▪ Crockpot, Bakeware, Kids Dishes, Blender\n▪ 2 Coffee Pots\n▪ Room for several people at once\n▪ Extra Refrigerator in garage\n\nTWO LIVING ROOMS:\nUPSTAIRS is great for relaxing with your large group & connecting while preparing  your meals\nDOWNSTAIRS is perfect to send the kids! Shuffleboard, Atari, Game table & Toddler play area\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Bus, Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.\n\nYou have access to resort amenities with your included amenity pass:\n▪ 3 on-site POOLS (MemDay-Labor Day)\n▪ GOLF at Ledgestone - pay at Pro Shop\n▪ 3 TENNIS courts\n▪ 3 PLAYGROUNDS\n▪ FITNESS Center\n▪ BASKETBALL court\n▪ Sand VOLLEYBALL Court\n▪ Catch & release FISHING\n▪ Paved WALKING PATH around the Lake\n▪ Clubhouse RESTAURANT - affordable - great patio!\n\nReach out anytime!  Feel free to message me through the AirBnB app should you have any questions!  Please let me know if anything needs attention.  Happy to help where I can & ensure you & your group have a lovely vacation getaway!\n\nStonebridge Resort is located just 10 minutes from the Branson strip and 1 mile from Silver Dollar City.  The gated communities 3200 acres intertwines with the popular & beautiful LedgeStone Championship Golf Course.  The resort is home to 3 outdoor swimming pools, 3 playgrounds, tennis courts, walking trails, catch & release lake, basketball court, sand volleyball court and on-site restaurant.\n\nAs a guest, you are welcome to enjoy all the amenities the resort has to offer.  There is a fee to golf, of course.  Simply sign up for a tee-time at the pro-shop in the Club House.\n\nThe Ledgestone Grille, located at the clubhouse, has a good selection for breakfast, lunch & dinner at approachable prices.  Both indoor & patio dining available.  Head over on Wednesday evening (5-9pm) for Karaoke - you might be treated with some local entertainers coming over on their night off!  Fine Dining is offered on Friday nights.\n\nThere are 3 marinas within 10 miles of Stonebridge Resort:  Indian Point, Port of Kimberling & State Park Marina.\n\nThere isn't much public transportation in the Branson area, so you will want a car.  There is parking available at each of the amenities on the resort.\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.",
+      "checkin": "16:00",
+      "checkout": "10:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "arcade_machine",
+        "baking_sheet",
+        "bathtub",
+        "bbq_area",
+        "bed_linens",
+        "board_games",
+        "body_soap",
+        "carbon_monoxide_detector",
+        "ceiling_fan",
+        "cleaning_products",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "essentials",
+        "exercise_equipment",
+        "extra_pillows_and_blankets",
+        "fireplace",
+        "fireplace_guards",
+        "fire_extinguisher",
+        "first_aid_kit",
+        "freezer",
+        "free_parking",
+        "garden_or_backyard",
+        "gym",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "high_chair",
+        "hot_water",
+        "hot_water_kettle",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "life_size_games",
+        "long_term_stays_allowed",
+        "microwave",
+        "mini_fridge",
+        "outdoor_seating",
+        "oven",
+        "pack_n_play_travel_crib",
+        "patio",
+        "patio_or_belcony",
+        "playground",
+        "pool",
+        "portable_fans",
+        "private_entrance",
+        "refrigerator",
+        "resort_access",
+        "shampoo",
+        "shower_gel",
+        "smoke_detector",
+        "stair_gates",
+        "stove",
+        "theme_room",
+        "toaster",
+        "tv",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 20,
+        "bedrooms": 6,
+        "beds": 11,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "living_room",
+          "beds": [
+            {
+              "type": "sofa_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "single_bed",
+              "quantity": 2
+            }
+          ]
+        }
+      ],
+      "property_type": "vacation_home",
+      "room_type": "Entire Home",
+      "tags": [
+        "Branson",
+        "Silver Dollar City",
+        "Stonebridge Resort",
+        "Table Rock Lake",
+        "Vacation",
+        "where to stay",
+        "Branson Landing",
+        "Ledgestone Golf Course",
+        "Tanger Outlets"
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2926721.3498761",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "direct",
+          "platform_id": "951600c5-7658-58f0-9cfc-7836f30fa590",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "manual",
+          "platform_id": "19eb1306-0f6d-5043-a751-eca3469e25cd",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "9c2e21bc-36a2-5b07-922f-4edc1bb33344",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "707860058972597447",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "child",
+        "parent": "c3980b2a-403c-4689-b52b-7a3013e403d4",
+        "children": [],
+        "siblings": [
+          "d96fce2d-b4fb-4dbd-8ede-0073060b4f92"
+        ]
+      }
+    },
+    {
+      "id": "d96fce2d-b4fb-4dbd-8ede-0073060b4f92",
+      "name": "Bogey 9",
+      "public_name": "Ultimate Family Spot! Sleeps 20 - Pools, Golf, FUN",
+      "picture": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjQ1NzQ3ODM0MTAwNzk5MjIy/original/8f9a7820-cbb2-4a54-89fb-49db5f3ca779.jpeg?aki_policy=small",
+      "address": {
+        "street": "9 Bogey Lane",
+        "city": "Branson West",
+        "state": "MO",
+        "postcode": "65737",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "36.68444610",
+          "longitude": "-93.31531347"
+        },
+        "display": "9 Bogey Lane, Branson West, MO, 65737, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Your Large Group (sleeps 20) will love being together in this LARGE RETREAT in Stonebridge.  Keep the kids entertained in the new GAME ROOM or playing POOL, games &  COWBOY dress-up downstairs while you relax with the adults upstairs!  \n\n▪ Walk 2 min. to the pool - one of 3 POOLS in the resort (MemDay-LaborDay)\n▪ GOLF on site at the LEDGESTONE Championship Golf Course (fees apply)\n▪ FISHING\n▪ PICKLEBALL, Volleyball\n▪ On-site BAR & RESTAURANT - great patio & views!\n▪ 5 min to SILVER DOLLAR CITY",
+      "description": "Your Large Group (sleeps 20) will love being together in this LARGE RETREAT in Stonebridge.  Keep the kids entertained in the new GAME ROOM or playing POOL, games &  COWBOY dress-up downstairs while you relax with the adults upstairs!  \n\n▪ Walk 2 min. to the pool - one of 3 POOLS in the resort (MemDay-LaborDay)\n▪ GOLF on site at the LEDGESTONE Championship Golf Course (fees apply)\n▪ FISHING\n▪ PICKLEBALL, Volleyball\n▪ On-site BAR & RESTAURANT - great patio & views!\n▪ 5 min to SILVER DOLLAR CITY\n\nThis Vacation Home offers  nearly 3500 sq ft of space for your large group to relax & enjoy an escape from the chaos of life.  After a great nights sleep (it's so peaceful here without the hub-bub of the city!) - start your day with a great cup of coffee on the screened in porch.\n\nSPACIOUS ACCOMMODATIONS:\n▪ 6 bedrooms comfortably sleeping up to 20 guests with 3 King, 5 Queen, 1 Twin, 2 Queen Sofas\n▪ Upstairs Living Room, Kitchen & Screened in Patio\n▪ Downstairs Rec Room, outdoor Patio & yard access\n▪ NEW Game Room Garage conversion!\n\nENTERTAINMENT GALORE!\nIn the home:\n▪ Pool Table & Shuffleboard\n▪ Upright Arcades & Star Wars Pinball\n▪ Air Hockey & Corn Hole\n▪ Giant Connect4 & Board Games\n▪ Cowboy dress-up & Selfie Station\n▪ Retro Atari hookups\n▪ Roku TVs in every room\n▪ Wi-Fi throughout home\n▪ BBQ grill\n\nIn the Resort (all free except Golf!):\n▪ 3 Swimming Pools - 1 just a short walk away\n▪ 3 Playgrounds\n▪ Catch & Release Fishing\n▪ Pickleball, Sand Volleyball, Basketball, Tennis (equipment rental available)\n▪ Fitness Center\n\nPRIME LOCATION!\n▪ Only 5 minutes to Silver Dollar City!  A premier 1880s-themed amusement park featuring thrilling rides, live shows, and festivals.\n▪ Near Table Rock Lake - with beaches, boating & all sorts of water activities\n▪ Stonebridge is a quiet escape -  just 15 minutes from the Strip where you can visit fantastic museums and attractions for the whole family, as well as live music shows, magic shows & lots of shopping.\n\nUpcoming Festivals and Events:\nBranson hosts numerous events throughout the year. Here are some highlights:\n\t• Spring Exposition (April 10 - May 12, 2025): A brand-new festival at Silver Dollar City featuring new shows, flavors, and attractions. \n\t• Bluegrass & BBQ (May 14 - 26, 2025): Enjoy performances by top bluegrass artists and savor mouthwatering barbecue at Silver Dollar City. \n\t• Branson Elvis Festival (May 2 - 4, 2025): Celebrate the King of Rock 'n' Roll with tribute artists and special events at the Pepsi Legends Theater. \n\t• Southern Gospel Picnic (August 21 - September 1, 2025): A gathering of renowned Southern gospel artists combined with delicious southern-style cuisine. \n\t• Harvest Festival (September 12 - October 26, 2025): Featuring thousands of illuminated pumpkins, crafts, and live entertainment at Silver Dollar City. \n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Bus, Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.\n\nWhere you'll Sleep:\nUPSTAIRS: \n\t• BDRM 1: 1 King bed w/en suite master bathroom \n\t• BDRM 2: 1 Queen \n\t• BDRM 3: 1 King \n\t• Living Room: 1 Queen Sofa Bed\n\nDOWNSTAIRS: \n\t• BDRM 4: 2 Queen Beds \n\t• BDRM 5: 1 King; bunk beds: Twin over Queen \n\t• BDRM 6: 'bonus' room through Bdrm5: 2 twin beds \n\t• Living Room: 1 Queen Sofa Bed\n\n\nWhether you're planning a family reunion, a corporate retreat, or a group vacation, our property at 9 Bogey Lane offers the perfect blend of comfort, entertainment, and proximity to Branson's top attractions. Book your stay today and create unforgettable memories!\n\nYou have access to resort amenities with your included amenity pass:\n▪ 3 on-site POOLS (MemDay-Labor Day)\n▪ GOLF at Ledgestone - pay at Pro Shop\n▪ Catch & release FISHING\n▪ PICKLEBALL & TENNIS courts\n▪ 3 PLAYGROUNDS\n▪ FITNESS Center\n▪ BASKETBALL court\n▪ Sand VOLLEYBALL Court\n▪ Paved WALKING PATH around the Lake\n▪ Clubhouse RESTAURANT - affordable - great patio!\n\nReach out anytime!  Feel free to message me through the AirBnB app should you have any questions - please let me know if anything needs attention.  Happy to help where I can & ensure you & your group have a 5 star vacation getaway!\n\nStonebridge Resort is located just 10 minutes from the Branson strip and 1 mile from Silver Dollar City.  The gated communities 3200 acres intertwines with the popular & beautiful LedgeStone Championship Golf Course.  The resort is home to 3 outdoor swimming pools, 3 playgrounds, tennis courts, walking trails, catch & release lake, basketball court, sand volleyball court and on-site restaurant.\n\nAs a guest, you are welcome to enjoy all the amenities the resort has to offer.  There is a fee to golf, of course.  Simply sign up for a tee-time at the pro-shop in the Club House.\n\nThe Ledgestone Grille, located at the clubhouse, has a good selection for breakfast, lunch & dinner at approachable prices.  Both indoor & patio dining available.  Head over on Wednesday evening (5-9pm) for Karaoke - you might be treated with some local entertainers coming over on their night off!  Fine Dining is offered on Friday nights.\n\nThere are 3 marinas within 10 miles of Stonebridge Resort:  Indian Point, Port of Kimberling & State Park Marina.\n\nThere isn't much public transportation in the Branson area, so you will want a car.  There is parking available at each of the amenities on the resort.\n\nRESORT FEE:  StoneBridge Resort will collect a $5 per vehicle per night fee.  The resort will collect this payment from you AT CHECKIN.\n\nThe Resort does not allow Boat, RV, Jet Ski or Trailer parking.  Please check with the local marina for options.",
+      "checkin": "16:00",
+      "checkout": "10:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "arcade_machine",
+        "baking_sheet",
+        "barbeque_utensils",
+        "bathtub",
+        "bbq_area",
+        "bed_linens",
+        "blender",
+        "board_games",
+        "body_soap",
+        "carbon_monoxide_detector",
+        "ceiling_fan",
+        "childrens_dinnerware",
+        "cleaning_products",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "crib",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "essentials",
+        "exercise_equipment",
+        "extra_pillows_and_blankets",
+        "fireplace",
+        "fireplace_guards",
+        "fire_extinguisher",
+        "first_aid_kit",
+        "freezer",
+        "free_parking",
+        "game_console",
+        "garden_or_backyard",
+        "gym",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "high_chair",
+        "hot_water",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "long_term_stays_allowed",
+        "microwave",
+        "mini_fridge",
+        "outdoor_seating",
+        "oven",
+        "pack_n_play_travel_crib",
+        "patio",
+        "patio_or_belcony",
+        "playground",
+        "pool",
+        "pool_table",
+        "portable_fans",
+        "private_entrance",
+        "private_living_room",
+        "refrigerator",
+        "resort_access",
+        "shampoo",
+        "shower_gel",
+        "smoke_detector",
+        "stair_gates",
+        "stove",
+        "theme_room",
+        "toaster",
+        "tv",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 20,
+        "bedrooms": 6,
+        "beds": 9,
+        "bathrooms": 3
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            },
+            {
+              "type": "double_bed",
+              "quantity": 1
+            },
+            {
+              "type": "single_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "vacation_home",
+      "room_type": "Entire Home",
+      "tags": [
+        "Branson Vacation",
+        "Branson West",
+        "Table Rock Lake",
+        "Stonebridge Resort",
+        "where to stay"
+      ],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "homeaway",
+          "platform_id": "321.2926282.3498322",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "manual",
+          "platform_id": "5b9f0193-a966-5971-99c6-efd64d46b353",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "fe866baf-660e-513f-9a99-f2dbb44da8f2",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "direct",
+          "platform_id": "94c5a252-f1a1-5b81-a8c9-69841073ba99",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "645747834100799222",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": {
+        "type": "child",
+        "parent": "c3980b2a-403c-4689-b52b-7a3013e403d4",
+        "children": [],
+        "siblings": [
+          "a7376e4e-748e-4b95-a9c1-9a830a708cab"
+        ]
+      }
+    },
+    {
+      "id": "7173697c-7492-42cf-a594-4bb888d3b5c4",
+      "name": "unit BIJOU HOUSE",
+      "public_name": "98% Walk score! Prime Westport Midtown Location!",
+      "picture": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNjM3Mjk2OTg4NjYzNzgwMw==/original/fc8069e2-6085-4965-8c8d-7d59c30adefa.jpeg?aki_policy=small",
+      "address": {
+        "street": "3931 Central Street",
+        "city": "Kansas City",
+        "state": "MO",
+        "postcode": "64111",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "39.05461314",
+          "longitude": "-94.58935620"
+        },
+        "display": "3931 Central Street, Kansas City, MO, 64111, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "BIJOU HOUSE offers a stylish experience at this centrally-located historic home -  part of the early Westport settlement!  Freshly renovated with luxury updates to offer your group a delightful stay while you explore Kansas City.\n\nLocated in WESTPORT, you can walk to restaurants & bars!\n\n- 28 RESTAURANTS/BARS and kitschy retro & antique SHOPS within .3 miles\n- 5 min drive to COUNTRY CLUB PLAZA\n- 10 min to downtown & convention center \n- 20 min to stadiums\n\nNo LOCALS without GREAT reviews Allowed",
+      "description": "BIJOU HOUSE offers a stylish experience at this centrally-located historic home -  part of the early Westport settlement!  Freshly renovated with luxury updates to offer your group a delightful stay while you explore Kansas City.\n\nLocated in WESTPORT, you can walk to restaurants & bars!\n\n- 28 RESTAURANTS/BARS and kitschy retro & antique SHOPS within .3 miles\n- 5 min drive to COUNTRY CLUB PLAZA\n- 10 min to downtown & convention center \n- 20 min to stadiums\n\nNo LOCALS without GREAT reviews Allowed\n\nBijou House is located in the heart of Kansas City in an urban neighborhood where you can expect an eclectic mix of people.  Please do not book if you do not feel comfortable in an urban environment.\n\nOne of my favorite things about Kansas City are its old glorious buildings - which is why I fell in love with this 1880 Victorian charmer.  This home has seen a lot in it's 100+ years - including it's latest renovation transforming the bathrooms & kitchen into luxury spaces.\n  \nThere are 3 bedrooms, each with 1 bed:\nUpstairs: 1 King, 1 Queen, Full Bath\nDownstairs: 1 King, 1/2 Bath\n\nA few games and a fun retro arcade are available for those rainy days when you want to stay home.  On lovely days, enjoy the cozy backyard oasis with a gas grill for cooking & a gas firepit for relaxing.\n\nYou have access to the entire property.  Fenced backyard helps create a cozy oasis for you to relax.\n\nI am available should you need something!  Just reach out with any questions or should anything not meet your expectations!\n\nLocated in the HEART of Westport (Part of the original Westport settlement in the 1800s!)  Walkable to many restaurants, bars & shopping.  \n\nThis is an URBAN neighborhood with an eclectic variety of people.  If you are not open minded, this neighborhood may not be the right fit for your group.  Some guests with young children do not feel this neighborhood is a fit.\n\nStreet parking.  Uber/Lyft anywhere (30 min from MCI airport).  Walk to shops, restaurants & bars.  \n\nFree Streetcar coming Spring 2025 (with access to UMKC, Plaza, Union Station, Downtown & Rivermarket)\n\nFIRST TIME GUESTS:\nWe love new guests & want to ensure the best experience!  Guests without any reviews will be asked a few questions as well as asked for ID Verification through our system.  Local guests without great reviews are not allowed.  This space is specifically for visitors to Kansas City.\n\nPLEASE NOTE:  Smoking or vaping of any kind is not allowed indoors.  Smoking outside is fine provided waste is properly disposed of.  \n\nStreet car will be finished in Summer 2025 to allow free access to the River market, Downtown & the Plaza by way of the public streetcar, just 3 blocks away!",
+      "checkin": "16:00",
+      "checkout": "11:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "arcade_machine",
+        "barbeque_utensils",
+        "bathtub",
+        "bbq_area",
+        "bed_linens",
+        "board_games",
+        "body_soap",
+        "books",
+        "carbon_monoxide_detector",
+        "ceiling_fan",
+        "cleaning_before_checkout",
+        "cleaning_products",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "dryer",
+        "extra_pillows_and_blankets",
+        "fire_extinguisher",
+        "fire_pit",
+        "first_aid_kit",
+        "freezer",
+        "garden_or_backyard",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "hot_water",
+        "hot_water_kettle",
+        "iron",
+        "kitchen",
+        "laundromat_nearby",
+        "long_term_stays_allowed",
+        "microwave",
+        "outdoor_seating",
+        "oven",
+        "pack_n_play_travel_crib",
+        "patio",
+        "patio_or_belcony",
+        "portable_fans",
+        "private_entrance",
+        "private_living_room",
+        "record_player",
+        "refrigerator",
+        "room_darkening_shades",
+        "shampoo",
+        "shower_gel",
+        "smoke_detector",
+        "stove",
+        "street_parking",
+        "toaster",
+        "tv",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 6,
+        "bedrooms": 3,
+        "beds": 3,
+        "bathrooms": 1.5
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "king_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "house",
+      "room_type": "Entire Home",
+      "tags": [
+        "3931 Central St",
+        "Bijou House"
+      ],
+      "house_rules": {
+        "pets_allowed": false,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "direct",
+          "platform_id": "3f70750a-7079-564c-98c0-20844902c951",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "manual",
+          "platform_id": "40eb96bd-9a9e-584a-bfe1-89688aae4069",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "c6beab47-66f7-5330-bef6-2a0d681bb1ee",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "booking",
+          "platform_id": "1285189801",
+          "platform_name": "Top Walk score! Prime Westport Midtown Location!",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "1136372969886637803",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    },
+    {
+      "id": "9992b7e5-bef8-4936-95fb-71d3691be82e",
+      "name": "Unit 4",
+      "public_name": "Historic 1Bdrm *Parking* Walk to Restaurants!",
+      "picture": "https://a0.muscache.com/im/pictures/miso/Hosting-1233645286407607688/original/06f344df-ca9b-4144-a1f0-84fdc332f699.jpeg?aki_policy=small",
+      "address": {
+        "number": "#2",
+        "street": "4037 Warwick Boulevard",
+        "city": "Kansas City",
+        "state": "MO",
+        "postcode": "64111",
+        "country": "US",
+        "country_name": "United States",
+        "coordinates": {
+          "latitude": "39.0527294",
+          "longitude": "-94.5836635"
+        },
+        "display": "#2, 4037 Warwick Boulevard, Kansas City, MO, 64111, US"
+      },
+      "timezone": "-0500",
+      "listed": true,
+      "currency": "USD",
+      "summary": "Enjoy a stylish experience at this centrally-located 1 bedroom apartment in the heart of midtown KC!  Plenty of off-street parking!\n\nHistoric Southmoreland neighborhood is ideally located walking distance to restaurants, grocery & shopping. For ideas on restaurants, night life & KC attractions while you're in town, I'll send you a map of my favorites!\n\nNOTE:\n2nd floor apartment accessible only by stairs. No LOCALS without GREAT reviews allowed.",
+      "description": "Enjoy a stylish experience at this centrally-located 1 bedroom apartment in the heart of midtown KC!  Plenty of off-street parking!\n\nHistoric Southmoreland neighborhood is ideally located walking distance to restaurants, grocery & shopping. For ideas on restaurants, night life & KC attractions while you're in town, I'll send you a map of my favorites!\n\nNOTE:\n2nd floor apartment accessible only by stairs. No LOCALS without GREAT reviews allowed.\n\nOne of my favorite things about Kansas City are its old glorious buildings - which is why I fell in love with this 1900 Victorian charmer.  This home has seen a lot in it's 100+ years, including being converted into 4 separate apartments. \n\nThis Midtown getaway is a happy, refreshing and beautiful escape from the ordinary hotel.  Tall ceilings, fun touches and a clean palette create an inviting & refreshing space.  \n\nThis 1 bedroom apartment is on the 2nd floor - accessible only by an exterior stairwell.  You'll find a fully equipped kitchen to meet your cooking & entertaining needs.  Coffee, sugar & creamer are provided (or Starbucks is just 2 blocks away).  Access your own TV apps through the Roku Smart TV.   Fiber Internet available - the fastest in town. \n\nIf you're here for work - there's a desk in the living room & a printer for your use.\n\nYour apartment is in the rear of the building.  You'll take the back stairs up to the top where you'll meet your private patio & entrance to your apartment.  You'll be provided a code which activates at check-in time and deactivates just after check out.\n\nFeel free to message me through the app.  I also live in the building so am often available if needed.\n\nThere is plenty of off-street parking in the side lot - able to accommodate a moving van and more than one car if you have it. This is a 2nd floor apartment, accessed by exterior stairwell on the side of the home.  \n\nPETS:\nCats & Dogs that don't bark are welcome. I must be respectful of the neighbors so cannot have barkers.  Camp Bow-wow is a few blocks away if you have a dog that barks a lot.  There is a one-time pet fee.  Please include your pet on your reservation.",
+      "checkin": "16:00",
+      "checkout": "11:00",
+      "amenities": [
+        "ac",
+        "alfresco_dining",
+        "baking_sheet",
+        "bathroom_essentials",
+        "bathtub",
+        "bath_towel",
+        "bbq_area",
+        "bedroom_comforts",
+        "bed_linens",
+        "body_soap",
+        "books",
+        "carbon_monoxide_detector",
+        "ceiling_fan",
+        "coffee",
+        "coffee_maker",
+        "conditioner",
+        "cooking_basics",
+        "dining_table",
+        "dishes_and_silverware",
+        "dishwasher",
+        "essentials",
+        "extra_pillows_and_blankets",
+        "fire_extinguisher",
+        "fire_pit",
+        "first_aid_kit",
+        "formal_dining_area",
+        "freezer",
+        "free_parking",
+        "full_kitchen",
+        "garden_or_backyard",
+        "hair_dryer",
+        "hangers",
+        "heating",
+        "hot_water",
+        "internet",
+        "iron",
+        "kitchen",
+        "laptop_friendly_workspace",
+        "laundromat_nearby",
+        "long_term_stays_allowed",
+        "microwave",
+        "netflix",
+        "outdoor_parking",
+        "outdoor_seating",
+        "oven",
+        "patio",
+        "patio_or_belcony",
+        "portable_fans",
+        "private_entrance",
+        "private_living_room",
+        "refrigerator",
+        "room_darkening_shades",
+        "shampoo",
+        "shower_gel",
+        "smart_tv",
+        "smoke_detector",
+        "stove",
+        "street_parking",
+        "toaster",
+        "toilet_paper",
+        "tv",
+        "twenty_four_hour_checkin",
+        "walk_in_shower",
+        "wardrobe_or_closet",
+        "washer",
+        "wine_glasses",
+        "wireless_internet"
+      ],
+      "capacity": {
+        "max": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "room_details": [
+        {
+          "type": "bedroom",
+          "beds": [
+            {
+              "type": "queen_bed",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "property_type": "apartment",
+      "room_type": "Entire Home",
+      "tags": [],
+      "house_rules": {
+        "pets_allowed": true,
+        "smoking_allowed": false,
+        "events_allowed": false
+      },
+      "listings": [
+        {
+          "platform": "direct",
+          "platform_id": "05fa5a6d-7805-5613-ad23-57461f36bbb2",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "manual",
+          "platform_id": "b4c47bfa-8255-52f4-a649-0a072d3748df",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": null
+        },
+        {
+          "platform": "gvr",
+          "platform_id": "d24d73e7-96b0-51e7-b356-b7172d8008b1",
+          "platform_name": null,
+          "platform_email": null
+        },
+        {
+          "platform": "booking",
+          "platform_id": "1284193301",
+          "platform_name": "Historic 1Bdrm - Parking - Walk to Restaurants & Westport!",
+          "platform_email": "jaymizehms@gmail.com"
+        },
+        {
+          "platform": "airbnb",
+          "platform_id": "1233645286407607688",
+          "platform_name": "Jaymi Zehms",
+          "platform_email": "jaymizehms@gmail.com"
+        }
+      ],
+      "ical_imports": [],
+      "calendar_restricted": false,
+      "parent_child": null
+    }
+  ],
+  "links": {
+    "first": "http://public.api.hospitable.com/v2/properties?page=1",
+    "last": "http://public.api.hospitable.com/v2/properties?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "http://public.api.hospitable.com/v2/properties",
+    "per_page": 10,
+    "to": 9,
+    "total": 9
+  }
+}
