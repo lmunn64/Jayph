@@ -37,3 +37,11 @@ export interface Property{
 }
     
 
+export interface Review {
+  name: string
+  img_src: string | undefined
+  date: string
+  platform: string
+  review_content: string
+  rating: number
+}

@@ -1,14 +1,6 @@
 <script setup lang="ts">
     const default_avatar = "https://styles.redditmedia.com/t5_8ajl6g/styles/communityIcon_ootntw58i8ue1.png"
-
-    interface Review {
-        name: string
-        img_src: string
-        date: string
-        provider: string
-        review_content: string
-        rating: number
-    }
+    import type { Review } from "~/types/property"
 
     const review = defineProps<Review>()
 
@@ -43,7 +35,7 @@
             </div>
         </div>
         <div class="review-info">
-            <p> <span style="color: #444">{{ review.date }} · {{ review.provider }}</span></p>
+            <p> <span style="color: #444">{{ review.date }} · {{ review.platform }}</span></p>
             <p
                 class="review"
                 :class=" { 'clamped': !expanded }"

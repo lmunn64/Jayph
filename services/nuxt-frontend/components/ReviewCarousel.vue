@@ -1,13 +1,6 @@
 <script setup lang="ts">
 
-interface Review {
-  name: string
-  img_src: string
-  date: string
-  provider: string
-  review_content: string
-  rating: number
-}
+import type { Review } from "~/types/property"
 
 const state = reactive({
   reviews: [] as Review[],
@@ -22,11 +15,11 @@ onMounted(() => {
   if (Array.isArray(reviewsData.value)) {
     reviewsData.value.forEach((el: any) => {
       state.reviews.push({
-        name: el.name,
-        img_src: el.img_src,
-        date: el.date,
-        provider: el.provider,
-        review_content: el.review_content,
+        name: "el.name",
+        img_src: el.img_src ?? "",
+        date: "el.responded_at",
+        platform: el.platform,
+        review_content: el.review,
         rating: el.rating
       })
     })
