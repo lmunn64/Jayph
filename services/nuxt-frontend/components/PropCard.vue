@@ -5,6 +5,8 @@
         title : string
         img_src: string
         description: string
+        city: string
+        state: string
         guests: number
         bedrooms: number
         bathrooms: number
@@ -34,9 +36,9 @@
         </div>
         <div class="content">
             <h3>{{props.title}}</h3>
-            <p>{{props.description}}</p>
+            <p>{{props.city}}, {{ props.state }}</p>
         </div>
-        <div class="ammenities">
+        <div class="amenities">
             <p> <font-awesome-icon icon="user" /> Guests {{ props.guests }} </p>
             <p>  <font-awesome-icon icon="bed" /> Bedrooms {{ props.bedrooms }} </p>
             <p>  <font-awesome-icon icon="bath" /> Bathrooms {{ props.bathrooms }} </p>
@@ -55,7 +57,7 @@
   overflow: hidden;
 }
 .card:hover .thumbnail{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .thumbnail-wrapper {
     height: 350px;
@@ -72,7 +74,7 @@
 .content {
     padding-inline: 1rem;
 }
-.ammenities {
+.amenities {
     padding-inline: 1rem;
     display: flex;
     gap: 40px;

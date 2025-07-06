@@ -32,10 +32,15 @@
 </script>
 
 <template>
-    <!-- <div class="card">
+    <div class="card">
         <div class="header">
             <img class="avatar" :src="review.img_src" alt="Profile Picture" @error = "setDefaultImage" />
-            <h3> {{ review.name }} </h3>
+            <div class="header-info">
+                <h3> {{ review.name }} </h3>
+                <div class="rating-row">
+                        <FontAwesomeIcon style="color: var(--accent-color)" icon="star" v-for="n in 5" :key="n"/>
+                </div>
+            </div>
         </div>
         <div class="review-info">
             <p> <span style="color: #444">{{ review.date }} · {{ review.provider }}</span></p>
@@ -50,10 +55,10 @@
                 {{ expanded ? "Show less" : "Read more" }}
             </button>
         </div>
-    </div> -->
+    </div>
 
     <!-- dummy data for display test -->
-    <div class="card">
+    <!-- <div class="card">
         <div class="header">
             <img class="avatar" :src="default_avatar" alt="Profile Picture" @error = "setDefaultImage" />
             <div class="header-info">
@@ -76,7 +81,7 @@
                 {{ expanded ? "Show less" : "Read more" }}
             </button>
         </div>
-    </div>
+    </div> -->
     <!-- NEED:
      Name
      Profile Picture
