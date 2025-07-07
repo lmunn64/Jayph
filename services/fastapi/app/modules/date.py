@@ -6,6 +6,7 @@ Includes:
     -Dictionary for date suffixes 
     -Function for converting a ISO 8601 date to human readable "MM DD, YYYY"
 """
+from datetime import date
 
 date_format = {
     1: 'January',
@@ -30,7 +31,7 @@ date_suffix = {
     12: 'th',
     13: 'th'
 }
-def format_date(date : str):
+def format_date_ISO(date : str):
     '''Transfer from ISO 8601 2025-05-22T22:13:13+00:00 to May 22, 2025'''
     date_list = date.split("-")
     month = date_format.get(int(date_list[1]))
