@@ -19,7 +19,7 @@ from dateutil.relativedelta import relativedelta
 
 from pydantic import ValidationError
 from fastapi import APIRouter, HTTPException
-from app.models.property import Property, Address, HouseRules, Capacity
+from app.models.property import Property, Address, HouseRules, Capacity, Details
 from app.models.image import Image
 from app.models.review import Review
 from app.models.calendar_model import Calendar, Date
@@ -174,7 +174,7 @@ async def get_properties():
         print('returning cached properties')
         return properties_cache.get('all_properties')
     try:
-        response = requests.get('https://public.api.hospitable.com/v2/properties',
+        response = requests.get('https://public.api.hospitable.com/v2/properties?include=details',
                                 headers={"Authorization": f"Bearer {PAT}"})
         if response.status_code != 200:
             raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
@@ -189,7 +189,8 @@ async def get_properties():
             description = item.get('description'),
             summary = item.get('summary'),
             capacity= Capacity(**item.get('capacity', {})),
-            house_rules= HouseRules(**item.get('house_rules', {}))
+            house_rules= HouseRules(**item.get('house_rules', {})),
+            details= Details(**item.get('details'))
         ) for item in content.get('data')
         if item.get('listed') is True]
         properties_cache.update({'all_properties': properties})
