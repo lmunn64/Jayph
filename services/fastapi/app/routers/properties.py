@@ -24,6 +24,7 @@ import requests
 from dotenv import load_dotenv
 from app.caches.properties_cache import properties_cache
 from app.modules.date import format_date
+from app.modules.image_link_enlarger import get_enlarged_URL
 
 '''base path for .env'''
 env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.env')
@@ -66,7 +67,7 @@ def get_properties():
         properties = [Property(
             id = item.get("id"),
             name = item.get('public_name'),
-            picture_url = item.get('picture'),
+            picture_url = get_enlarged_URL(item.get('picture')),
             address = Address(**item.get('address', {})),
             amenities = item.get('amenities'),
             description = item.get('description'),
@@ -176,7 +177,7 @@ def get_properties():
         properties = [Property(
             id = item.get("id"),
             name = item.get('public_name'),
-            picture_url = item.get('picture'),
+            picture_url = get_enlarged_URL(item.get('picture')),
             address = Address(**item.get('address', {})),
             amenities = item.get('amenities'),
             description = item.get('description'),

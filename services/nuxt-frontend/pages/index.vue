@@ -8,7 +8,7 @@
     })
 
     const { data: properties } = await useAsyncData('properties', () =>
-        $fetch('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/properties')
+        $fetch('http://127.0.0.1:8000/properties')
     )
 
     onMounted(() => {
