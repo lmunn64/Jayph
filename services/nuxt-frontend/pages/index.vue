@@ -1,56 +1,12 @@
 <script setup lang ='ts'>
     import { reactive } from 'vue'
     import type { Property, HouseRules, Capacity, Address} from '~/types/property'
+    import { usePropertyStore } from '~/stores/properties'
 
-    const state = reactive({
-        properties: [] as Property[],
-        isLoading: true,
-    })
+    const propertyStore = usePropertyStore()
 
-    const { data: properties } = await useAsyncData('properties', () =>
-        $fetch('http://127.0.0.1:8000/properties')
-    )
-
-    onMounted(() => {
-        if (Array.isArray(properties.value)) {
-            properties.value.forEach((el: any) => {
-                let cap : Capacity = {
-                    max : el.capacity.max,
-                    bedrooms : el.capacity.bedrooms,
-                    beds : el.capacity.beds,
-                    bathrooms : el.capacity.bathrooms,
-                }
-                let hr : HouseRules = {
-                    pets_allowed : el.house_rules.pets_allowed,
-                    smoking_allowed : el.house_rules.smoking_allowed,
-                    events_allowed : el.house_rules.events_allowed,
-                }
-                let addr : Address = {
-                    city : el.address.city,
-                    state : el.address.state,
-                    country : el.address.country,
-                    postcode : el.address.postcode,
-                }
-                let prop : Property = {
-                    id : el.id,
-                    name : el.name,
-                    picture_url : el.picture_url,
-                    address : addr,
-                    amenities : el.amenities,
-                    description : el.description,
-                    summary : el.summary,
-                    capacity : cap,
-                    house_rules : hr
-                }
-                console.log(el.id)
-                state.properties.push(prop)
-            })
-            state.isLoading = false
-        } else {
-            console.error('Unexpected response from server')
-        }
-    })
-
+    await propertyStore.fetchProperties()
+    
 </script>
 
 <template>
@@ -62,8 +18,10 @@
     <!-- <ListingSearch /> -->
     
     <!-- Properties components-->
-    <PropContainer :properties= "state.properties"/>
-
+    <div v-if="propertyStore.isLoaded">
+        <PropContainer :properties= "propertyStore.properties"/>
+    </div>
+    
     <!-- Reviews components -->
 
     <ReviewCarousel />

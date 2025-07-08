@@ -1,15 +1,431 @@
 {
   "data": [
     {
-      "id": "cbe8b838-a311-448e-b20a-4c62bee4601c",
+      "id": "afc0edd0-57fe-4792-b74d-a434c769f022",
       "platform": "airbnb",
       "public": {
         "rating": 5,
-        "review": "Jaymi was a terrific host -- consistently responsive and personable -- and she has a lovely place.",
-        "response": "Thank you so much for your kind words, Doug. It was a pleasure hosting you all at our vacation_home, and I’m glad you felt well taken care of. I hope we can welcome you back again soon!"
+        "review": "Great location. Pretty much 20 minute walk or drive to most restaurants and museums. Great and communicative host. Nice cozy place. Would stay here again. Parking was very convenient.",
+        "response": null
       },
       "private": {
-        "feedback": "Hello Jaymi,\n\nThanks for sharing your place with us! It's lovely. Below are a couple of notes from Pam:\n\nWe all enjoyed our stay. Having the game room was super fun.\n\nThe maintenance people fixed the master bed at 11 Bogey promptly. The slats were not screwed in under the head of the bed and it collapsed under the guests. But they fixed it enough for the first night, and all was well.\n\nThe kitchen sink faucet was very wiggly and we had to screw it in twice. A more permanent fix might be good. But again it was no big deal for us -- we weren't fazed.",
+        "feedback": "Thanks for letting us stay at your place. Everything was good. Not really any issues. The desk and back stairs have a couple of loose screws. Internet is just good enough for streaming. Can’t really do anything about the creaky floors. We enjoyed our stay. Sorry about leaving the dish and food in the microwave. Thank you again!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-28T19:54:47+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Luis",
+        "last_name": "Perez",
+        "language": "en"
+      }
+    },
+    {
+      "id": "da3494ba-7f98-4f34-913c-923072826550",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Very comfortable stay! The area was quiet and safe, but close to lots of KC activities. There were great amenities, some I didnt utilize due to the short stay, but it had a full kitchen and laundry. The layout was very relaxing. The bed was comfortable and had clean hotel quality linens. Clean and comfortable furniture. Lots of room to spread out and feel at home.  The shower had good water and pressure. I will definitely stay here again when im in the area!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Had a great stay, loved the area and the setup was perfect for a smaller space! Thanks for hosting!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-23T20:26:36+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Brian",
+        "last_name": "Kelley",
+        "language": "en"
+      }
+    },
+    {
+      "id": "9ac8b4de-8279-441d-be62-729ec93306f0",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Nice place. Quaint and clean. Great host.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you! Enjoyed our time in KC.",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-20T14:27:04+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Nikki",
+        "last_name": "Ervin",
+        "language": "en"
+      }
+    },
+    {
+      "id": "21f60cbd-140e-4c3e-b8c7-e14d038cdbe4",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Perfect place! Excellent communication! I highly recommend this place.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Sorry it took me so long to send the review. Your place is great! It was so nice to feel at home and comfortable!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-16T22:18:35+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Travis",
+        "last_name": "Sanders",
+        "language": "en"
+      }
+    },
+    {
+      "id": "156cc193-219a-4590-beb0-7c392b3378f6",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Enjoyed our stay!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 4,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-15T03:07:54+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Jackie",
+        "last_name": "Sims",
+        "language": "en"
+      }
+    },
+    {
+      "id": "aec6da63-1048-4cab-a847-2d70a7235225",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Great place and locale!",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-14T16:12:22+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Nathan",
+        "last_name": "Jones",
+        "language": "en"
+      }
+    },
+    {
+      "id": "ce4a55ae-ccf9-4d05-8ae4-1002d77a73f8",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was super responsive and great to work with! The apartment was small and cute with old charm, with the only charm came some creaky floorboards but that is to be expected. The kitchen was the best stocked I’ve seen in an Airbnb with all the essentials and good quality pots and pans. I also loved that Jaymi did not make us do a huge checkout list like some airbnbs do, we simply had to wash our dishes and we were good to go :)",
+        "response": null
+      },
+      "private": {
+        "feedback": null,
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-12T16:08:32+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Regan",
+        "last_name": "Peter",
+        "language": "en"
+      }
+    },
+    {
+      "id": "3eaa88b6-903b-430f-b118-c75f8f4f0388",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Charming decor, quiet, and comfortable.  I booked with short notice and Jaymi was responsive and friendly.  Plenty of off street parking.  Great location to walk to art museums and restaurants.",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thanks, Jaymi!",
+        "detailed_ratings": [
+          {
+            "type": "value",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "cleanliness",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "communication",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "location",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "checkin",
+            "rating": 5,
+            "comment": null
+          },
+          {
+            "type": "accuracy",
+            "rating": 5,
+            "comment": null
+          }
+        ]
+      },
+      "reviewed_at": "2025-03-11T05:27:58+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Kim",
+        "last_name": "Kaspar",
+        "language": "en"
+      }
+    },
+    {
+      "id": "3693ebf7-4ad8-46d3-a852-b1148bb06134",
+      "platform": "airbnb",
+      "public": {
+        "rating": 5,
+        "review": "Jaymi was such a helpful and friendly host. The neighborhood was quiet and close to lots of \"good eats\" spots. \n\nOverall, we very much enjoyed our stay and the only complaint I could possibly muster is creaky floors in the bedroom.\n\nStay here, Jaymi will take care of you!",
+        "response": null
+      },
+      "private": {
+        "feedback": "Thank you again Jaymi. You were a such a blessing!",
         "detailed_ratings": [
           {
             "type": "value",
@@ -43,20 +459,25 @@
           }
         ]
       },
-      "reviewed_at": "2025-06-25T23:18:26+00:00",
-      "responded_at": "2025-06-28T15:46:03+00:00",
-      "can_respond": false
+      "reviewed_at": "2025-03-05T17:13:17+00:00",
+      "responded_at": null,
+      "can_respond": true,
+      "guest": {
+        "first_name": "Stephanie",
+        "last_name": "Kelley",
+        "language": "en"
+      }
     },
     {
-      "id": "ba2f0519-accf-11ef-b88f-12c2b6e0cd20",
+      "id": "1d564133-e02f-4f93-a8b9-ed06362d1fda",
       "platform": "airbnb",
       "public": {
         "rating": 5,
-        "review": "Jaymi was really great, very communicative! The cleaners were there a little past check in.. but Jaymi was very nice and quick to help us get into the home as soon as possible. Not fault of her own it seemed. \n\nThe house was comfortable and just what we needed for a quiet oasis to get some work done! \n\nThank you Jaymi for being such a great host!",
+        "review": "The home was clean with lots of charm.  I just wish there was a TV in the bedroom.  It was a lovely home.",
         "response": null
       },
       "private": {
-        "feedback": null,
+        "feedback": "Great place. Thank you.",
         "detailed_ratings": [
           {
             "type": "value",
@@ -90,350 +511,26 @@
           }
         ]
       },
-      "reviewed_at": "2024-09-20T16:36:57+00:00",
+      "reviewed_at": "2025-02-28T06:08:11+00:00",
       "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "a7f947ff-accf-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "We hosted a large family reunion at Jaymi's place and we could not have been happier. For one, Jaymi was very proactive and patient as we asked all kinds of questions and she was very accommodating to our group. Most importantly, the layout of the bedrooms and other rooms really worked well for us. We had a mix of people, ranging from 3 months to 80 years old and everyone had plenty of \"personal\" space in addition to the open areas where we all gathered. And the kitchen was wonderful for us to do our cooking. The back patios were really nice too and very comfortable to sit on despite the heat.\n\nWe have been to quite a few places over the years and Jaymi's was absolutely the best. In fact, the whole group is talking about going back next year too! Would give 10-stars if I could.\n\nYou will not be disappointed at all and you will appreciate all that Jaymi does while you're staying at her wonderful home.",
-        "response": null
-      },
-      "private": {
-        "feedback": "Thank you for everything!",
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2024-08-12T18:30:50+00:00",
-      "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "95275d5c-accf-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "Nice quiet neighborhood, close proximity to a pool. Host is responsive to any issues. Really enjoyed our stay!",
-        "response": null
-      },
-      "private": {
-        "feedback": null,
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2024-06-25T21:44:36+00:00",
-      "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "93259326-accf-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "Jaymi was great.",
-        "response": null
-      },
-      "private": {
-        "feedback": null,
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2024-06-17T19:26:01+00:00",
-      "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "8d77ab06-accf-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "This place was ideal for our large group!!We definitely would come back again!",
-        "response": "So glad to hear that our vacation home was ideal for your group, Nancy!  Thanks for being great guests - We'd love to welcome you all back anytime!"
-      },
-      "private": {
-        "feedback": "We enjoyed our stay very much!The house was perfect for our large group!The kitchens were well stocked as well.thankyou!",
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2024-06-06T21:03:51+00:00",
-      "responded_at": "2024-06-06T21:50:46+00:00",
-      "can_respond": false
-    },
-    {
-      "id": "90b9d05f-accd-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "Wonderful vacation! Very responsive to an unexpected problem. Secure area that was well maintained. Kids loved the games and costumes at the house. Highly recommend!\nThank you to Jaymi and Paige!",
-        "response": null
-      },
-      "private": {
-        "feedback": "Not having hot water Saturday night/Sunday morning was a bummer but Paige was wonderful to fix promptly and have it working after lunch on Sunday.",
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2023-08-31T02:07:24+00:00",
-      "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "90b9d9ff-accd-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "Jaymi was beyond helpful when needed. I emailed her with several questions and her responsiveness was extremely prompt. We had a small situation with the drain in a bathroom and she had someone there to fix it within 5 minutes! \n\nAbsolutely recommend.",
-        "response": null
-      },
-      "private": {
-        "feedback": null,
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 4,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2023-06-28T00:02:26+00:00",
-      "responded_at": null,
-      "can_respond": true
-    },
-    {
-      "id": "90baaa5c-accd-11ef-b88f-12c2b6e0cd20",
-      "platform": "airbnb",
-      "public": {
-        "rating": 5,
-        "review": "I enjoyed our stay we actually rented out both of Jamyi beautiful units for our large family. Although we were in two separate homes we were still able to cook together eat together as well as have some good bonding time. Everything you see in the photos are really there and more. We enjoyed ourselves and hope to book again in the future.",
-        "response": null
-      },
-      "private": {
-        "feedback": "I loved the units our stay was great. Everything that was listed as there and more. Only thing that wasn’t mentioned was I needed a credit card at the time of check in. Thankfully I had one on me I normally don’t travel with my credit cards",
-        "detailed_ratings": [
-          {
-            "type": "value",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "cleanliness",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "communication",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "location",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "checkin",
-            "rating": 5,
-            "comment": null
-          },
-          {
-            "type": "accuracy",
-            "rating": 5,
-            "comment": null
-          }
-        ]
-      },
-      "reviewed_at": "2022-11-03T15:36:46+00:00",
-      "responded_at": null,
-      "can_respond": true
+      "can_respond": true,
+      "guest": {
+        "first_name": "Kimberly",
+        "last_name": "Jenkins",
+        "language": "en"
+      }
     }
   ],
   "links": {
-    "first": "http://public.api.hospitable.com/v2/properties/c3980b2a-403c-4689-b52b-7a3013e403d4/reviews?page=1",
-    "last": "http://public.api.hospitable.com/v2/properties/c3980b2a-403c-4689-b52b-7a3013e403d4/reviews?page=1",
+    "first": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=1",
+    "last": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=2",
     "prev": null,
-    "next": null
+    "next": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=2"
   },
   "meta": {
     "current_page": 1,
     "from": 1,
-    "last_page": 1,
+    "last_page": 2,
     "links": [
       {
         "url": null,
@@ -441,19 +538,24 @@
         "active": false
       },
       {
-        "url": "http://public.api.hospitable.com/v2/properties/c3980b2a-403c-4689-b52b-7a3013e403d4/reviews?page=1",
+        "url": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=1",
         "label": "1",
         "active": true
       },
       {
-        "url": null,
+        "url": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=2",
+        "label": "2",
+        "active": false
+      },
+      {
+        "url": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews?page=2",
         "label": "Next &raquo;",
         "active": false
       }
     ],
-    "path": "http://public.api.hospitable.com/v2/properties/c3980b2a-403c-4689-b52b-7a3013e403d4/reviews",
-    "per_page": 25,
-    "to": 9,
-    "total": 9
+    "path": "http://public.api.hospitable.com/v2/properties/9992b7e5-bef8-4936-95fb-71d3691be82e/reviews",
+    "per_page": 10,
+    "to": 10,
+    "total": 19
   }
 }

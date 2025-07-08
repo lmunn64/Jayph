@@ -16,18 +16,18 @@ const state = reactive({
 })
 
 const { data: reviewsData } = await useAsyncData('reviews', () =>
-  $fetch('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/properties/d90a7eb9-36e3-4a8e-b908-8106c30dc073/reviews')
+  $fetch('http://127.0.0.1:8000/properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews')
 )
 
 onMounted(() => {
   if (Array.isArray(reviewsData.value)) {
     reviewsData.value.forEach((el: any) => {
       state.reviews.push({
-        name: "el.name",
-        img_src: el.img_src ?? "",
-        date: "el.responded_at",
+        name: el.name,
+        img_src: el.img_src,
+        date: el.date,
         platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
-        review_content: el.review,
+        review_content: el.review_content,
         rating: el.rating
       })
     })

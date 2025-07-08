@@ -78,7 +78,8 @@ def get_properties():
             description = item.get('description'),
             summary = item.get('summary'),
             capacity= Capacity(**item.get('capacity', {})),
-            house_rules= HouseRules(**item.get('house_rules', {}))
+            house_rules= HouseRules(**item.get('house_rules', {})),
+            details= Details(**item.get('details'))
         ) for item in content.get('data')
         if item.get('listed') is True]
         properties_cache.update({'all_properties': properties})
@@ -141,7 +142,7 @@ def get_reviews(uuid: str):
     try:
         reviews = [Review(
             id = item.get('id'),
-            name= "Luke Munn",
+            name= item.get('guest').get('first_name') + " " + item.get('guest').get('last_name'),
             img_src= "",
             date= format_date_ISO(item.get('reviewed_at')),
             review_content= item.get('public').get('review'),
@@ -183,7 +184,7 @@ async def get_properties():
         properties = [Property(
             id = item.get("id"),
             name = item.get('public_name'),
-            picture_url = item.get('picture'),
+            picture_url = get_enlarged_URL(item.get('picture')),
             address = Address(**item.get('address', {})),
             amenities = item.get('amenities'),
             description = item.get('description'),
@@ -245,7 +246,10 @@ async def get_reviews(uuid: str):
         content = response.json()
         reviews = [Review(
             id = item.get('id'),
-            review= item.get('public').get('review'),
+            name= item.get('guest').get('first_name') + " " + item.get('guest').get('last_name'),
+            img_src= "",
+            date= format_date_ISO(item.get('reviewed_at')),
+            review_content= item.get('public').get('review'),
             rating= item.get('public').get('rating'),
             platform= item.get('platform')
         ) for item in content.get('data')]

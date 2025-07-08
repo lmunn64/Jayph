@@ -22,7 +22,13 @@ export interface HouseRules{
     events_allowed: boolean | null
 } 
     
-
+export interface Details{
+    space_overview: string | undefined
+    guest_access: string | undefined
+    other_details: string | undefined
+    neighborhood_description: string | undefined
+    getting_around: string | undefined
+}
 
 export interface Property{
     id: string
@@ -34,14 +40,15 @@ export interface Property{
     summary: string
     capacity: Capacity
     house_rules: HouseRules
+    details: Details
 }
     
 
 export interface Review {
-  name: string
-  img_src: string | undefined
-  date: string
-  platform: string
-  review_content: string
-  rating: number
+    name: string
+    img_src: string
+    date: string
+    platform: string
+    review_content: string
+    rating: number
 }

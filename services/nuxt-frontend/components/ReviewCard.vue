@@ -25,12 +25,12 @@
 
     // check if text overflows the clamped height (i.e., > 3 lines)
     onMounted(() => {
-    const el = reviewRef.value;
-    if (el && el.scrollHeight > el.clientHeight + 2) {
-        showToggle.value = true;
-    }
+        const el = reviewRef.value;
+        if (el && el.scrollHeight > el.clientHeight + 2) {
+            showToggle.value = true;
+        }
     });
-
+    console.log(review)
 </script>
 
 <template>

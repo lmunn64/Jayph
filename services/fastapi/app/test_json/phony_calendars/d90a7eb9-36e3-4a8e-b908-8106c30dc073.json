@@ -1,0 +1,1558 @@
+{
+  "data": {
+    "listing_id": "24099066",
+    "provider": "airbnb-official",
+    "start_date": "2025-07-07",
+    "end_date": "2025-09-30",
+    "days": [
+      {
+        "date": "2025-07-07",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-08",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-09",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-10",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-11",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-12",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-13",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-14",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-15",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-16",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-17",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-18",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-19",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-20",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-21",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-22",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-23",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-24",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-25",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-26",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-07-27",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-28",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-29",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-30",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-07-31",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-01",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-02",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-03",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-04",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-05",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-06",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-07",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-08",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-09",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-10",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-11",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-12",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-13",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-14",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-15",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-16",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-17",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-18",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-19",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-20",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-21",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-22",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-23",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-24",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-25",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-26",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-27",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-28",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-08-29",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-30",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-08-31",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-01",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-02",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-03",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-04",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-05",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-06",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-07",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-08",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-09",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-10",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-11",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-12",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-13",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-14",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-15",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-16",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-17",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-18",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-19",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-20",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-21",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-22",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-23",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-24",
+        "day": "WEDNESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-25",
+        "day": "THURSDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-26",
+        "day": "FRIDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-27",
+        "day": "SATURDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 11700,
+          "currency": "USD",
+          "formatted": "$117.00"
+        }
+      },
+      {
+        "date": "2025-09-28",
+        "day": "SUNDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-29",
+        "day": "MONDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      },
+      {
+        "date": "2025-09-30",
+        "day": "TUESDAY",
+        "min_stay": 30,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": {
+          "reason": "AVAILABLE",
+          "source": "airbnb",
+          "source_type": "PLATFORM",
+          "available": true
+        },
+        "price": {
+          "amount": 9000,
+          "currency": "USD",
+          "formatted": "$90.00"
+        }
+      }
+    ]
+  }
+}
