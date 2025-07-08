@@ -20,6 +20,7 @@ class HouseRules(BaseModel):
     pets_allowed: bool
     smoking_allowed: bool
     events_allowed: Optional[bool] = None
+
 # model for details of the house
 class Details(BaseModel):
     space_overview: str | None
@@ -27,6 +28,7 @@ class Details(BaseModel):
     other_details: str | None
     neighborhood_description: str | None
     getting_around: str | None
+    
 # base listing model
 class Property(BaseModel):
     id: str
