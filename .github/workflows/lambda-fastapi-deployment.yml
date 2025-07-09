@@ -15,6 +15,7 @@ jobs:
           python-version: '3.11'
       - name: Directory to /fastapi
         run: cd services/fastapi
+      - run: ls
       - name: Dependencies
         run: pip3 install -t dependencies -r requirements.txt
       - name: Zip Setup
