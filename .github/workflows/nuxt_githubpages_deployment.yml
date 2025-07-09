@@ -19,7 +19,7 @@ jobs:
         run: npm install
       - name: Generate SSR public files
         working-directory: services/nuxt-frontend
-        run: npx nuxt generate
+        run: npm run generate
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
