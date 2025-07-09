@@ -238,9 +238,10 @@ async def get_reviews(uuid: str):
         - 409: If the data format is invalid.
     """
     try:
-        response = requests.get(f"https://public.api.hospitable.com/v2/properties/{uuid}/reviews",
+        response = requests.get(f"https://public.api.hospitable.com/v2/properties/{uuid}/reviews?include=guest",
                                 headers={"Authorization": f"Bearer {PAT}"})
         if response.status_code != 200:
+            print(response.json())
             raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
     
         content = response.json()
