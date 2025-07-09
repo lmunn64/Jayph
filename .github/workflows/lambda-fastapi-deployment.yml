@@ -1,0 +1,32 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  fountaincitystays-lambda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python Setup
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.11'
+      - name: Directory to /fastapi
+        run: cd services/fastapi
+      - name: Dependencies
+        run: pip3 install -t dependencies -r requirements.txt
+      - name: Zip Setup
+        run: (cd dependencies; zip ../aws_lambda_artifact.zip -r .)
+      - name: Add /app to zip
+        run: zip -r aws_lambda_artifact.zip -u app
+      - run: echo "The FastAPI application has been zipped. Ready for Deployment to AWS Lambda ."
+      - name: AWS Lambda Deployment
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: eu-north-1
+      - run: aws lambda update-function-code --function-name=fountaincitystays --zip-file=fileb://aws_lambda_artifact.zip
+      - run: echo "🍏 This job's status is ${{ job.status }}."
