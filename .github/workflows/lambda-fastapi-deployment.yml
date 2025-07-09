@@ -23,11 +23,13 @@ jobs:
         working-directory: ./services/fastapi
         run: zip -r aws_lambda_artifact.zip -u app
       - run: echo "The FastAPI application has been zipped. Ready for Deployment to AWS Lambda ."
-      - name: AWS Lambda Deployment
+      - name: AWS Setup
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: eu-north-1
-      - run: aws lambda update-function-code --function-name=fountaincitystays --zip-file=fileb://aws_lambda_artifact.zip
+      - name: AWS Lambda Deployment
+        working-directory: ./services/fastapi
+        run: aws lambda update-function-code --function-name=fountaincitystays --zip-file=fileb://aws_lambda_artifact.zip
       - run: echo "🍏 This job's status is ${{ job.status }}."
