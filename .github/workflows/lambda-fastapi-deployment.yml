@@ -18,9 +18,10 @@ jobs:
         run: pip3 install -t dependencies -r requirements.txt
       - name: Zip Setup
         working-directory: ./services/fastapi
-        run: ls
+        run:  (cd dependencies; zip ../aws_lambda_artifact.zip -r .)
       - name: Add /app to zip
-        run: zip -r aws_lambda_artifact.zip -u services/fastapi/app
+        working-directory: ./services/fastapi
+        run: zip -r aws_lambda_artifact.zip -u app
       - run: echo "The FastAPI application has been zipped. Ready for Deployment to AWS Lambda ."
       - name: AWS Lambda Deployment
         uses: aws-actions/configure-aws-credentials@v2
