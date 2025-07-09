@@ -16,7 +16,7 @@ const state = reactive({
 })
 
 const { data: reviewsData } = await useAsyncData('reviews', () =>
-  $fetch('http://127.0.0.1:8000/properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews')
+  $fetch('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews')
 )
 
 onMounted(() => {

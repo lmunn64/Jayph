@@ -9,7 +9,7 @@ export const usePropertyStore = defineStore('property', {
   actions: {
     async fetchProperties() {
       if (this.isLoaded) return
-      const properties = await $fetch<Property[]>('http://127.0.0.1:8000/properties')
+      const properties = await $fetch<Property[]>('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties')
       this.properties = properties.map((el) => ({
         id: el.id,
         name: el.name,

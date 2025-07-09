@@ -2,8 +2,10 @@ name: Deploy Nuxt to GitHub Pages
 
 on:
   push:
-    branches: main
-
+    branches: 
+      - main
+    paths: 
+      - 'services/nuxt-frontend/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -12,10 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+      - name: Install Dependencies
         working-directory: services/nuxt-frontend
-      - run: npm run generate
+        run: npm install
+      - name: Generate SSR public files
         working-directory: services/nuxt-frontend
+        run: npx nuxt generate
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
