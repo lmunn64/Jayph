@@ -1,9 +1,12 @@
-name: GitHub Actions Demo
+name: AWS Lambda CD
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
     branches:
       - main
+    paths:
+      - 'services/fastapi/**'
+
 jobs:
   fountaincitystays-lambda:
     runs-on: ubuntu-latest
