@@ -8,15 +8,16 @@ jobs:
   fountaincitystays-lambda:
     runs-on: ubuntu-latest
     steps:
-      - working-directory: ./services/fastapi
       - uses: actions/checkout@v4
       - name: Python Setup
         uses: actions/setup-python@v5
         with: 
           python-version: '3.11'
       - name: Dependencies
+        working-directory: ./services/fastapi
         run: pip3 install -t dependencies -r requirements.txt
       - name: Zip Setup
+        working-directory: ./services/fastapi
         run: ls
       - name: Add /app to zip
         run: zip -r aws_lambda_artifact.zip -u services/fastapi/app
