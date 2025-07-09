@@ -16,7 +16,7 @@ jobs:
       - name: Dependencies
         run: pip3 install -t dependencies -r services/fastapi/requirements.txt
       - name: Zip Setup
-        run: zip aws_lambda_artifact.zip -r services/fastapi/dependencies
+        run: zip -r aws_lambda_artifact.zip . -i services/fastapi/dependencies
       - name: Add /app to zip
         run: zip -r aws_lambda_artifact.zip -u services/fastapi/app
       - run: echo "The FastAPI application has been zipped. Ready for Deployment to AWS Lambda ."
