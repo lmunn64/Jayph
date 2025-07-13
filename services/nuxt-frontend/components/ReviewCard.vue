@@ -36,7 +36,7 @@
 <template>
     <div class="card">
         <div class="header">
-            <img class="avatar" :src="review.img_src" alt="Profile Picture" @error = "setDefaultImage" />
+            <!-- <img class="avatar" :src="review.img_src" alt="Profile Picture" @error = "setDefaultImage" /> -->
             <div class="header-info">
                 <h3> {{ review.name }} </h3>
                 <div class="rating-row">

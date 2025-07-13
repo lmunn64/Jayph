@@ -15,8 +15,19 @@ const state = reactive({
   isLoading: true
 })
 
-const { data: reviewsData } = await useAsyncData('reviews', () =>
-  $fetch('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews')
+// defining property ID for property pages
+const props = defineProps<{
+  propertyId?: string
+}>()
+
+// if propertyId is defined, will fetch from that property's reviews, otherwise fetch from defualt (first property)
+// *(**fetch for no property ID case used for front page, should grab all reviews instead of just the first
+const endpoint = props.propertyId
+  ? `https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${props.propertyId}/reviews`
+  : 'https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
+
+const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, () =>
+  $fetch(endpoint)
 )
 
 onMounted(() => {
@@ -37,17 +48,6 @@ onMounted(() => {
     console.error('Could not fetch review data')
   }
 })
-
-// const reviews = ref<Review[]>([
-//   {
-//     name: 'John Doe',
-//     img_src: 'https://styles.redditmedia.com/t5_8ajl6g/styles/communityIcon_ootntw58i8ue1.png',
-//     date: 'May 2025',
-//     provider: 'Airbnb',
-//     review_content: '1 Jaymi was very easy to work with and very personable. They are great recommendations and was excellent at communication. The house was beautiful and felt like home. Local to everything we needed and was very clean. Grateful for the experience and the home.',
-//     rating: 5
-//   }
-// ])
 
 const currentIndex = ref(0)
 const len = computed(() => state.reviews.length)
@@ -83,36 +83,38 @@ watch(currentIndex, () => {
 </script>
 
 <template>
-  <h1> Reviews </h1>
-  <div class="carousel-wrapper" v-if="!state.isLoading">
-    <button class="nav-btn prev" @click="prev">‹</button>
+  <div v-if="reviewsData?.length">
+    <div class="carousel-wrapper" v-if="!state.isLoading">
+      <button class="nav-btn prev" @click="prev">‹</button>
 
-    <div class="carousel" ref="carouselRef">
-      <div
-        v-for="(review, i) in extendedReviews"
-        :key="`${review.name}-${i}`"
-        class="carousel-card"
-        :class="{ centered: (i - len) === currentIndex }"
-        :style="{
-          transform: (i - len) === currentIndex ? 'scale(1)' : 'scale(0.65)',
-          opacity: (i - len) === currentIndex ? 1 : 0.5,
-          transition: 'transform 0.3s ease, opacity 0.3s ease'
-        }"
-      >
-        <ReviewCard v-bind="review" />
+      <div class="carousel" ref="carouselRef">
+        <div
+          v-for="(review, i) in extendedReviews"
+          :key="`${review.name}-${i}`"
+          class="carousel-card"
+          :class="{ centered: (i - len) === currentIndex }"
+          :style="{
+            transform: (i - len) === currentIndex ? 'scale(1)' : 'scale(0.65)',
+            opacity: (i - len) === currentIndex ? 1 : 0.5,
+            transition: 'transform 0.3s ease, opacity 0.3s ease'
+          }"
+        >
+          <ReviewCard v-bind="review" />
+        </div>
       </div>
+
+      <button class="nav-btn next" @click="next">›</button>
     </div>
 
-    <button class="nav-btn next" @click="next">›</button>
+    <div v-else class="loading-text">
+      Loading reviews...
+    </div>
   </div>
-
-  <div v-else class="loading-text">
-    Loading reviews...
-  </div>
+  <p v-else>No reviews yet for this property.</p>
 </template>
 
 <style scoped>
-h1 {
+h1, p {
   text-align: center;
 }
 .carousel-wrapper {
@@ -150,6 +152,7 @@ h1 {
   scrollbar-width: none; 
   width: 100%;
   scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
 }
 
 .carousel::-webkit-scrollbar {

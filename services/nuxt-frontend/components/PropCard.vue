@@ -11,6 +11,7 @@
     const thumbnail = "https://media.tenor.com/P4HGr5rklqYAAAAM/spongebob.gif";
 
     interface Props {
+        id: string
         title : string
         img_src: string
         description: string
@@ -31,22 +32,24 @@
 </script>
 
 <template>
-    <div class="card">
-        <div class="thumbnail-wrapper">
-            <!-- sets image as 'thumbnail' if it is invalid -->
-            <img :src="props.img_src" alt="thumbnail" class="thumbnail" @error = "setDefaultImage"/>
+    <NuxtLink :to="`/properties/${props.id}`" class="card-link">
+        <div class="card">
+            <div class="thumbnail-wrapper">
+                <!-- sets image as 'thumbnail' if it is invalid -->
+                <img :src="props.img_src" alt="thumbnail" class="thumbnail" @error = "setDefaultImage"/>
+            </div>
+            <div class="content">
+                <h3>{{props.title}}</h3>
+                <p>{{props.city}}, {{ props.state }}</p>
+            </div>
+            <div class="amenities">
+                <p> <font-awesome-icon icon="user" /> Guests {{ props.guests }} </p>
+                <p>  <font-awesome-icon icon="bed" /> Bedrooms {{ props.bedrooms }} </p>
+                <p>  <font-awesome-icon icon="bath" /> Bathrooms {{ props.bathrooms }} </p>
+                
+            </div>
         </div>
-        <div class="content">
-            <h3>{{props.title}}</h3>
-            <p>{{props.city}}, {{ props.state }}</p>
-        </div>
-        <div class="amenities">
-            <p> <font-awesome-icon icon="user" /> Guests {{ props.guests }} </p>
-            <p>  <font-awesome-icon icon="bed" /> Bedrooms {{ props.bedrooms }} </p>
-            <p>  <font-awesome-icon icon="bath" /> Bathrooms {{ props.bathrooms }} </p>
-            
-        </div>
-    </div>
+    </NuxtLink>
 </template>
 
 <style scoped>
@@ -59,6 +62,11 @@
   overflow: hidden;
   cursor: pointer;
   transition: ease 0.2s;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .card:hover {
     border: 2px solid var(--accent-color);

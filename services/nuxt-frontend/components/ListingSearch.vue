@@ -54,13 +54,13 @@ function toggleDropdown(index: number) {
 .listing-container {
     top: 0;
     left: 0;
-    height: 400px;
-    background-color: var(--secondary-color);
+    height: 200px;
+    background-color: var(--primary-color);
     color: var(--text-color-light);
 }
 .title {
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 .btn-container {
     display: flex;
@@ -82,7 +82,7 @@ function toggleDropdown(index: number) {
     height: 58px;
     padding-inline: 40px;
     width: 15vw;
-    background-color: var(--bg-color);
+    background-color: white;
     color: var(--text-color-dark);
 }
 
@@ -95,8 +95,8 @@ function toggleDropdown(index: number) {
   margin-top: 8px;
   position: absolute;
   border-radius: 16px;
-  background: var(--bg-color);
-  border: 0px;
+  background: white;
+  border: 1px solid #ccc;
   z-index: 10;
   width: 15vw;
   overflow: hidden;
@@ -104,7 +104,7 @@ function toggleDropdown(index: number) {
 
 .menu p {
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   color: var(--text-color-dark);
   cursor: pointer;
 }
@@ -114,7 +114,7 @@ function toggleDropdown(index: number) {
   color: var(--text-color-light);
 }
 .search {
-    border: 2px solid var(--bg-color);
+    border: 2px solid white;
     background-color: var(--accent-color);
     color: var(--text-color-light);
 }

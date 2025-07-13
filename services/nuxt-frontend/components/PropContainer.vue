@@ -40,7 +40,7 @@
 
     <!-- display prop cards for selected property -->
     <div class="card-grid">
-        <PropCard v-for = "(property, index) in filteredProperties" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :city = "property.address.city" :state = "property.address.state" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
+        <PropCard v-for = "(property, index) in filteredProperties" :id="property.id" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :city = "property.address.city" :state = "property.address.state" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
     </div>
 </template>
 
@@ -57,7 +57,7 @@ h1, h2, h3 {
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 .card-grid > * {
    box-sizing: border-box;
@@ -76,6 +76,7 @@ h1, h2, h3 {
 }
 .filter-buttons {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(2, minmax(300px, 650px));
   gap: 2rem;
   max-width: 1400px;
@@ -85,19 +86,20 @@ h1, h2, h3 {
 }
 
 .filter-buttons button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.25em;
   border: 2px solid var(--border-color, #ccc);
   background-color: white;
   cursor: pointer;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 .filter-buttons button:hover {
   border: 2px solid var(--accent-color);
 }
 .filter-buttons button.active {
-  background-color: var(--accent-color, #007BFF);
+  background-color: var(--accent-color);
   color: white;
-  border-color: var(--accent-color, #007BFF);
+  border-color: var(--accent-color);
 }
 </style>

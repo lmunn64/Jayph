@@ -15,7 +15,7 @@
     <HeroContainer />
 
     <!-- Listing Search -->
-    <!-- <ListingSearch /> -->
+    <ListingSearch />
     
     <!-- Properties components-->
     <div v-if="propertyStore.isLoaded">
@@ -23,7 +23,7 @@
     </div>
     
     <!-- Reviews components -->
-
+    <h1> Why Guests Choose Us...</h1>
     <ReviewCarousel />
 
   </div>
