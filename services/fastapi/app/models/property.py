@@ -3,6 +3,7 @@ from typing import List, Optional
 
 # model for the address of a listing
 class Address(BaseModel):
+    street: str
     city: str
     state: str
     country: str
