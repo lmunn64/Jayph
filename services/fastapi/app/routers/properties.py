@@ -12,23 +12,30 @@ Includes router endpoints for:
                 /{uuid}/images - Return all validated images of a given property by its uuid as List[Image] from external Hospitable API
 """
 from datetime import date
-from typing import Dict, List
+from typing import Dict, List, Optional
 import os
 import json
 from dateutil.relativedelta import relativedelta
-
+import requests
+from dotenv import load_dotenv
 from pydantic import ValidationError
 from fastapi import APIRouter, HTTPException
+
+# Model Imports
 from app.models.property import Property, Address, HouseRules, Capacity, Details
 from app.models.image import Image
 from app.models.review import Review
 from app.models.calendar_model import Calendar, Date
-from app.models.quote import Quote
-import requests
-from dotenv import load_dotenv
+from app.models.quote import Quote, Quote_Response, Fee, Discount
+
+# Method Imports
 from app.caches.properties_cache import properties_cache
 from app.modules.date import format_date_ISO
 from app.modules.image_link_enlarger import get_enlarged_URL
+from app.models.search import Property_Total
+
+
+
 
 
 '''base path for .env'''
@@ -309,6 +316,86 @@ async def get_calendar(uuid : str, start_date : str = date.today(), end_date : s
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
     return calendar
 
-@router.post('/api_properties/{uuid}/quote')
+@router.post('/api_properties/{uuid}/quote', tags=['hospitable properties'])
 async def gen_quote(uuid : str, item: Quote):
-    return {"message": "Item created successfully", "item": item}
+    """
+    Generates and returns a validated quote for a given property by its UUID from the external Hospitable API.
+
+    - Path param: uuid (str) - The property UUID.
+    - Request body: Quote - The quote request details including dates, guests, and guest details.
+    - Response: Quote_Response
+    - Errors:
+        - 401: If the external API call is forbidden.
+        - 409: If the data format is invalid.
+    """
+    try: 
+        quote = item.model_dump(exclude_none=True)
+        print(quote)
+        response = requests.post(f"https://public.api.hospitable.com/v2/properties/{uuid}/quote",
+            headers={"Authorization": f"Bearer {PAT}"},
+            json=quote)
+        if response.status_code != 200:
+            print(response.json())
+            raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
+        content = response.json()
+        data = content.get("data")
+        quote_response = Quote_Response(
+            quote_id= data.get("quote_id"),
+            booking_url= data.get("booking_url"),
+            fees = [Fee(**fee) for fee in data.get("financials").get("fees")],
+            discounts= [Discount(**disc) for disc in data.get("financials").get("discounts")],
+            total_before_tax= data.get("financials").get("totals").get("total_without_taxes").get("formatted")
+        )
+    except ValidationError as e:
+        raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
+    return {"message": "Quote created successfully", "quote": quote_response}
+
+@router.get('/api_properties/search', response_model= list[Property_Total], tags=['hospitable properties'])
+async def search_properties(adults: int, start_date: str, end_date: str, children : Optional[int] = None, infants : Optional[int] = None, pets : Optional[int] = None, location : Optional[str] = None):
+    """
+    Searches and returns all available properties with pricing for given criteria from the external Hospitable API.
+
+    - Query params:
+        - adults (int): Number of adult guests (required).
+        - start_date (str): Check-in date in YYYY-MM-DD format (required).
+        - end_date (str): Check-out date in YYYY-MM-DD format (required).
+        - children (int, optional): Number of children guests.
+        - infants (int, optional): Number of infant guests.
+        - pets (int, optional): Number of pets.
+        - location (str, optional): City name to filter properties by location.
+    - Response: List[Property_Total]
+    - Errors:
+        - 401: If the external API call is forbidden.
+        - 409: If the data format is invalid.
+    """
+    try:
+        search_params = {
+            'start_date' : start_date,
+            'end_date' : end_date,
+            'adults': adults,
+            'children': children,
+            'infants': infants,
+            'pets' : pets
+        }
+
+        # remove None values
+        search_params = {k: v for k, v in search_params.items() if v is not None}
+
+        # call search
+        response = requests.get(f"https://public.api.hospitable.com/v2/properties/search",
+                                headers={"Authorization": f"Bearer {PAT}"},
+                                params=search_params)
+        if response.status_code != 200:
+            print(response.status_code + ": " + response.reason_phrase)
+            raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
+        content = response.json()
+        data = content.get("data")
+        search_results =[Property_Total(
+            uuid= item.get("property").get("id"),
+            total_before_taxes= item.get("pricing").get("total_without_taxes").get("formatted_string")
+        ) for item in data 
+        if item.get("availability").get("available") is True and 
+        (location is None or item.get("property").get("address").get("city") == location)] 
+    except ValidationError as e:
+        raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
+    return search_results

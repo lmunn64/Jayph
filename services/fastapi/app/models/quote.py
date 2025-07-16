@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class Guests(BaseModel):
     adults: int
@@ -18,5 +19,23 @@ class Quote(BaseModel):
     checkout_date: str
     guests: Guests
     guest_details: Guest_Details
-    promo_code: str | None
+    promo_code: Optional[str] = None
+
+class Fee(BaseModel):
+    amount: int
+    formatted: str
+    label: str
+    category: str
+
+class Discount(Fee):
+    pass
+
+class Quote_Response(BaseModel):
+    quote_id: str
+    booking_url: str
+    fees: list[Fee]
+    discounts: list[Discount]
+    total_before_tax: str
+    
+
     
