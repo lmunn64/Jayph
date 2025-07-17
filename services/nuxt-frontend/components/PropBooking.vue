@@ -52,7 +52,7 @@
     min-height: 80vh;
     width: 100%;
     background-color: var(--secondary-color);
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -60,10 +60,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-style: dashed;
+    border-style: solid;
     width: 100%;
     max-width: 1200px;
-  
 }
 
 .calendar-col {
@@ -94,16 +93,22 @@
         align-items: center;
     }
     .calendar-col{
-        width: 100%;
+        width: 90%;
         height: auto; 
         margin-right: 0;
         margin-bottom: 15px;
     }
     .booking-info {
-        width: 100%;
+        width: 90%;
         height: auto;
         margin-left: 0;
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 400px){
+    .booking-component{
+        border-style: none;
     }
 }
 
