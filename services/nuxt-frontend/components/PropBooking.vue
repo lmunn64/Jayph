@@ -24,41 +24,47 @@ watch(selectedDates, (newDates, oldDates) => {
             <div class= "calendar-col">
                  <Calendar v-model="selectedDates" />
             </div>
+
             <div class="booking-info"> 
-                <h1>Price Details</h1>
-                <table class="price-table">
-                    <tbody class="price-table-body">
-                        <tr>
-                            <td class="td-start">$164.50 x 4 nights</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                        <tr>
-                            <td class="td-start">Cleaning Fee</td>
-                        
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                        <tr>
-                            <td class="td-start">Pet Fee</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                         <tr>
-                            <td class="td-start">Additional Guest Fee</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                         <tr>
-                            <td class="td-start">Additional Guest Fee</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                         <tr>
-                            <td class="td-start">Additional Guest Fee</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                         <tr>
-                            <td class="td-start">Additional Guest Fee</td>
-                            <td class="td-end">$1.00</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class = placeholder-guest-selector> Place Holder Guest Selector</div>
+                <div class = "price-info"> 
+                    <h2 >Price Details</h2>
+                    <table class="price-table">
+                        <tbody class="price-table-body">
+                            
+                            <tr>
+                                <td class="td-start">$164.50 x 4 nights</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Cleaning Fee</td>
+                            
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Pet Fee</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Additional Guest Fee</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Additional Guest Fee</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Additional Guest Fee</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-start">Additional Guest Fee</td>
+                                <td class="td-end">$1.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -107,6 +113,30 @@ watch(selectedDates, (newDates, oldDates) => {
     min-height: fit-content; 
 }
 
+.price-info {
+    width: 90%;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    border-style: dashed;
+    border-width: 1px;
+ 
+    min-height: fit-content; 
+}
+
+.placeholder-guest-selector {
+    display: flex;
+    width: 80%;
+    height: 60px;
+    background-color: bisque;
+    border-radius: 8px;
+    margin: 0 10px 10px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 950px) {
     .booking-component{
         flex-direction: column;
@@ -133,26 +163,23 @@ watch(selectedDates, (newDates, oldDates) => {
 }
 
 .price-table {
-    width: 85%; /* Use full width available */
+    width: 100%; 
     margin: 0 auto;
     border-collapse: collapse;
-    table-layout: auto; /* Allow table to size based on content */
+    table-layout: auto; 
 }
 
 .td-end{
     padding: 15px;
-    text-align: center;
-    border: 1px solid #ccc; /* Add borders for better visibility */
+    text-align: end;
 }
 
 .td-start{
     padding: 15px;
     text-align: start;
-    border: 1px solid #ccc;
 }
 
-/* Add this to handle table overflow if needed */
-.booking-info {
-    overflow-y: auto; /* Add scroll if content gets too tall */
-}
+/* .booking-info {
+    overflow-y: auto;
+} */
 </style>
