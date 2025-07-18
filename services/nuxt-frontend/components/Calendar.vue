@@ -5,29 +5,40 @@ import '@vuepic/vue-datepicker/dist/main.css'
 const date = ref()
 const calendarContainer = ref()
 const isWideEnough = ref(false)
+const clearDateBtn = useTemplateRef('clear-date-btn')
 
-const selectedDates = ref()
+const selectedDates = defineModel({required: true})
+
 // Check parent container width to determine if show multi-calendar
 const checkWidth = () => {
   if (calendarContainer.value && calendarContainer.value.parentElement) {
     const parentWidth = calendarContainer.value.parentElement.offsetWidth
     console.log('Parent width:', parentWidth) // Debug log
-    isWideEnough.value = parentWidth >= 800
+    isWideEnough.value = parentWidth >= 900
   }
 }
 
-// Format selected dates
-const format = (dates: Date[]) => {
-    if (!dates) return 'Select dates'
-    
-    const [startDate, endDate] = dates
-
-    if (!startDate) return 'Select start date'
-    if (!endDate) return `${formatSingleDate(startDate)} - Select end date`
-    selectedDates.value = [formatSingleDate(startDate), formatSingleDate(endDate)]
-    return `${formatSingleDate(startDate)} - ${formatSingleDate(endDate)}`
-  
+const handleDateUpdate = (selectedDate : Date[]) => {
+    if (selectedDate && Array.isArray(selectedDate) && selectedDate.length === 2) {
+        const [startDate, endDate] = selectedDate
+        
+        if (startDate && endDate) {
+            // Both dates selected - format and update selectedDates
+            const formattedDates = [formatSingleDate(startDate), formatSingleDate(endDate)]
+            selectedDates.value = formattedDates
+            
+            // Enable clear button
+            clearDateBtn.value?.classList.add('set')
+            
+            console.log('Range selected:', formattedDates)
+        }
+    } else if (!selectedDate) {
+        // Dates cleared
+        selectedDates.value = null
+        clearDateBtn.value?.classList.remove('set')
+    }
 }
+
 const formatSingleDate = (date : Date) => {
     const day = date.getDate()
     const month = date.getMonth() + 1
@@ -35,11 +46,20 @@ const formatSingleDate = (date : Date) => {
     return `${year}-${month}-${day}`
 }
 
+
+const clearDate = () => {
+    date.value = null
+    selectedDates.value = null
+    console.log('Dates cleared')
+    clearDateBtn.value?.classList.remove('set')
+}
+
 onMounted(() => {
     nextTick(() => {
         checkWidth()
     })
-     window.addEventListener('resize', checkWidth)
+    window.addEventListener('resize', checkWidth)
+    
 })
 
 onUnmounted(() => {
@@ -48,27 +68,70 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="calendarContainer" ref="calendarContainer">
-    <VueDatePicker 
-        v-model="date" 
-        range 
-        :multi-calendars="isWideEnough ? 2 : undefined"
-        inline 
-        auto-apply
-        :enable-time-picker="false"
-        :key="isWideEnough"
-        no-today
-        :min-date="new Date()"
-        :format = "format"
-    />
-  </div>
+    <div class = "calendarWrapper">
+        <div class="calendarContainer" ref="calendarContainer">
+                <VueDatePicker 
+                    v-model="date" 
+                    range 
+                    :multi-calendars="isWideEnough ? 2 : undefined"
+                    inline 
+                    auto-apply
+                    :enable-time-picker="false"
+                    :key="isWideEnough"
+                    no-today
+                    :min-date="new Date()"
+                    @update:model-value="handleDateUpdate"
+                />
+            </div>
+            <button class = "clear-dates-btn" @click="clearDate" ref = 'clear-date-btn'>Clear Dates</button>
+
+    </div>
+    
 </template>
 
 <style scoped>
-/* Calendar styling */
+
+.calendarWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-dates-btn{
+    margin-top: 10px;
+    font-size: larger;
+    background-color: transparent;
+    border-radius: 8px;
+    border-width: 0;
+    padding:0;
+    pointer-events: none;
+    color: #0000005e;
+    width: auto;
+    height: 1.7em;
+}
+
+.clear-dates-btn.set{
+    margin-top: 10px;
+    font-size: larger;
+    pointer-events:all;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 8px;
+    border-width: 0;
+    text-decoration: underline;
+    color: #000000;
+    width: auto;
+    height: 1.7em;
+    transition: 250ms;
+}
+
+.clear-dates-btn.set:hover{
+    color: #0000005e;
+    transition: 250ms;
+}
 .calendarContainer {
-    /* Define custom properties on the container */
-    --dp-cell-size: 50px;
+    --dp-cell-size: 65px;
     --dp-border-radius: 3px;
     --dp-button-height: 4px;
     --dp-font-size: 1.2rem;
@@ -103,10 +166,17 @@ onUnmounted(() => {
 .calendarContainer :deep(.dp__month_year_select){
     pointer-events: none;
 }
-@media (max-width: 400px) {
+@media (max-width: 525px) {
     .calendarContainer {
-        --dp-cell-size: 45px;
+        --dp-cell-size: 50px;
         --dp-cell-padding: 2px;
     }
 }
+@media (max-width: 400px) {
+    .calendarContainer {
+        --dp-cell-size: 40px;
+        --dp-cell-padding: 2px;
+    }
+}
+
 </style>

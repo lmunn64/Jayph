@@ -1,10 +1,29 @@
+<script setup lang="ts">
+import Calendar from './Calendar.vue';
+import { ref } from 'vue'
+
+const selectedDates = ref()
+interface Props {
+    id: string
+}
+
+const bookingProps = defineProps<Props>()
+
+// this where we will call quote endpoint teehee
+watch(selectedDates, (newDates, oldDates) => {
+    // currently have the selected dates in selectedDates, updating great.
+    // JUST NEED TO CALL API WITH ALL OTHER DATA and also set up interfaces 
+    // for the responses we will get and send. 
+    console.log('Selected dates changed on ', bookingProps.id, ' :', newDates)
+}, { deep: true })
+
+</script>
 <template>
     <div class="booking-wrapper">
         <div class= "booking-component">
             <div class= "calendar-col">
-                 <Calendar />
+                 <Calendar v-model="selectedDates" />
             </div>
-           
             <div class="booking-info"> 
                 <h1>Price Details</h1>
                 <table class="price-table">
@@ -49,9 +68,10 @@
 .booking-wrapper {
     display: flex;
     justify-content: center;
+    border-radius: 10px;
     min-height: 80vh;
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -60,7 +80,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-style: solid;
+    border-radius: 5px;
     width: 100%;
     max-width: 1200px;
 }
