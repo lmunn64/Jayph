@@ -11,6 +11,7 @@
 <script setup lang="ts">
 import GuestSelector from './GuestSelector.vue'
 
+const selectedDates = ref()
 
 interface Search {
   location: string
@@ -120,7 +121,7 @@ onUnmounted(() => {
                     Check-in → Check-out
                 </button>
                 <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
-                    <!-- calendar selection component -->
+                    <Calendar v-model="selectedDates" :for-search="true"/>
                 </div>
             </div>
             <div class="dropdown">
@@ -219,10 +220,12 @@ onUnmounted(() => {
   color: var(--text-color-light);
 }
 .date-menu {
-  width: 600px; 
-  height: 300px;
-  padding: 1rem;
-  box-sizing: border-box;
+    display: flex;
+    width: 700px;  
+    min-height: calc(350px + 3rem);
+    max-height: calc(390px + 3rem);
+    height: auto;
+    justify-content: center;
 }
 .search {
     border: 2px solid white;

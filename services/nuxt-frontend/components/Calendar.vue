@@ -9,12 +9,29 @@ const clearDateBtn = useTemplateRef('clear-date-btn')
 
 const selectedDates = defineModel({required: true})
 
+interface Props {
+    forSearch?: boolean // New prop to indicate it's for search
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    forSearch: false
+})
+
 // Check parent container width to determine if show multi-calendar
 const checkWidth = () => {
   if (calendarContainer.value && calendarContainer.value.parentElement) {
     const parentWidth = calendarContainer.value.parentElement.offsetWidth
+    const parentHeight = calendarContainer.value.parentElement.offsetHeight
     console.log('Parent width:', parentWidth) // Debug log
-    isWideEnough.value = parentWidth >= 900
+    console.log('Parent height:', parentHeight) // Debug log
+    
+    // For search dropdown, use different logic
+    if (props.forSearch) {
+        isWideEnough.value = parentWidth >= 650 // Lower threshold for search
+    } else {
+        // For PropBooking, keep existing logic
+        isWideEnough.value = parentWidth >= 800
+    }
   }
 }
 
@@ -68,7 +85,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class = "calendarWrapper">
+    <div class = "calendarWrapper" :class="{ 'search-calendar': forSearch }">
         <div class="calendarContainer" ref="calendarContainer">
                 <VueDatePicker 
                     v-model="date" 
@@ -96,6 +113,10 @@ onUnmounted(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
 }
 
 .clear-dates-btn{
@@ -130,6 +151,7 @@ onUnmounted(() => {
     color: #0000005e;
     transition: 250ms;
 }
+
 .calendarContainer {
     --dp-cell-size: 65px;
     --dp-border-radius: 3px;
@@ -140,6 +162,8 @@ onUnmounted(() => {
     --dp-cell-padding: 8px;
     --dp-two-calendars-spacing: 20px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    max-height: calc(100% - 2.7em);
+    max-width: 100%;
 }
 
 .calendarContainer :deep(.dp__theme_light) {
@@ -150,6 +174,7 @@ onUnmounted(() => {
     --dp-border-color: #e9ecef;
     --dp-text-color: #212529;
     --dp-hover-color: #daf0fd;
+         --dp-menu-border-color: #ffffff;
     --dp-highlight-color: rgb(25 118 210 / 10%);
 }
 
@@ -157,7 +182,24 @@ onUnmounted(() => {
     background-color: #fff;
 }
 
- .calendarContainer :deep(.dp__calendar_item[aria-disabled="true"]) {
+
+.search-calendar .calendarContainer {
+    --dp-cell-size: 45px; /* Smaller cells for search dropdown */
+    --dp-cell-padding: 3px;
+    --dp-font-size: 0.9rem;
+    --dp-two-calendars-spacing: 10px; /* Tighter spacing between calendars */
+
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.search-calendar {
+    container-type: size;
+}
+
+.calendarContainer :deep(.dp__calendar_item[aria-disabled="true"]) {
     pointer-events: none;
     text-decoration:line-through;
     cursor: not-allowed;
@@ -166,13 +208,13 @@ onUnmounted(() => {
 .calendarContainer :deep(.dp__month_year_select){
     pointer-events: none;
 }
-@media (max-width: 525px) {
+@container (max-width: 525px) {
     .calendarContainer {
-        --dp-cell-size: 50px;
+        --dp-cell-size: 60px;
         --dp-cell-padding: 2px;
     }
 }
-@media (max-width: 400px) {
+@container (max-width: 400px){
     .calendarContainer {
         --dp-cell-size: 40px;
         --dp-cell-padding: 2px;

@@ -80,6 +80,7 @@ watch(selectedDates, (newDates, oldDates) => {
     background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
+
 }
 
 .booking-component {
@@ -88,12 +89,15 @@ watch(selectedDates, (newDates, oldDates) => {
     align-items: center;
     border-radius: 5px;
     width: 100%;
+    height:100%;
     max-width: 1200px;
+    
 }
 
 .calendar-col {
     display: flex;
     width: 60%;
+    height: 90%;
     justify-content: center;
     align-items: center; 
     border-style: dashed;
@@ -110,7 +114,6 @@ watch(selectedDates, (newDates, oldDates) => {
     border-style: dashed;
     border-width: 1px;
     padding: 20px; 
-    min-height: fit-content; 
 }
 
 .price-info {
@@ -120,8 +123,6 @@ watch(selectedDates, (newDates, oldDates) => {
     align-items: flex-start;
     border-style: dashed;
     border-width: 1px;
- 
-    min-height: fit-content; 
 }
 
 .placeholder-guest-selector {
@@ -141,10 +142,11 @@ watch(selectedDates, (newDates, oldDates) => {
     .booking-component{
         flex-direction: column;
         align-items: center;
+        
     }
     .calendar-col{
         width: 90%;
-        height: auto; 
+        height: 100%; 
         margin-right: 0;
         margin-bottom: 15px;
     }
