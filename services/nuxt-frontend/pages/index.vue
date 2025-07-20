@@ -10,13 +10,13 @@
 </script>
 
 <template>
-  <div class="wrapper">  
-    <!-- Hero component -->
+  <!-- Hero component -->
     <HeroContainer />
 
-    <!-- Listing Search -->
-    <ListingSearch />
-    
+  <!-- Listing Search -->
+  <ListingSearch />
+  <div class="wrapper">  
+
     <!-- Properties components-->
     <div v-if="propertyStore.isLoaded">
         <PropContainer :properties= "propertyStore.properties"/>
@@ -34,12 +34,24 @@
 h1, h2, p {
   text-align: center;
 }
-.wrapper {
-    padding: 0;
+/* .wrapper {
+    padding-inline: 1rem;
+    max-width: 1200px;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0; 
-}
+} */
+ .wrapper {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;        
+    padding-inline: 1rem;    
+    margin: 0 auto;
+    box-sizing: border-box; 
+    background-color: var(--bg-color);
+ }
 
 </style>

@@ -93,7 +93,7 @@
     display: flex;
     gap: 40px;
 }
-@media (max-width: 600px){
+@media (max-width: 650px){
     .card {
         width: 90vw;
     }

@@ -120,7 +120,7 @@ h1, p {
 }
 .carousel-wrapper {
   position: relative;
-  
+  /* width: 90vw; */
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -166,5 +166,13 @@ h1, p {
   width: 650px;
   will-change: transform, opacity;
   user-select: none;
+}
+@media (max-width: 600px) {
+    .nav-btn {
+      padding: 0 0.25rem;
+    }
+    .carousel-card {
+      width: 80vw;
+    }
 }
 </style>
