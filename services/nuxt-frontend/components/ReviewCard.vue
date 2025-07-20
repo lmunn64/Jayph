@@ -30,7 +30,6 @@
             showToggle.value = true;
         }
     });
-    console.log(review)
 </script>
 
 <template>

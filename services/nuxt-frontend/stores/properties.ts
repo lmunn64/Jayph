@@ -8,13 +8,18 @@ export const usePropertyStore = defineStore('property', {
   }),
   actions: {
     async fetchProperties() {
-      if (this.isLoaded) return
+      if (this.isLoaded) {
+        console.log("Returning cached properties")
+        return
+      }
+      console.log("Fetching properties")
       const properties = await $fetch<Property[]>('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties')
       this.properties = properties.map((el) => ({
         id: el.id,
         name: el.name,
         picture_url: el.picture_url,
         address: {
+          street: el.address.street,
           city: el.address.city,
           state: el.address.state,
           country: el.address.country,

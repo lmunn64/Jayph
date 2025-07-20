@@ -22,8 +22,7 @@ const checkWidth = () => {
   if (calendarContainer.value && calendarContainer.value.parentElement) {
     const parentWidth = calendarContainer.value.parentElement.offsetWidth
     const parentHeight = calendarContainer.value.parentElement.offsetHeight
-    console.log('Parent width:', parentWidth) // Debug log
-    console.log('Parent height:', parentHeight) // Debug log
+
     
     // For search dropdown, use different logic
     if (props.forSearch) {
@@ -96,7 +95,9 @@ onUnmounted(() => {
                     :enable-time-picker="false"
                     :key="isWideEnough"
                     no-today
+                    prevent-min-max-navigation
                     :min-date="new Date()"
+                    :month-change-on-scroll="false"
                     @update:model-value="handleDateUpdate"
                 />
             </div>

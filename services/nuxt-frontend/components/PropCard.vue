@@ -23,8 +23,6 @@
     }
 
     const props = defineProps<Props>()
-    
-    console.log(props.img_src)
 
     function setDefaultImage(event: Event){
         (event.target as HTMLImageElement).src = thumbnail
