@@ -196,7 +196,7 @@ onUnmounted(() => {
 }
 
 .search-calendar {
-    container-type: size;
+    container-type: inline-size;
 }
 
 .calendarContainer :deep(.dp__calendar_item[aria-disabled="true"]) {

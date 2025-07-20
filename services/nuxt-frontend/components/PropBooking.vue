@@ -7,6 +7,13 @@ interface Props {
     id: string
 }
 
+const guestCounts = ref({
+  adults: 2,
+  children: 0,
+  infants: 0,
+  pets: 0
+})
+
 const bookingProps = defineProps<Props>()
 
 // this where we will call quote endpoint teehee
@@ -26,7 +33,9 @@ watch(selectedDates, (newDates, oldDates) => {
             </div>
 
             <div class="booking-info"> 
-                <div class = placeholder-guest-selector> Place Holder Guest Selector</div>
+                <div class = placeholder-guest-selector> 
+                    <GuestSelector v-model="guestCounts" />
+                </div>
                 <div class = "price-info"> 
                     <h2 >Price Details</h2>
                     <table class="price-table">
@@ -127,14 +136,14 @@ watch(selectedDates, (newDates, oldDates) => {
 
 .placeholder-guest-selector {
     display: flex;
-    width: 80%;
-    height: 60px;
-    background-color: bisque;
+    flex-direction: column;
+    width: 90%;
+    background-color: white;
     border-radius: 8px;
     margin: 0 10px 10px 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* align-items: center; */
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 

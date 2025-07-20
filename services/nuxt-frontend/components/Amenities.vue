@@ -196,7 +196,6 @@
   margin-right: 0.75rem;
 }
 .toggle-btn {
-  margin-left: 3rem;
   padding: 0.5rem 1rem;
   border: 2px solid var(--border-color, #ccc);
   cursor: pointer;

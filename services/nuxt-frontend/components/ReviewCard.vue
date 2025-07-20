@@ -65,10 +65,12 @@
     .card {
         background-color: var(--bg-color);
         width: 650px;
+        text-align: center;
     }
     .header {
         display: flex;
-        align-items: left;
+        align-items: center;
+        justify-content: center;
         gap: 12px;
         padding: 12px;
     }
@@ -78,6 +80,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     .avatar {
         margin-top: 12px;

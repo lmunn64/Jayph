@@ -47,24 +47,23 @@
 <style scoped>
 
 h1, h2, h3 {
-    text-align: center;
+  text-align: center;
 }
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 650px));
   justify-content: center;
   gap: 2rem;
-  padding: 0 20px;
   box-sizing: border-box;
   max-width: 1400px;
-  margin: 0 auto;
-  padding-bottom: 2rem;
-}
-.card-grid > * {
-   box-sizing: border-box;
+  margin: 0 auto 2rem auto;
 }
 
-/* One card per row if zoomed enough */
+.card-grid > * {
+  box-sizing: border-box;
+}
+
 @media (max-width: 600px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -75,13 +74,13 @@ h1, h2, h3 {
     width: 100%;
   }
 }
+
 .filter-buttons {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, minmax(300px, 650px));
   gap: 2rem;
   max-width: 1400px;
-  padding: 0 20px;
   margin: 0 auto 1.5rem auto;
   box-sizing: border-box;
 }
@@ -98,22 +97,23 @@ h1, h2, h3 {
   width: auto;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
   .filter-buttons {
     grid-template-columns: 1fr;
-    max-width: 90%;
-    padding: 0;
+    max-width: 100%;
     gap: 1rem;
   }
-
   .filter-buttons button {
-    width: 100%; 
+    margin: 0 auto;
+    width: 90vw;
     font-size: 1em;
   }
 }
+
 .filter-buttons button:hover {
   border: 2px solid var(--accent-color);
 }
+
 .filter-buttons button.active {
   background-color: var(--accent-color);
   color: white;
