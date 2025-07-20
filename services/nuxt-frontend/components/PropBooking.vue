@@ -74,6 +74,7 @@ watch(selectedDates, (newDates, oldDates) => {
 .booking-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     min-height: 80vh;
     width: 100%;
@@ -145,7 +146,8 @@ watch(selectedDates, (newDates, oldDates) => {
         
     }
     .calendar-col{
-        width: 90%;
+        width: 100%;
+        
         height: 100%; 
         margin-right: 0;
         margin-bottom: 15px;

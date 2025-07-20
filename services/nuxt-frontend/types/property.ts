@@ -6,16 +6,12 @@ export interface Address{
     postcode: string
 }
 
-
-
 export interface Capacity{
     max: number
     bedrooms: number
     beds: Float16Array
     bathrooms: number
 }
-  
-
 
 export interface HouseRules{
     pets_allowed: boolean | null
@@ -51,5 +47,5 @@ export interface Review {
     date: string
     platform: string
     review_content: string
-    rating: number
+    rating: Float16Array
 }

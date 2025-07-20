@@ -264,7 +264,7 @@ async def get_reviews(uuid: str):
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
     except AttributeError as e:
-        raise HTTPException(status_code=409, detail='Validation error: External API has returned unexpected response format')
+        raise HTTPException(status_code=409, detail='Attribute Error: External API has returned unexpected response format')
     return reviews
 
 @router.get('/api_properties/{uuid}/calendar', response_model=Calendar, tags=['hospitable properties'])
