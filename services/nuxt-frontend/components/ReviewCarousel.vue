@@ -26,6 +26,7 @@ const endpoint = props.propertyId
   ? `https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${props.propertyId}/reviews`
   : 'https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
 
+console.log(props.propertyId)
 const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, () =>
   $fetch(endpoint)
 )

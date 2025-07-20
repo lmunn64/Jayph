@@ -223,7 +223,7 @@ onUnmounted(() => {
     display: flex;
     width: 700px;  
     min-height: calc(350px + 3rem);
-    max-height: calc(390px + 3rem);
+    max-height: calc(395px + 3rem); /** since rows are 45 pixels more, account for extra row in max */
     height: auto;
     justify-content: center;
 }

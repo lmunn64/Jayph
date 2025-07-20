@@ -111,12 +111,12 @@ onUnmounted(() => {
 .calendarWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    
+    container-type: inline-size;
 }
 
 .clear-dates-btn{
@@ -174,7 +174,7 @@ onUnmounted(() => {
     --dp-border-color: #e9ecef;
     --dp-text-color: #212529;
     --dp-hover-color: #daf0fd;
-         --dp-menu-border-color: #ffffff;
+     --dp-menu-border-color: #ffffff;
     --dp-highlight-color: rgb(25 118 210 / 10%);
 }
 
@@ -188,7 +188,6 @@ onUnmounted(() => {
     --dp-cell-padding: 3px;
     --dp-font-size: 0.9rem;
     --dp-two-calendars-spacing: 10px; /* Tighter spacing between calendars */
-
     max-height: 100%;
     max-width: 100%;
     box-shadow: none;
@@ -208,15 +207,16 @@ onUnmounted(() => {
 .calendarContainer :deep(.dp__month_year_select){
     pointer-events: none;
 }
+
 @container (max-width: 525px) {
     .calendarContainer {
-        --dp-cell-size: 60px;
+        --dp-cell-size: 50px;
         --dp-cell-padding: 2px;
     }
 }
 @container (max-width: 400px){
     .calendarContainer {
-        --dp-cell-size: 40px;
+        --dp-cell-size: 45px;
         --dp-cell-padding: 2px;
     }
 }
