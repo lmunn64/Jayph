@@ -56,17 +56,19 @@
                 <p> {{ property.details.guest_access }}</p>
             <h3> Other Details </h3>
                 <p> {{ property.details.other_details }}</p>
-        </div>
+            <!-- booking -->
+            <PropBooking :id = 'id' />
+            <!-- review carousel -->
+            <h1 style="text-align: center;">Reviews</h1>
+            <ReviewCarousel :propertyId="id" />
 
-        <!-- booking -->
-        <PropBooking />
+            <!-- location -->
+            <PropLocation />
+            </div>
 
-        <!-- review carousel -->
-        <h1 style="text-align: center;">Reviews</h1>
-        <ReviewCarousel :propertyId="id" />
+        
 
-        <!-- location -->
-        <PropLocation />
+
     </div>
     <div v-else>
             <p> Loading property... </p>
@@ -83,6 +85,9 @@ p {
     tab-size: 0;
 }
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     max-width: 1200px;        
     padding-inline: 1rem;    
