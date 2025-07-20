@@ -5,20 +5,102 @@
         - Date selection button for stay length
         - Guest selection for # people staying
         - Each option displayed in dropdown menu
+        - Buttons stack on mobile displays
 -->
 
 <script setup lang="ts">
+import GuestSelector from './GuestSelector.vue'
 
-const showDropdown1 = ref(false)
-const showDropdown2 = ref(false)
-const showDropdown3 = ref(false)
 
-// close all other dropdowns when one is opened
-function toggleDropdown(index: number) {
-  showDropdown1.value = index === 1 ? !showDropdown1.value : false
-  showDropdown2.value = index === 2 ? !showDropdown2.value : false
-  showDropdown3.value = index === 3 ? !showDropdown3.value : false
+interface Search {
+  location: string
+  checkinDate: string
+  checkoutDate: string
+  adults: number
+  children: number
+  infants: number
+  pets: number
 }
+
+const search = ref<Search>({
+    location: '',
+    checkinDate: '',
+    checkoutDate: '',
+    adults: 2,
+    children: 0,
+    infants: 0,
+    pets: 0,
+})
+
+// object to sync with GuestSelector which then syncs to search via watch function
+const guestCounts = ref({
+  adults: 2,
+  children: 0,
+  infants: 0,
+  pets: 0
+})
+
+watch(guestCounts, (newVal) => {
+  search.value.adults = newVal.adults
+  search.value.children = newVal.children
+  search.value.infants = newVal.infants
+  search.value.pets = newVal.pets
+})
+
+// compute button content when updating num guests
+const guestSummary = computed(() => {
+  const parts = []
+
+  if (guestCounts.value.adults > 0) parts.push(`${guestCounts.value.adults} Adult${guestCounts.value.adults > 1 ? 's' : ''}`)
+  if (guestCounts.value.children > 0) parts.push(`${guestCounts.value.children} Child${guestCounts.value.children > 1 ? 'ren' : ''}`)
+  if (guestCounts.value.infants > 0) parts.push(`${guestCounts.value.infants} Infant${guestCounts.value.infants > 1 ? 's' : ''}`)
+  if (guestCounts.value.pets > 0) parts.push(`${guestCounts.value.pets} Pet${guestCounts.value.pets > 1 ? 's' : ''}`)
+
+  return parts.length > 0 ? parts.join(', ') : 'Guests'
+})
+
+// all dropdowns default to being closed, show below
+const showDropdowns = ref([false, false, false])
+const dropdownAbove = ref([false, false, false])
+
+// function to toggle dropdowns
+function toggleDropdown(index: number, event: MouseEvent) {
+  const wasOpen = showDropdowns.value[index]
+  showDropdowns.value = [false, false, false]
+
+  if (!wasOpen) {
+    const button = event.currentTarget as HTMLElement
+    const rect = button.getBoundingClientRect()
+    const spaceBelow = window.innerHeight - rect.bottom
+    dropdownAbove.value[index] = spaceBelow < 200
+    showDropdowns.value[index] = true
+  }
+}
+
+// close dropdowns on outside click
+function handleClickOutside(event: MouseEvent) {
+  const target = event.target as HTMLElement
+  if (!target.closest('.dropdown')) {
+    showDropdowns.value = [false, false, false]
+  }
+}
+
+function setLocation (loc: string) {
+    search.value.location = loc
+    showDropdowns.value = [false, false, false]
+}
+
+function searchListings (input: Search){
+    // redirect to search results page
+}
+
+onMounted(() => {
+  window.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('click', handleClickOutside)
+})
 
 </script>
 
@@ -27,23 +109,27 @@ function toggleDropdown(index: number) {
         <h1 class="title">Find your stay.</h1>
         <div class="btn-container">
             <div class="dropdown">
-                <button class="input" @click="toggleDropdown(1)"> Location </button>
-                <div class="menu" v-if="showDropdown1">
-                    <p>Branson West</p>
-                    <p>Kansas City</p>
+                <button class="input" @click="(e) => toggleDropdown(0, e)"> {{ search.location ? search.location : 'Location' }}</button>
+                <div v-if="showDropdowns[0]" :class="{ menu: true, above: dropdownAbove[0] }">
+                    <button @click="setLocation('Branson West')">Branson West</button>
+                    <button @click="setLocation('Kansas City')">Kansas City</button>
                 </div>
             </div>
             <div class="dropdown">
-                <button class="input">
-                    Check-in -> Check-out
+                <button class="input" @click="(e) => toggleDropdown(1, e)">
+                    Check-in → Check-out
                 </button>
+                <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
+                    <!-- calendar selection component -->
+                </div>
             </div>
             <div class="dropdown">
-                <button class="input">
-                    2 adults
-                </button>
+                <button class="input" @click="(e) => toggleDropdown(2, e)"> {{ guestSummary }} </button>
+                <div v-if="showDropdowns[2]" :class="{ menu: true, above: dropdownAbove[2] }">
+                    <GuestSelector v-model="guestCounts" />
+                </div>
             </div>
-            <button class="search">
+            <button class="search" @click="searchListings(search)">
                 Search
             </button>
         </div>
@@ -66,7 +152,6 @@ function toggleDropdown(index: number) {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    /* padding: 0 2rem; */
 }
 .btn-container button {
     font-size: 1em;
@@ -86,7 +171,6 @@ function toggleDropdown(index: number) {
     color: var(--text-color-dark);
 }
 
-
 .dropdown {
   position: relative;
 }
@@ -100,18 +184,45 @@ function toggleDropdown(index: number) {
   z-index: 10;
   width: 15vw;
   overflow: hidden;
+  top: 100%; /* default: below the button */
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.menu p {
+.menu.above {
+  top: auto;
+  bottom: 100%; /* position above the button */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.menu-below {
+  margin-top: 8px;
+  top: 100%;
+}
+
+.menu button {
   margin: 0;
+  border: none;
+  background: white;
+  text-align: left;
+  overflow: hidden;
+  border-radius: 0px;
+  width: 100%;
   padding: 1rem 1rem;
   color: var(--text-color-dark);
   cursor: pointer;
 }
 
-.menu p:hover {
+.menu button:hover {
   background-color: var(--highlight-color);
   color: var(--text-color-light);
+}
+.date-menu {
+  width: 600px; 
+  height: 300px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 .search {
     border: 2px solid white;
@@ -120,5 +231,25 @@ function toggleDropdown(index: number) {
 }
 .search:hover {
     background-color: var(--highlight-color);
+}
+
+@media (max-width: 850px) {
+  .listing-container {
+    height: 400px;
+  }
+  .btn-container {
+    flex-direction: column;
+    align-items: center;   
+  }
+  .btn-container button {
+    width: 90vw;  
+    max-width: 400px;
+  }
+  .menu {
+    width: 90vw !important;  
+    max-width: 400px !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 </style>

@@ -32,11 +32,11 @@
 </script>
 
 <template>
-    <NuxtLink :to="`/properties/${props.id}`" class="card-link">
+    <NuxtLink :to="`/properties/${props.id}`" class="card-link" draggable="false">
         <div class="card">
             <div class="thumbnail-wrapper">
                 <!-- sets image as 'thumbnail' if it is invalid -->
-                <img :src="props.img_src" alt="thumbnail" class="thumbnail" @error = "setDefaultImage"/>
+                <img :src="props.img_src" alt="thumbnail" class="thumbnail" draggable="false" @error = "setDefaultImage"/>
             </div>
             <div class="content">
                 <h3>{{props.title}}</h3>
@@ -94,5 +94,17 @@
     padding-inline: 1rem;
     display: flex;
     gap: 40px;
+}
+@media (max-width: 600px){
+    .card {
+        width: 90vw;
+    }
+    .thumbnail-wrapper, .thumbnail {
+        height: 200px;
+    }
+    .amenities {
+        flex-wrap: wrap;
+        gap: 0 20px;
+    }
 }
 </style>

@@ -59,32 +59,6 @@
             </button>
         </div>
     </div>
-
-    <!-- dummy data for display test -->
-    <!-- <div class="card">
-        <div class="header">
-            <img class="avatar" :src="default_avatar" alt="Profile Picture" @error = "setDefaultImage" />
-            <div class="header-info">
-                <h3> John Doe </h3>
-                <div class="rating-row">
-                    <FontAwesomeIcon icon="star" v-for="n in 5" :key="n"/>
-                </div>
-            </div>
-        </div>
-        <div class="review-info">
-            <p> <span style="color: #444">June 2025 · Airbnb</span></p>
-            <p
-                class="review"
-                :class=" { 'clamped': !expanded }"
-                ref="reviewRef"
-                > 
-                    Jaymi was very easy to work with and very personable. They are great recommendations and was excellent at communication. The house was beautiful and felt like home. Local to everything we needed and was very clean. Grateful for the experience and the home.
-            </p>
-            <button v-if="showToggle" @click="expanded = !expanded" class="toggle-btn">
-                {{ expanded ? "Show less" : "Read more" }}
-            </button>
-        </div>
-    </div> -->
 </template>
 
 <style scoped>
@@ -141,5 +115,11 @@
         color: var(--accent-color);
         cursor: pointer;
         padding: 0;
+    }
+
+    @media (max-width: 600px) {
+        .card {
+            width: 80vw;
+        }
     }
 </style>

@@ -45,6 +45,7 @@
 </template>
 
 <style scoped>
+
 h1, h2, h3 {
     text-align: center;
 }
@@ -91,8 +92,24 @@ h1, h2, h3 {
   border: 2px solid var(--border-color, #ccc);
   background-color: white;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: auto;
+}
+
+@media (max-width: 700px) {
+  .filter-buttons {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .filter-buttons button {
+    width: 100%; 
+    font-size: 1em;
+  }
 }
 .filter-buttons button:hover {
   border: 2px solid var(--accent-color);
