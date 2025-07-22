@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
+import type { DatePickerInstance } from "@vuepic/vue-datepicker"
 import type { Calendar_Date, Calendar } from '~/types/calendar'
+import { addDays, max } from 'date-fns';
+
 const date = ref()
 const calendarContainer = ref()
 const isWideEnough = ref(false)
 const clearDateBtn = useTemplateRef('clear-date-btn')
+const datepicker = ref<DatePickerInstance>(null);
 
 const selectedDates = defineModel({required: true})
+
+const tempDisabledDates = ref<Date[] | undefined>([])
 
 const isLoading = ref<boolean>(true)
 
@@ -37,9 +43,9 @@ const checkWidth = () => {
 }
 
 const handleDateUpdate = (selectedDate : Date[]) => {
+    console.log(selectedDate)
     if (selectedDate && Array.isArray(selectedDate) && selectedDate.length === 2) {
         const [startDate, endDate] = selectedDate
-        
         if (startDate && endDate) {
             // Both dates selected - format and update selectedDates
             const formattedDates = [formatSingleDate(startDate), formatSingleDate(endDate)]
@@ -56,56 +62,91 @@ const handleDateUpdate = (selectedDate : Date[]) => {
         clearDateBtn.value?.classList.remove('set')
     }
 }
+// handle the selection of the first date in a calendar
+// need to disable
+const handleDateSelection = (selectedDate : Date) =>{
+    if(!props.cal_data){
+        return
+    }
+    const startDate = formatSingleDate(selectedDate)
+    console.log(startDate)
+
+    // Enable clear button
+    clearDateBtn.value?.classList.add('set')
+
+    const startDateObj : Calendar_Date | undefined = props.cal_data.dates.find(d => d.date === startDate)
+
+    if(!startDateObj){
+        return
+    }
+
+    const min_stay = startDateObj.min_stay
+
+    const startDateIndex = props.cal_data.dates.findIndex(d => d.date === startDate)
+    const maxDateIndex : number = props.cal_data.dates.findIndex((d, index, dArr) => index >= startDateIndex && !d.available && (!dArr[index - 1]?.available && !d.closed_for_checkin))
+    console.log(maxDateIndex)
+
+    tempDisabledDates.value = props.cal_data.dates.filter((d, index, dArr) => index < startDateIndex || (maxDateIndex > 0 && index >= maxDateIndex))
+    .map(d => new Date(d.date + 'T00:00:00'))
+
+}
 
 const formatSingleDate = (date : Date) => {
     const day = date.getDate()
     const month = date.getMonth() + 1
     const year = date.getFullYear()
-    return `${year}-${month}-${day}`
+    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
+
 }
 
+const clearTempDisabledDates = () => {
+    //remove the temp disableds based on startDate
+    if(tempDisabledDates.value){
+        tempDisabledDates.value = undefined
+    }}
 
 const clearDate = () => {
     date.value = null
+    if(datepicker.value)
+        datepicker.value.clearValue() 
+    
     selectedDates.value = null
+    clearTempDisabledDates()
     console.log('Dates cleared')
     clearDateBtn.value?.classList.remove('set')
 }
 
 const unavailableDates = computed(() => {
+    const base = props.cal_data
+        ? props.cal_data.dates
+            .filter((d, index, dArr) => (
+                !d.available
+                && (!dArr[index - 1]?.available && !d.closed_for_checkin)
+            ))
+            .map(d => new Date(d.date + 'T00:00:00'))
+        : []
+    return [...base, ...(tempDisabledDates.value || [])]
+})
+
+// Only highlight if its not available, the previous date is available, AND the current is NOT closed for check in
+const checkInOnly = computed(() => {
     if (!props.cal_data){
         return []
     }
-    const unavailableDates : Date[] = props.cal_data.dates
-        .filter(d => !d.available)
+    const checkInOnly : Date[] = props.cal_data.dates
+        .filter((d, index, dArr) => (
+            !d.available
+            && (dArr[index - 1]?.available && !d.closed_for_checkin)
+        ))
         .map(d => new Date(d.date + 'T00:00:00'))
-    isLoading.value = false;
-    return unavailableDates
+    return checkInOnly
 })
-const getCalendarCellByDate = (targetDate: string) => {
-    // Format: YYYY-MM-DD
-    const selector = `#dp-${targetDate}`
-    return document.querySelector(selector)
-}
-const checkInOnlyDates = () => {
-
-}
 
 onMounted(() => {
     nextTick(() => {
         checkWidth()
-        const cell = getCalendarCellByDate('2025-07-22')
-        if (cell) {
-            console.log('Found cell:', cell)
-        }
     })
-    
-
-
     window.addEventListener('resize', checkWidth)
-    if(props.forSearch){
-        checkInOnlyDates()
-    }
 })
 
 onUnmounted(() => {
@@ -120,6 +161,7 @@ onUnmounted(() => {
     <div class = "calendarWrapper" :class="{ 'search-calendar': forSearch }">
         <div class="calendarContainer" ref="calendarContainer">
                 <VueDatePicker 
+                    ref="datepicker"
                     v-model="date" 
                     :range="{ noDisabledRange: true }" 
                     :multi-calendars="isWideEnough ? 2 : undefined"
@@ -127,13 +169,14 @@ onUnmounted(() => {
                     auto-apply
                     :enable-time-picker="false"
                     :key="isWideEnough"
+                    :highlight="checkInOnly"
                     no-today
-                    :loading = "isLoading"
                     :disabled-dates="unavailableDates"
                     prevent-min-max-navigation
                     :min-date="new Date()"
                     :month-change-on-scroll="false"
                     @update:model-value="handleDateUpdate"
+                    @range-start="handleDateSelection"
                 />
             </div>
             <button class = "clear-dates-btn" @click="clearDate" ref = 'clear-date-btn'>Clear Dates</button>
@@ -210,14 +253,21 @@ onUnmounted(() => {
     --dp-border-color: #e9ecef;
     --dp-text-color: #212529;
     --dp-hover-color: #daf0fd;
-     --dp-menu-border-color: #ffffff;
-    --dp-highlight-color: rgb(25 118 210 / 10%);
+    --dp-menu-border-color: #ffffff;
+    --dp-highlight-color: 0
 }
 
 .calendarContainer :deep(.dp__inner_nav){
     background-color: #fff;
 }
 
+/** Checkin only dates */
+.calendarContainer :deep(.dp__cell_highlight){
+    cursor:not-allowed;
+    pointer-events: none;
+    
+    color: #2125298a;
+}
 
 .search-calendar .calendarContainer {
     --dp-cell-size: 45px; /* Smaller cells for search dropdown */
