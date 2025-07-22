@@ -2,39 +2,25 @@
 
 <script setup lang="ts">
     import { usePropertyStore } from '~/stores/properties'
+    import type { Calendar } from '~/types/calendar'
     const route = useRoute()
     const id = route.params.id as string
 
     const propertyStore = usePropertyStore()
     await propertyStore.fetchProperties()
 
+    await propertyStore.fetchImages(id)
+
     const property = computed(() =>
         propertyStore.properties.find(p => p.id.toString() === id)
     )
 
-    const { data: imageData, error } = await useAsyncData(`images-${id}`, () =>
-        $fetch<{ url: string }[]>(`https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${id}/images`)
-    )
-
-    const state = reactive({
-        images: [] as string[],
-        isLoading: true,
-    })
-
-    onMounted(() => {
-        if (Array.isArray(imageData.value)) {
-            state.images = imageData.value.map((img) => img.url)
-        } else {
-            console.error('No image data returned')
-        }
-        state.isLoading = false
-    })
 </script>
 
 <template>
     <div v-if="property">
         <!-- hero - slideshow with gallery option -->
-        <PropHero v-if="!state.isLoading && state.images.length" :images="state.images" />
+        <PropHero v-if="!propertyStore.property_images_loading[id] && propertyStore.property_images[id].length" :images="propertyStore.property_images[id]" />
 
         <div class="wrapper">
             <h1> {{ property.name }} </h1>
@@ -64,7 +50,7 @@
 
             <!-- location -->
             <PropLocation />
-            </div>
+        </div>
 
         
 

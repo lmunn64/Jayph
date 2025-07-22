@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
-
+import type { Calendar_Date, Calendar } from '~/types/calendar'
 const date = ref()
 const calendarContainer = ref()
 const isWideEnough = ref(false)
@@ -9,27 +9,29 @@ const clearDateBtn = useTemplateRef('clear-date-btn')
 
 const selectedDates = defineModel({required: true})
 
+const isLoading = ref<boolean>(true)
+
 interface Props {
-    forSearch?: boolean // New prop to indicate it's for search
+    forSearch?: boolean 
+    cal_data?: Calendar 
 }
 
 const props = withDefaults(defineProps<Props>(), {
     forSearch: false
 })
 
-// Check parent container width to determine if show multi-calendar
+// check parent container width to determine if show multi-calendar
 const checkWidth = () => {
   if (calendarContainer.value && calendarContainer.value.parentElement) {
     const parentWidth = calendarContainer.value.parentElement.offsetWidth
     const parentHeight = calendarContainer.value.parentElement.offsetHeight
 
-    
-    // For search dropdown, use different logic
+    // for search dropdown, use smaller width threshold
     if (props.forSearch) {
         isWideEnough.value = parentWidth >= 650 // Lower threshold for search
     } else {
-        // For PropBooking, keep existing logic
-        isWideEnough.value = parentWidth >= 800
+        // for PropBooking, keep existing logic
+        isWideEnough.value = parentWidth >= 900
     }
   }
 }
@@ -41,7 +43,7 @@ const handleDateUpdate = (selectedDate : Date[]) => {
         if (startDate && endDate) {
             // Both dates selected - format and update selectedDates
             const formattedDates = [formatSingleDate(startDate), formatSingleDate(endDate)]
-            selectedDates.value = formattedDates
+            selectedDates.value = [...formattedDates]
             
             // Enable clear button
             clearDateBtn.value?.classList.add('set')
@@ -70,17 +72,48 @@ const clearDate = () => {
     clearDateBtn.value?.classList.remove('set')
 }
 
+const unavailableDates = computed(() => {
+    if (!props.cal_data){
+        return []
+    }
+    const unavailableDates : Date[] = props.cal_data.dates
+        .filter(d => !d.available)
+        .map(d => new Date(d.date + 'T00:00:00'))
+    isLoading.value = false;
+    return unavailableDates
+})
+const getCalendarCellByDate = (targetDate: string) => {
+    // Format: YYYY-MM-DD
+    const selector = `#dp-${targetDate}`
+    return document.querySelector(selector)
+}
+const checkInOnlyDates = () => {
+
+}
+
 onMounted(() => {
     nextTick(() => {
         checkWidth()
+        const cell = getCalendarCellByDate('2025-07-22')
+        if (cell) {
+            console.log('Found cell:', cell)
+        }
     })
-    window.addEventListener('resize', checkWidth)
     
+
+
+    window.addEventListener('resize', checkWidth)
+    if(props.forSearch){
+        checkInOnlyDates()
+    }
 })
 
 onUnmounted(() => {
     window.removeEventListener('resize', checkWidth)
 })
+
+
+
 </script>
 
 <template>
@@ -88,13 +121,15 @@ onUnmounted(() => {
         <div class="calendarContainer" ref="calendarContainer">
                 <VueDatePicker 
                     v-model="date" 
-                    range 
+                    :range="{ noDisabledRange: true }" 
                     :multi-calendars="isWideEnough ? 2 : undefined"
                     inline 
                     auto-apply
                     :enable-time-picker="false"
                     :key="isWideEnough"
                     no-today
+                    :loading = "isLoading"
+                    :disabled-dates="unavailableDates"
                     prevent-min-max-navigation
                     :min-date="new Date()"
                     :month-change-on-scroll="false"
@@ -211,7 +246,7 @@ onUnmounted(() => {
 
 @container (max-width: 525px) {
     .calendarContainer {
-        --dp-cell-size: 50px;
+        --dp-cell-size: 55px;
         --dp-cell-padding: 2px;
     }
 }

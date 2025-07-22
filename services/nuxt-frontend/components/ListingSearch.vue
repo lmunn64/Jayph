@@ -9,19 +9,11 @@
 -->
 
 <script setup lang="ts">
+import VueCalendar from './VueCalendar.vue'
 import GuestSelector from './GuestSelector.vue'
+import type { Search } from '~/types/booking'
 
 const selectedDates = ref()
-
-interface Search {
-  location: string
-  checkinDate: string
-  checkoutDate: string
-  adults: number
-  children: number
-  infants: number
-  pets: number
-}
 
 const search = ref<Search>({
     location: '',
@@ -121,7 +113,7 @@ onUnmounted(() => {
                     Check-in → Check-out
                 </button>
                 <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
-                    <Calendar v-model="selectedDates" :for-search="true"/>
+                    <VueCalendar v-model="selectedDates" :for-search="true"/>
                 </div>
             </div>
             <div class="dropdown">

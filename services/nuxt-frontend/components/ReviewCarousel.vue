@@ -26,7 +26,7 @@ const endpoint = props.propertyId
   ? `https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${props.propertyId}/reviews`
   : 'https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
 
-console.log(props.propertyId)
+
 const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, () =>
   $fetch(endpoint)
 )
@@ -120,7 +120,7 @@ h1, p {
 }
 .carousel-wrapper {
   position: relative;
-  /* width: 90vw; */
+  
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -166,13 +166,5 @@ h1, p {
   width: 650px;
   will-change: transform, opacity;
   user-select: none;
-}
-@media (max-width: 600px) {
-    .nav-btn {
-      padding: 0 0.25rem;
-    }
-    .carousel-card {
-      width: 80vw;
-    }
 }
 </style>

@@ -1,46 +1,100 @@
 <script setup lang="ts">
-import Calendar from './Calendar.vue';
+import VueCalendar from './VueCalendar.vue';
 import { ref } from 'vue'
+import type { Quote } from '~/types/booking'
+import type { Calendar } from '~/types/calendar';
 
-const selectedDates = ref()
 interface Props {
     id: string
 }
+const bookingProps= defineProps<Props>()
+
+const selectedDates = ref<string[]>()
+
+const hasPromo = ref(false)
 
 const guestCounts = ref({
-  adults: 2,
-  children: 0,
-  infants: 0,
-  pets: 0
+    adults: 2,
+    children: 0,
+    infants: 0,
+    pets: 0
+})
+const promoCode = ref<string>()
+const quote = ref<Quote>({
+    id: bookingProps.id,
+    checkinDate: '',
+    checkoutDate: '',
+    adults: 1,
+    children: 0,
+    infants: 0,
+    pets: 0,
+    promo: ''
 })
 
-const bookingProps = defineProps<Props>()
+const promoForm = useTemplateRef('promo-form')
+
+//fetch calendar data
+const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
+    $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
+)
+let calendar: Calendar | null = calendar_data.value;
+console.log(calendar_data.value)
 
 // this where we will call quote endpoint teehee
-watch(selectedDates, (newDates, oldDates) => {
+watch([selectedDates, guestCounts, promoCode], ([newDates, newGuests, newPromo]) => {
     // currently have the selected dates in selectedDates, updating great.
     // JUST NEED TO CALL API WITH ALL OTHER DATA and also set up interfaces 
-    // for the responses we will get and send. 
-    console.log('Selected dates changed on ', bookingProps.id, ' :', newDates)
+
+    // if the dates clear, or if there are no dates when adjusting adults and childre
+    // a new quote wont get created
+    if(newDates != undefined){ // for the responses we will get and send. 
+        quote.value.adults = newGuests.adults
+        quote.value.children = newGuests.children
+        quote.value.infants = newGuests.infants
+        quote.value.pets = newGuests.pets
+        quote.value.checkinDate = newDates[0]
+        quote.value.checkoutDate = newDates[1]
+        if(newPromo != undefined)
+            quote.value.promo = newPromo
+        console.log('new quote generated: ', quote.value)
+    }
+    
+    
 }, { deep: true })
 
+const openPromo = () =>{
+    hasPromo.value = !hasPromo.value
+}
+
+const submitPromo = () => {
+    if(promoForm.value != undefined){
+        if(promoForm.value.value != undefined && promoForm.value.value != "")
+            promoCode.value = promoForm.value.value
+        else
+            /**must be valid maybe add class to outline red */
+            return
+    }
+    else{
+
+    }
+    
+}
 </script>
 <template>
     <div class="booking-wrapper">
         <div class= "booking-component">
             <div class= "calendar-col">
-                 <Calendar v-model="selectedDates" />
+                 <VueCalendar v-if = 'calendar' v-model="selectedDates" :cal_data = calendar  />
             </div>
 
             <div class="booking-info"> 
                 <div class = placeholder-guest-selector> 
-                    <GuestSelector v-model="guestCounts" />
+                    <GuestSelector v-model="guestCounts"/>
                 </div>
                 <div class = "price-info"> 
                     <h2 >Price Details</h2>
                     <table class="price-table">
                         <tbody class="price-table-body">
-                            
                             <tr>
                                 <td class="td-start">$164.50 x 4 nights</td>
                                 <td class="td-end">$1.00</td>
@@ -58,20 +112,13 @@ watch(selectedDates, (newDates, oldDates) => {
                                 <td class="td-start">Additional Guest Fee</td>
                                 <td class="td-end">$1.00</td>
                             </tr>
-                            <tr>
-                                <td class="td-start">Additional Guest Fee</td>
-                                <td class="td-end">$1.00</td>
-                            </tr>
-                            <tr>
-                                <td class="td-start">Additional Guest Fee</td>
-                                <td class="td-end">$1.00</td>
-                            </tr>
-                            <tr>
-                                <td class="td-start">Additional Guest Fee</td>
-                                <td class="td-end">$1.00</td>
-                            </tr>
                         </tbody>
                     </table>
+                </div>
+                <p class = "promo-code-text" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
+                <div class = "promo-container" :class = "{ hidden : !hasPromo}">
+                    <input type= "text" class = "promo-code-form" ref = "promo-form">
+                    <button class = "promo-code-btn" @click = submitPromo>Submit</button>
                 </div>
                 
             </div>
@@ -190,6 +237,46 @@ watch(selectedDates, (newDates, oldDates) => {
 .td-start{
     padding: 15px;
     text-align: start;
+}
+.promo-code-text{
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+    margin: 10px;
+}
+.promo-container{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    min-height: 1rem;
+    justify-content: center;
+}
+.promo-code-form{
+    width: 50%;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    margin: 5px;
+}
+/**also later */
+.promo-code-form:focus{
+
+}
+.promo-code-btn{
+    width: auto;
+    height: auto;
+    font-size: small;
+    border-radius: 8px;
+    border-width: 0;
+}
+/** later */
+.promo-code-btn:hover{
+    
+}
+.hidden{
+    display: none;
 }
 
 /* .booking-info {

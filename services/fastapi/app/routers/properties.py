@@ -19,7 +19,7 @@ from dateutil.relativedelta import relativedelta
 import requests
 from dotenv import load_dotenv
 from pydantic import ValidationError
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 
 # Model Imports
 from app.models.property import Property, Address, HouseRules, Capacity, Details
@@ -268,7 +268,7 @@ async def get_reviews(uuid: str):
     return reviews
 
 @router.get('/api_properties/{uuid}/calendar', response_model=Calendar, tags=['hospitable properties'])
-async def get_calendar(uuid : str, start_date : str = date.today(), end_date : str = str(date.today() + relativedelta(months=+4))):
+async def get_calendar(uuid : str, start_date : Optional[str] = Query(None), end_date : Optional[str] = Query(None)):
     """
     Fetches and returns the calendar availability for a given property by its UUID from the external Hospitable API.
 
@@ -281,6 +281,11 @@ async def get_calendar(uuid : str, start_date : str = date.today(), end_date : s
         - 401: If the external API call is forbidden.
         - 409: If the data format is invalid.
     """
+     # Set defaults if not provided
+    if start_date is None:
+        start_date = str(date.today())
+    if end_date is None:
+        end_date = str(date.today() + relativedelta(months=+4))
     try:
         cal_params = {
             'start_date' : start_date,
@@ -335,8 +340,8 @@ async def gen_quote(uuid : str, item: Quote):
             headers={"Authorization": f"Bearer {PAT}"},
             json=quote)
         if response.status_code != 200:
-            print(response.json())
-            raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
+            json = response.json()
+            raise HTTPException(status_code =  response.status_code, detail = json.get('reason_phrase'))
         content = response.json()
         data = content.get("data")
         quote_response = Quote_Response(

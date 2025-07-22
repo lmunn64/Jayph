@@ -1,15 +1,21 @@
 import { defineStore } from 'pinia'
-import type { Property } from '~/types/property'
+import type { Calendar } from '~/types/calendar'
+import type { Property, Review } from '~/types/property'
 
 export const usePropertyStore = defineStore('property', {
   state: () => ({
     properties: [] as Property[],
     isLoaded: false,
+    
+    property_reviews: {} as Record<string, Review[]>,
+
+    property_images: {} as Record<string, string[]>,
+    property_images_loading: {} as Record<string, boolean>,
+    
   }),
   actions: {
     async fetchProperties() {
       if (this.isLoaded) {
-        console.log("Returning cached properties")
         return
       }
       console.log("Fetching properties")
@@ -48,6 +54,41 @@ export const usePropertyStore = defineStore('property', {
         }
       }))
       this.isLoaded = true
+    },
+    // use for later when reviews are set by Jaymi for the front page, use it the same on
+    // the property page ([id].vue) as we do when loading properties on the index.vue.
+    // we want to pass the values from pages to components, not fetch from components.
+    // especially in onMounted calls, as it is not good for caching and server side rendering
+    // for example, in ReviewCarousel.vue. we want the review data sent from the parents as we do 
+    // properties from index.vue -> PropContainer.vue -> PropCard.vue
+    async fetchReviews(propId : string){
+      if(this.property_reviews[propId]){
+        console.log("Returning cached property reviews")
+        return 
+      }
+      const prop_reviews = await $fetch<Review[]>(`https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${propId}/reviews`)
+      this.property_reviews[propId] = prop_reviews.map((el) => ({
+        name: el.name,
+        img_src: el.img_src,
+        date: el.date,
+        platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
+        review_content: el.review_content,
+        rating: el.rating
+      }))
+    },
+    async fetchImages(propId : string){
+      if(this.property_images[propId]){
+        console.log("Returning cached property images")
+        return 
+      }
+      console.log("Fetching property images")
+      this.property_images_loading[propId] = true
+      try {
+        const images = await $fetch<{ url: string }[]>(`https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${propId}/images`)
+        this.property_images[propId] = images.map(img => img.url)
+      } finally {
+        this.property_images_loading[propId] = false
+      }
     }
   }
 })
