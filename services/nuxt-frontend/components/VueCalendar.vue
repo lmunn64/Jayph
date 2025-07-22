@@ -15,6 +15,12 @@ const selectedDates = defineModel({required: true})
 
 const tempDisabledDates = ref<Date[] | undefined>([])
 
+const tempHighlightedDates = ref<Date[]>([])
+
+const tempHighlightedMaxDate = ref<Date[]>([])
+
+const minStayHighlightedDates = ref<Date[]>([])
+
 const isLoading = ref<boolean>(true)
 
 interface Props {
@@ -62,8 +68,8 @@ const handleDateUpdate = (selectedDate : Date[]) => {
         clearDateBtn.value?.classList.remove('set')
     }
 }
+
 // handle the selection of the first date in a calendar
-// need to disable
 const handleDateSelection = (selectedDate : Date) =>{
     if(!props.cal_data){
         return
@@ -81,10 +87,21 @@ const handleDateSelection = (selectedDate : Date) =>{
     }
 
     const min_stay = startDateObj.min_stay
-
+    
     const startDateIndex = props.cal_data.dates.findIndex(d => d.date === startDate)
+
     const maxDateIndex : number = props.cal_data.dates.findIndex((d, index, dArr) => index >= startDateIndex && !d.available && (!dArr[index - 1]?.available && !d.closed_for_checkin))
-    console.log(maxDateIndex)
+   
+    // find the last date that can be selected if it is a checkin only date.
+    const checkinHighlightedDate = tempHighlightedDates.value.find(d=> formatSingleDate(d) === props.cal_data?.dates.at(maxDateIndex - 1)?.date)
+    if(checkinHighlightedDate)
+        tempHighlightedMaxDate.value.push(checkinHighlightedDate)
+    //add highlighted dates for min stay restrictions
+    console.log(min_stay)
+    if(min_stay > 1){
+        minStayHighlightedDates.value = props.cal_data.dates.filter((d, index, dArr) => index > startDateIndex && index < startDateIndex + min_stay)
+        .map(d=> new Date(d.date + 'T00:00:00'))
+    }
 
     tempDisabledDates.value = props.cal_data.dates.filter((d, index, dArr) => index < startDateIndex || (maxDateIndex > 0 && index >= maxDateIndex))
     .map(d => new Date(d.date + 'T00:00:00'))
@@ -96,7 +113,6 @@ const formatSingleDate = (date : Date) => {
     const month = date.getMonth() + 1
     const year = date.getFullYear()
     return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
-
 }
 
 const clearTempDisabledDates = () => {
@@ -108,7 +124,13 @@ const clearTempDisabledDates = () => {
 const clearDate = () => {
     date.value = null
     if(datepicker.value)
-        datepicker.value.clearValue() 
+        datepicker.value.clearValue()
+
+    // return the checkin only date to the calendar 
+    tempHighlightedMaxDate.value.pop()
+    for(var i =0; i < minStayHighlightedDates.value.length; i++){
+        minStayHighlightedDates.value.pop()
+    }
     
     selectedDates.value = null
     clearTempDisabledDates()
@@ -130,16 +152,25 @@ const unavailableDates = computed(() => {
 
 // Only highlight if its not available, the previous date is available, AND the current is NOT closed for check in
 const checkInOnly = computed(() => {
-    if (!props.cal_data){
+ if (!props.cal_data) {
         return []
     }
-    const checkInOnly : Date[] = props.cal_data.dates
+    // Get all check-in only dates
+    const highlighted = props.cal_data.dates
         .filter((d, index, dArr) => (
-            !d.available
-            && (dArr[index - 1]?.available && !d.closed_for_checkin)
+            !d.available &&
+            (dArr[index - 1]?.available && !d.closed_for_checkin)
         ))
         .map(d => new Date(d.date + 'T00:00:00'))
-    return checkInOnly
+
+    // Remove any dates that are in tempHighlightedMaxDate.value
+    const filtered = highlighted.filter(
+        d => !tempHighlightedMaxDate.value.some(
+            maxDate => d.getTime() === maxDate.getTime()
+        )
+    )
+    tempHighlightedDates.value = highlighted
+    return [...filtered, ...(minStayHighlightedDates.value || [])]
 })
 
 onMounted(() => {
@@ -262,13 +293,16 @@ onUnmounted(() => {
 }
 
 /** Checkin only dates */
-.calendarContainer :deep(.dp__cell_highlight){
+.calendarContainer :deep(.dp__calendar_item .dp__cell_highlight){
     cursor:not-allowed;
     pointer-events: none;
-    
     color: #2125298a;
 }
 
+.calendarContainer :deep(.dp__calendar_item:has(.dp__cell_highlight)) {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+}
 .search-calendar .calendarContainer {
     --dp-cell-size: 45px; /* Smaller cells for search dropdown */
     --dp-cell-padding: 3px;
