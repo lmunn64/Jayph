@@ -96,6 +96,7 @@ const handleDateSelection = (selectedDate : Date) =>{
     const checkinHighlightedDate = tempHighlightedDates.value.find(d=> formatSingleDate(d) === props.cal_data?.dates.at(maxDateIndex - 1)?.date)
     if(checkinHighlightedDate)
         tempHighlightedMaxDate.value.push(checkinHighlightedDate)
+
     //add highlighted dates for min stay restrictions
     console.log(min_stay)
     if(min_stay > 1){
@@ -278,6 +279,7 @@ onUnmounted(() => {
 
 .calendarContainer :deep(.dp__theme_light) {
     --dp-primary-color: rgba(0, 0, 0, 0.74);
+    --dp-highlight-color: rgb(25 118 210 / 10%);
     --dp-primary-text-color: #ffffff;
     --dp-secondary-color: #cccccc;
     --dp-background-color: #ffffff;
@@ -297,12 +299,18 @@ onUnmounted(() => {
     cursor:not-allowed;
     pointer-events: none;
     color: #2125298a;
+
 }
 
 .calendarContainer :deep(.dp__calendar_item:has(.dp__cell_highlight)) {
     pointer-events: none !important;
     cursor: not-allowed !important;
 }
+
+.calendarContainer :deep(.dp__calendar_item:has(.dp__range_between)) {
+   background-color: #daf0fd;
+}
+
 .search-calendar .calendarContainer {
     --dp-cell-size: 45px; /* Smaller cells for search dropdown */
     --dp-cell-padding: 3px;

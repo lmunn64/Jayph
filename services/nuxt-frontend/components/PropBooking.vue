@@ -79,6 +79,7 @@ const submitPromo = () => {
     }
     
 }
+
 </script>
 <template>
     <div class="booking-wrapper">
@@ -199,7 +200,6 @@ const submitPromo = () => {
     .booking-component{
         flex-direction: column;
         align-items: center;
-        
     }
     .calendar-col{
         width: 100%;

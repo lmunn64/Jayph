@@ -119,8 +119,8 @@ h1, p {
   text-align: center;
 }
 .carousel-wrapper {
+  overflow-x: scroll;
   position: relative;
-  
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -154,6 +154,7 @@ h1, p {
   width: 100%;
   scroll-snap-type: x mandatory;
   padding-bottom: 2rem;
+  user-select: none;
 }
 
 .carousel::-webkit-scrollbar {

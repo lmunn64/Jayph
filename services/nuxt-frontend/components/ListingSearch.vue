@@ -14,7 +14,11 @@ import GuestSelector from './GuestSelector.vue'
 import type { Search } from '~/types/booking'
 
 const selectedDates = ref()
-
+const options = {
+  year: "numeric" as const,
+  month: "short" as const,
+  day: "numeric" as const
+}
 const search = ref<Search>({
     location: '',
     checkinDate: '',
@@ -33,11 +37,21 @@ const guestCounts = ref({
   pets: 0
 })
 
-watch(guestCounts, (newVal) => {
-  search.value.adults = newVal.adults
-  search.value.children = newVal.children
-  search.value.infants = newVal.infants
-  search.value.pets = newVal.pets
+watch([guestCounts, selectedDates], ([newGuests, newDates]) => {
+  search.value.adults = newGuests.adults
+  search.value.children = newGuests.children
+  search.value.infants = newGuests.infants
+  search.value.pets = newGuests.pets
+  console.log(newDates)
+  if(newDates !== undefined){
+    search.value.checkinDate = newDates[0]
+    search.value.checkoutDate = newDates[1]
+  }
+  else {
+    search.value.checkinDate = ''
+    search.value.checkoutDate = ''
+  }
+  console.log(search.value)
 })
 
 // compute button content when updating num guests
@@ -86,7 +100,11 @@ function setLocation (loc: string) {
 function searchListings (input: Search){
     // redirect to search results page
 }
-
+const formattedDate = (date : string) =>{
+  //assume YYYY-MM-DD
+  const toFormat : Date = new Date(date)
+  return toFormat.toLocaleDateString(undefined, options)
+}
 onMounted(() => {
   window.addEventListener('click', handleClickOutside)
 })
@@ -110,7 +128,7 @@ onUnmounted(() => {
             </div>
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(1, e)">
-                    Check-in → Check-out
+                    {{search.checkinDate && search.checkoutDate ? `${formattedDate(search.checkinDate)} → ${formattedDate(search.checkoutDate)}` : "Check-in → Check-out"}}
                 </button>
                 <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
                     <VueCalendar v-model="selectedDates" :for-search="true"/>
