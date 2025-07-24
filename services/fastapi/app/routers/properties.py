@@ -15,6 +15,8 @@ from datetime import date
 from typing import Dict, List, Optional
 import os
 import json
+import time
+
 from dateutil.relativedelta import relativedelta
 import requests
 from dotenv import load_dotenv
@@ -34,9 +36,8 @@ from app.modules.date import format_date_ISO
 from app.modules.image_link_enlarger import get_enlarged_URL
 from app.models.search import Property_Total
 
-
-
-
+## time to live for reviews and images
+CACHE_TTL = 60 * 60
 
 '''base path for .env'''
 env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.env')
@@ -217,6 +218,11 @@ async def get_images(uuid: str):
         - 401: If the external API call is forbidden.
         - 409: If the data format is invalid.
     """
+    now = time.time()
+    last_updated = properties_cache['property_images_last_updated'].get(uuid)
+    if(uuid in properties_cache.get('property_images', {}) and last_updated and (now - last_updated < CACHE_TTL)):
+        print('returning ${uuid} cached images')
+        return properties_cache['property_images'][uuid]
     try:
         response = requests.get(f"https://public.api.hospitable.com/v2/properties/{uuid}/images",
                                 headers={"Authorization": f"Bearer {PAT}"})
@@ -231,6 +237,8 @@ async def get_images(uuid: str):
         ) for item in content.get('data')]
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
+    properties_cache['property_images'][uuid] = images
+    properties_cache['property_images_last_updated'][uuid] = now
     return images
 
 @router.get('/api_properties/{uuid}/reviews', response_model=List[Review], tags=['hospitable properties'])
@@ -244,6 +252,11 @@ async def get_reviews(uuid: str):
         - 401: If the external API call is forbidden.
         - 409: If the data format is invalid.
     """
+    now = time.time()
+    last_updated = properties_cache['property_reviews_last_updated'].get(uuid)
+    if(uuid in properties_cache.get('property_reviews', {}) and last_updated and (now - last_updated < CACHE_TTL)):
+        print('returning ${uuid} cached reviews')
+        return properties_cache['property_reviews'][uuid]
     try:
         response = requests.get(f"https://public.api.hospitable.com/v2/properties/{uuid}/reviews?include=guest",
                                 headers={"Authorization": f"Bearer {PAT}"})
@@ -265,6 +278,8 @@ async def get_reviews(uuid: str):
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
     except AttributeError as e:
         raise HTTPException(status_code=409, detail='Attribute Error: External API has returned unexpected response format')
+    properties_cache['property_reviews'][uuid] = reviews
+    properties_cache['property_reviews_last_updated'][uuid] = now
     return reviews
 
 @router.get('/api_properties/{uuid}/calendar', response_model=Calendar, tags=['hospitable properties'])

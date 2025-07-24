@@ -18,42 +18,48 @@ export const usePropertyStore = defineStore('property', {
       if (this.isLoaded) {
         return
       }
-      console.log("Fetching properties")
-      const properties = await $fetch<Property[]>('https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties')
-      this.properties = properties.map((el) => ({
-        id: el.id,
-        name: el.name,
-        picture_url: el.picture_url,
-        address: {
-          street: el.address.street,
-          city: el.address.city,
-          state: el.address.state,
-          country: el.address.country,
-          postcode: el.address.postcode,
-        },
-        amenities: el.amenities,
-        description: el.description,
-        summary: el.summary,
-        capacity: {
-          max: el.capacity.max,
-          bedrooms: el.capacity.bedrooms,
-          beds: el.capacity.beds,
-          bathrooms: el.capacity.bathrooms,
-        },
-        house_rules: {
-          pets_allowed: el.house_rules.pets_allowed,
-          smoking_allowed: el.house_rules.smoking_allowed,
-          events_allowed: el.house_rules.events_allowed,
-        },
-        details : {
-          space_overview: el.details.space_overview,
-          guest_access: el.details.guest_access,
-          other_details: el.details.other_details,
-          neighborhood_description: el.details.neighborhood_description,
-          getting_around: el.details.getting_around
-        }
-      }))
-      this.isLoaded = true
+      try {
+        console.log("fetching properties from api gateway")
+        const properties = await $fetch<Property[]>('https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
+        this.properties = properties.map((el) => ({
+          id: el.id,
+          name: el.name,
+          picture_url: el.picture_url,
+          address: {
+            street: el.address.street,
+            city: el.address.city,
+            state: el.address.state,
+            country: el.address.country,
+            postcode: el.address.postcode,
+          },
+          amenities: el.amenities,
+          description: el.description,
+          summary: el.summary,
+          capacity: {
+            max: el.capacity.max,
+            bedrooms: el.capacity.bedrooms,
+            beds: el.capacity.beds,
+            bathrooms: el.capacity.bathrooms,
+          },
+          house_rules: {
+            pets_allowed: el.house_rules.pets_allowed,
+            smoking_allowed: el.house_rules.smoking_allowed,
+            events_allowed: el.house_rules.events_allowed,
+          },
+          details : {
+            space_overview: el.details.space_overview,
+            guest_access: el.details.guest_access,
+            other_details: el.details.other_details,
+            neighborhood_description: el.details.neighborhood_description,
+            getting_around: el.details.getting_around
+          }
+        }))
+        this.isLoaded = true
+      } catch (error) {
+        console.error("Error fetching properties:", error)
+        this.isLoaded = false
+        // set an error state or message here
+      }
     },
     // use for later when reviews are set by Jaymi for the front page, use it the same on
     // the property page ([id].vue) as we do when loading properties on the index.vue.
@@ -66,7 +72,8 @@ export const usePropertyStore = defineStore('property', {
         console.log("Returning cached property reviews")
         return 
       }
-      const prop_reviews = await $fetch<Review[]>(`https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${propId}/reviews`)
+      console.log("fetching propery reviews from api gateway")
+      const prop_reviews = await $fetch<Review[]>(`https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/reviews`)
       this.property_reviews[propId] = prop_reviews.map((el) => ({
         name: el.name,
         img_src: el.img_src,
@@ -84,9 +91,13 @@ export const usePropertyStore = defineStore('property', {
       console.log("Fetching property images")
       this.property_images_loading[propId] = true
       try {
-        const images = await $fetch<{ url: string }[]>(`https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${propId}/images`)
+        const images = await $fetch<{ url: string }[]>(`https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/images`)
         this.property_images[propId] = images.map(img => img.url)
-      } finally {
+      } catch (error) {
+        console.error("Error fetching property images:", error)
+        // set an error state or message here
+      }
+      finally {
         this.property_images_loading[propId] = false
       }
     }
