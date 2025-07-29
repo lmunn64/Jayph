@@ -85,7 +85,7 @@ const handleDateSelection = (selectedDate : Date) =>{
     if(!startDateObj){
         return
     }
-
+  
     const min_stay = startDateObj.min_stay
     
     const startDateIndex = props.cal_data.dates.findIndex(d => d.date === startDate)
@@ -96,7 +96,7 @@ const handleDateSelection = (selectedDate : Date) =>{
     const checkinHighlightedDate = tempHighlightedDates.value.find(d=> formatSingleDate(d) === props.cal_data?.dates.at(maxDateIndex - 1)?.date)
     if(checkinHighlightedDate)
         tempHighlightedMaxDate.value.push(checkinHighlightedDate)
-
+    
     //add highlighted dates for min stay restrictions
     console.log(min_stay)
     if(min_stay > 1){
@@ -109,6 +109,7 @@ const handleDateSelection = (selectedDate : Date) =>{
 
 }
 
+/** Format Date to a string value following "YYYY-MM-DD" */
 const formatSingleDate = (date : Date) => {
     const day = date.getDate()
     const month = date.getMonth() + 1
@@ -139,6 +140,7 @@ const clearDate = () => {
     clearDateBtn.value?.classList.remove('set')
 }
 
+/** Grab the unavailable dates from the json calendar data, update on computed anytime tempDisabledDates value updates */
 const unavailableDates = computed(() => {
     const base = props.cal_data
         ? props.cal_data.dates
@@ -302,7 +304,18 @@ onUnmounted(() => {
 
 }
 
+/** Don't allow clicks for end start and highlighted (max stay restricted) dates */
 .calendarContainer :deep(.dp__calendar_item:has(.dp__cell_highlight)) {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+}
+
+.calendarContainer :deep(.dp__calendar_item:has(.dp__range_start)) {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+}
+
+.calendarContainer :deep(.dp__calendar_item:has(.dp__range_end)) {
     pointer-events: none !important;
     cursor: not-allowed !important;
 }

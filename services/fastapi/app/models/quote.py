@@ -7,7 +7,7 @@ class Guests(BaseModel):
     infants: int
     pets: int
 
-'''Quote generation body mode to validate generating a quote body'''
+'''Quote generation body model to validate generating a quote body'''
 class Quote(BaseModel):
     checkin_date: str
     checkout_date: str

@@ -20,7 +20,7 @@ export const usePropertyStore = defineStore('property', {
       }
       try {
         console.log("fetching properties from api gateway")
-        const properties = await $fetch<Property[]>('https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
+        const properties = await $fetch<Property[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
         this.properties = properties.map((el) => ({
           id: el.id,
           name: el.name,
@@ -73,7 +73,7 @@ export const usePropertyStore = defineStore('property', {
         return 
       }
       console.log("fetching propery reviews from api gateway")
-      const prop_reviews = await $fetch<Review[]>(`https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/reviews`)
+      const prop_reviews = await $fetch<Review[]>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/reviews`)
       this.property_reviews[propId] = prop_reviews.map((el) => ({
         name: el.name,
         img_src: el.img_src,
@@ -91,7 +91,7 @@ export const usePropertyStore = defineStore('property', {
       console.log("Fetching property images")
       this.property_images_loading[propId] = true
       try {
-        const images = await $fetch<{ url: string }[]>(`https://9un9op31m7.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/images`)
+        const images = await $fetch<{ url: string }[]>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/images`)
         this.property_images[propId] = images.map(img => img.url)
       } catch (error) {
         console.error("Error fetching property images:", error)

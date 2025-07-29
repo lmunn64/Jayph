@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueCalendar from './VueCalendar.vue';
 import { ref } from 'vue'
-import type { Quote } from '~/types/booking'
+import type { Guests, Quote, Quote_Response } from '~/types/booking'
 import type { Calendar } from '~/types/calendar';
 
 interface Props {
@@ -13,22 +13,20 @@ const selectedDates = ref<string[]>()
 
 const hasPromo = ref(false)
 
-const guestCounts = ref({
+const guestCounts = ref<Guests>({
     adults: 2,
     children: 0,
     infants: 0,
     pets: 0
 })
+
 const promoCode = ref<string>()
+
 const quote = ref<Quote>({
-    id: bookingProps.id,
-    checkinDate: '',
-    checkoutDate: '',
-    adults: 1,
-    children: 0,
-    infants: 0,
-    pets: 0,
-    promo: ''
+    checkin_date: '',
+    checkout_date: '',
+    guests: guestCounts.value,
+    promo_code: undefined
 })
 
 const promoForm = useTemplateRef('promo-form')
@@ -41,22 +39,30 @@ let calendar: Calendar | null = calendar_data.value;
 console.log(calendar_data.value)
 
 // this where we will call quote endpoint teehee
-watch([selectedDates, guestCounts, promoCode], ([newDates, newGuests, newPromo]) => {
+watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
     // currently have the selected dates in selectedDates, updating great.
     // JUST NEED TO CALL API WITH ALL OTHER DATA and also set up interfaces 
 
-    // if the dates clear, or if there are no dates when adjusting adults and childre
-    // a new quote wont get created
-    if(newDates != undefined){ // for the responses we will get and send. 
-        quote.value.adults = newGuests.adults
-        quote.value.children = newGuests.children
-        quote.value.infants = newGuests.infants
-        quote.value.pets = newGuests.pets
-        quote.value.checkinDate = newDates[0]
-        quote.value.checkoutDate = newDates[1]
+    /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
+    if(newDates != undefined){
+        quote.value.guests.adults = newGuests.adults
+        quote.value.guests.children = newGuests.children
+        quote.value.guests.infants = newGuests.infants
+        quote.value.guests.pets = newGuests.pets
+        quote.value.checkin_date = newDates[0]
+        quote.value.checkout_date = newDates[1]
         if(newPromo != undefined)
-            quote.value.promo = newPromo
+            quote.value.promo_code = newPromo
         console.log('new quote generated: ', quote.value)
+        const {data: quote_response, error} = await useAsyncData<Quote_Response>(()=>
+            $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/quote`,{
+                method: 'POST',
+                body: quote.value,
+            })
+        )
+        if(quote_response.value){
+            console.log("Quote received: ", quote_response.value)
+        }
     }
     
     
@@ -82,18 +88,19 @@ const submitPromo = () => {
 
 </script>
 <template>
-    <div class="booking-wrapper">
+    <div class="booking-wrapper">                
         <div class= "booking-component">
-            <div class= "calendar-col">
-                 <VueCalendar v-if = 'calendar' v-model="selectedDates" :cal_data = calendar  />
+            <h2 v-if = '!calendar'> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
+            <div class= "calendar-col" v-if = 'calendar'>
+                 <VueCalendar v-model="selectedDates" :cal_data = calendar  />
             </div>
 
-            <div class="booking-info"> 
+            <div class="booking-info" v-if = 'calendar'> 
                 <div class = placeholder-guest-selector> 
-                    <GuestSelector v-model="guestCounts"/>
+                    <GuestSelector v-if = 'calendar' v-model="guestCounts"/>
                 </div>
                 <div class = "price-info"> 
-                    <h2 >Price Details</h2>
+                    <h2>Price Details</h2>
                     <table class="price-table">
                         <tbody class="price-table-body">
                             <tr>
@@ -132,13 +139,13 @@ const submitPromo = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+
     border-radius: 10px;
-    min-height: 80vh;
+    min-height: 25vh;
     width: 100%;
     background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
-
 }
 
 .booking-component {
@@ -149,7 +156,6 @@ const submitPromo = () => {
     width: 100%;
     height:100%;
     max-width: 1200px;
-    
 }
 
 .calendar-col {
