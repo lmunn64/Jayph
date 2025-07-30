@@ -36,45 +36,53 @@ const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bo
     $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
 )
 let calendar: Calendar | null = calendar_data.value;
-console.log(calendar_data.value)
 
-// this where we will call quote endpoint teehee
+// debouncer for watched booking details
+let debounceTimer: ReturnType<typeof setTimeout> | null = null
+
+
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
-    /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
-    if(newDates != undefined){
-        const quotePayload = {
-        checkin_date: selectedDates.value?.[0] ?? '',
-        checkout_date: selectedDates.value?.[1] ?? '',
-        guests: {
-            adults: guestCounts.value.adults,
-            children: guestCounts.value.children,
-            infants: guestCounts.value.infants,
-            pets: guestCounts.value.pets
-        },
-        promo_code: promoCode.value
-        }
-        if(newPromo != undefined)
-            quotePayload.promo_code = newPromo
-        console.log('quote being generated...: ', quotePayload)
-        
-        try{
-            is_fetching_quote.value = true
-            const quote_response = await $fetch<Quote_Response>(
-            `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
-            {
-                method: 'POST',
-                body: quotePayload,
-            })     
-            if(quote_response){
-                current_quote.value = quote_response
-                console.log("Quote received: ", current_quote.value)
+    /** Debouncer for rapid guest or date changes */
+    if(debounceTimer)
+        clearTimeout(debounceTimer)
+    debounceTimer = setTimeout(async ()=> {
+        /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
+        if(newDates != undefined){
+            const quotePayload = {
+            checkin_date: selectedDates.value?.[0] ?? '',
+            checkout_date: selectedDates.value?.[1] ?? '',
+            guests: {
+                adults: guestCounts.value.adults,
+                children: guestCounts.value.children,
+                infants: guestCounts.value.infants,
+                pets: guestCounts.value.pets
+            },
+            promo_code: promoCode.value
+            }
+            if(newPromo != undefined)
+                quotePayload.promo_code = newPromo
+            console.log('quote being generated...: ', quotePayload)
+            
+            try{
+                is_fetching_quote.value = true
+                const quote_response = await $fetch<Quote_Response>(
+                `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
+                {
+                    method: 'POST',
+                    body: quotePayload,
+                })     
+                if(quote_response){
+                    current_quote.value = quote_response
+                    console.log("Quote received: ", current_quote.value)
+                    is_fetching_quote.value = false
+                }
+            } catch (error) {
+                console.error("Error fetching quote:", error)
                 is_fetching_quote.value = false
             }
-        } catch (error) {
-            console.error("Error fetching quote:", error)
-            is_fetching_quote.value = false
         }
-    }
+    }, 500)
+    
 }, { deep: true })
 
 const openPromo = () =>{

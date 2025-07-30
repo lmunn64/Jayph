@@ -23,6 +23,8 @@ const minStayHighlightedDates = ref<Date[]>([])
 
 const isLoading = ref<boolean>(true)
 
+const maxDate = ref(new Date().setFullYear(new Date().getFullYear() + 2))
+
 interface Props {
     forSearch?: boolean 
     cal_data?: Calendar 
@@ -208,6 +210,7 @@ onUnmounted(() => {
                     :disabled-dates="unavailableDates"
                     prevent-min-max-navigation
                     :min-date="new Date()"
+                    :max-date="maxDate"
                     :month-change-on-scroll="false"
                     @update:model-value="handleDateUpdate"
                     @range-start="handleDateSelection"

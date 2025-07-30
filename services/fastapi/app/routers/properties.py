@@ -300,7 +300,7 @@ async def get_calendar(uuid : str, start_date : Optional[str] = Query(None), end
     if start_date is None:
         start_date = str(date.today())
     if end_date is None:
-        end_date = str(date.today() + relativedelta(months=+4))
+        end_date = str(date.today() + relativedelta(years=+2))
     try:
         cal_params = {
             'start_date' : start_date,
