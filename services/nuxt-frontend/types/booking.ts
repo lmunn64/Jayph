@@ -40,6 +40,7 @@ export interface Discount{
 export interface Quote_Response{
     quote_id: string
     booking_url: string
+    sub_total: string
     fees: Fee[]
     discounts: Discount[]
     total_before_tax: string

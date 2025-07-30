@@ -350,7 +350,7 @@ async def gen_quote(uuid : str, item: Quote):
     """
     try: 
         quote = item.model_dump(exclude_none=True)
-        print(quote)
+        print(item)
         response = requests.post(f"https://public.api.hospitable.com/v2/properties/{uuid}/quote",
             headers={"Authorization": f"Bearer {PAT}"},
             json=quote)
@@ -362,13 +362,14 @@ async def gen_quote(uuid : str, item: Quote):
         quote_response = Quote_Response(
             quote_id= data.get("quote_id"),
             booking_url= data.get("booking_url"),
+            sub_total = data.get("financials").get("totals").get("sub_total").get("formatted"),
             fees = [Fee(**fee) for fee in data.get("financials").get("fees")],
             discounts= [Discount(**disc) for disc in data.get("financials").get("discounts")],
             total_before_tax= data.get("financials").get("totals").get("total_without_taxes").get("formatted")
         )
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
-    return {"message": "Quote created successfully", "quote": quote_response}
+    return quote_response
 
 @router.get('/api_properties/search', response_model= list[Property_Total], tags=['hospitable properties'])
 async def search_properties(adults: int, start_date: str, end_date: str, children : Optional[int] = None, infants : Optional[int] = None, pets : Optional[int] = None, location : Optional[str] = None):

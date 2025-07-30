@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import VueCalendar from './VueCalendar.vue';
 import { ref } from 'vue'
-import type { Guests, Quote, Quote_Response } from '~/types/booking'
+import type { Guests, Quote, Quote_Response, Fee, Discount} from '~/types/booking'
 import type { Calendar } from '~/types/calendar';
 
 interface Props {
     id: string
 }
+
 const bookingProps= defineProps<Props>()
 
 const selectedDates = ref<string[]>()
@@ -22,16 +23,15 @@ const guestCounts = ref<Guests>({
 
 const promoCode = ref<string>()
 
-const quote = ref<Quote>({
-    checkin_date: '',
-    checkout_date: '',
-    guests: guestCounts.value,
-    promo_code: undefined
-})
 
 const promoForm = useTemplateRef('promo-form')
 
-//fetch calendar data
+// stored current quote, starts undefined
+const current_quote = ref<Quote_Response>()
+
+const is_fetching_quote = ref<boolean>(false)
+
+// fetch calendar data
 const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
     $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
 )
@@ -40,32 +40,41 @@ console.log(calendar_data.value)
 
 // this where we will call quote endpoint teehee
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
-    // currently have the selected dates in selectedDates, updating great.
-    // JUST NEED TO CALL API WITH ALL OTHER DATA and also set up interfaces 
-
     /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
     if(newDates != undefined){
-        quote.value.guests.adults = newGuests.adults
-        quote.value.guests.children = newGuests.children
-        quote.value.guests.infants = newGuests.infants
-        quote.value.guests.pets = newGuests.pets
-        quote.value.checkin_date = newDates[0]
-        quote.value.checkout_date = newDates[1]
+        const quotePayload = {
+        checkin_date: selectedDates.value?.[0] ?? '',
+        checkout_date: selectedDates.value?.[1] ?? '',
+        guests: {
+            adults: guestCounts.value.adults,
+            children: guestCounts.value.children,
+            infants: guestCounts.value.infants,
+            pets: guestCounts.value.pets
+        },
+        promo_code: promoCode.value
+        }
         if(newPromo != undefined)
-            quote.value.promo_code = newPromo
-        console.log('new quote generated: ', quote.value)
-        const {data: quote_response, error} = await useAsyncData<Quote_Response>(()=>
-            $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/quote`,{
+            quotePayload.promo_code = newPromo
+        console.log('quote being generated...: ', quotePayload)
+        
+        try{
+            is_fetching_quote.value = true
+            const quote_response = await $fetch<Quote_Response>(
+            `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
+            {
                 method: 'POST',
-                body: quote.value,
-            })
-        )
-        if(quote_response.value){
-            console.log("Quote received: ", quote_response.value)
+                body: quotePayload,
+            })     
+            if(quote_response){
+                current_quote.value = quote_response
+                console.log("Quote received: ", current_quote.value)
+                is_fetching_quote.value = false
+            }
+        } catch (error) {
+            console.error("Error fetching quote:", error)
+            is_fetching_quote.value = false
         }
     }
-    
-    
 }, { deep: true })
 
 const openPromo = () =>{
@@ -87,6 +96,7 @@ const submitPromo = () => {
 }
 
 </script>
+
 <template>
     <div class="booking-wrapper">                
         <div class= "booking-component">
@@ -99,36 +109,42 @@ const submitPromo = () => {
                 <div class = placeholder-guest-selector> 
                     <GuestSelector v-if = 'calendar' v-model="guestCounts"/>
                 </div>
-                <div class = "price-info"> 
+                
+                <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
                     <h2>Price Details</h2>
                     <table class="price-table">
                         <tbody class="price-table-body">
                             <tr>
-                                <td class="td-start">$164.50 x 4 nights</td>
-                                <td class="td-end">$1.00</td>
+                                <td class="td-start">Sub Total</td>
+                                <td class="td-end">{{ current_quote.sub_total }}</td>
                             </tr>
-                            <tr>
-                                <td class="td-start">Cleaning Fee</td>
-                            
-                                <td class="td-end">$1.00</td>
+                            <tr  v-for="(fee, i) in current_quote.fees" :key ="`$fee-${i}`">
+                                <td class="td-start">{{ fee.label }}</td>
+                                <td class="td-end">{{ fee.formatted }}</td>
                             </tr>
-                            <tr>
-                                <td class="td-start">Pet Fee</td>
-                                <td class="td-end">$1.00</td>
-                            </tr>
-                            <tr>
-                                <td class="td-start">Additional Guest Fee</td>
-                                <td class="td-end">$1.00</td>
+                             <tr  v-for="(discount, i) in current_quote.discounts" :key ="`$discount-${i}`">
+                                <td class="td-start">{{ discount.label }}</td>
+                                <td class="td-end">{{ discount.formatted }}</td>
                             </tr>
                         </tbody>
                     </table>
+                    <table class="total-table">
+                        <tbody class="price-table-body">
+                            <tr>
+                                <td class="td-total-start">Total Before Taxes</td>
+                                <td class="td-total-end">{{ current_quote.total_before_tax }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                   
                 </div>
-                <p class = "promo-code-text" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
+                <p class = "promo-code-text" v-if="current_quote" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
                 <div class = "promo-container" :class = "{ hidden : !hasPromo}">
                     <input type= "text" class = "promo-code-form" ref = "promo-form">
                     <button class = "promo-code-btn" @click = submitPromo>Submit</button>
                 </div>
-                
+                <div class="loader" v-if="is_fetching_quote"></div>
             </div>
         </div>
     </div>
@@ -164,8 +180,8 @@ const submitPromo = () => {
     height: 90%;
     justify-content: center;
     align-items: center; 
-    border-style: dashed;
-    border-width: 1px;
+    /* border-style: dashed;
+    border-width: 1px; */
     padding: 20px; 
 }
 
@@ -175,8 +191,8 @@ const submitPromo = () => {
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    border-style: dashed;
-    border-width: 1px;
+    /* border-style: dashed;
+    border-width: 1px; */
     padding: 20px; 
 }
 
@@ -185,9 +201,11 @@ const submitPromo = () => {
     flex-direction: column;
     justify-content: center; 
     align-items: flex-start;
-    border-style: dashed;
-    border-width: 1px;
+    /* border-style: dashed;
+    border-width: 1px; */
 }
+
+
 
 .placeholder-guest-selector {
     display: flex;
@@ -228,22 +246,42 @@ const submitPromo = () => {
     }
 }
 
-.price-table {
+/** price table styling */
+.total-table {
     width: 100%; 
     margin: 0 auto;
-    border-collapse: collapse;
     table-layout: auto; 
 }
 
+.price-table {
+    width: 100%; 
+    margin: 0 auto;
+    table-layout: auto; 
+    border-bottom: 1px solid #00000023;
+}
 .td-end{
-    padding: 15px;
+    padding: 5px;
     text-align: end;
+    opacity: 60%;
 }
 
 .td-start{
     padding: 15px;
     text-align: start;
+    opacity: 60%;
 }
+
+.td-total-start{
+    padding-top: 15px;
+    text-align: start;
+    font-size:larger;
+}
+.td-total-end{
+    padding-top: 15px;
+    text-align: end;
+    font-size:larger;
+}
+
 .promo-code-text{
     text-decoration: underline;
     font-style: italic;
@@ -285,6 +323,23 @@ const submitPromo = () => {
     display: none;
 }
 
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
 /* .booking-info {
     overflow-y: auto;
 } */
