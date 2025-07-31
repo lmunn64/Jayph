@@ -11,6 +11,8 @@ const isWideEnough = ref(false)
 const clearDateBtn = useTemplateRef('clear-date-btn')
 const datepicker = ref<DatePickerInstance>(null);
 
+const emit = defineEmits(['delete-quote-response'])
+
 const selectedDates = defineModel({required: true})
 
 const tempDisabledDates = ref<Date[] | undefined>([])
@@ -23,7 +25,7 @@ const minStayHighlightedDates = ref<Date[]>([])
 
 const isLoading = ref<boolean>(true)
 
-const maxDate = ref(new Date().setFullYear(new Date().getFullYear() + 2))
+const maxDate = ref(new Date(new Date().setFullYear(new Date().getFullYear() + 2)))
 
 interface Props {
     forSearch?: boolean 
@@ -76,6 +78,10 @@ const handleDateSelection = (selectedDate : Date) =>{
     if(!props.cal_data){
         return
     }
+    
+    //emit clearQuoteResponse in parent
+    emit('delete-quote-response')
+
     const startDate = formatSingleDate(selectedDate)
     console.log(startDate)
 
@@ -138,8 +144,13 @@ const clearDate = () => {
     
     selectedDates.value = null
     clearTempDisabledDates()
+
+    //emit clearQuoteResponse in parent
+    emit('delete-quote-response')
+    
     console.log('Dates cleared')
     clearDateBtn.value?.classList.remove('set')
+    
 }
 
 /** Grab the unavailable dates from the json calendar data, update on computed anytime tempDisabledDates value updates */
@@ -207,6 +218,8 @@ onUnmounted(() => {
                     :key="isWideEnough"
                     :highlight="checkInOnly"
                     no-today
+                    :locale="'en-GB'"
+                    month-name-format="long"
                     :disabled-dates="unavailableDates"
                     prevent-min-max-navigation
                     :min-date="new Date()"
@@ -269,7 +282,7 @@ onUnmounted(() => {
 }
 
 .calendarContainer {
-    --dp-cell-size: 65px;
+    --dp-cell-size: 68px;
     --dp-border-radius: 3px;
     --dp-button-height: 4px;
     --dp-font-size: 1.2rem;
@@ -312,7 +325,19 @@ onUnmounted(() => {
     pointer-events: none !important;
     cursor: not-allowed !important;
 }
+.calendarContainer :deep(.dp__calendar_header_item) {
+    height: auto;
+}
+/** Calendar dates */
+.calendarContainer :deep(.dp__month_year_select) {
+    width: auto;
+    font-size:20px;
+    padding: 4px;
+}
+.calendarContainer :deep(.dp__month_year_wrap:not(:has(.dp--arrow-btn-nav))) {
+    justify-content: center;
 
+}
 .calendarContainer :deep(.dp__calendar_item:has(.dp__range_start)) {
     pointer-events: none !important;
     cursor: not-allowed !important;
@@ -352,15 +377,15 @@ onUnmounted(() => {
     pointer-events: none;
 }
 
-@container (max-width: 525px) {
+@container (max-width: 475px) {
     .calendarContainer {
-        --dp-cell-size: 55px;
+        --dp-cell-size: 58px;
         --dp-cell-padding: 2px;
     }
 }
-@container (max-width: 400px){
+@container (max-width: 425px){
     .calendarContainer {
-        --dp-cell-size: 45px;
+        --dp-cell-size: 51px;
         --dp-cell-padding: 2px;
     }
 }

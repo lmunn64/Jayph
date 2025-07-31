@@ -35,6 +35,7 @@ const is_fetching_quote = ref<boolean>(false)
 const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
     $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
 )
+
 let calendar: Calendar | null = calendar_data.value;
 
 // debouncer for watched booking details
@@ -42,51 +43,60 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
-    /** Debouncer for rapid guest or date changes */
-    if(debounceTimer)
-        clearTimeout(debounceTimer)
-    debounceTimer = setTimeout(async ()=> {
-        /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
-        if(newDates != undefined){
-            const quotePayload = {
-            checkin_date: selectedDates.value?.[0] ?? '',
-            checkout_date: selectedDates.value?.[1] ?? '',
-            guests: {
-                adults: guestCounts.value.adults,
-                children: guestCounts.value.children,
-                infants: guestCounts.value.infants,
-                pets: guestCounts.value.pets
-            },
-            promo_code: promoCode.value
-            }
-            if(newPromo != undefined)
-                quotePayload.promo_code = newPromo
-            console.log('quote being generated...: ', quotePayload)
-            
-            try{
-                is_fetching_quote.value = true
-                const quote_response = await $fetch<Quote_Response>(
-                `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
-                {
-                    method: 'POST',
-                    body: quotePayload,
-                })     
-                if(quote_response){
-                    current_quote.value = quote_response
-                    console.log("Quote received: ", current_quote.value)
+    if(newDates != undefined){
+        is_fetching_quote.value = true
+        /** Debouncer for rapid guest or date changes (won't worry about recent data as much when closing and opening of guest count is the trigger for sending new requests on guest change) */
+        if(debounceTimer)
+            clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(async ()=> {
+            /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
+
+                const quotePayload = {
+                checkin_date: selectedDates.value?.[0] ?? '',
+                checkout_date: selectedDates.value?.[1] ?? '',
+                guests: {
+                    adults: guestCounts.value.adults,
+                    children: guestCounts.value.children,
+                    infants: guestCounts.value.infants,
+                    pets: guestCounts.value.pets
+                },
+                promo_code: promoCode.value
+                }
+                if(newPromo != undefined)
+                    quotePayload.promo_code = newPromo
+                console.log('quote being generated...: ', quotePayload)
+                
+                try{
+                    
+                    const quote_response = await $fetch<Quote_Response>(
+                    `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
+                    {
+                        method: 'POST',
+                        body: quotePayload,
+                    })     
+                    if(quote_response){
+                        current_quote.value = quote_response
+                        console.log("Quote received: ", current_quote.value)
+                        is_fetching_quote.value = false
+                    }
+                } catch (error) {
+                    console.error("Error fetching quote:", error)
                     is_fetching_quote.value = false
                 }
-            } catch (error) {
-                console.error("Error fetching quote:", error)
-                is_fetching_quote.value = false
-            }
-        }
-    }, 500)
-    
+           
+        }, 700)
+     }
 }, { deep: true })
 
 const openPromo = () =>{
     hasPromo.value = !hasPromo.value
+}
+
+const clearQuoteResponse = () =>{
+    // Clears quote response to disallow user from selecting expired 
+    console.log("clearing quote response")
+    current_quote.value = undefined
+    is_fetching_quote.value = false
 }
 
 const submitPromo = () => {
@@ -103,17 +113,28 @@ const submitPromo = () => {
     
 }
 
+const redirectToHospitable = () =>{
+    if(current_quote.value){
+        if(current_quote.value.booking_url){
+            window.open(current_quote.value.booking_url, '_blank', 'noopener')
+        }
+    }
+}
+
 </script>
 
 <template>
-    <div class="booking-wrapper">                
+    <div class="booking-wrapper">       
+        
         <div class= "booking-component">
             <h2 v-if = '!calendar'> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
             <div class= "calendar-col" v-if = 'calendar'>
-                 <VueCalendar v-model="selectedDates" :cal_data = calendar  />
+                 <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar  />
             </div>
-
+            
             <div class="booking-info" v-if = 'calendar'> 
+                 <h1>Your Stay</h1> 
+                <!-- <hr></hr> -->
                 <div class = placeholder-guest-selector> 
                     <GuestSelector v-if = 'calendar' v-model="guestCounts"/>
                 </div>
@@ -126,7 +147,7 @@ const submitPromo = () => {
                                 <td class="td-start">Sub Total</td>
                                 <td class="td-end">{{ current_quote.sub_total }}</td>
                             </tr>
-                            <tr  v-for="(fee, i) in current_quote.fees" :key ="`$fee-${i}`">
+                            <tr  v-for="(fee, i) in current_quote.fees.filter((e)=> e.amount > 0)" :key ="`$fee-${i}`">
                                 <td class="td-start">{{ fee.label }}</td>
                                 <td class="td-end">{{ fee.formatted }}</td>
                             </tr>
@@ -145,12 +166,18 @@ const submitPromo = () => {
                         </tbody>
                     </table>
 
-                   
-                </div>
-                <p class = "promo-code-text" v-if="current_quote" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
-                <div class = "promo-container" :class = "{ hidden : !hasPromo}">
-                    <input type= "text" class = "promo-code-form" ref = "promo-form">
-                    <button class = "promo-code-btn" @click = submitPromo>Submit</button>
+                    
+                    <div class = "promo-container" >
+                        <p class = "promo-code-text" v-if="current_quote" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
+                        <div class = "promo-container" :class = "{ hidden : !hasPromo}">                        
+                            <input type= "text" class = "promo-code-form" ref = "promo-form">
+                            <button class = "promo-code-btn" @click = submitPromo>Submit</button>
+                        </div>
+                    </div>
+                    <div class="request-book-container">
+                        <button class = "rq-book-btn" @click = "redirectToHospitable">Request to Book</button>
+                        <p class = "small-text">You won't be charged yet</p>
+                    </div>
                 </div>
                 <div class="loader" v-if="is_fetching_quote"></div>
             </div>
@@ -162,11 +189,12 @@ const submitPromo = () => {
 .booking-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-self: center;
+    align-items: start;
+    flex-direction: column;
     border-radius: 10px;
-    min-height: 25vh;
-    width: 100%;
+    min-height: 60vh;
+    width: 92%;
     background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
@@ -178,30 +206,49 @@ const submitPromo = () => {
     align-items: center;
     border-radius: 5px;
     width: 100%;
+    padding-top: 20px;
     height:100%;
     max-width: 1200px;
 }
 
 .calendar-col {
     display: flex;
-    width: 60%;
+    width: 55%;
     height: 90%;
-    justify-content: center;
-    align-items: center; 
+    justify-content: end;
+    align-items: end; 
+    padding: 0 20px 10px 20px;
+    margin: 5px;
     /* border-style: dashed;
     border-width: 1px; */
-    padding: 20px; 
+   
 }
 
+h1{
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: xx-large;
+}
+
+/* hr{
+    width:90%;
+    height: 1px;
+    color:#000;
+    border-width: 0;
+    padding: 0px;
+} */
 .booking-info {
     display: flex;
-    width: 40%;
+    width: 50%;
     flex-direction: column;
     justify-content: center; 
+    padding: 0 20px 10px 10px;
+    margin: 5px;
+    margin-top: -2em;
     align-items: center;
     /* border-style: dashed;
     border-width: 1px; */
-    padding: 20px; 
+ 
 }
 
 .price-info {
@@ -214,14 +261,12 @@ const submitPromo = () => {
 }
 
 
-
 .placeholder-guest-selector {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     background-color: white;
     border-radius: 8px;
-    margin: 0 10px 10px 10px;
     /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -232,19 +277,20 @@ const submitPromo = () => {
     .booking-component{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     .calendar-col{
         width: 100%;
         
         height: 100%; 
-        margin-right: 0;
-        margin-bottom: 15px;
+       
+        
     }
     .booking-info {
         width: 90%;
+        padding: 10px 10px 10px 10px;
         height: auto;
-        margin-left: 0;
-        margin-top: 15px;
+
     }
 }
 
@@ -320,17 +366,46 @@ const submitPromo = () => {
     width: auto;
     height: auto;
     font-size: small;
-    border-radius: 8px;
+    border-radius: 5px;
     border-width: 0;
 }
 /** later */
 .promo-code-btn:hover{
     
 }
+
 .hidden{
     display: none;
 }
+.request-book-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.rq-book-btn{
+    width: 275px;
+    height: 50px;
+    border-radius: 5px;
+    border-width: 0px;
+    font-size: medium;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+.rq-book-btn:hover{
+    background-color: #c2c2c2;
+    transition: 0.3s;
+}
 
+.rq-book-btn:active{
+    background-color: #858585;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+.small-text{
+    font-size: small;
+    opacity: 60%;
+}
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;

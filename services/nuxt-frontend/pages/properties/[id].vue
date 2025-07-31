@@ -7,12 +7,23 @@
     const id = route.params.id as string
 
     const propertyStore = usePropertyStore()
-    await propertyStore.fetchProperties()
+    
+    const {data : properties} = await useAsyncData('properties', async () => {
+        await propertyStore.fetchProperties()
+        return propertyStore.properties
+    })
+    
+    const {data : images} = await useAsyncData(`images-${id}`, async () => {
+        await propertyStore.fetchImages(id)
+        return propertyStore.property_images[id]
+    })
 
-    await propertyStore.fetchImages(id)
-
-    const property = computed(() =>
-        propertyStore.properties.find(p => p.id.toString() === id)
+    const property = computed(() =>{
+        if(properties.value){
+            return properties.value.find(p => p.id.toString() === id)
+        }
+        return undefined
+    }
     )
 
 </script>
@@ -20,7 +31,7 @@
 <template>
     <div v-if="property">
         <!-- hero - slideshow with gallery option -->
-        <PropHero v-if="!propertyStore.property_images_loading[id] && propertyStore.property_images[id].length" :images="propertyStore.property_images[id]" />
+        <PropHero v-if="images" :images="images" />
 
         <div class="wrapper">
             <h1> {{ property.name }} </h1>
@@ -74,6 +85,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: ;
     width: 100%;
     max-width: 1200px;        
     padding-inline: 1rem;    
