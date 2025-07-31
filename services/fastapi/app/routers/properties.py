@@ -349,7 +349,7 @@ async def gen_quote(uuid : str, item: Quote):
         - 409: If the data format is invalid.
     """
     try: 
-        quote = item.model_dump(exclude_none=True)
+        quote = item.dict(exclude_none=True)
         print(item)
         response = requests.post(f"https://public.api.hospitable.com/v2/properties/{uuid}/quote",
             headers={"Authorization": f"Bearer {PAT}"},

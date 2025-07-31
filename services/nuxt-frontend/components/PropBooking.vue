@@ -33,7 +33,7 @@ const is_fetching_quote = ref<boolean>(false)
 
 // fetch calendar data
 const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
-    $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
+    $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
 )
 
 let calendar: Calendar | null = calendar_data.value;
@@ -69,7 +69,7 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                 try{
                     
                     const quote_response = await $fetch<Quote_Response>(
-                    `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
+                    `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/quote`,
                     {
                         method: 'POST',
                         body: quotePayload,
@@ -147,7 +147,7 @@ const redirectToHospitable = () =>{
                                 <td class="td-start">Sub Total</td>
                                 <td class="td-end">{{ current_quote.sub_total }}</td>
                             </tr>
-                            <tr  v-for="(fee, i) in current_quote.fees.filter((e)=> e.amount > 0)" :key ="`$fee-${i}`">
+                            <tr  v-for="(fee, i) in current_quote.fees.filter((e : Fee)=> e.amount > 0)" :key ="`$fee-${i}`">
                                 <td class="td-start">{{ fee.label }}</td>
                                 <td class="td-end">{{ fee.formatted }}</td>
                             </tr>
