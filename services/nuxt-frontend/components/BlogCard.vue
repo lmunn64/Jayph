@@ -114,11 +114,25 @@ function onTagClick(tag: string) {
         overflow: hidden;
     }
     .divider {
-        color: #ccc;
+        background-color: #ccc;
+        height: 1px;
+        border: none;
     }
     .viewer-info {
         display: flex;
         justify-content: flex-start;
         gap: 36px;
+    }
+    @media (max-width: 750px) {
+        .card {
+            flex-direction: column;
+        }
+        .thumbnail {
+            width: 100%;
+            height: 30vh;
+        }
+        .info {
+            padding: 0 24px;
+        }
     }
 </style>
