@@ -2,12 +2,11 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 # model for the address of a listing
-class Address(BaseModel):
-    street: str
+class Coordinates(BaseModel):
     city: str
     state: str
-    country: str
-    postcode: str
+    latitude: str
+    longitude: str
 
 # model for the capacity of a listing
 class Capacity(BaseModel):
@@ -35,7 +34,7 @@ class Property(BaseModel):
     id: str
     name: str
     picture_url: str
-    address: Address
+    coordinates: Coordinates
     amenities: List[str]
     description: str
     summary: str
