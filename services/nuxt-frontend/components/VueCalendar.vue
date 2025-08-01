@@ -150,7 +150,6 @@ const clearDate = () => {
     
     console.log('Dates cleared')
     clearDateBtn.value?.classList.remove('set')
-    
 }
 
 /** Grab the unavailable dates from the json calendar data, update on computed anytime tempDisabledDates value updates */

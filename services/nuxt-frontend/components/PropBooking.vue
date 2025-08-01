@@ -43,6 +43,12 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
+     if (!newDates || !newDates[0] || !newDates[1]) {
+        current_quote.value = undefined
+        is_fetching_quote.value = false
+        if (debounceTimer) clearTimeout(debounceTimer)
+        return
+    }
     if(newDates != undefined){
         is_fetching_quote.value = true
         /** Debouncer for rapid guest or date changes (won't worry about recent data as much when closing and opening of guest count is the trigger for sending new requests on guest change) */
@@ -237,20 +243,24 @@ h1{
     border-width: 0;
     padding: 0px;
 } */
-.booking-info {
+.booking-info{
     display: flex;
     width: 50%;
     flex-direction: column;
     justify-content: center; 
     padding: 0 20px 10px 10px;
     margin: 5px;
-    margin-top: -2em;
+    margin-top: -2.5em;
     align-items: center;
     /* border-style: dashed;
     border-width: 1px; */
- 
 }
 
+@media (min-height: 600px){
+    .booking-info{
+        margin-top: 0;
+    }
+}
 .price-info {
     width: 90%;
     flex-direction: column;
@@ -281,16 +291,13 @@ h1{
     }
     .calendar-col{
         width: 100%;
-        
         height: 100%; 
-       
-        
     }
     .booking-info {
         width: 90%;
         padding: 10px 10px 10px 10px;
         height: auto;
-
+        margin-top: -1em;
     }
 }
 
