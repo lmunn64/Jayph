@@ -31,10 +31,9 @@ const current_quote = ref<Quote_Response>()
 
 const is_fetching_quote = ref<boolean>(false)
 
-// fetch calendar data
-const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
-    $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
-)
+const calendar_data = ref<Calendar | null>(null)
+const calendarLoading = ref(true)
+const calendarError = ref()
 
 let calendar: Calendar | null = calendar_data.value;
 
@@ -127,22 +126,35 @@ const redirectToHospitable = () =>{
     }
 }
 
+onMounted(async () => {
+    try {
+        calendar_data.value = await $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
+    } catch (error) {
+        console.error('Error loading calendar:', error)
+        calendarError.value = error
+    } finally {
+        calendarLoading.value = false
+    }
+})
 </script>
 
 <template>
     <div class="booking-wrapper">       
         
         <div class= "booking-component">
-            <h2 v-if = '!calendar'> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
-            <div class= "calendar-col" v-if = 'calendar'>
-                 <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar  />
+            <div v-if="calendarLoading" class="calendar-loading">
+                <p>Loading booking calendar...</p>
+            </div>
+            <h2 v-else-if="calendarError"> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
+            <div class= "calendar-col" v-if = 'calendar_data'>
+                 <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar_data  />
             </div>
             
-            <div class="booking-info" v-if = 'calendar'> 
+            <div class="booking-info" v-if = 'calendar_data'> 
                  <h1>Your Stay</h1> 
                 <!-- <hr></hr> -->
                 <div class = placeholder-guest-selector> 
-                    <GuestSelector v-if = 'calendar' v-model="guestCounts"/>
+                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts"/>
                 </div>
                 
                 <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 

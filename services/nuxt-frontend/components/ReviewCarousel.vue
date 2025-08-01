@@ -23,8 +23,8 @@ const props = defineProps<{
 // if propertyId is defined, will fetch from that property's reviews, otherwise fetch from defualt (first property)
 // *(**fetch for no property ID case used for front page, should grab all reviews instead of just the first
 const endpoint = props.propertyId
-  ? `https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/${props.propertyId}/reviews`
-  : 'https://az2zhr2dqyzfs3cjwc55p52yje0ncfyj.lambda-url.eu-north-1.on.aws/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
+  ? `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${props.propertyId}/reviews`
+  : 'https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
 
 
 const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, () =>
