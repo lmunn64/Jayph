@@ -20,7 +20,7 @@ export const usePropertyStore = defineStore('property', {
       }
       try {
         console.log("fetching properties from api gateway")
-        const properties = await $fetch<Property[]>('http://localhost:8000/api_properties')
+        const properties = await $fetch<Property[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
         this.properties = properties.map((el) => ({
           id: el.id,
           name: el.name,
