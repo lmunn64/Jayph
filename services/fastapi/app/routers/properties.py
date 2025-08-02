@@ -24,7 +24,7 @@ from pydantic import ValidationError
 from fastapi import APIRouter, HTTPException, Query
 
 # Model Imports
-from app.models.property import Property, Address, HouseRules, Capacity, Details
+from app.models.property import Coordinates, Property, HouseRules, Capacity, Details
 from app.models.image import Image
 from app.models.review import Review
 from app.models.calendar_model import Calendar, Date
@@ -187,13 +187,17 @@ async def get_properties():
                                 headers={"Authorization": f"Bearer {PAT}"})
         if response.status_code != 200:
             raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
-    
+        
         content = response.json()
         properties = [Property(
             id = item.get("id"),
             name = item.get('public_name'),
             picture_url = get_enlarged_URL(item.get('picture')),
-            address = Address(**item.get('address', {})),
+            coordinates= Coordinates(
+                city = item.get('address').get('city'),
+                state = item.get('address').get('state'),
+                latitude=item.get('address').get('coordinates').get('latitude'),
+                longitude=item.get('address').get('coordinates').get('longitude')),
             amenities = item.get('amenities'),
             description = item.get('description'),
             summary = item.get('summary'),

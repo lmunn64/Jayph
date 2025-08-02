@@ -1,9 +1,8 @@
-export interface Address{
-    street: string
+export interface Coordinates{
     city: string
     state: string
-    country: string
-    postcode: string
+    latitude: string
+    longitude: string
 }
 
 export interface Capacity{
@@ -31,7 +30,7 @@ export interface Property{
     id: string
     name: string
     picture_url: string
-    address: Address
+    coordinates: Coordinates
     amenities: string[]
     description: string
     summary: string

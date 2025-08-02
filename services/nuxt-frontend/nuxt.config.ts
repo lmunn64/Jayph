@@ -8,6 +8,11 @@ export default defineNuxtConfig({
   app : {
     baseURL: '/Jayph/'
   },
+  runtimeConfig : {
+    public : {
+      googleMapsApiKey : process.env.GOOGLE_API_KEY
+    }
+  },
   devtools: { enabled: true },
     modules: [
     '@pinia/nuxt',

@@ -42,20 +42,20 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
-     if (!newDates || !newDates[0] || !newDates[1]) {
+    /** If user cancels in the middle of a call it will cancel the call and not display price */
+    if (!newDates || !newDates[0] || !newDates[1]) {
         current_quote.value = undefined
         is_fetching_quote.value = false
         if (debounceTimer) clearTimeout(debounceTimer)
         return
     }
+    /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
     if(newDates != undefined){
         is_fetching_quote.value = true
         /** Debouncer for rapid guest or date changes (won't worry about recent data as much when closing and opening of guest count is the trigger for sending new requests on guest change) */
         if(debounceTimer)
             clearTimeout(debounceTimer)
         debounceTimer = setTimeout(async ()=> {
-            /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
-
                 const quotePayload = {
                 checkin_date: selectedDates.value?.[0] ?? '',
                 checkout_date: selectedDates.value?.[1] ?? '',
@@ -69,10 +69,8 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                 }
                 if(newPromo != undefined)
                     quotePayload.promo_code = newPromo
-                console.log('quote being generated...: ', quotePayload)
-                
-                try{
-                    
+                console.log('quote being generated...: ', quotePayload)                
+                try{                    
                     const quote_response = await $fetch<Quote_Response>(
                     `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/quote`,
                     {

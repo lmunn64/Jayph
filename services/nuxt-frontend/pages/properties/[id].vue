@@ -22,7 +22,6 @@ const property = computed(() => {
 // Load images asynchronously WITHOUT await (non-blocking)
 const images = ref<string[]>()
 const imagesLoading = ref(true)
-
 onMounted(async () => {
     try {
         await propertyStore.fetchImages(id)
@@ -73,7 +72,7 @@ onMounted(async () => {
             <h1 style="text-align: center;">Reviews</h1>
             <ReviewCarousel :propertyId="id" />
 
-            <PropLocation />
+            <PropLocation v-if = "property.coordinates.latitude && property.coordinates.longitude" :getting_around ="property.details.getting_around" :latitude="property.coordinates.latitude" :longitude ="property.coordinates.longitude"/>
         </div>
     </div>
     <div v-else>
