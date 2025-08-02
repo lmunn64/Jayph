@@ -73,7 +73,7 @@ onMounted(async () => {
             <h1 style="text-align: center;">Reviews</h1>
             <ReviewCarousel :propertyId="id" />
 
-            <PropLocation v-if = "property.coordinates.latitude && property.coordinates.longitude" :getting_around ="property.details.getting_around || '' " :latitude="property.coordinates.latitude" :longitude ="property.coordinates.longitude"/>
+            <PropLocation v-if = "property.coordinates.latitude && property.coordinates.longitude" :getting_around ="property.details.getting_around" :latitude="property.coordinates.latitude" :longitude ="property.coordinates.longitude"/>
         </div>
     </div>
     <div v-else>

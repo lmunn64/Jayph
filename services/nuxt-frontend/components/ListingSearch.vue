@@ -187,7 +187,7 @@ onUnmounted(() => {
 }
 
 .menu {
-
+  margin-top: 8px;
   position: absolute;
   border-radius: 16px;
   background: white;

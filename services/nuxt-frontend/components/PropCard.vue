@@ -9,7 +9,7 @@
 
 <script setup lang = 'ts'>
     const thumbnail = "https://media.tenor.com/P4HGr5rklqYAAAAM/spongebob.gif";
-
+    import { Bed, User, Bath } from 'lucide-vue-next';
     interface Props {
         id: string
         title : string
@@ -40,12 +40,20 @@
                 <h3>{{props.title}}</h3>
                 <p>{{props.city}}, {{ props.state }}</p>
             </div>
-            <div class="amenities">
-                <p> <font-awesome-icon icon="user" /> Guests {{ props.guests }} </p>
-                <p>  <font-awesome-icon icon="bed" /> Bedrooms {{ props.bedrooms }} </p>
-                <p>  <font-awesome-icon icon="bath" /> Bathrooms {{ props.bathrooms }} </p>
-                
-            </div>
+            <ul class="amenities">
+                <div class = "amenity-item">
+                    <User class = "icon"/>
+                    <p>Guests {{ props.guests }} </p>
+                </div>
+                <li class = "amenity-item">
+                    <Bed class = "icon"/>
+                    <p>Bedrooms {{ props.bedrooms }} </p>
+                </li>
+                <li class = "amenity-item">
+                    <Bath class = "icon"/>
+                    <p>Bathrooms {{ props.bathrooms }} </p>
+                </li>              
+            </ul>
         </div>
     </NuxtLink>
 </template>
@@ -76,6 +84,7 @@
     height: 350px;
     overflow: hidden;
 }
+
 .thumbnail {
   width: 100%;
   height: 350px;
@@ -83,15 +92,30 @@
   display: block;
   transition: transform 0.2s ease;
 }
+.icon {
+    color: var(--accent-color);
 
+    width: 30px;
+    flex-shrink: 0;
+}
 .content {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     gap: 0px;
 }
 .amenities {
-    padding-inline: 1rem;
     display: flex;
-    gap: 40px;
+    justify-content: start;
+    gap: 0.5rem;
+
+    padding: 0 1em;
+}
+.amenity-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 1rem;
+    margin-right: 1.2em;
+    color: #333;
 }
 @media (max-width: 650px){
     .card {

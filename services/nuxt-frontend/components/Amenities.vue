@@ -184,7 +184,6 @@
     useIcon(Music, ['record_player'])
     useIcon(Wind, ['portable_fans'])
 
-    // Keep your existing functions...
     const defaultIcon = Circle
 
     function getIcon(amenity: string) {
@@ -230,7 +229,6 @@ const visibleAmenities = computed(() => {
 })
 
 
-
 const categoryLabels = {
     all: 'All Amenities',
     common: 'Common',
@@ -254,7 +252,6 @@ const getCategoryCount = (category: string) => {
 </script>
 
 <template>
-    <!-- Category Filter Buttons -->
     <div class="category-filters">
         <button 
             v-for="([category, label]) in Object.entries(categoryLabels).filter(([category]) => getCategoryCount(category) > 0)"
@@ -266,12 +263,10 @@ const getCategoryCount = (category: string) => {
         </button>
     </div>
 
-    <!-- Selected Category Title -->
     <h3 v-if="selectedCategory !== 'all'" class="category-title">
         {{ categoryLabels[selectedCategory] }}
     </h3>
 
-    <!-- Amenities Grid -->
     <ul class="amenities-grid">
         <li v-for="item in visibleAmenities" :key="item" class="amenity-item">
             <component :is="getIcon(item)" class="icon" />
@@ -279,7 +274,6 @@ const getCategoryCount = (category: string) => {
         </li>
     </ul>
 
-    <!-- Show More/Less Button -->
     <button
         v-if="categorizedAmenities.length > 16"
         class="toggle-btn"
@@ -288,7 +282,6 @@ const getCategoryCount = (category: string) => {
         {{ expanded ? 'Show less' : `Show all ${categorizedAmenities.length} amenities` }}
     </button>
 
-    <!-- No amenities message -->
     <p v-if="categorizedAmenities.length === 0" class="no-amenities">
         No amenities in this category.
     </p>
@@ -354,7 +347,6 @@ const getCategoryCount = (category: string) => {
     color: var(--accent-color);
     text-align: center;
     width: 40px;
-
     flex-shrink: 0;
     margin-right: 0.25rem
 }
