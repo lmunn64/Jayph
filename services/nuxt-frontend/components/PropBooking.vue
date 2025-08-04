@@ -31,10 +31,9 @@ const current_quote = ref<Quote_Response>()
 
 const is_fetching_quote = ref<boolean>(false)
 
-// fetch calendar data
-const {data: calendar_data, error} = await useAsyncData<Calendar>(`calendar-${bookingProps.id}`, ()=>
-    $fetch(`http://localhost:8000/api_properties/${bookingProps.id}/calendar`)
-)
+const calendar_data = ref<Calendar | null>(null)
+const calendarLoading = ref(true)
+const calendarError = ref()
 
 let calendar: Calendar | null = calendar_data.value;
 
@@ -43,14 +42,20 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
+    /** If user cancels in the middle of a call it will cancel the call and not display price */
+    if (!newDates || !newDates[0] || !newDates[1]) {
+        current_quote.value = undefined
+        is_fetching_quote.value = false
+        if (debounceTimer) clearTimeout(debounceTimer)
+        return
+    }
+    /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
     if(newDates != undefined){
         is_fetching_quote.value = true
         /** Debouncer for rapid guest or date changes (won't worry about recent data as much when closing and opening of guest count is the trigger for sending new requests on guest change) */
         if(debounceTimer)
             clearTimeout(debounceTimer)
         debounceTimer = setTimeout(async ()=> {
-            /** If the dates aren't clear, or if there are dates when adjusting adults and children, generate a new quote */
-
                 const quotePayload = {
                 checkin_date: selectedDates.value?.[0] ?? '',
                 checkout_date: selectedDates.value?.[1] ?? '',
@@ -64,12 +69,10 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                 }
                 if(newPromo != undefined)
                     quotePayload.promo_code = newPromo
-                console.log('quote being generated...: ', quotePayload)
-                
-                try{
-                    
+                console.log('quote being generated...: ', quotePayload)                
+                try{                    
                     const quote_response = await $fetch<Quote_Response>(
-                    `http://localhost:8000/api_properties/${bookingProps.id}/quote`,
+                    `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/quote`,
                     {
                         method: 'POST',
                         body: quotePayload,
@@ -121,22 +124,35 @@ const redirectToHospitable = () =>{
     }
 }
 
+onMounted(async () => {
+    try {
+        calendar_data.value = await $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
+    } catch (error) {
+        console.error('Error loading calendar:', error)
+        calendarError.value = error
+    } finally {
+        calendarLoading.value = false
+    }
+})
 </script>
 
 <template>
     <div class="booking-wrapper">       
         
         <div class= "booking-component">
-            <h2 v-if = '!calendar'> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
-            <div class= "calendar-col" v-if = 'calendar'>
-                 <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar  />
+            <div v-if="calendarLoading" class="calendar-loading">
+                <p>Loading booking calendar...</p>
+            </div>
+            <h2 v-else-if="calendarError"> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
+            <div class= "calendar-col" v-if = 'calendar_data'>
+                 <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar_data  />
             </div>
             
-            <div class="booking-info" v-if = 'calendar'> 
+            <div class="booking-info" v-if = 'calendar_data'> 
                  <h1>Your Stay</h1> 
                 <!-- <hr></hr> -->
                 <div class = placeholder-guest-selector> 
-                    <GuestSelector v-if = 'calendar' v-model="guestCounts"/>
+                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts"/>
                 </div>
                 
                 <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
@@ -147,7 +163,7 @@ const redirectToHospitable = () =>{
                                 <td class="td-start">Sub Total</td>
                                 <td class="td-end">{{ current_quote.sub_total }}</td>
                             </tr>
-                            <tr  v-for="(fee, i) in current_quote.fees.filter((e)=> e.amount > 0)" :key ="`$fee-${i}`">
+                            <tr  v-for="(fee, i) in current_quote.fees.filter((e : Fee)=> e.amount > 0)" :key ="`$fee-${i}`">
                                 <td class="td-start">{{ fee.label }}</td>
                                 <td class="td-end">{{ fee.formatted }}</td>
                             </tr>
@@ -237,20 +253,24 @@ h1{
     border-width: 0;
     padding: 0px;
 } */
-.booking-info {
+.booking-info{
     display: flex;
     width: 50%;
     flex-direction: column;
     justify-content: center; 
     padding: 0 20px 10px 10px;
     margin: 5px;
-    margin-top: -2em;
+    margin-top: -2.5em;
     align-items: center;
     /* border-style: dashed;
     border-width: 1px; */
- 
 }
 
+@media (min-height: 600px){
+    .booking-info{
+        margin-top: 0;
+    }
+}
 .price-info {
     width: 90%;
     flex-direction: column;
@@ -281,16 +301,13 @@ h1{
     }
     .calendar-col{
         width: 100%;
-        
         height: 100%; 
-       
-        
     }
     .booking-info {
         width: 90%;
         padding: 10px 10px 10px 10px;
         height: auto;
-
+        margin-top: -1em;
     }
 }
 

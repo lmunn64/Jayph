@@ -18,7 +18,7 @@
     const selectedLocation = ref('Kansas City') /* default selection */
 
     const filteredProperties = computed(() => {
-      return props.properties.filter(p => p.address.city === selectedLocation.value)
+      return props.properties.filter(p => p.coordinates.city === selectedLocation.value)
     })
 </script>
 
@@ -40,7 +40,7 @@
 
     <!-- display prop cards for selected property -->
     <div class="card-grid">
-        <PropCard v-for = "(property, index) in filteredProperties" :id="property.id" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :city = "property.address.city" :state = "property.address.state" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
+        <PropCard v-for = "(property, index) in filteredProperties" :id="property.id" :title="property.name" :img_src = "property.picture_url" :description = "property.description" :city = "property.coordinates.city" :state = "property.coordinates.state" :guests = "property.capacity.max" :bedrooms = "property.capacity.bedrooms" :bathrooms = "property.capacity.bathrooms"/>
     </div>
 </template>
 

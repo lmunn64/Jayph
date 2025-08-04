@@ -1,6 +1,4 @@
 <script setup lang ='ts'>
-    import { reactive } from 'vue'
-    import type { Property, HouseRules, Capacity, Address} from '~/types/property'
     import { usePropertyStore } from '~/stores/properties'
 
     const propertyStore = usePropertyStore()

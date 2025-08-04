@@ -25,12 +25,11 @@ export const usePropertyStore = defineStore('property', {
           id: el.id,
           name: el.name,
           picture_url: el.picture_url,
-          address: {
-            street: el.address.street,
-            city: el.address.city,
-            state: el.address.state,
-            country: el.address.country,
-            postcode: el.address.postcode,
+          coordinates: {
+            city: el.coordinates.city,
+            state: el.coordinates.state,
+            latitude: el.coordinates.latitude,
+            longitude: el.coordinates.longitude,
           },
           amenities: el.amenities,
           description: el.description,

@@ -3,10 +3,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   ssr: true,
   nitro : {
-      preset: 'static'
+      preset: 'netlify'
   },
   app : {
     baseURL: '/Jayph/'
+  },
+  runtimeConfig : {
+    public : {
+      googleMapsApiKey : process.env.GOOGLE_API_KEY
+    }
   },
   devtools: { enabled: true },
     modules: [
