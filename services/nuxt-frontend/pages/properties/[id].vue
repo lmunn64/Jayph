@@ -85,7 +85,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: ;
+    /* align-items: ; */
     width: 100%;
     max-width: 1200px;        
     padding-inline: 1rem;    
