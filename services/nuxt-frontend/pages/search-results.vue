@@ -18,7 +18,7 @@
     async function fetchSearchedProperties() {
         const query = route.fullPath.split('?')[1] || ''
 
-        searchedProperties.value = await $fetch<SearchProperty[]>('http://127.0.0.1:5000/api_properties/search?' + query)
+        searchedProperties.value = await $fetch<SearchProperty[]>('http://127.0.0.1:8000/api_properties/search?' + query)
         console.log('Fetched properties:', searchedProperties.value)
     }
 
