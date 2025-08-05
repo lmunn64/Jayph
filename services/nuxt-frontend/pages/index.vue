@@ -9,10 +9,10 @@
 
 <template>
   <!-- Hero component -->
+  <div class="hero-section">
     <HeroContainer />
-
-  <!-- Listing Search -->
-  <ListingSearch />
+    <ListingSearch />
+  </div>
   <div class="wrapper">  
 
     <!-- Properties components-->
@@ -40,16 +40,22 @@ h1, h2, p {
     flex-direction: column;
     gap: 0; 
 } */
- .wrapper {
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: fit-content; /* Full viewport height */
+  
+}
+.wrapper {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    max-width: 1400px;        
-    padding-inline: 1rem;    
-    margin: 0 auto;
-    box-sizing: border-box; 
-    background-color: var(--bg-color);
- }
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;        
+  padding-inline: 1rem;    
+  margin: 0 auto;
+  box-sizing: border-box; 
+  background-color: var(--bg-color);
+}
 
 </style>

@@ -253,9 +253,10 @@ onUnmounted(() => {
     background-color: transparent;
     border-radius: 8px;
     border-width: 0;
+    user-select: none;
     padding:0;
     pointer-events: none;
-    color: #0000005e;
+    color: var(--text-color-dark-disabled);
     width: auto;
     height: 1.7em;
 }
@@ -269,7 +270,7 @@ onUnmounted(() => {
     border-radius: 8px;
     border-width: 0;
     text-decoration: underline;
-    color: #000000;
+    color: var(--text-color-dark);
     width: auto;
     height: 1.7em;
     transition: 250ms;
@@ -330,8 +331,9 @@ onUnmounted(() => {
 /** Calendar dates */
 .calendarContainer :deep(.dp__month_year_select) {
     width: auto;
-    font-size:20px;
-    padding: 4px;
+    font-size:18px;
+    font-weight: bold;
+    padding: 2px;
 }
 .calendarContainer :deep(.dp__month_year_wrap:not(:has(.dp--arrow-btn-nav))) {
     justify-content: center;
@@ -388,5 +390,10 @@ onUnmounted(() => {
         --dp-cell-padding: 2px;
     }
 }
-
+@container (max-width: 400px){
+    .calendarContainer {
+        --dp-cell-size: 40px;
+        --dp-cell-padding: 2px;
+    }
+}
 </style>

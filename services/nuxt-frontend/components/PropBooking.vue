@@ -6,6 +6,7 @@ import type { Calendar } from '~/types/calendar';
 
 interface Props {
     id: string
+    max_capacity: number
 }
 
 const bookingProps= defineProps<Props>()
@@ -126,7 +127,7 @@ const redirectToHospitable = () =>{
 
 onMounted(async () => {
     try {
-        calendar_data.value = await $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
+        calendar_data.value = await $fetch<Calendar>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
     } catch (error) {
         console.error('Error loading calendar:', error)
         calendarError.value = error
@@ -149,10 +150,10 @@ onMounted(async () => {
             </div>
             
             <div class="booking-info" v-if = 'calendar_data'> 
-                 <h1>Your Stay</h1> 
+                 
                 <!-- <hr></hr> -->
                 <div class = placeholder-guest-selector> 
-                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts"/>
+                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
                 </div>
                 
                 <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
@@ -425,11 +426,12 @@ h1{
 }
 /* HTML: <div class="loader"></div> */
 .loader {
-  width: 50px;
+  width: 35px;
   padding: 8px;
+  margin-top: 20px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #25b09b;
+  background: var(--accent-color);
   --_m: 
     conic-gradient(#0000 10%,#000),
     linear-gradient(#000 0 0) content-box;

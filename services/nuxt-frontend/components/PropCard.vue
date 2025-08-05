@@ -117,7 +117,7 @@
     margin-right: 1.2em;
     color: #333;
 }
-@media (max-width: 650px){
+@media (max-width: 700px){
     .card {
         width: 90vw;
     }
