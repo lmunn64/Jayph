@@ -60,19 +60,19 @@
 
 <style scoped>
 .card {
-  width: 650px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 2px solid #e2e2e2;
-  overflow: hidden;
-  cursor: pointer;
-  transition: ease 0.2s;
+    width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: var(--default-border-radius);
+    border: 2px solid #e2e2e2;
+    overflow: hidden;
+    cursor: pointer;
+    transition: ease 0.2s;
 }
 .card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 .card:hover {
     border: 2px solid var(--accent-color);
@@ -86,15 +86,14 @@
 }
 
 .thumbnail {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.2s ease;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
 }
 .icon {
     color: var(--accent-color);
-
     width: 30px;
     flex-shrink: 0;
 }
@@ -106,7 +105,6 @@
     display: flex;
     justify-content: start;
     gap: 0.5rem;
-
     padding: 0 1em;
 }
 .amenity-item {

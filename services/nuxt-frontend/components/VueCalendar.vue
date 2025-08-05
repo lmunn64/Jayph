@@ -251,7 +251,7 @@ onUnmounted(() => {
     margin-top: 10px;
     font-size: larger;
     background-color: transparent;
-    border-radius: 8px;
+    border-radius: var(--default-border-radius);
     border-width: 0;
     user-select: none;
     padding:0;
@@ -262,17 +262,10 @@ onUnmounted(() => {
 }
 
 .clear-dates-btn.set{
-    margin-top: 10px;
-    font-size: larger;
     pointer-events:all;
     cursor: pointer;
-    background-color: transparent;
-    border-radius: 8px;
-    border-width: 0;
     text-decoration: underline;
     color: var(--text-color-dark);
-    width: auto;
-    height: 1.7em;
     transition: 250ms;
 }
 
@@ -283,10 +276,10 @@ onUnmounted(() => {
 
 .calendarContainer {
     --dp-cell-size: 68px;
-    --dp-border-radius: 3px;
+    --dp-border-radius: var(--default-border-radius);
     --dp-button-height: 4px;
     --dp-font-size: 1.2rem;
-    --dp-cell-border-radius: 1px;
+    --dp-cell-border-radius:var(--default-border-radius);
     --dp-menu-min-width: 300px;
     --dp-cell-padding: 8px;
     --dp-two-calendars-spacing: 20px;

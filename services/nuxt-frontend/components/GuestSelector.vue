@@ -104,7 +104,7 @@
         height: 32px;
         background: none;
         border: 1px solid var(--border-color, #ccc);
-        border-radius: 50%;
+        border-radius: var(--default-border-radius);
         font-size: 1rem;
         color: var(--text-color-dark, #333);
         cursor: pointer;

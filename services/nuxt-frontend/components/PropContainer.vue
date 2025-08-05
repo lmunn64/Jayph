@@ -91,7 +91,7 @@ h1, h2, h3 {
   border: 2px solid var(--border-color, #ccc);
   background-color: white;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: var(--default-border-radius);
   transition: all 0.3s ease;
   box-sizing: border-box;
   width: auto;

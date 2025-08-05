@@ -187,7 +187,7 @@ const toggleSearchOpen = () =>{
     height: 150px;
     width: 100%;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
     background-color: var(--primary-color-20);
     color: var(--text-color-light);
 }
@@ -213,7 +213,7 @@ const toggleSearchOpen = () =>{
 }
 .mobile-toggle-btn{
     font-size: 1em;
-    border-radius: 16px;
+    border-radius: var(--default-border-radius);
     outline: none;
     cursor: pointer;
     transition: opacity 3s ease, visibility 3s ease;
@@ -238,18 +238,20 @@ const toggleSearchOpen = () =>{
 }
 .btn-container button {
     font-size: 1em;
+    width: auto;
     padding: 0.5rem 1rem;
-    border-radius: 16px;
+    border-radius: var(--default-border-radius);
     outline: none;
     cursor: pointer;
     transition: 0.2s ease;
 }
+
 .input {
     text-align: left;
     border: 0px;
     height: 58px;
     padding-inline: 40px;
-    width: 20vw;
+    min-width: 20vw;
     background-color: white;
     color: var(--text-color-dark);
 }
@@ -261,7 +263,7 @@ const toggleSearchOpen = () =>{
 .menu {
   margin-top: 8px;
   position: absolute;
-  border-radius: 16px;
+  border-radius: var(--default-border-radius);
   background: white;
   border: 1px solid #ccc;
   z-index: 10;
@@ -330,12 +332,13 @@ const toggleSearchOpen = () =>{
 
 @media (max-width: 850px) {
   .listing-container {
-    height: 150px;
-    transition: all .7s ease;
+    height: 140px;
+    transition: all .4s ease;
   }
 
   .listing-container.mobile-expanded {
     height: 350px;
+    transition: all .7s ease;
   }
 
   .listing-container.overflow-hidden {
@@ -367,8 +370,6 @@ const toggleSearchOpen = () =>{
     visibility: hidden;
     flex-direction: column;
     align-items: center;
-    overflow: visible;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
   
   .mobile-expanded .btn-container {
@@ -377,7 +378,7 @@ const toggleSearchOpen = () =>{
     transition: opacity 2s ease, visibility 0.3s ease, transform 0.3s ease;
   }
   .btn-container button {
-    width: 90vw;  
+    width: 90vw;
     max-width: 400px;
   }
 
@@ -393,4 +394,5 @@ const toggleSearchOpen = () =>{
     z-index: 200;
   }
 }
+
 </style>

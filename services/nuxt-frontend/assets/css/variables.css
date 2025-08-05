@@ -9,4 +9,9 @@
   --highlight-color: #5ba0aa;
   --bg-color: #F4F1EE;
   --text-color-dark-disabled: #2e2e2e3b;
+
+
+  /** non-color asset settings */
+  --default-border-radius: 16px;
+  --secondary-border-radius: 8px;
 }

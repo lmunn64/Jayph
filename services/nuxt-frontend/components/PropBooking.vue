@@ -152,7 +152,7 @@ onMounted(async () => {
             <div class="booking-info" v-if = 'calendar_data'> 
                  
                 <!-- <hr></hr> -->
-                <div class = placeholder-guest-selector> 
+                <div class = guest-selector> 
                     <GuestSelector v-if = 'calendar_data' v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
                 </div>
                 
@@ -209,7 +209,7 @@ onMounted(async () => {
     align-self: center;
     align-items: start;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: var(--default-border-radius);
     min-height: 60vh;
     width: 92%;
     background-color: #7fab8d;
@@ -221,7 +221,7 @@ onMounted(async () => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     width: 100%;
     padding-top: 20px;
     height:100%;
@@ -282,12 +282,12 @@ h1{
 }
 
 
-.placeholder-guest-selector {
+.guest-selector {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--secondary-border-radius);
     /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -371,8 +371,9 @@ h1{
     width: 50%;
     font-size: medium;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 1px;
+    border-color: var(--accent-color);
     border-style: solid;
     margin: 5px;
 }
@@ -384,7 +385,7 @@ h1{
     width: auto;
     height: auto;
     font-size: small;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 0;
 }
 /** later */
@@ -405,7 +406,7 @@ h1{
 .rq-book-btn{
     width: 275px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 0px;
     font-size: medium;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
