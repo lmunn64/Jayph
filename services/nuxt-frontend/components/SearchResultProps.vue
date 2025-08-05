@@ -1,37 +1,24 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Property } from '~/types/property';
+import type { Property_wTotal } from '~/types/property';
 
-interface SearchedProperty {
-  uuid: string
-  total_before_taxes: number
-}
 
 const props = defineProps<{
-  searchedProperties: SearchedProperty[]
-  allProperties: Property[]
+  enrichedProperties: Property_wTotal[]
 }>()
 
-const enrichedProperties = computed(() => {
-  return props.searchedProperties.map(sp => {
-    const fullProperty = props.allProperties.find(p => p.id === sp.uuid)
-    return {
-      ...fullProperty,
-      total_before_taxes: sp.total_before_taxes,
-    }
-  }).filter(p => p !== undefined) as (Property & { total_before_taxes: number })[]
-})
+
 </script>
 
 <template>
   <div class="property-list">
-    <div v-if="enrichedProperties.length === 0">
+    <div v-if="props.enrichedProperties.length === 0">
       Loading...
     </div>
     <div v-else class="grid-container">
       <SearchPropCard
-        v-for="property in enrichedProperties"
-        :key="property.id"
+        v-for="property in props.enrichedProperties"
+        :key="property.property.id"
         :property="property"
       />
     </div>

@@ -39,7 +39,11 @@ export interface Property{
     details: Details
 }
     
-
+export interface Property_wTotal{
+   property: Property
+   total_before_taxes: string
+}
+    
 export interface Review {
     name: string
     img_src: string
@@ -47,4 +51,9 @@ export interface Review {
     platform: string
     review_content: string
     rating: Float16Array
+}
+
+export interface SearchedProperty {
+  uuid: string
+  total_before_taxes: number
 }

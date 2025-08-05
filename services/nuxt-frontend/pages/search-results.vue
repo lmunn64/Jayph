@@ -1,26 +1,31 @@
 <script setup lang="ts">
 
     import { usePropertyStore } from '~/stores/properties'
-
+    import type { SearchedProperty, Property, Property_wTotal } from '~/types/property'
     const propertyStore = usePropertyStore()
 
     await propertyStore.fetchProperties()
 
-    interface SearchProperty {
-        uuid: string
-        total_before_taxes: number
-    }
-
     const route = useRoute()
 
-    const searchedProperties = ref<SearchProperty[]>([])
+    const searchedProperties = ref<SearchedProperty[]>([])
 
     async function fetchSearchedProperties() {
         const query = route.fullPath.split('?')[1] || ''
-
-        searchedProperties.value = await $fetch<SearchProperty[]>('http://127.0.0.1:8000/api_properties/search?' + query)
+        console.log(query)
+        searchedProperties.value = await $fetch<SearchedProperty[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/search?' + query)
         console.log('Fetched properties:', searchedProperties.value)
     }
+
+    const enrichedProperties = computed<Property_wTotal[]>(() => {
+        return searchedProperties.value.map(sp => {
+            const fullProperty = propertyStore.properties.find(p => p.id === sp.uuid)
+            return fullProperty ? {
+                property: fullProperty,
+                total_before_taxes: String(sp.total_before_taxes),
+            } : undefined
+        }).filter(p => p !== undefined)
+    })
 
     watch(() => route.query, () => {
         fetchSearchedProperties()
@@ -36,8 +41,8 @@
     <h1 v-if="searchedProperties.length > 0" class="title">Results ({{ searchedProperties.length }})</h1>
     <div class="wrapper">
         <!-- display property listings and map of all results side-by-side -->
-        <SearchResultProps :searchedProperties="searchedProperties" :allProperties="propertyStore.properties"/>
-        <SearchResultMap />
+        <SearchResultProps :enrichedProperties="enrichedProperties ?? []"/>
+        <SearchResultMap :enrichedProperties="enrichedProperties"/>
     </div>
 </template>
 

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { Property } from '~/types/property'
+import type { Property_wTotal } from '~/types/property'
 
 const props = defineProps<{
-  property: Property & { total_before_taxes: number }
+  property: Property_wTotal
 }>()
 </script>
 
 <template>
-<NuxtLink :to="`/properties/${property.id}`" class="card-link" draggable="false">
+<NuxtLink :to="`/properties/${property.property.id}`" class="card-link" draggable="false">
   <div class="card">
-    <img class="thumbnail" :src="property.picture_url" alt="property image" />
+    <img class="thumbnail" :src="property.property.picture_url" alt="property image" />
     <div class="details">
         <div class="property-info">
-            <h2>{{ property.name }}</h2>  
-            <p>{{ property.capacity.bedrooms }} bedrooms • {{ property.capacity.bathrooms }} bathrooms • sleeps {{ property.capacity.max }}</p>
+            <h2>{{ property.property.name }}</h2>  
+            <p>{{ property.property.capacity.bedrooms }} bedrooms • {{ property.property.capacity.bathrooms }} bathrooms • sleeps {{ property.property.capacity.max }}</p>
         </div>
         <div class="price">
             <h3>{{ property.total_before_taxes }}</h3>

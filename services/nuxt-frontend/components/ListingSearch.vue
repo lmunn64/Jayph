@@ -12,6 +12,8 @@
 import VueCalendar from './VueCalendar.vue'
 import GuestSelector from './GuestSelector.vue'
 import type { Search } from '~/types/booking'
+import { formatSingleDate } from '~/composables/useDateUtils'
+import { select } from '#build/ui'
 
 const selectedDates = ref()
 const options = {
@@ -105,9 +107,24 @@ function buildQueryParams(search: Search): string {
   if (search.infants) params.append('infants', search.infants.toString())
   if (search.pets) params.append('pets', search.pets.toString())
   if (search.location) params.append('location', search.location)
-  if (search.checkinDate) params.append('start_date', search.checkinDate)
-  if (search.checkoutDate) params.append('end_date', search.checkoutDate)
-
+  /** set dates to selected search dates, or format new dates from today to 5 days from today */
+  var startDate : string = ""
+  var endDate : string = ""
+  if (search.checkinDate) 
+    startDate = search.checkinDate
+  else  
+    startDate = formatSingleDate(new Date())
+  if (search.checkoutDate) 
+    endDate =  search.checkoutDate
+  else {
+    const fiveDays : Date = new Date()
+    fiveDays.setDate(fiveDays.getDate() + 5)
+    endDate =  formatSingleDate(fiveDays)
+  }
+  search.checkinDate = startDate
+  search.checkoutDate = endDate
+  params.append('start_date', startDate)
+  params.append('end_date', endDate)
   return params.toString()
 }
 
@@ -117,11 +134,14 @@ function searchListings(search: Search) {
   const query = buildQueryParams(search)
   router.push(`/search-results?${query}`)
 }
-const formattedDate = (date : string) =>{
+
+/** Format a YYYY-MM-DD date to locale string (e.g. Aug XX, 20XX) */
+const formattedDatetoLocale = (date : string) : string =>{
   //assume YYYY-MM-DD
-  const toFormat : Date = new Date(date)
+  const toFormat : Date = new Date(date + 'T00:00:00')
   return toFormat.toLocaleDateString(undefined, options)
 }
+
 onMounted(() => {
   window.addEventListener('click', handleClickOutside)
 })
@@ -145,7 +165,7 @@ onUnmounted(() => {
             </div>
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(1, e)">
-                    {{search.checkinDate && search.checkoutDate ? `${formattedDate(search.checkinDate)} → ${formattedDate(search.checkoutDate)}` : "Check-in → Check-out"}}
+                    {{search.checkinDate && search.checkoutDate ? `${formattedDatetoLocale(search.checkinDate)} → ${formattedDatetoLocale(search.checkoutDate)}` : "Check-in → Check-out"}}
                 </button>
                 <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
                     <VueCalendar v-model="selectedDates" :for-search="true"/>

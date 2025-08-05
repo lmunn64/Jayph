@@ -4,7 +4,7 @@ import '@vuepic/vue-datepicker/dist/main.css'
 import type { DatePickerInstance } from "@vuepic/vue-datepicker"
 import type { Calendar_Date, Calendar } from '~/types/calendar'
 import { addDays, max } from 'date-fns';
-
+import { formatSingleDate } from '~/composables/useDateUtils'
 const date = ref()
 const calendarContainer = ref()
 const isWideEnough = ref(false)
@@ -117,13 +117,7 @@ const handleDateSelection = (selectedDate : Date) =>{
 
 }
 
-/** Format Date to a string value following "YYYY-MM-DD" */
-const formatSingleDate = (date : Date) => {
-    const day = date.getDate()
-    const month = date.getMonth() + 1
-    const year = date.getFullYear()
-    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
-}
+
 
 const clearTempDisabledDates = () => {
     //remove the temp disableds based on startDate

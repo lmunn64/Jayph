@@ -1,44 +1,46 @@
 <script setup lang="ts">
     import { ref } from 'vue'
-    import { GoogleMap, Circle, Marker, MarkerCluster } from 'vue3-google-map'
-import type { Coordinates } from '~/types/property';
+    import { GoogleMap, Circle, Marker, MarkerCluster, AdvancedMarker } from 'vue3-google-map'
+    import type { Coordinates } from '~/types/property';
+
     const config = useRuntimeConfig()
     interface Props {
         props_coords?: Coordinates[]
-
+        zoom: number
         // Used for center (when props_coords it will be either a kansas city coord, branson city coord or both zoomed out for view of all locations)
         latitude: string
         longitude: string
     }
 
     const mapProps = defineProps<Props>()
-    
-    const center = {lat: parseFloat(mapProps.latitude), lng: parseFloat(mapProps.longitude)}
-    
-    const locations: Array<{ lat: number; lng: number }> = []
+    console.log(mapProps.props_coords)
+    const center = computed(() => ({
+        lat: parseFloat(mapProps.latitude), 
+        lng: parseFloat(mapProps.longitude)
+    }))
+
+    // ✅ Make locations reactive - updates when props_coords changes
+    const locations = computed(() => {
+        if (!mapProps.props_coords) return []
+        
+        return mapProps.props_coords.map((e: Coordinates) => ({
+            lat: parseFloat(e.latitude),
+            lng: parseFloat(e.longitude)
+        }))
+    })
 
     /** If there are several property coordinates, it will map them to locations which will 
      *  be used for a Marker Cluster */
-    if(mapProps.props_coords){
-        mapProps.props_coords.forEach((e : Coordinates) => {
-            var loc_coords = {
-                lat: parseFloat(e.latitude), lng: parseFloat(e.longitude)
-            }
-            locations.push(loc_coords)
-        })
-        
-    }
-    const circle = {
-        center: center,
-        radius: 500,
-        strokeColor: '#FF1004',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35, 
-    }
-    const zoom = 13
-
+    console.log(locations.value)
+    const circle = computed(() => ({
+    center: center.value,
+    radius: 400,
+    strokeColor: '#FF1004',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35, 
+}))
 </script>
 
 
@@ -46,10 +48,11 @@ import type { Coordinates } from '~/types/property';
     <GoogleMap class = "prop-map"
         :api-key= "config.public.googleMapsApiKey"
         :center = "center"
+        :map-id = "config.public.googleMapsId"
         :zoom = "zoom"
     >
     <MarkerCluster v-if= "mapProps.props_coords !== undefined">
-      <Marker
+      <AdvancedMarker
         v-for="(location, i) in locations"
         :key="i"
         :options="{ position: location }"
