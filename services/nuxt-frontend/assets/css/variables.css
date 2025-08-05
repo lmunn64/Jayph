@@ -1,9 +1,17 @@
 :root {
   --primary-color: #3A6351;
+  --primary-color-20: #3a635186;
+
   --secondary-color: #5C946E;
   --accent-color: #4E848A;
   --text-color-dark: #2e2e2e;
   --text-color-light: #faf9f6;
   --highlight-color: #5ba0aa;
   --bg-color: #F4F1EE;
+  --text-color-dark-disabled: #2e2e2e3b;
+
+
+  /** non-color asset settings */
+  --default-border-radius: 16px;
+  --secondary-border-radius: 8px;
 }

@@ -6,6 +6,7 @@ import type { Calendar } from '~/types/calendar';
 
 interface Props {
     id: string
+    max_capacity: number
 }
 
 const bookingProps= defineProps<Props>()
@@ -126,7 +127,7 @@ const redirectToHospitable = () =>{
 
 onMounted(async () => {
     try {
-        calendar_data.value = await $fetch(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
+        calendar_data.value = await $fetch<Calendar>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
     } catch (error) {
         console.error('Error loading calendar:', error)
         calendarError.value = error
@@ -149,10 +150,10 @@ onMounted(async () => {
             </div>
             
             <div class="booking-info" v-if = 'calendar_data'> 
-                 <h1>Your Stay</h1> 
+                 
                 <!-- <hr></hr> -->
-                <div class = placeholder-guest-selector> 
-                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts"/>
+                <div class = guest-selector> 
+                    <GuestSelector v-if = 'calendar_data' v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
                 </div>
                 
                 <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
@@ -208,7 +209,7 @@ onMounted(async () => {
     align-self: center;
     align-items: start;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: var(--default-border-radius);
     min-height: 60vh;
     width: 92%;
     background-color: #7fab8d;
@@ -220,7 +221,7 @@ onMounted(async () => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     width: 100%;
     padding-top: 20px;
     height:100%;
@@ -281,12 +282,12 @@ h1{
 }
 
 
-.placeholder-guest-selector {
+.guest-selector {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--secondary-border-radius);
     /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -370,8 +371,9 @@ h1{
     width: 50%;
     font-size: medium;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 1px;
+    border-color: var(--accent-color);
     border-style: solid;
     margin: 5px;
 }
@@ -383,7 +385,7 @@ h1{
     width: auto;
     height: auto;
     font-size: small;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 0;
 }
 /** later */
@@ -404,7 +406,7 @@ h1{
 .rq-book-btn{
     width: 275px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: var(--secondary-border-radius);
     border-width: 0px;
     font-size: medium;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
@@ -425,11 +427,12 @@ h1{
 }
 /* HTML: <div class="loader"></div> */
 .loader {
-  width: 50px;
+  width: 35px;
   padding: 8px;
+  margin-top: 20px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #25b09b;
+  background: var(--accent-color);
   --_m: 
     conic-gradient(#0000 10%,#000),
     linear-gradient(#000 0 0) content-box;

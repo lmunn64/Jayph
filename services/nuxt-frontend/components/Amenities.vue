@@ -302,7 +302,7 @@ const getCategoryCount = (category: string) => {
     border: 2px solid var(--border-color, #ccc);
     background: white;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: var(--secondary-border-radius);
     font-size: 0.9rem;
     transition: all 0.2s ease;
 }
@@ -355,7 +355,7 @@ const getCategoryCount = (category: string) => {
     padding: 0.5rem 1rem;
     border: 2px solid var(--border-color, #ccc);
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: var(--secondary-border-radius);
     transition: all 0.2s ease;
     margin: 1rem auto;
     display: block;
