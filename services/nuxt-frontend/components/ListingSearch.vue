@@ -97,8 +97,25 @@ function setLocation (loc: string) {
     showDropdowns.value = [false, false, false]
 }
 
-function searchListings (input: Search){
-    // redirect to search results page
+function buildQueryParams(search: Search): string {
+  const params = new URLSearchParams()
+
+  if (search.adults) params.append('adults', search.adults.toString())
+  if (search.children) params.append('children', search.children.toString())
+  if (search.infants) params.append('infants', search.infants.toString())
+  if (search.pets) params.append('pets', search.pets.toString())
+  if (search.location) params.append('location', search.location)
+  if (search.checkinDate) params.append('start_date', search.checkinDate)
+  if (search.checkoutDate) params.append('end_date', search.checkoutDate)
+
+  return params.toString()
+}
+
+const router = useRouter()
+
+function searchListings(search: Search) {
+  const query = buildQueryParams(search)
+  router.push(`/search-results?${query}`)
 }
 const formattedDate = (date : string) =>{
   //assume YYYY-MM-DD
@@ -117,7 +134,7 @@ onUnmounted(() => {
 
 <template>
     <div class="listing-container">
-        <h1 class="title">Find your stay.</h1>
+        <!-- <h1 class="title">Find your stay.</h1> -->
         <div class="btn-container">
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(0, e)"> {{ search.location ? search.location : 'Location' }}</button>
@@ -151,7 +168,7 @@ onUnmounted(() => {
 .listing-container {
     top: 0;
     left: 0;
-    height: 200px;
+    height: 120px;
     background-color: var(--primary-color);
     color: var(--text-color-light);
 }
@@ -160,6 +177,7 @@ onUnmounted(() => {
     padding-top: 1rem;
 }
 .btn-container {
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -248,7 +266,7 @@ onUnmounted(() => {
 
 @media (max-width: 850px) {
   .listing-container {
-    height: 400px;
+    height: 320px;
   }
   .btn-container {
     flex-direction: column;

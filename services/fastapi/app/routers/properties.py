@@ -411,7 +411,6 @@ async def search_properties(adults: int, start_date: str, end_date: str, childre
                                 headers={"Authorization": f"Bearer {PAT}"},
                                 params=search_params)
         if response.status_code != 200:
-            print(response.status_code + ": " + response.reason_phrase)
             raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
         content = response.json()
         data = content.get("data")
