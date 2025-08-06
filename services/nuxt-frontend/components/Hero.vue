@@ -86,7 +86,7 @@
       z-index: 2;
       text-align: center;
       color: white;
-      top: 45%;
+      top: 40%;
       transform: translateY(-50%);
     }
 

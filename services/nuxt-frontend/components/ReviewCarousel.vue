@@ -52,7 +52,11 @@ onMounted(() => {
 
 const currentIndex = ref(0)
 const len = computed(() => state.reviews.length)
-const cardWidth = 650 + 16
+const getCardWidth = () => {
+  if (!carouselRef.value) return 650
+  const firstCard = carouselRef.value.querySelector('.carousel-card')
+  return firstCard instanceof HTMLElement ? firstCard.offsetWidth + 16 : 650 // card width + gap
+}
 const carouselRef = ref<HTMLDivElement | null>(null)
 
 // copying reviews for constant center padding
@@ -60,7 +64,11 @@ const extendedReviews = computed(() => [...state.reviews, ...state.reviews, ...s
 
 function scrollToIndex(idx: number) {
   if (!carouselRef.value) return
-  const scrollPos = (idx + len.value) * cardWidth - (carouselRef.value.clientWidth - cardWidth) / 2
+  
+  const cardWidth = getCardWidth()
+  const targetIndex = idx + len.value // Middle set of reviews
+  const scrollPos = targetIndex * cardWidth - (carouselRef.value.clientWidth - cardWidth) / 2
+  
   carouselRef.value.scrollTo({ left: scrollPos, behavior: 'smooth' })
 }
 
@@ -164,7 +172,8 @@ h1, p {
 .carousel-card {
   scroll-snap-align: center;
   flex: 0 0 auto;
-  width: 650px;
+  width: fit-content; 
+
   will-change: transform, opacity;
   user-select: none;
 }

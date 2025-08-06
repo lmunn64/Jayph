@@ -63,7 +63,7 @@
 <style scoped>
     .card {
         background-color: var(--bg-color);
-        width: 650px;
+        width: 100%;
         text-align: center;
     }
     .header {
@@ -104,7 +104,7 @@
     .clamped {
         display: -webkit-box;
         -webkit-line-clamp: 3;  
-        line-clamp: 3;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -119,9 +119,5 @@
         padding: 0;
     }
 
-    @media (max-width: 600px) {
-        .card {
-            width: 80vw;
-        }
-    }
+
 </style>
