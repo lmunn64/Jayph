@@ -78,6 +78,7 @@ onMounted(() => {
       :loop="true"
       :effect="'coverflow'"
       :grab-cursor="true"
+      :auto-height="true"
       :coverflow-effect="{
         rotate: 0,
         stretch: 0,
@@ -117,6 +118,7 @@ h1, p {
 }
 .swiper {
   padding: 0 90px; /* space for arrows */
+  height: fit-content;
   position: relative;
 
 }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Property } from '~/types/property';
 import GMap from './GMap.vue';
 
 interface Props {
@@ -34,7 +33,7 @@ const locationProps = defineProps<Props>()
     text-align: start;
     height: 65vh;
     padding: 25px;
-    background-color: var(--accent-color);
+   
 }
 h2{
     margin-top: 10px;

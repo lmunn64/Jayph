@@ -51,30 +51,9 @@ const faqs = ref<FaqItem[]>([
 
 const activeIndex = ref<number | null>(null)
 
+
 function toggle(index: number) {
   activeIndex.value = activeIndex.value === index ? null : index
-}
-function onEnter(el: Element) {
-  const element = el as HTMLElement
-  element.style.height = '0'
-  element.style.opacity = '0'
-  element.style.transition = 'height 0.3s ease, opacity 0.3s ease'
-
-  nextTick(() => {
-    element.style.height = element.scrollHeight + 'px'
-    element.style.opacity = '1'
-  })
-}
-
-function onLeave(el: Element) {
-  const element = el as HTMLElement
-  element.style.height = element.scrollHeight + 'px'
-  element.style.opacity = '1'
-  element.offsetHeight // force reflow
-
-  element.style.transition = 'height 0.3s ease, opacity 0.3s ease'
-  element.style.height = '0'
-  element.style.opacity = '0'
 }
 </script>
 
@@ -89,20 +68,12 @@ function onLeave(el: Element) {
         <span>{{ faq.question }}</span>
         <span>{{ activeIndex === index ? '-' : '+' }}</span>
       </button>
-
-      <transition
-        name="expand"
-        @enter="onEnter"
-        @leave="onLeave"
+      <div
+        class="faq-answer"
+        :class="{ 'expanded': activeIndex === index }"
       >
-        <div
-          v-show="activeIndex === index"
-          class="faq-answer"
-          ref="content"
-        >
-          {{ faq.answer }}
-        </div>
-      </transition>
+        {{ faq.answer }}
+      </div>
     </div>
   </div>
 </template>
@@ -116,10 +87,12 @@ function onLeave(el: Element) {
   padding: 2rem;
   margin-bottom: 2rem;
 }
+
 .faq-item {
   border-bottom: 1px solid #ccc;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
+
 .faq-question {
   display: flex;
   justify-content: space-between;
@@ -131,11 +104,22 @@ function onLeave(el: Element) {
   cursor: pointer;
   text-align: left;
 }
+
 .faq-answer {
   margin-left: 0.5rem;
-  overflow: hidden;
   font-size: 1rem;
   color: #444;
   margin-top: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-answer.expanded {
+  max-height: 200px;
+  opacity: 1;
+  transition: all .8s ease;
+
 }
 </style>
