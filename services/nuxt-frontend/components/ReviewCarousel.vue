@@ -7,8 +7,15 @@
         - list loops back to start
 -->
 <script setup lang="ts">
-
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-coverflow'
 import type { Review } from "~/types/property"
+const modules = [Pagination, Navigation, EffectCoverflow]
+import index_reviews from '~/public/static/index-reviews.json' 
 
 const state = reactive({
   reviews: [] as Review[],
@@ -27,9 +34,18 @@ const endpoint = props.propertyId
   : 'https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/cfa6a066-72e8-4a24-a1e4-e48273983344/reviews'
 
 
-const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, () =>
-  $fetch(endpoint)
-)
+const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${props.propertyId || 'all'}`, async () => {
+  if(props.propertyId !== undefined){
+     const response = await fetch(endpoint)
+    if (!response.ok) {
+      throw new Error('Failed to fetch reviews')
+    }
+    return response.json()
+  }
+  else {
+    return index_reviews
+  }
+})
 
 onMounted(() => {
   if (Array.isArray(reviewsData.value)) {
@@ -49,76 +65,46 @@ onMounted(() => {
     console.error('Could not fetch review data')
   }
 })
-
-const currentIndex = ref(0)
-const len = computed(() => state.reviews.length)
-const getCardWidth = () => {
-  if (!carouselRef.value) return 650
-  const firstCard = carouselRef.value.querySelector('.carousel-card')
-  return firstCard instanceof HTMLElement ? firstCard.offsetWidth + 16 : 650 // card width + gap
-}
-const carouselRef = ref<HTMLDivElement | null>(null)
-
-// copying reviews for constant center padding
-const extendedReviews = computed(() => [...state.reviews, ...state.reviews, ...state.reviews])
-
-function scrollToIndex(idx: number) {
-  if (!carouselRef.value) return
-  
-  const cardWidth = getCardWidth()
-  const targetIndex = idx + len.value // Middle set of reviews
-  const scrollPos = targetIndex * cardWidth - (carouselRef.value.clientWidth - cardWidth) / 2
-  
-  carouselRef.value.scrollTo({ left: scrollPos, behavior: 'smooth' })
-}
-
-function next() {
-  currentIndex.value = (currentIndex.value + 1) % len.value
-  scrollToIndex(currentIndex.value)
-}
-
-function prev() {
-  currentIndex.value = (currentIndex.value - 1 + len.value) % len.value
-  scrollToIndex(currentIndex.value)
-}
-
-onMounted(() => {
-  nextTick(() => scrollToIndex(currentIndex.value))
-})
-
-watch(currentIndex, () => {
-  scrollToIndex(currentIndex.value)
-})
 </script>
 
 <template>
-  <div v-if="reviewsData?.length">
-    <div class="carousel-wrapper" v-if="!state.isLoading">
-      <button class="nav-btn prev" @click="prev">‹</button>
-
-      <div class="carousel" ref="carouselRef">
-        <div
-          v-for="(review, i) in extendedReviews"
-          :key="`${review.name}-${i}`"
-          class="carousel-card"
-          :class="{ centered: (i - len) === currentIndex }"
-          :style="{
-            transform: (i - len) === currentIndex ? 'scale(1)' : 'scale(0.65)',
-            opacity: (i - len) === currentIndex ? 1 : 0.5,
-            transition: 'transform 0.3s ease, opacity 0.3s ease'
-          }"
-        >
-          <ReviewCard v-bind="review" />
-        </div>
-      </div>
-
-      <button class="nav-btn next" @click="next">›</button>
-    </div>
-
-    <div v-else class="loading-text">
-      Loading reviews...
-    </div>
+ <div class = "review-carousel"v-if="reviewsData?.length && !state.isLoading">
+    <Swiper
+      :modules="modules"
+      :slides-per-view="1"
+      :space-between="0"
+      :centered-slides="true"
+      
+      :loop="true"
+      :effect="'coverflow'"
+      :grab-cursor="true"
+      :coverflow-effect="{
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: false,
+      }"
+      :pagination="{ clickable: true }"
+      :navigation="{ enabled : true }"
+      :breakpoints="{
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 50,
+        },
+        1250: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+      }"
+      class="review-swiper"
+    >
+      <SwiperSlide v-for="review in state.reviews" :key="review.name">
+        <ReviewCard v-bind="review" />
+      </SwiperSlide>
+    </Swiper>
   </div>
+    
   <p v-else>No reviews yet for this property.</p>
 </template>
 
@@ -126,55 +112,31 @@ watch(currentIndex, () => {
 h1, p {
   text-align: center;
 }
-.carousel-wrapper {
-  overflow-x: scroll;
+.review-carousel{
+  overflow: hidden
+}
+.swiper {
+  padding: 0 90px; /* space for arrows */
   position: relative;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+
+}
+@media (max-width: 1250px){
+  .swiper {
+    padding: 0 0px; 
+    position: relative;
+  }
 }
 
-.nav-btn {
-  background: var(--accent-color);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0 1rem;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 4px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+:deep(.swiper-button-next) {
+  color: var(--accent-color);
+  right: 0px;
 }
 
-.carousel {
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  display: flex;
-  gap: 16px;
-  flex-wrap: nowrap;
-  -ms-overflow-style: none;
-  scrollbar-width: none; 
-  width: 100%;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 2rem;
-  user-select: none;
+:deep(.swiper-button-prev) {
+  color: var(--accent-color);
+  left: 0px;
 }
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-card {
-  scroll-snap-align: center;
-  flex: 0 0 auto;
-  width: fit-content; 
-
-  will-change: transform, opacity;
-  user-select: none;
+:deep(.swiper-pagination-bullet){
+   background-color: var(--accent-color);
 }
 </style>

@@ -44,7 +44,6 @@ h1, h2, p {
   position: relative;
   width: 100%;
   height: fit-content; /* Full viewport height */
-  
 }
 .wrapper {
   display: flex;
