@@ -269,7 +269,6 @@ const toggleSearchOpen = () =>{
     margin: 0
 }
 .btn-container {
-    padding-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
