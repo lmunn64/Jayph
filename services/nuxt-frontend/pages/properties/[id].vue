@@ -67,7 +67,7 @@ onMounted(async () => {
             <h3>Other Details</h3>
             <p>{{ property.details.other_details }}</p>
 
-            <PropBooking :id="id" />
+            <PropBooking :id="id" :max_capacity = "property.capacity.max"/>
 
             <h1 style="text-align: center;">Reviews</h1>
             <ReviewCarousel :propertyId="id" />

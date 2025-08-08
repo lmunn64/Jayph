@@ -37,7 +37,7 @@
 
     <!-- flavor text to display over slideshow -->
     <div class="hero-overlay">
-      <h1 class="hero-title">Welcome to Fountain City Stays!</h1>
+      <h1 class="hero-title">Approachable. Relaxing. Inspired Spaces. Come Stay Today!</h1>
       <p class="hero-subtitle">Our spaces are designed with you in mind. We wish to provide an atmosphere that makes you smile. </p>
     </div>
   </div>
@@ -55,23 +55,23 @@
     }
 
     .slideshow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
 
     .hero-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
     .hero-image.active {
-    opacity: 1;
-    z-index: 1;
+      opacity: 1;
+      z-index: 1;
     }
     .gradient-overlay {
       position: absolute;
@@ -82,21 +82,21 @@
       z-index: 2;
     }
     .hero-overlay {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
-    top: 50%;
-    transform: translateY(-50%);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      top: 40%;
+      transform: translateY(-50%);
     }
 
     .hero-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--text-color-light);
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-color-light);
     }
     .hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-color-light);
+      font-size: 1rem;
+      color: var(--text-color-light);
     }
 </style>

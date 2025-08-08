@@ -15,7 +15,7 @@ import type { Search } from '~/types/booking'
 import { formatSingleDate } from '~/composables/useDateUtils'
 import { select } from '#build/ui'
 
-const selectedDates = ref()
+const selectedDates = ref<string[]>()
 const options = {
   year: "numeric" as const,
   month: "short" as const,
@@ -39,13 +39,26 @@ const guestCounts = ref({
   pets: 0
 })
 
+const mobileSearchOpen = ref<boolean>(false)
+const transitioning_mobile = ref(false)
+
+
+/** watcher for when mobile dropdown is transitioning  */
+watch(mobileSearchOpen, (val) => {
+  transitioning_mobile.value = true
+  setTimeout(() => {
+    transitioning_mobile.value = false
+  }, 700) 
+})
+
+/** watcher for dates and guest counts */
 watch([guestCounts, selectedDates], ([newGuests, newDates]) => {
   search.value.adults = newGuests.adults
   search.value.children = newGuests.children
   search.value.infants = newGuests.infants
   search.value.pets = newGuests.pets
   console.log(newDates)
-  if(newDates !== undefined){
+  if(newDates && Array.isArray(newDates) && newDates.length >= 2){
     search.value.checkinDate = newDates[0]
     search.value.checkoutDate = newDates[1]
   }
@@ -72,7 +85,7 @@ const guestSummary = computed(() => {
 const showDropdowns = ref([false, false, false])
 const dropdownAbove = ref([false, false, false])
 
-// function to toggle dropdowns
+// function to toggle dropdowns, adds visible class into template
 function toggleDropdown(index: number, event: MouseEvent) {
   const wasOpen = showDropdowns.value[index]
   showDropdowns.value = [false, false, false]
@@ -81,7 +94,7 @@ function toggleDropdown(index: number, event: MouseEvent) {
     const button = event.currentTarget as HTMLElement
     const rect = button.getBoundingClientRect()
     const spaceBelow = window.innerHeight - rect.bottom
-    dropdownAbove.value[index] = spaceBelow < 200
+    dropdownAbove.value[index] = spaceBelow < 320
     showDropdowns.value[index] = true
   }
 }
@@ -150,15 +163,33 @@ onUnmounted(() => {
   window.removeEventListener('click', handleClickOutside)
 })
 
+// Toggle function for mobile searching
+const toggleSearchOpen = () =>{
+  mobileSearchOpen.value = !mobileSearchOpen.value
+}
+
 </script>
 
 <template>
-    <div class="listing-container">
-        <!-- <h1 class="title">Find your stay.</h1> -->
+    <div class="listing-container" :class = "{'mobile-expanded' : mobileSearchOpen ,'overflow-hidden': transitioning_mobile}">
+              <button 
+            v-if="mobileSearchOpen" 
+            class="close-btn" 
+            @click="toggleSearchOpen()"
+        >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <h2 class="title">Find your stay.</h2>
+
+        <div class = "mobile-toggle-container">
+          <button class = "mobile-toggle-btn" :class = "{'hidden' : mobileSearchOpen}" @click = "toggleSearchOpen()">Search Properties</button>         
+        </div>
         <div class="btn-container">
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(0, e)"> {{ search.location ? search.location : 'Location' }}</button>
-                <div v-if="showDropdowns[0]" :class="{ menu: true, above: dropdownAbove[0] }">
+                <div :class="{ menu: true, above: dropdownAbove[0], visible : showDropdowns[0] }">
                     <button @click="setLocation('Branson West')">Branson West</button>
                     <button @click="setLocation('Kansas City')">Kansas City</button>
                 </div>
@@ -167,13 +198,13 @@ onUnmounted(() => {
                 <button class="input" @click="(e) => toggleDropdown(1, e)">
                     {{search.checkinDate && search.checkoutDate ? `${formattedDatetoLocale(search.checkinDate)} → ${formattedDatetoLocale(search.checkoutDate)}` : "Check-in → Check-out"}}
                 </button>
-                <div v-if="showDropdowns[1]" :class="['menu', 'date-menu', { above: dropdownAbove[1] }]">
+                <div :class="['menu', 'date-menu', { above: dropdownAbove[1], visible: showDropdowns[1] }]">
                     <VueCalendar v-model="selectedDates" :for-search="true"/>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(2, e)"> {{ guestSummary }} </button>
-                <div v-if="showDropdowns[2]" :class="{ menu: true, above: dropdownAbove[2] }">
+                <div :class="{ menu: true, above: dropdownAbove[2], visible : showDropdowns[2] }">
                     <GuestSelector v-model="guestCounts" />
                 </div>
             </div>
@@ -186,15 +217,56 @@ onUnmounted(() => {
 
 <style scoped>
 .listing-container {
-    top: 0;
-    left: 0;
-    height: 120px;
-    background-color: var(--primary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    background-color: var(--primary-color-20);
     color: var(--text-color-light);
+}
+.close-btn {
+    position: absolute;
+    top: .75em;
+    right: .75rem;
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.29);
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-dark);
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+.mobile-toggle-container {
+    display: none;
+}
+.mobile-toggle-btn{
+    font-size: 1em;
+    border-radius: var(--default-border-radius);
+    outline: none;
+    cursor: pointer;
+    transition: opacity 3s ease, visibility 3s ease;
+    border: 0px;
+    height: 50px;
+    width: 45vw;
+    max-width: 225px;
+    background-color: white;
+    color: var(--text-color-dark);
 }
 .title {
     text-align: center;
     padding-top: 1rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    margin: 0
 }
 .btn-container {
     padding-top: 2rem;
@@ -204,18 +276,20 @@ onUnmounted(() => {
 }
 .btn-container button {
     font-size: 1em;
+    width: auto;
     padding: 0.5rem 1rem;
-    border-radius: 16px;
+    border-radius: var(--default-border-radius);
     outline: none;
     cursor: pointer;
     transition: 0.2s ease;
 }
+
 .input {
     text-align: left;
     border: 0px;
     height: 58px;
     padding-inline: 40px;
-    width: 15vw;
+    min-width: 20vw;
     background-color: white;
     color: var(--text-color-dark);
 }
@@ -227,14 +301,19 @@ onUnmounted(() => {
 .menu {
   margin-top: 8px;
   position: absolute;
-  border-radius: 16px;
+  border-radius: var(--default-border-radius);
   background: white;
   border: 1px solid #ccc;
   z-index: 10;
-  width: 15vw;
+  width: fit-content;
+  min-width: 300px;
   overflow: hidden;
+  /** hiding menu by default now */
+  opacity: 0;
+  visibility: hidden;
   top: 100%; /* default: below the button */
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -248,6 +327,11 @@ onUnmounted(() => {
 .menu-below {
   margin-top: 8px;
   top: 100%;
+}
+
+.menu.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu button {
@@ -270,7 +354,7 @@ onUnmounted(() => {
 .date-menu {
     display: flex;
     width: 700px;  
-    min-height: calc(350px + 3rem);
+    min-height: calc(330px + 3rem);
     max-height: calc(395px + 3rem); /** since rows are 45 pixels more, account for extra row in max */
     height: auto;
     justify-content: center;
@@ -286,21 +370,67 @@ onUnmounted(() => {
 
 @media (max-width: 850px) {
   .listing-container {
-    height: 320px;
+    height: 140px;
+    transition: all .4s ease;
   }
-  .btn-container {
+
+  .listing-container.mobile-expanded {
+    height: 350px;
+    transition: all .7s ease;
+  }
+
+  .listing-container.overflow-hidden {
+    overflow: hidden;
+  }
+
+  /** unhide the mobile toggle */
+  .mobile-toggle-container{
+    justify-content: center;
+    gap: 1rem;
+    display: flex;
+  }
+
+  .mobile-toggle-btn.hidden{
+    justify-content: center;
+    gap: 1rem;
+    display: none;
+  }
+
+  .mobile-toggle-down{
+    cursor: pointer;
+  }
+  .mobile-toggle-down.hidden{
+    display: none;
+  }
+  
+ .btn-container {
+    opacity: 0;
+    visibility: hidden;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
+  }
+  
+  .mobile-expanded .btn-container {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 2s ease, visibility 0.3s ease, transform 0.3s ease;
   }
   .btn-container button {
-    width: 90vw;  
+    width: 90vw;
     max-width: 400px;
   }
+
+  .close-btn {
+    display: flex;
+  } 
   .menu {
     width: 90vw !important;  
     max-width: 400px !important;
+    visibility: hidden;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 200;
   }
 }
+
 </style>
