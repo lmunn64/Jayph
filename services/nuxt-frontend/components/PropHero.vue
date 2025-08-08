@@ -55,6 +55,14 @@ const carouselConfig = {
         }, 5000) // Change image every 5 seconds, loop to start
     })
 
+    function getGlobalIndex(rowIndex: number, index: number): number {
+      let count = 0
+      for (let i = 0; i < rowIndex; i++) {
+        count += chunkedImages.value[i].length
+      }
+      return count + index
+    }
+
     function openGallery(){
       showGallery.value = true
     }
@@ -129,7 +137,7 @@ const carouselConfig = {
                     :key="img"
                     :src="img"
                     class="gallery-thumb"
-                    @click="openSlideshow(rowIndex * 2 + index)"
+                    @click="openSlideshow(getGlobalIndex(rowIndex, index))"
                     />
               </div>
             </div>
