@@ -6929,6 +6929,11 @@ vue-router@^4.5.1:
   dependencies:
     "@vue/devtools-api" "^6.6.4"
 
+vue3-carousel@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/vue3-carousel/-/vue3-carousel-0.16.0.tgz#2b15a2ed83082eb3b91d3375d637c6d90d82d8d2"
+  integrity sha512-IKRKtvHP8gNDRHSzINXwFbJ/Zy2HS+Gv2lXPnAEop6pxsvB17+fz2WQlNZ6ytilLkM5DOu/jXPoDQi/xy17bjg==
+
 vue3-google-map@^0.23.1:
   version "0.23.1"
   resolved "https://registry.npmjs.org/vue3-google-map/-/vue3-google-map-0.23.1.tgz"
@@ -6948,6 +6953,11 @@ vue@^3.4.5, vue@^3.5.13, vue@^3.5.16, vue@^3.5.18:
     "@vue/runtime-dom" "3.5.18"
     "@vue/server-renderer" "3.5.18"
     "@vue/shared" "3.5.18"
+
+vueperslides@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vueperslides/-/vueperslides-3.6.0.tgz#96d9a2e440a3fb9c496f0e177d953f681a546026"
+  integrity sha512-ip2/Mvzhs9A21NnPQWsnx2JVoa0v5ecRNa3Kobyp6VTdxTH+xJRdT9bjVV3EVoK/YUyhYMpPJLExhB9udd91JA==
 
 web-streams-polyfill@^3.0.3:
   version "3.3.3"

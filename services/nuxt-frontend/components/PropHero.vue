@@ -9,29 +9,18 @@
 -->
 
 <script setup lang="ts">
-//     const images = [
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-// ] 
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+const carouselConfig = {
+  itemsToShow: 2,
+  transition: 1000,
+  autoplay: 5000,
+  pauseAutoplayOnHover: true,
+  height:450,
+  wrapAround: true
+}
+
     
     const props = defineProps<{
       images: string[]
@@ -40,6 +29,26 @@
     const showGallery = ref(false)
     const showSlideshow = ref(false)
     const slideshowIndex = ref(0)
+
+    const chunkSizes = [1,2]  // pattern of imgs per row
+    const chunkedImages = computed(() => { // groups imgs by rows
+      const result: string[][] = []
+      let i = 0
+      let toggle = 0 // alter between chunk sizes
+      const imgs = props.images
+      while (i < imgs.length) {
+        let size = chunkSizes[toggle % chunkSizes.length]
+        if (i + size > imgs.length) {
+          size = imgs.length - i // handle 2-row when only 1 image left
+        }
+        result.push(imgs.slice(i, i + size))
+        i += size
+        toggle++
+      }
+      return result
+    })
+
+
     onMounted(() => {
         setInterval(() => {
             currentIndex.value = (currentIndex.value + 1) % props.images.length
@@ -67,12 +76,21 @@
     function prevSlide() {
       slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
     }
+
+    // constrain body scrolling on modals
+    watch(showGallery, (val) => {
+      if (val) {
+        document.body.style.overflow = 'hidden'  // disable body scroll
+      } else {
+        document.body.style.overflow = ''       // enable body scroll
+      }
+    })
 </script>
 
 <template>
     <div class="hero">
         <!-- slideshow element -->
-        <div class="slideshow">
+        <!-- <div class="slideshow">
         <img
             v-for="(img, index) in images"
             :key="img"
@@ -81,28 +99,55 @@
             :class="{ active: index === currentIndex }"
             alt="Hero Slide"
         />
-        </div>
-
-        <!-- gradient overlay for text visibility -->
-        <!-- <div class="gradient-overlay"></div> -->
-
-        <!-- <div class="hero-overlay">
-          <h1 class="hero-title">Welcome to [PROPERTY]!</h1>
         </div> -->
+        <div class="slideshow">
+          <Carousel v-bind="carouselConfig">
+          <Slide v-for="(img, i) in images" :key="i">
+            <img :src="img" alt="image">
+          </Slide>
+
+          <template #addons>
+            <Navigation />
+          </template>
+        </Carousel>
+        </div>
 
         <button class="see-photos-btn" @click="openGallery">See all photos</button>
 
         <!-- gallery display -->
         <div v-if="showGallery" class="modal" @click.self="closeAllModals">
-        <div class="gallery-grid">
-            <img
-            v-for="(img, index) in images"
-            :key="img"
-            :src="img"
-            class="gallery-thumb"
-            @click="openSlideshow(index)"
-            />
-        </div>
+        <div class="gallery-container">
+            <div class="gallery-rows">
+              <div
+                v-for="(row, rowIndex) in chunkedImages"
+                :key="rowIndex"
+                class="gallery-row"
+                :class="{single: row.length === 1, double: row.length ===2 }"
+                >
+                  <img 
+                    v-for="(img, index) in row"
+                    :key="img"
+                    :src="img"
+                    class="gallery-thumb"
+                    @click="openSlideshow(rowIndex * 2 + index)"
+                    />
+              </div>
+            </div>
+            <div class="gallery-text">
+              <h1>Summary</h1>
+              <p>Very cozy & homey apartment- Fantastic location! Walking distance to many KC amenities:
+                - 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)
+                - 10 min walk to Westport
+                - 3 min drive to the Plaza
+                - 10 min drive to Downtown, Sprint Center & Convention Center
+                - 2 blocks from Starbucks
+                - 2 blocks from the Roasterie
+
+                NO LOCALS without GREAT reviews allowed
+
+                NOTE:  Dining Chairs have been switched out - updated photos coming.</p>
+            </div>
+          </div>
         </div>
 
         <!-- modal slideshow -->
@@ -128,21 +173,21 @@
 </template>
 
 <style scoped>
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 p {
     text-align:center;
 }
 .hero {
 position: relative;
 width: 100%;
-height: 600px;
+height: 450px;
 overflow: hidden;
 }
 
-.slideshow {
-position: absolute;
-width: 100%;
-height: 100%;
-}
 
 .hero-image {
 position: absolute;
@@ -156,6 +201,15 @@ transition: opacity 1s ease-in-out;
 .hero-image.active {
 opacity: 1;
 z-index: 1;
+}
+
+.carousel {
+  --vc-nav-background: rgba(0, 0, 0, 0.7);
+  --vc-nav-color: white;
+  --vc-nav-color-hover: var(--accent-color);
+  --vc-nav-border-radius: 0%;
+  --vc-nav-height: 45px;
+  --vc-nav-width: 45px;
 }
 
 .gradient-overlay {
@@ -205,14 +259,15 @@ color: var(--text-color-light);
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1001; /* cover navbar */
+  overscroll-behavior: contain;
 }
 
-.gallery-grid {
+/* .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
@@ -227,14 +282,65 @@ color: var(--text-color-light);
   cursor: pointer;
   border-radius: var(--secondary-border-radius);
   transition: transform 0.2s ease;
+} */
+.gallery-container {
+  display: flex;
+  background-color:var(--bg-color);
+  padding: 16px;
+  overscroll-behavior: contain;
+  max-width: 90vw;
+}
+
+.gallery-text {
+  max-width: 400px;
+  padding: 16px;
+  color: var(--text-color-dark);
+  text-align: center;
+}
+
+.gallery-rows {
+  max-width: 90%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.gallery-row.single {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-row.double {
+  display:flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gallery-thumb {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: var(--secondary-border-radius);
+  transition: transform 0.2s ease;
+  max-width: 100%;
+}
+
+.gallery-row.double .gallery-thumb {
+  width: 49%;
 }
 
 .gallery-thumb:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .slideshow-modal {
-  margin-top: 40px;
+  background-color: rgb(15, 15, 15);
+  /* margin-top: 40px; */
   display: flex;
   flex-direction: column;
   align-items: center;
