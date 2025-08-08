@@ -17,9 +17,19 @@
         loading.value = true
         const query = route.fullPath.split('?')[1] || ''
         console.log(query)
-        searchedProperties.value = await $fetch<SearchedProperty[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/search?' + query)
-        console.log('Fetched properties:', searchedProperties.value)
-        loading.value = false
+        try {
+            const response = await $fetch<SearchedProperty[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/search?' + query)
+            if(response){
+                searchedProperties.value = response
+                console.log('Fetched properties:', searchedProperties.value)
+            }
+        } catch (error) {
+            console.log(error)
+            console.log('Could not fetch properties')
+            
+        } finally {
+            loading.value = false
+        }
     }
 
     // properties obtained from search including all property info
@@ -74,8 +84,8 @@
     gap: 1rem;
     justify-content: center;
     width: 100%;
-    height: 85vh;
-    padding: 1rem 1rem;    
+    height: 90vh;
+    padding: 20px 60px 20px 60px;    
     margin: 0 auto;
     box-sizing: border-box; 
     background-color: var(--bg-color);

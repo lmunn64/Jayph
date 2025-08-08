@@ -15,6 +15,8 @@ import type { Search } from '~/types/booking'
 import { formatSingleDate } from '~/composables/useDateUtils'
 import { select } from '#build/ui'
 
+const route = useRoute()
+
 const selectedDates = ref<string[]>()
 const options = {
   year: "numeric" as const,
@@ -42,6 +44,8 @@ const guestCounts = ref({
 const mobileSearchOpen = ref<boolean>(false)
 const transitioning_mobile = ref(false)
 
+// Check if we're on the index page
+const isIndexPage = computed(() => route.name === 'index')
 
 /** watcher for when mobile dropdown is transitioning  */
 watch(mobileSearchOpen, (val) => {
@@ -171,7 +175,8 @@ const toggleSearchOpen = () =>{
 </script>
 
 <template>
-    <div class="listing-container" :class = "{'mobile-expanded' : mobileSearchOpen ,'overflow-hidden': transitioning_mobile}">
+    <div class="listing-container" :class = "{'mobile-expanded' : mobileSearchOpen ,'overflow-hidden': transitioning_mobile,'fixed-position': !isIndexPage,
+        'absolute-position': isIndexPage} ">
               <button 
             v-if="mobileSearchOpen" 
             class="close-btn" 
@@ -217,80 +222,88 @@ const toggleSearchOpen = () =>{
 
 <style scoped>
 .listing-container {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    height: 150px;
-    width: 100%;
-    z-index: 10;
-    backdrop-filter: blur(6px);
-    background-color: var(--primary-color-20);
-    color: var(--text-color-light);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  background-color: var(--primary-color-20);
+  color: var(--text-color-light);
+}
+.listing-container.fixed-position {
+  background-color: var(--primary-color);
+  backdrop-filter: none;
+  
+  position: relative;
+  bottom: auto;
+  z-index: 1;
 }
 .close-btn {
-    position: absolute;
-    top: .75em;
-    right: .75rem;
-    width: 25px;
-    height: 25px;
-    background: rgba(255, 255, 255, 0.29);
-    border: none;
-    border-radius: 30%;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color-dark);
-    transition: all 0.2s ease;
-    z-index: 20;
+  position: absolute;
+  top: .75em;
+  right: .75rem;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.29);
+  border: none;
+  border-radius: 30%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-dark);
+  transition: all 0.2s ease;
+  z-index: 20;
 }
 .mobile-toggle-container {
     display: none;
 }
 .mobile-toggle-btn{
-    font-size: 1em;
-    border-radius: var(--default-border-radius);
-    outline: none;
-    cursor: pointer;
-    transition: opacity 3s ease, visibility 3s ease;
-    border: 0px;
-    height: 50px;
-    width: 45vw;
-    max-width: 225px;
-    background-color: white;
-    color: var(--text-color-dark);
+  font-size: 1em;
+  border-radius: var(--default-border-radius);
+  outline: none;
+  cursor: pointer;
+  transition: opacity 3s ease, visibility 3s ease;
+  border: 0px;
+  height: 50px;
+  width: 45vw;
+  max-width: 225px;
+  background-color: white;
+  color: var(--text-color-dark);
 }
 .title {
-    text-align: center;
-    padding-top: 1rem;
-    font-weight: 200;
-    padding-bottom: 1rem;
-    margin: 0
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  margin: 0
 }
 .btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 .btn-container button {
-    font-size: 1em;
-    width: auto;
-    padding: 0.5rem 1rem;
-    border-radius: var(--default-border-radius);
-    outline: none;
-    cursor: pointer;
-    transition: 0.2s ease;
+  font-size: 1em;
+  width: auto;
+  padding: 0.5rem 1rem;
+  border-radius: var(--default-border-radius);
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .input {
-    text-align: left;
-    border: 0px;
-    height: 58px;
-    padding-inline: 40px;
-    min-width: 20vw;
-    background-color: white;
-    color: var(--text-color-dark);
+  text-align: left;
+  border: 0px;
+  height: 58px;
+  padding-inline: 40px;
+  min-width: 20vw;
+  background-color: white;
+  color: var(--text-color-dark);
 }
 
 .dropdown {

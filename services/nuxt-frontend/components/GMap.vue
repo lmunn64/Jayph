@@ -46,9 +46,9 @@
 
 <template>
     <GoogleMap class = "prop-map"
-        :api-key= "config.public.googleMapsApiKey"
+        
         :center = "center"
-        :map-id = "config.public.googleMapsId"
+       
         :zoom = "zoom"
     >
     <MarkerCluster v-if= "mapProps.props_coords !== undefined">
@@ -67,6 +67,8 @@
 <style scoped>
 
 .prop-map{
+    overflow: hidden;
+    border-radius: inherit;
     width: 100%; 
     height: 100%
 }

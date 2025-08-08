@@ -58,6 +58,7 @@ const props = defineProps<{
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding-right: 1rem;
 }
 .grid-container {
   display: grid;

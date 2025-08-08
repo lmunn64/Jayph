@@ -90,10 +90,11 @@ const center = computed<string[]>(() => {
 <style scoped>
     .container {
         /* padding: 1rem 0; */
-        width: 40%;
+        width: 50%;
         height: auto;
     }
     .map {
+        border-radius: var(--secondary-border-radius);
         /* padding: 1rem 0; */
         background-color: var(--accent-color);
         width: 100%; 
