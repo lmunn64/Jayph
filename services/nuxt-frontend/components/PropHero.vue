@@ -23,6 +23,7 @@ const carouselConfig = {
 
     
     const props = defineProps<{
+      summary: string
       images: string[]
     }>()
     const currentIndex = ref(0)
@@ -85,6 +86,15 @@ const carouselConfig = {
       slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
     }
 
+    const emit = defineEmits<{
+      (e: 'scroll-to-section'): void
+    }>()
+
+    function scrollToBooking() {
+      closeAllModals()
+      emit('scroll-to-section')
+    }
+
     // constrain body scrolling on modals
     watch(showGallery, (val) => {
       if (val) {
@@ -132,7 +142,7 @@ const carouselConfig = {
                 class="gallery-row"
                 :class="{single: row.length === 1, double: row.length ===2 }"
                 >
-                  <img 
+                  <img draggable="false"
                     v-for="(img, index) in row"
                     :key="img"
                     :src="img"
@@ -142,18 +152,9 @@ const carouselConfig = {
               </div>
             </div>
             <div class="gallery-text">
-              <h1>Summary</h1>
-              <p>Very cozy & homey apartment- Fantastic location! Walking distance to many KC amenities:
-                - 4 blocks to Nelson-Atkins, Kemper & Art Institute (& the beautiful campus)
-                - 10 min walk to Westport
-                - 3 min drive to the Plaza
-                - 10 min drive to Downtown, Sprint Center & Convention Center
-                - 2 blocks from Starbucks
-                - 2 blocks from the Roasterie
-
-                NO LOCALS without GREAT reviews allowed
-
-                NOTE:  Dining Chairs have been switched out - updated photos coming.</p>
+              <h1>About the Property</h1>
+              <p> {{ summary }} </p>
+              <button @click="scrollToBooking()">Book Now</button>
             </div>
           </div>
         </div>
@@ -297,6 +298,7 @@ color: var(--text-color-light);
   padding: 16px;
   overscroll-behavior: contain;
   max-width: 90vw;
+  border-radius: var(--secondary-border-radius);
 }
 
 .gallery-text {
@@ -304,6 +306,22 @@ color: var(--text-color-light);
   padding: 16px;
   color: var(--text-color-dark);
   text-align: center;
+  position: relative;
+}
+
+.gallery-text button{
+  padding: 16px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  width: 100%;
+  border-radius: var(--secondary-border-radius);
+  /* margin-top: 100%; */
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .gallery-rows {
@@ -422,5 +440,24 @@ color: var(--text-color-light);
 .thumbnail-preview.active {
   opacity: 1;
   border-color: white;
+}
+
+@media (max-width: 750px){
+  .gallery-container{
+    max-height: 80vh;
+    flex-direction: column;
+  }
+  .gallery-text p, h1{
+    display: none;
+  }
+  .gallery-text button {
+    outline: 8px solid var(--bg-color);
+  }
+  .slideshow-image {
+    height: auto;
+  }
+  .nav {
+    top: 90%;
+  }
 }
 </style>
