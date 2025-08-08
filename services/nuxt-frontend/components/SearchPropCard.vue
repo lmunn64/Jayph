@@ -1,3 +1,10 @@
+<!-- 
+    SearchPropCard component
+    contains:
+        property card to be used for Property_wTotal interface
+        simplified version of PropCard which includes price total
+-->
+
 <script setup lang="ts">
 import type { Property_wTotal } from '~/types/property'
 
@@ -15,9 +22,12 @@ const props = defineProps<{
             <h2>{{ property.property.name }}</h2>  
             <p>{{ property.property.capacity.bedrooms }} bedrooms • {{ property.property.capacity.bathrooms }} bathrooms • sleeps {{ property.property.capacity.max }}</p>
         </div>
-        <div class="price">
+         <div v-if="property.total_before_taxes.length!==0" class="price">
             <h3>{{ property.total_before_taxes }}</h3>
-        </div> 
+        </div>
+        <div v-else class="price">
+            <h4> Unavailable for Current Selection.</h4>
+        </div>
     </div>
   </div>
 </NuxtLink>
