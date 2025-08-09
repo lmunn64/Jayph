@@ -1,9 +1,10 @@
 <!-- 
     Hero component for property pages
     Contains:
-        - slideshow with text heading
+        - navigatable carousel slideshow (autoplay/looping)
         - 'see all photos' button
-          - when clicked, displays photos in grid style
+          - when clicked, displays photos in zillow-style rows
+          - summary and 'book now' button displayed alongside gallery
           - selecting a photo from this grid will allow for manual
             scrolling with image previews at the bottom
 -->
@@ -12,15 +13,27 @@
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-const carouselConfig = {
-  itemsToShow: 2,
-  transition: 1000,
-  autoplay: 5000,
-  pauseAutoplayOnHover: true,
-  height:450,
-  wrapAround: true
-}
-
+    const carouselConfig = ref(getConfig())
+    // one config for mobile, one for desktop (changes on page reload)
+    function getConfig() {
+      if (window.innerWidth <= 750) {
+        return {
+          itemsToShow: 1,
+          transition: 600,
+          autoplay: 4000,
+          height: 250,
+          wrapAround: true
+        }
+      }
+      return {
+        itemsToShow: 2,
+        transition: 1000,
+        autoplay: 5000,
+        pauseAutoplayOnHover: true,
+        height: 450,
+        wrapAround: true
+      }
+    }
     
     const props = defineProps<{
       summary: string
@@ -31,6 +44,7 @@ const carouselConfig = {
     const showSlideshow = ref(false)
     const slideshowIndex = ref(0)
 
+    // gallery row organization
     const chunkSizes = [1,2]  // pattern of imgs per row
     const chunkedImages = computed(() => { // groups imgs by rows
       const result: string[][] = []
@@ -53,9 +67,10 @@ const carouselConfig = {
     onMounted(() => {
         setInterval(() => {
             currentIndex.value = (currentIndex.value + 1) % props.images.length
-        }, 5000) // Change image every 5 seconds, loop to start
+        }, 5000) // change image every 5 seconds, loop to start
     })
 
+    // fix for redirecting to correct image on gallery
     function getGlobalIndex(rowIndex: number, index: number): number {
       let count = 0
       for (let i = 0; i < rowIndex; i++) {
@@ -86,6 +101,7 @@ const carouselConfig = {
       slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
     }
 
+    // for scrolling to booking section in parent
     const emit = defineEmits<{
       (e: 'scroll-to-section'): void
     }>()
@@ -108,20 +124,10 @@ const carouselConfig = {
 <template>
     <div class="hero">
         <!-- slideshow element -->
-        <!-- <div class="slideshow">
-        <img
-            v-for="(img, index) in images"
-            :key="img"
-            :src="img"
-            class="hero-image"
-            :class="{ active: index === currentIndex }"
-            alt="Hero Slide"
-        />
-        </div> -->
         <div class="slideshow">
           <Carousel v-bind="carouselConfig">
-          <Slide v-for="(img, i) in images" :key="i">
-            <img :src="img" alt="image">
+          <Slide  v-for="(img, i) in images" :key="i">
+            <img draggable="false" :src="img" alt="image">
           </Slide>
 
           <template #addons>
@@ -161,14 +167,14 @@ const carouselConfig = {
 
         <!-- modal slideshow -->
         <div v-if="showSlideshow" class="modal slideshow-modal" @click.self="closeAllModals">
-            <img :src="images[slideshowIndex]" class="slideshow-image" />
+            <img :src="images[slideshowIndex]" class="slideshow-image" draggable="false"/>
             <button class="nav left" @click="prevSlide">‹</button>
             <button class="nav right" @click="nextSlide">›</button>
             <button class="close" @click="closeAllModals">×</button>
 
             <!-- image previews at bottom of slideshow -->
             <div class="thumbnail-strip">
-                <img
+                <img draggable="false"
                     v-for="(img, index) in images"
                     :key="img"
                     :src="img"
@@ -196,7 +202,6 @@ width: 100%;
 height: 450px;
 overflow: hidden;
 }
-
 
 .hero-image {
 position: absolute;
@@ -239,16 +244,6 @@ top: 50%;
 transform: translateY(-50%);
 }
 
-.hero-title {
-font-size: 3rem;
-margin-bottom: 1rem;
-color: var(--text-color-light);
-}
-.hero-subtitle {
-font-size: 1.5rem;
-color: var(--text-color-light);
-}
-
 .see-photos-btn {
   position: absolute;
   right: 1rem;
@@ -276,22 +271,6 @@ color: var(--text-color-light);
   overscroll-behavior: contain;
 }
 
-/* .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  max-width: 90%;
-  padding: 2rem;
-}
-
-.gallery-thumb {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: var(--secondary-border-radius);
-  transition: transform 0.2s ease;
-} */
 .gallery-container {
   display: flex;
   background-color:var(--bg-color);
@@ -329,6 +308,7 @@ color: var(--text-color-light);
   padding: 16px;
   display: flex;
   flex-direction: column;
+  border-radius: var(--secondary-border-radius);
   gap: 16px;
   max-height: 85vh;
   overflow-y: auto;
@@ -419,7 +399,7 @@ color: var(--text-color-light);
   max-width: 90vw;
   overflow-x: auto;
   padding: 0.5rem 0;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .thumbnail-preview {
@@ -443,9 +423,21 @@ color: var(--text-color-light);
 }
 
 @media (max-width: 750px){
+  .hero {
+    height: 250px;
+  }
   .gallery-container{
+    border-radius: var(--default-border-radius);
     max-height: 80vh;
     flex-direction: column;
+    gap: 32px;
+  }
+  .gallery-rows {
+    max-width: 100%;
+    padding: 0px;
+  }
+  .gallery-thumb {
+    max-height: 120px;
   }
   .gallery-text p, h1{
     display: none;
