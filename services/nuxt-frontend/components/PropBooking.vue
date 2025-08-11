@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Underline } from 'lucide-vue-next';
 import VueCalendar from './VueCalendar.vue';
 import { ref } from 'vue'
 import type { Guests, Quote, Quote_Response, Fee, Discount} from '~/types/booking'
@@ -24,9 +25,11 @@ const guestCounts = ref<Guests>({
 
 const promoCode = ref<string>()
 
-
 const promoForm = useTemplateRef('promo-form')
 
+const promoError = ref<boolean>()
+
+const promoMessage = ref<string>('')
 // stored current quote, starts undefined
 const current_quote = ref<Quote_Response>()
 
@@ -82,10 +85,18 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                         current_quote.value = quote_response
                         console.log("Quote received: ", current_quote.value)
                         is_fetching_quote.value = false
+                        if(promoError.value){
+                            promoError.value = false
+                        }
                     }
                 } catch (error) {
                     console.error("Error fetching quote:", error)
                     is_fetching_quote.value = false
+                    if(newPromo){
+                        promoCode.value = undefined
+                        promoError.value = true
+                        promoMessage.value = "Invalid promo code, try again"
+                    }
                 }
            
         }, 700)
@@ -105,16 +116,17 @@ const clearQuoteResponse = () =>{
 
 const submitPromo = () => {
     if(promoForm.value != undefined){
-        if(promoForm.value.value != undefined && promoForm.value.value != "")
+        if(promoForm.value.value != undefined && promoForm.value.value != ""){
             promoCode.value = promoForm.value.value
-        else
-            /**must be valid maybe add class to outline red */
+            promoError.value = false
+        }
+        else{
+            promoError.value = true
+            promoMessage.value = "Please enter valid code"
             return
+        }
+          
     }
-    else{
-
-    }
-    
 }
 
 const redirectToHospitable = () =>{
@@ -143,13 +155,14 @@ onMounted(async () => {
         <div class= "booking-component">
             <div v-if="calendarLoading" class="calendar-loading">
                 <p>Loading booking calendar...</p>
+                <div class="loader"></div>
             </div>
             <h2 v-else-if="calendarError"> Sorry, we cannot display the booking details at this time, try refreshing the page.</h2>
             <div class= "calendar-col" v-if = 'calendar_data'>
                  <VueCalendar @delete-quote-response="clearQuoteResponse" v-model="selectedDates" :cal_data = calendar_data  />
             </div>
             
-            <div class="booking-info" v-if = 'calendar_data'> 
+            <div class="booking-info" v-if = '!calendarLoading'> 
                  
                 <!-- <hr></hr> -->
                 <div class = guest-selector> 
@@ -184,12 +197,13 @@ onMounted(async () => {
                     </table>
 
                     
-                    <div class = "promo-container" >
-                        <p class = "promo-code-text" v-if="current_quote" :class = "{ hidden: hasPromo }"@click = openPromo ref = 'promo-text'>I have a discount code</p>
+                    <div class = "promo-wrapper" >
+                        <p class = "promo-code-text"  :class = "{ hidden: hasPromo}"@click = openPromo ref = 'promo-text'>I have a discount code</p>
                         <div class = "promo-container" :class = "{ hidden : !hasPromo}">                        
-                            <input type= "text" class = "promo-code-form" ref = "promo-form">
+                            <input type= "text" class = "promo-code-form" :class = "{ error: promoError }"ref = "promo-form">
                             <button class = "promo-code-btn" @click = submitPromo>Submit</button>
                         </div>
+                        <p class = "promo-code-message" :class = "{ hidden: !hasPromo }" ref = 'promo-text'>{{ promoMessage }}</p>
                     </div>
                     <div class="request-book-container">
                         <button class = "rq-book-btn" @click = "redirectToHospitable">Request to Book</button>
@@ -266,7 +280,15 @@ h1{
     /* border-style: dashed;
     border-width: 1px; */
 }
-
+.calendar-loading{
+    display: flex;
+    font-weight: 600;
+    font-size: large;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 @media (min-height: 600px){
     .booking-info{
         margin-top: 0;
@@ -291,7 +313,7 @@ h1{
     /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--primary-box-shadow);
 }
 
 @media (max-width: 950px) {
@@ -331,14 +353,15 @@ h1{
     table-layout: auto; 
     border-bottom: 1px solid #00000023;
 }
+
 .td-end{
-    padding: 5px;
+    padding: 5px 10px 15px 10px;
     text-align: end;
     opacity: 60%;
 }
 
 .td-start{
-    padding: 15px;
+    padding: 5px 10px 15px 10px;
     text-align: start;
     opacity: 60%;
 }
@@ -354,6 +377,7 @@ h1{
     font-size:larger;
 }
 
+/** promo stylings */
 .promo-code-text{
     text-decoration: underline;
     font-style: italic;
@@ -362,6 +386,20 @@ h1{
 }
 .promo-container{
     display: flex;
+    align-items: center;
+    margin: 10px 10px 5px 10px;
+    min-height: 1rem;
+    justify-content: center;
+}
+.promo-code-message{
+    margin: 0 0 10px;
+    color: rgb(214, 6, 6);
+ 
+    font-size: small;
+}
+.promo-wrapper{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 10px;
     min-height: 1rem;
@@ -377,6 +415,11 @@ h1{
     border-style: solid;
     margin: 5px;
 }
+
+.promo-code-form.error{
+    border-color:  rgb(214, 6, 6);
+}
+
 /**also later */
 .promo-code-form:focus{
 

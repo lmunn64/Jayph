@@ -9,25 +9,46 @@
 -->
 
 <script setup lang="ts">
-    const default_avatar = "https://styles.redditmedia.com/t5_8ajl6g/styles/communityIcon_ootntw58i8ue1.png"
     import type { Review } from "~/types/property"
 
     const review = defineProps<Review>()
 
-    function setDefaultImage(event: Event){
-        (event.target as HTMLImageElement).src = default_avatar
-    }
-
+    const emit = defineEmits(['toggle'])
+    
     // 'read more' variables
     const expanded = ref(false);
     const showToggle = ref(false);
     const reviewRef = ref<HTMLElement | null>(null);
 
-    // check if text overflows the clamped height (i.e., > 3 lines)
-    onMounted(() => {
+    //check if we should toggle 
+    const checkOverflow = () => {
         const el = reviewRef.value;
         if (el && el.scrollHeight > el.clientHeight + 2) {
             showToggle.value = true;
+        } 
+        else if(!expanded.value){ 
+            showToggle.value = false;
+        }
+    };
+
+    // check if text overflows the clamped height (i.e., > 3 lines)
+    onMounted(() => {
+        if (reviewRef.value) {
+            checkOverflow();
+            // Create ResizeObserver to watch height changes
+            const resizeObserver = new ResizeObserver((entries) => {
+                for (let entry of entries) {
+                    checkOverflow();
+                }
+            });
+            
+            // Start observing the element
+            resizeObserver.observe(reviewRef.value);
+            
+            // Cleanup observer when component unmounts
+            onUnmounted(() => {
+                resizeObserver.disconnect();
+            });
         }
     });
 </script>
@@ -53,7 +74,7 @@
                     {{ review.review_content }}
             </p>
             <!-- if more than 3 lines, will show 'read more' button -->
-            <button v-if="showToggle" @click="expanded = !expanded" class="toggle-btn">
+            <button v-if="showToggle" @click="() => { expanded = !expanded; emit('toggle') }" class="toggle-btn">
                 {{ expanded ? "Show less" : "Read more" }}
             </button>
         </div>
@@ -62,8 +83,16 @@
 
 <style scoped>
     .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         background-color: var(--bg-color);
+        height: fit-content;
+        min-height:400px;
+        margin-bottom: 30px;
         width: 100%;
+     
         text-align: center;
     }
     .header {
@@ -94,7 +123,7 @@
         align-items: center;
     }
     .review-info {
-        padding-inline: 12px;
+        padding-inline: 75px;
         padding-bottom: 12px;
     }
     .review {
@@ -103,8 +132,8 @@
     }
     .clamped {
         display: -webkit-box;
-        -webkit-line-clamp: 3;  
-        line-clamp: 2;
+        -webkit-line-clamp: 5;  
+        line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;

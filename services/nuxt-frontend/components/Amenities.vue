@@ -75,7 +75,7 @@
             iconMap[key] = icon
         })
     }
-
+    const dropdownOpen = ref(false)
     // Organize amenities by categories
     const amenityCategories = {
         common: [
@@ -124,6 +124,8 @@
             'child_safety_outlet_covers'
         ]
     }
+
+    const amenitiesRef = ref<HTMLElement | null>(null)
 
     // map each amenity to a FontAwesome icon name (or array for prefixes)
     useIcon(Snowflake, ['ac', 'refrigerator', 'mini_fridge', 'freezer'])
@@ -228,7 +230,38 @@ const visibleAmenities = computed(() => {
     return expanded.value ? amenities : amenities.slice(0, 16)
 })
 
+const scrollToAmenities = () => {
+    nextTick(() => {
+        if (amenitiesRef.value) {
+            amenitiesRef.value.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'center'
+            })
+        }
+    })
+}
 
+const toggleExpanded = () => {
+    expanded.value = !expanded.value
+    if (expanded.value) {
+        scrollToAmenities()
+    }
+}
+
+const selectCategory = (category: keyof typeof categoryLabels) => {
+    selectedCategory.value = category
+    expanded.value = false
+    dropdownOpen.value = false
+    if (category !== 'all') {
+        scrollToAmenities()
+    }
+}
+
+// Close dropdown when clicking outside
+const closeDropdown = () => {
+    dropdownOpen.value = false
+}
 const categoryLabels = {
     all: 'All Amenities',
     common: 'Common',
@@ -252,21 +285,49 @@ const getCategoryCount = (category: string) => {
 </script>
 
 <template>
-    <div class="category-filters">
-        <button 
-            v-for="([category, label]) in Object.entries(categoryLabels).filter(([category]) => getCategoryCount(category) > 0)"
-            :key="category"
-            :class="['category-btn', { active: selectedCategory === category }]"
-            @click="selectedCategory = category as keyof typeof categoryLabels; expanded = false"
-        >
-            {{ label }} ({{ getCategoryCount(category) }})
-        </button>
+    <div class = "amenities-header" ref="amenitiesRef">
+        <h2>Amenities</h2>
+        <div class="filter-dropdown-container">
+            <button 
+                class="filter-dropdown-toggle"
+                @click="dropdownOpen = !dropdownOpen"
+                :class="{ active: dropdownOpen }"
+            >
+                <span>{{ categoryLabels[selectedCategory] }}</span>
+                <svg 
+                    class="dropdown-arrow" 
+                    :class="{ rotated: dropdownOpen }"
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 24 24" 
+                    fill="none"
+                >
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <div v-if="dropdownOpen" class="filter-dropdown-menu">
+                <button
+                    v-for="([category, label]) in Object.entries(categoryLabels).filter(([category]) => getCategoryCount(category) > 0)"
+                    :key="category"
+                    class="filter-dropdown-item"
+                    :class="{ active: selectedCategory === category }"
+                    @click="selectCategory(category as keyof typeof categoryLabels)"
+                >
+                    <span>{{ label }}</span>
+                </button>
+            </div>
+        </div>
     </div>
+
+
 
     <h3 v-if="selectedCategory !== 'all'" class="category-title">
         {{ categoryLabels[selectedCategory] }}
     </h3>
-
+    <h3 v-else class="category-title">
+        All Amenities
+    </h3>
     <ul class="amenities-grid">
         <li v-for="item in visibleAmenities" :key="item" class="amenity-item">
             <component :is="getIcon(item)" class="icon" />
@@ -277,14 +338,16 @@ const getCategoryCount = (category: string) => {
     <button
         v-if="categorizedAmenities.length > 16"
         class="toggle-btn"
-        @click="expanded = !expanded"
+        @click="toggleExpanded"
     >
-        {{ expanded ? 'Show less' : `Show all ${categorizedAmenities.length} amenities` }}
+        {{ expanded ? 'Show less' : `Show more` }}
     </button>
 
     <p v-if="categorizedAmenities.length === 0" class="no-amenities">
         No amenities in this category.
     </p>
+    <div v-if="dropdownOpen" class="dropdown-overlay" @click="closeDropdown"></div>
+
 </template>
 
 <style scoped>
@@ -296,34 +359,99 @@ const getCategoryCount = (category: string) => {
     margin-bottom: 1.5rem;
     padding: 0 3rem;
 }
+.amenities-header{
+    scroll-margin-top: 100px;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    justify-content: space-between;
+    
+}
 
-.category-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--border-color, #ccc);
-    background: white;
+.filter-dropdown-container {
+    position: relative;
+}
+.filter-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    background-color: white;
     cursor: pointer;
     border-radius: var(--secondary-border-radius);
     font-size: 0.9rem;
     transition: all 0.2s ease;
+    min-width: 100px;
+    justify-content: space-between;
 }
 
-.category-btn:hover {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
+.dropdown-arrow {
+    transition: transform 0.2s ease;
 }
 
-.category-btn.active {
+.dropdown-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    right: 0;
+    background: white;
+    border:none;
+    border-radius: var(--secondary-border-radius);
+    box-shadow: var(--primary-box-shadow);    min-width: 210px;
+    z-index: 3;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.filter-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    
+}
+
+.filter-dropdown-item:hover {
     background: var(--accent-color);
     color: white;
-    border-color: var(--accent-color);
 }
+
+.filter-dropdown-item.active {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
 
 .category-title {
     text-align: center;
     margin: 1rem 0;
     color: var(--accent-color);
     font-size: 1.2rem;
+}
+
+.dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2;
 }
 
 .amenities-grid {
@@ -353,8 +481,11 @@ const getCategoryCount = (category: string) => {
 
 .toggle-btn {
     padding: 0.5rem 1rem;
-    border: 2px solid var(--border-color, #ccc);
+    border: none;
+
+    box-shadow: var(--primary-box-shadow);
     cursor: pointer;
+    background-color: white;
     border-radius: var(--secondary-border-radius);
     transition: all 0.2s ease;
     margin: 1rem auto;
@@ -368,8 +499,10 @@ const getCategoryCount = (category: string) => {
     padding: 2rem;
 }
 
-@media (max-width: 645px){
-    .toggle-btn {}
+@media (max-width: 800px){
+    .category-filters{
+        display: none;
+    }
 
 }
 </style>

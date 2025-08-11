@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Property } from '~/types/property';
 import GMap from './GMap.vue';
 
 interface Props {
@@ -16,7 +15,11 @@ const locationProps = defineProps<Props>()
         <h2>Find us</h2>
         <p v-if = "locationProps.getting_around">{{ locationProps.getting_around }}</p>
         <div class = "map-wrapper">
+<<<<<<< HEAD
             <GMap :zoom = "13":latitude = "locationProps.latitude" :longitude = "locationProps.longitude"/>
+=======
+            <GMap :zoom = 13 :latitude = "locationProps.latitude" :longitude = "locationProps.longitude"/>
+>>>>>>> review-carousel-dev
         </div>
     </div>
 </template>
@@ -34,7 +37,7 @@ const locationProps = defineProps<Props>()
     text-align: start;
     height: 65vh;
     padding: 25px;
-    background-color: var(--accent-color);
+   
 }
 h2{
     margin-top: 10px;

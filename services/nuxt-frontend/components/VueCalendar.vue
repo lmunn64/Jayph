@@ -277,7 +277,8 @@ onUnmounted(() => {
     --dp-menu-min-width: 300px;
     --dp-cell-padding: 8px;
     --dp-two-calendars-spacing: 20px;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--primary-box-shadow);
     max-height: calc(100% - 2.7em);
     max-width: 100%;
 }

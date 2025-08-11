@@ -50,7 +50,7 @@ onMounted(async () => {
             <p>{{ property.summary }}</p>
 
             <!-- Rest of your content loads immediately -->
-            <h2>Amenities</h2>
+            
             <Amenities :amenities="property.amenities"/>
 
             <h2>Space Overview</h2>

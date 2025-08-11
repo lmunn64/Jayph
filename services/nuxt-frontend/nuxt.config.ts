@@ -11,7 +11,11 @@ export default defineNuxtConfig({
   runtimeConfig : {
     public : {
       googleMapsApiKey : process.env.GOOGLE_API_KEY,
+<<<<<<< HEAD
       googleMapsId: process.env.GOOGLE_MAP_ID as string
+=======
+      googleMapsId: process.env.GOOGLE_MAP_ID
+>>>>>>> review-carousel-dev
     }
   },
   devtools: { enabled: true },

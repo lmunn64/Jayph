@@ -35,6 +35,7 @@ from app.caches.properties_cache import properties_cache
 from app.modules.date import format_date_ISO
 from app.modules.image_link_enlarger import get_enlarged_URL
 from app.models.search import Property_Total
+from app.modules.name import get_review_name
 
 ## time to live for reviews and images
 CACHE_TTL = 60 * 60
@@ -271,7 +272,7 @@ async def get_reviews(uuid: str):
         content = response.json()
         reviews = [Review(
             id = item.get('id'),
-            name= item.get('guest').get('first_name') + " " + item.get('guest').get('last_name'),
+            name= get_review_name(item.get('guest').get('first_name'), item.get('guest').get('last_name')),
             img_src= "",
             date= format_date_ISO(item.get('reviewed_at')),
             review_content= item.get('public').get('review'),

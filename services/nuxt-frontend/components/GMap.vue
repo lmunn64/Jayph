@@ -19,7 +19,7 @@
         lng: parseFloat(mapProps.longitude)
     }))
 
-    // ✅ Make locations reactive - updates when props_coords changes
+    
     const locations = computed(() => {
         if (!mapProps.props_coords) return []
         
@@ -32,15 +32,16 @@
     /** If there are several property coordinates, it will map them to locations which will 
      *  be used for a Marker Cluster */
     console.log(locations.value)
+
     const circle = computed(() => ({
-    center: center.value,
-    radius: 400,
-    strokeColor: '#FF1004',
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: '#FF0000',
-    fillOpacity: 0.35, 
-}))
+        center: center.value,
+        radius: 400,
+        strokeColor: '#FF1004',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35, 
+    }))
 </script>
 
 
@@ -48,7 +49,7 @@
     <GoogleMap class = "prop-map"
         
         :center = "center"
-       
+        :map-id = "config.public.googleMapsId"
         :zoom = "zoom"
     >
     <MarkerCluster v-if= "mapProps.props_coords !== undefined">

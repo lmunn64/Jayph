@@ -1,0 +1,47 @@
+[
+    {
+        "id": "41660891-ce1d-461a-8289-bb9473474d38",
+        "name": "Ernesto V.",
+        "img_src": "",
+        "platform": "airbnb",
+        "review_content": "This apartment is well located. I really liked that it was pet-friendly, and the surroundings are perfect for walking and exploring Kansas City. It’s very close to downtown. The only issue I had was that the bedroom floor squeaky a lot. But overall, everything was great. I would definitely choose it again.",
+        "rating": 4,
+        "date": "July 13th, 2025"
+    },
+    {
+        "id": "5b02a0da-2388-477a-9e9f-18629c5cb3db",
+        "name": "Ashley D.",
+        "img_src": "",
+        "platform": "airbnb",
+        "review_content": "Beautiful home that had everything you need. Spacious, quiet, cozy, home where the adults can relax while the kids play. Host was great answered any questions in a timely manner and made sure we had everything we needed with instructions before arrival. Would highly recommend and will return!",
+        "rating": 5,
+        "date": "April 20th, 2025"
+    },
+    {
+        "id": "afc0edd0-57fe-4792-b74d-a434c769f022",
+        "name": "Luis P.",
+        "img_src": "",
+        "platform": "airbnb",
+        "review_content": "Great location. Pretty much 20 minute walk or drive to most restaurants and museums. Great and communicative host. Nice cozy place. Would stay here again. Parking was very convenient.",
+        "rating": 5,
+        "date": "March 28th, 2025"
+    },
+    {
+        "id": "da3494ba-7f98-4f34-913c-923072826550",
+        "name": "Brian K.",
+        "img_src": "",
+        "platform": "airbnb",
+        "review_content": "Very comfortable stay! The area was quiet and safe, but close to lots of KC activities. There were great amenities, some I didnt utilize due to the short stay, but it had a full kitchen and laundry. The layout was very relaxing. The bed was comfortable and had clean hotel quality linens. Clean and comfortable furniture. Lots of room to spread out and feel at home.  The shower had good water and pressure. I will definitely stay here again when im in the area!",
+        "rating": 5,
+        "date": "March 23rd, 2025"
+    },
+    {
+        "id": "5f68164d-66c7-4707-b711-e361c6c47856",
+        "name": "Brittany P.",
+        "img_src": "",
+        "platform": "airbnb",
+        "review_content": "We had a group of 13 which included 6 kids. Not a single time throughout our 4 night stay did our kids complain of being bored! This place had so much to do to keep not only the kids entertained, but the adults as well! The host was always quick to respond as well which is greatly appreciative. The place had everything we needed and more.",
+        "rating": 5,
+        "date": "April 1st, 2025"
+    }
+]
