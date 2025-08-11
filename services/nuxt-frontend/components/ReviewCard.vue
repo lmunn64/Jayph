@@ -13,6 +13,8 @@
 
     const review = defineProps<Review>()
 
+    const emit = defineEmits(['toggle'])
+    
     // 'read more' variables
     const expanded = ref(false);
     const showToggle = ref(false);
@@ -72,7 +74,7 @@
                     {{ review.review_content }}
             </p>
             <!-- if more than 3 lines, will show 'read more' button -->
-            <button v-if="showToggle" @click="expanded = !expanded" class="toggle-btn">
+            <button v-if="showToggle" @click="() => { expanded = !expanded; emit('toggle') }" class="toggle-btn">
                 {{ expanded ? "Show less" : "Read more" }}
             </button>
         </div>

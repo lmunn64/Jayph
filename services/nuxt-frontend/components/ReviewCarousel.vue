@@ -16,11 +16,25 @@ import 'swiper/css/effect-coverflow'
 import type { Review } from "~/types/property"
 const modules = [Pagination, Navigation, EffectCoverflow]
 import index_reviews from '~/public/static/index-reviews.json' 
+import type { Swiper as SwiperClass } from 'swiper/types'
 
 const state = reactive({
   reviews: [] as Review[],
   isLoading: true
 })
+
+const swiperRef = ref<SwiperClass | null>(null)
+
+const onSwiper = (swiper: SwiperClass) => {
+  swiperRef.value = swiper
+}
+
+const toggleReview = () => {
+  // Wait for DOM to update, then recalc Swiper height
+  requestAnimationFrame(() => {
+    swiperRef.value?.updateAutoHeight(300) // 300ms animation
+  })
+}
 
 // defining property ID for property pages
 const props = defineProps<{
@@ -74,7 +88,7 @@ onMounted(() => {
       :slides-per-view="1"
       :space-between="0"
       :centered-slides="true"
-      
+      @swiper="onSwiper"
       :loop="true"
       :effect="'coverflow'"
       :grab-cursor="true"
@@ -86,7 +100,7 @@ onMounted(() => {
         modifier: 1,
         slideShadows: false,
       }"
-      :pagination="{ clickable: true }"
+      :pagination="{ enabled: false }"
       :navigation="{ enabled : true }"
       :breakpoints="{
         768: {
@@ -101,7 +115,7 @@ onMounted(() => {
       class="review-swiper"
     >
       <SwiperSlide v-for="review in state.reviews" :key="review.name">
-        <ReviewCard v-bind="review" />
+        <ReviewCard v-bind="review"  @toggle = "toggleReview" />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -114,14 +128,15 @@ h1, p {
   text-align: center;
 }
 .review-carousel{
-  overflow: hidden
+  overflow: hidden;
+ 
 }
 .swiper {
   padding: 0 90px; /* space for arrows */
-  height: fit-content;
   position: relative;
 
 }
+
 @media (max-width: 1250px){
   .swiper {
     padding: 0 0px; 
