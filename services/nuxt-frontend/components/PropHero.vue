@@ -10,30 +10,13 @@
 -->
 
 <script setup lang="ts">
-import 'vue3-carousel/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-
-    const carouselConfig = ref(getConfig())
-    // one config for mobile, one for desktop (changes on page reload)
-    function getConfig() {
-      if (window.innerWidth <= 750) {
-        return {
-          itemsToShow: 1,
-          transition: 600,
-          autoplay: 4000,
-          height: 250,
-          wrapAround: true
-        }
-      }
-      return {
-        itemsToShow: 2,
-        transition: 1000,
-        autoplay: 5000,
-        pauseAutoplayOnHover: true,
-        height: 450,
-        wrapAround: true
-      }
-    }
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import { Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/autoplay'
+    import 'swiper/css/navigation';
+    import 'swiper/css/effect-coverflow'
+    const modules = [Navigation, Autoplay ,EffectCoverflow]
     
     const props = defineProps<{
       summary: string
@@ -124,16 +107,42 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 <template>
     <div class="hero">
         <!-- slideshow element -->
-        <div class="slideshow">
-          <Carousel v-bind="carouselConfig">
-          <Slide  v-for="(img, i) in images" :key="i">
-            <img draggable="false" :src="img" alt="image">
-          </Slide>
 
-          <template #addons>
-            <Navigation />
-          </template>
-        </Carousel>
+        <div class="swiper">
+          <Swiper
+            :modules="modules"
+            :slides-per-view="1.5"
+            :space-between="0"
+            :centered-slides="true"
+            :autoplay="{
+              delay: 3500,
+              disableOnInteraction: false,
+            }"
+            :loop="true" 
+            :effect="'coverflow'"
+            :grab-cursor="true"
+            :auto-height="true"
+            :coverflow-effect="{
+              rotate: 0,
+              stretch: 0,
+              depth: 0,
+              modifier: 1,
+              slideShadows: false,
+            }"
+            :navigation="{ enabled : true }"
+            :breakpoints="{
+              768: {
+                slidesPerView: 3,
+              },
+              1250: {
+                slidesPerView: 4,
+              },
+            }"
+          >
+            <SwiperSlide v-for="(img, i) in images" :key="i">
+              <img draggable="false" :src="img" alt="image">
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         <button class="see-photos-btn" @click="openGallery">See all photos</button>
@@ -188,42 +197,46 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 </template>
 
 <style scoped>
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 p {
     text-align:center;
 }
 .hero {
 position: relative;
 width: 100%;
-height: 450px;
+/* height: 450px; */
 overflow: hidden;
 }
 
-.hero-image {
-position: absolute;
-width: 100%;
-height: 100%;
-object-fit: cover;
-opacity: 0;
-transition: opacity 1s ease-in-out;
+.swiper {
+  position: relative;
+}
+.swiper-slide {
+  aspect-ratio: 4 / 3; 
 }
 
-.hero-image.active {
-opacity: 1;
-z-index: 1;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.carousel {
-  --vc-nav-background: rgba(0, 0, 0, 0.7);
-  --vc-nav-color: white;
-  --vc-nav-color-hover: var(--accent-color);
-  --vc-nav-border-radius: 0%;
-  --vc-nav-height: 45px;
-  --vc-nav-width: 45px;
+:deep(.swiper-slide) {
+  opacity: 0.6; /* dim non-active slides */
+  transition: opacity 0.5s ease; /* smooth fade effect */
+}
+
+:deep(.swiper-slide-active) {
+  opacity: 1;
+}
+
+:deep(.swiper-button-next) {
+  color: var(--accent-color);
+  right: 0px;
+}
+
+:deep(.swiper-button-prev) {
+  color: var(--accent-color);
+  left: 0px;
 }
 
 .gradient-overlay {
@@ -424,7 +437,7 @@ transform: translateY(-50%);
 
 @media (max-width: 750px){
   .hero {
-    height: 250px;
+    /* height: 250px; */
   }
   .gallery-container{
     border-radius: var(--default-border-radius);
