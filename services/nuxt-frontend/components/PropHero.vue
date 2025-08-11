@@ -111,7 +111,7 @@
         <div class="swiper">
           <Swiper
             :modules="modules"
-            :slides-per-view="1.5"
+            :slides-per-view="1"
             :space-between="0"
             :centered-slides="true"
             :autoplay="{
@@ -131,12 +131,12 @@
             }"
             :navigation="{ enabled : true }"
             :breakpoints="{
-              768: {
-                slidesPerView: 3,
+              700: {
+                slidesPerView: 2,
               },
-              1250: {
-                slidesPerView: 4,
-              },
+              1285: {
+                slidesPerView: 3.5
+              }
             }"
           >
             <SwiperSlide v-for="(img, i) in images" :key="i">
@@ -201,17 +201,17 @@ p {
     text-align:center;
 }
 .hero {
-position: relative;
-width: 100%;
-/* height: 450px; */
-overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .swiper {
   position: relative;
+  height: 375px;
 }
 .swiper-slide {
-  aspect-ratio: 4 / 3; 
+  height: 375px;
 }
 
 .swiper-slide img {
@@ -249,12 +249,12 @@ overflow: hidden;
 }
 
 .hero-overlay {
-position: relative;
-z-index: 2;
-text-align: center;
-color: white;
-top: 50%;
-transform: translateY(-50%);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .see-photos-btn {
