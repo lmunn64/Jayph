@@ -19,15 +19,20 @@ const props = defineProps<{
     <img class="thumbnail" :src="property.property.picture_url" alt="property image" />
     <div class="details">
         <div class="property-info">
-            <h2>{{ property.property.name }}</h2>  
+            <h2>{{ property.property.name }}</h2> 
+            <div>{{ property.property.coordinates.city }}</div> 
             <p>{{ property.property.capacity.bedrooms }} bedrooms • {{ property.property.capacity.bathrooms }} bathrooms • sleeps {{ property.property.capacity.max }}</p>
         </div>
-         <div v-if="property.total_before_taxes.length!==0" class="price">
-            <h3>{{ property.total_before_taxes }}</h3>
+        <div class = "result-container">
+            <div v-if="property.total_before_taxes.length!==0" class="price-container">
+                <div class = "price">{{ property.total_before_taxes }}</div>
+                <div class = "price-helper"> Total before taxes</div>
+            </div>
+            <div v-else class="price-container">
+                <div class = "price-helper"> Total before taxes</div>
+            </div>
         </div>
-        <div v-else class="price">
-            <h4> Unavailable for Current Selection.</h4>
-        </div>
+        
     </div>
   </div>
 </NuxtLink>
@@ -39,8 +44,10 @@ h2 {
 }
 .card-link {
   text-decoration: none;
+  width: 100%;
+
   color: inherit;
-  display: block;
+  display: flex;
 }
 .card {
     display: flex;
@@ -62,10 +69,42 @@ h2 {
     display: block;
     transition: transform 0.2s ease;
 }
-.details {
+.details{
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    min-height: 0;
+}
+.property-info {
     padding: 0 1.5rem;
 }
+.result-container{
+    display: flex;
+    bottom:0;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    min-height: 70px;
+    margin-top: auto;
+}
 .price {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    color: var(--secondary-color);
+    font-weight: bold;
     text-align: right;
+}
+
+.price-helper {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+@media (max-width: 400px){
+.thumbnail {
+    height: 180px;
+}
 }
 </style>

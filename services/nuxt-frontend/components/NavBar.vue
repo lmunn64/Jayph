@@ -55,7 +55,18 @@ a:hover {
 }
 .nav-links {
    display: flex;
-   gap: 2rem;
+   gap: 1.5rem;
+}
+@media (max-width: 400px){
+   .nav-links {
+      display: flex;
+      gap: 1rem;
+   }
+   .navbar{
+   
+   justify-content: space-between;
+
+}
 }
 
 </style>

@@ -79,13 +79,13 @@
     padding-inline: 6rem;
 }
 .wrapper {
-  display: flex;
-    flex-direction: wrap;
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
     justify-content: center;
     width: 100%;
     height: 90vh;
-    padding: 20px 60px 20px 60px;    
+    padding: 20px 60px;    
     margin: 0 auto;
     box-sizing: border-box; 
     background-color: var(--bg-color);
@@ -93,6 +93,13 @@
  @media (max-width: 850px) {
     .wrapper {
         flex-direction: column;
+        padding: 10px 30px; 
+        height: auto;
+    }
+ }
+  @media (max-width: 500px) {
+    .wrapper {
+        padding: 0px 20px;  
         height: auto;
     }
  }

@@ -267,7 +267,7 @@ onUnmounted(() => {
     flex-direction: column;
     border-radius: var(--default-border-radius);
     min-height: 60vh;
-    width: 100%;
+    width: 95%;
     background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
@@ -303,13 +303,6 @@ h1{
     font-size: xx-large;
 }
 
-/* hr{
-    width:90%;
-    height: 1px;
-    color:#000;
-    border-width: 0;
-    padding: 0px;
-} */
 .booking-info{
     display: flex;
     width: 50%;
@@ -319,10 +312,8 @@ h1{
     margin: 5px;
     margin-top: -2.5em;
     align-items: center;
-    /* border-style: dashed;
-    border-width: 1px; */
+    justify-content: center;
 }
-
 
 .calendar-loading{
     display: flex;

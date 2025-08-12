@@ -37,3 +37,9 @@ h3 {
       font-size: var(--subsubheader-mobile-text-size)
     }
 }
+
+@keyframes skeleton-pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}

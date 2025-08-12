@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Coordinates, Property_wTotal } from '~/types/property'
 import GMap from './GMap.vue'
+import SkeletonSearchMap from './skeleton-components/SkeletonSearchMap.vue'
 
 interface Props {
   enrichedProperties: Property_wTotal[]
@@ -63,7 +64,7 @@ const get_center_coord = (coords: Coordinates[]) : string[] => {
         
 
     /** else its either both branson and kansas city or neither, so show whole map */
-    zoom.value = 6
+    zoom.value = 8
     return ['37.8736461', ' -93.8935481']
 }
 
@@ -78,8 +79,8 @@ const center = computed<string[]>(() => {
 
 <template>
     <div class="container">
-        <div v-if="loading">
-            Loading...
+        <div v-if="searchMapProps.loading" class="map">
+            <SkeletonSearchMap/>
         </div>
         <div v-else class="map">
             <GMap :zoom = "zoom" :latitude = "center[0]" :longitude = "center[1]" :props_coords ="coordinates"/>
@@ -96,7 +97,6 @@ const center = computed<string[]>(() => {
     .map {
         border-radius: var(--secondary-border-radius);
         /* padding: 1rem 0; */
-        background-color: var(--accent-color);
         width: 100%; 
         height: 100%;
     }

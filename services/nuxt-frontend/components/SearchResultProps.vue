@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import type { Property_wTotal } from '~/types/property';
-
+import SkeletonSearchCard from './skeleton-components/SkeletonSearchCard.vue';
 
 const props = defineProps<{
   enrichedProperties: Property_wTotal[]
@@ -25,8 +25,10 @@ const props = defineProps<{
 <template>
   <div class="property-list">
     <h1> {{ enrichedProperties.length }} of {{ enrichedProperties.length + missingProperties.length }} properties available</h1>
-    <div v-if="loading">
-      Loading...
+    <div v-if="props.loading">
+        <div class="grid-container">
+        <SkeletonSearchCard v-for="n in 4" :key="n" />
+      </div>
     </div>
     <div v-else>
       <div v-if="props.enrichedProperties.length === 0">
@@ -54,11 +56,11 @@ const props = defineProps<{
 
 <style scoped>
 .property-list {
-    width: 50%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-right: 1rem;
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 1rem;
 }
 .grid-container {
   display: grid;
@@ -75,6 +77,9 @@ const props = defineProps<{
 @media (max-width: 850px) {
   .property-list {
     width: 100%;
+    
+    padding-right: 0;
+    scrollbar-width: none;
   }
 }
 </style>

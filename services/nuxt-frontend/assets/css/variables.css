@@ -4,6 +4,7 @@
 
   --secondary-color: #5C946E;
   --accent-color: #4E848A;
+  --skeleton-color: #e0e0e0;
   --text-color-dark: #2e2e2e;
   --text-color-light: #faf9f6;
   --highlight-color: #5ba0aa;
@@ -32,4 +33,7 @@
   --header-mobile-text-size: 36px;
   --subheader-mobile-text-size: 20px;
   --subsubheader-mobile-text-size: 20px;
+
+  /** animation */
+  --skeleton-animation: skeleton-pulse 1.5s infinite;
 }

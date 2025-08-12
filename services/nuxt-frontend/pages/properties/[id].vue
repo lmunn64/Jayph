@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SkeletonPropHero from '~/components/skeleton-components/SkeletonPropHero.vue'
 import { usePropertyStore } from '~/stores/properties'
 import type { Calendar } from '~/types/calendar'
 
@@ -49,8 +50,8 @@ onMounted(async () => {
             :images="images" 
             :summary="property.summary"
         />
-        <div v-else-if="imagesLoading" class="hero-loading">
-            <p>Loading images...</p>
+        <div v-else-if="imagesLoading">
+            <SkeletonPropHero/>
         </div>
 
         <div class="wrapper">

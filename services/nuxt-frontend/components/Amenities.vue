@@ -240,7 +240,8 @@ onUnmounted(() => {
     background: white;
     border:none;
     border-radius: var(--secondary-border-radius);
-    box-shadow: var(--primary-box-shadow);    min-width: 210px;
+    box-shadow: var(--primary-box-shadow);    
+    min-width: 210px;
     z-index: 3;
     max-height: 300px;
     overflow-y: auto;
@@ -344,7 +345,7 @@ onUnmounted(() => {
     .amenities-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(100px, 1fr));
-        gap: 1rem 2rem;
+        gap: 1rem 1rem;
         list-style: none;
         padding: 0 1rem;
         margin: 1rem;
