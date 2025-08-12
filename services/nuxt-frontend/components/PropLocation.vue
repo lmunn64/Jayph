@@ -23,7 +23,7 @@ const locationProps = defineProps<Props>()
 <style scoped>
 .map-wrapper{  
     width: 100%; 
-    height: 100%;
+    height: 300px;
 }
 .location-wrapper {
     display: flex;
@@ -31,9 +31,7 @@ const locationProps = defineProps<Props>()
     align-items: center;
     flex-direction: column;
     text-align: start;
-    height: 65vh;
     padding: 25px;
-   
 }
 h2{
     margin-top: 10px;

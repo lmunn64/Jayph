@@ -89,7 +89,7 @@
         flex-direction: column;
         background-color: var(--bg-color);
         height: fit-content;
-        min-height:400px;
+        min-height:300px;
         margin-bottom: 30px;
         width: 100%;
      

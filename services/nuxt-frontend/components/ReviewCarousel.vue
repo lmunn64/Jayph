@@ -129,12 +129,12 @@ h1, p {
 }
 .review-carousel{
   overflow: hidden;
- 
+  height: fit-content;
 }
 .swiper {
   padding: 0 90px; /* space for arrows */
   position: relative;
-
+  
 }
 
 @media (max-width: 1250px){

@@ -129,7 +129,7 @@
               modifier: 1,
               slideShadows: false,
             }"
-            :navigation="{ enabled : true }"
+            
             :breakpoints="{
               700: {
                 slidesPerView: 2,

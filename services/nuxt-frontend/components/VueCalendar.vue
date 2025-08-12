@@ -269,7 +269,8 @@ onUnmounted(() => {
 }
 
 .calendarContainer {
-    --dp-cell-size: 68px;
+    --dp-cell-size: 80px;
+    --dp-font-family: var(--primary-font);
     --dp-border-radius: var(--default-border-radius);
     --dp-button-height: 4px;
     --dp-font-size: 1.2rem;
@@ -319,7 +320,7 @@ onUnmounted(() => {
 /** Calendar dates */
 .calendarContainer :deep(.dp__month_year_select) {
     width: auto;
-    font-size:18px;
+    font-size:20px;
     font-weight: bold;
     padding: 2px;
 }
@@ -365,6 +366,25 @@ onUnmounted(() => {
 .calendarContainer :deep(.dp__month_year_select){
     pointer-events: none;
 }
+@container (max-width: 600px) {
+    .calendarContainer {
+        --dp-cell-size: 70px;
+        --dp-cell-padding: 2px;
+    }
+}
+@container (max-width: 550px) {
+    .calendarContainer {
+        --dp-cell-size: 68px;
+        --dp-cell-padding: 2px;
+    }
+}
+
+@container (max-width: 525px) {
+    .calendarContainer {
+        --dp-cell-size: 65px;
+        --dp-cell-padding: 2px;
+    }
+}
 
 @container (max-width: 475px) {
     .calendarContainer {
@@ -374,14 +394,22 @@ onUnmounted(() => {
 }
 @container (max-width: 425px){
     .calendarContainer {
-        --dp-cell-size: 51px;
+        --dp-cell-size: 55px;
         --dp-cell-padding: 2px;
     }
 }
 @container (max-width: 400px){
     .calendarContainer {
+        --dp-cell-size: 46px;
+        --dp-cell-padding: 2px;
+        --dp-menu-min-width: 230px;
+    }
+}
+@container (max-width: 350px){
+    .calendarContainer {
         --dp-cell-size: 40px;
         --dp-cell-padding: 2px;
+        --dp-menu-min-width: 230px;
     }
 }
 </style>

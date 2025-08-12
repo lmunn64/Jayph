@@ -55,7 +55,7 @@ onMounted(async () => {
 
         <div class="wrapper">
             <h1>{{ property.name }}</h1>
-            <p>{{ property.summary }}</p>
+            <p class = "summary">{{ property.summary }}</p>
 
             <!-- Rest of your content loads immediately -->
             
@@ -98,19 +98,21 @@ onMounted(async () => {
     background-color: #f5f5f5;
 }
 
-h1, h2, h3 {
-    padding-inline: 2rem;
+h1, h2{
+    padding-inline: var(--primary-header-inline);
 }
 
-h1{
-    font-size: xxx-large;
+h3 {
+    padding-inline: var(--secondary-header-inline);
 }
+
 p {
-    padding-inline: 3rem;
-    font-size: large;
+    padding-inline: var(--secondary-header-inline);
     tab-size: 0;
 }
-
+.summary{
+    font-size: var(--paragraph-secondary-text-size)
+}
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -122,4 +124,5 @@ p {
     box-sizing: border-box; 
     background-color: var(--bg-color);
 }
+
 </style>

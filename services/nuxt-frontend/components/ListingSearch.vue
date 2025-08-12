@@ -14,6 +14,7 @@ import GuestSelector from './GuestSelector.vue'
 import type { Search } from '~/types/booking'
 import { formatSingleDate } from '~/composables/useDateUtils'
 import { select } from '#build/ui'
+import { User, CalendarDays, MapPin} from 'lucide-vue-next';
 
 const route = useRoute()
 
@@ -193,7 +194,10 @@ const toggleSearchOpen = () =>{
         </div>
         <div class="btn-container">
             <div class="dropdown">
-                <button class="input" @click="(e) => toggleDropdown(0, e)"> {{ search.location ? search.location : 'Location' }}</button>
+                <button class="input" @click="(e) => toggleDropdown(0, e)"> 
+                  <MapPin class = "icon"/> 
+                  {{ search.location ? search.location : 'Location' }}
+                </button>
                 <div :class="{ menu: true, above: dropdownAbove[0], visible : showDropdowns[0] }">
                     <button @click="setLocation('Branson West')">Branson West</button>
                     <button @click="setLocation('Kansas City')">Kansas City</button>
@@ -201,6 +205,7 @@ const toggleSearchOpen = () =>{
             </div>
             <div class="dropdown">
                 <button class="input" @click="(e) => toggleDropdown(1, e)">
+                    <CalendarDays class = "icon"/>
                     {{search.checkinDate && search.checkoutDate ? `${formattedDatetoLocale(search.checkinDate)} → ${formattedDatetoLocale(search.checkoutDate)}` : "Check-in → Check-out"}}
                 </button>
                 <div :class="['menu', 'date-menu', { above: dropdownAbove[1], visible: showDropdowns[1] }]">
@@ -208,10 +213,15 @@ const toggleSearchOpen = () =>{
                 </div>
             </div>
             <div class="dropdown">
-                <button class="input" @click="(e) => toggleDropdown(2, e)"> {{ guestSummary }} </button>
-                <div :class="{ menu: true, above: dropdownAbove[2], visible : showDropdowns[2] }">
+               
+              <button class="input" @click="(e) => toggleDropdown(2, e)">
+                <User class = "icon"/> 
+                {{ guestSummary }} 
+                
+              </button>
+              <div :class="{ menu: true, above: dropdownAbove[2], visible : showDropdowns[2] }">
                     <GuestSelector v-model="guestCounts" />
-                </div>
+              </div>
             </div>
             <button class="search" @click="searchListings(search)">
                 Search
@@ -297,10 +307,13 @@ const toggleSearchOpen = () =>{
 }
 
 .input {
+  display: flex;
+  align-items: center;
+  gap: .5em;
   text-align: left;
   border: 0px;
   height: 58px;
-  padding-inline: 40px;
+  padding-inline: 20px;
   min-width: 20vw;
   background-color: white;
   color: var(--text-color-dark);

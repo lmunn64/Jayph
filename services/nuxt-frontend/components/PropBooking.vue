@@ -4,11 +4,15 @@ import VueCalendar from './VueCalendar.vue';
 import { ref } from 'vue'
 import type { Guests, Quote, Quote_Response, Fee, Discount} from '~/types/booking'
 import type { Calendar } from '~/types/calendar';
+import { User } from 'lucide-vue-next';
 
 interface Props {
     id: string
     max_capacity: number
 }
+const screenWidth = ref(window.innerWidth)
+
+const showGuestDropdown = ref(false)
 
 const bookingProps= defineProps<Props>()
 
@@ -136,8 +140,33 @@ const redirectToHospitable = () =>{
         }
     }
 }
+const toggleGuestDropdown= ()=> {
+  showGuestDropdown.value = !showGuestDropdown.value
+} 
+
+const handleGuestClickOutside = (event: MouseEvent) => {
+  const target = event.target as HTMLElement
+  if (!target.closest('.guest-dropdown')) {
+    showGuestDropdown.value = false
+  }
+}
+
+const updateWidth = () =>  {
+  screenWidth.value = window.innerWidth
+}
+
+const guestSummary = computed(() => {
+  const parts = []
+  if (guestCounts.value.adults > 0) parts.push(`${guestCounts.value.adults} Adult${guestCounts.value.adults > 1 ? 's' : ''}`)
+  if (guestCounts.value.children > 0) parts.push(`${guestCounts.value.children} Child${guestCounts.value.children > 1 ? 'ren' : ''}`)
+  if (guestCounts.value.infants > 0) parts.push(`${guestCounts.value.infants} Infant${guestCounts.value.infants > 1 ? 's' : ''}`)
+  if (guestCounts.value.pets > 0) parts.push(`${guestCounts.value.pets} Pet${guestCounts.value.pets > 1 ? 's' : ''}`)
+  return parts.length > 0 ? parts.join(', ') : 'Guests'
+})
 
 onMounted(async () => {
+    window.addEventListener('resize', updateWidth)
+    window.addEventListener('click', handleGuestClickOutside)
     try {
         calendar_data.value = await $fetch<Calendar>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/calendar`)
     } catch (error) {
@@ -147,6 +176,12 @@ onMounted(async () => {
         calendarLoading.value = false
     }
 })
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateWidth)
+    window.removeEventListener('click', handleGuestClickOutside)
+})
+
 </script>
 
 <template>
@@ -164,11 +199,18 @@ onMounted(async () => {
             
             <div class="booking-info" v-if = '!calendarLoading'> 
                  
-                <!-- <hr></hr> -->
-                <div class = guest-selector> 
+                <div v-if = "screenWidth > 950" class = guest-selector> 
                     <GuestSelector v-if = 'calendar_data' v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
                 </div>
-                
+                <div v-else class="dropdown guest-dropdown">
+                    <button class="input" @click="toggleGuestDropdown">
+                        <User class = "icon"/>
+                        {{ guestSummary }}
+                    </button>
+                    <div :class="{ menu: true, visible: showGuestDropdown }">
+                        <GuestSelector v-if="calendar_data" v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
+                    </div>
+                </div>
                 <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
                     <h2>Price Details</h2>
                     <table class="price-table">
@@ -225,7 +267,7 @@ onMounted(async () => {
     flex-direction: column;
     border-radius: var(--default-border-radius);
     min-height: 60vh;
-    width: 92%;
+    width: 100%;
     background-color: #7fab8d;
     padding: 10px;
     box-sizing: border-box;
@@ -271,8 +313,8 @@ h1{
 .booking-info{
     display: flex;
     width: 50%;
+    max-width: 350px;
     flex-direction: column;
-    justify-content: center; 
     padding: 0 20px 10px 10px;
     margin: 5px;
     margin-top: -2.5em;
@@ -280,6 +322,8 @@ h1{
     /* border-style: dashed;
     border-width: 1px; */
 }
+
+
 .calendar-loading{
     display: flex;
     font-weight: 600;
@@ -331,6 +375,7 @@ h1{
         padding: 10px 10px 10px 10px;
         height: auto;
         margin-top: -1em;
+        margin-bottom: 0;
     }
 }
 
@@ -338,6 +383,51 @@ h1{
     .booking-component{
         border-style: none;
     }
+}
+
+.dropdown.guest-dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: var(--paragraph-text-size);
+    border: 0px;
+    height: 58px;
+    gap: .75em;
+    padding-inline: 20px;
+    background-color: white;
+    width: 100%;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--primary-box-shadow);
+    cursor: pointer;
+}
+.menu {
+    margin-top: 8px;
+    position: absolute;
+    border-radius: var(--default-border-radius);
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 10;
+    width: 100%;
+    min-width: 300px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--primary-box-shadow);
+    transition: opacity 0.2s, visibility 0.2s;
+}
+.menu.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /** price table styling */

@@ -3,3 +3,37 @@ body, button, input, select, textarea {
   white-space: pre-wrap;
   font-weight: 400; /* ExtraLight */
 }
+
+body p {
+  font-size: var(--paragraph-text-size);
+}
+
+h1 {
+  font-size: var(--header-text-size);
+}
+
+h2 { 
+  font-size: var(--subheader-text-size);
+}
+
+h3 {
+  font-size: var(--subsubheader-text-size)
+}
+
+@media (max-width: 500px){
+    body p {
+      font-size: var(--paragraph-mobile-text-size);
+    }
+
+    h1 {
+      font-size: var(--header-mobile-text-size);
+    }
+
+    h2 { 
+      font-size: var(--subheader-mobile-text-size);
+    }
+
+    h3 {
+      font-size: var(--subsubheader-mobile-text-size)
+    }
+}
