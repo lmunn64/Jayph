@@ -1,50 +1,66 @@
 <!-- 
     Hero component for property pages
     Contains:
-        - slideshow with text heading
+        - navigatable carousel slideshow (autoplay/looping)
         - 'see all photos' button
-          - when clicked, displays photos in grid style
+          - when clicked, displays photos in zillow-style rows
+          - summary and 'book now' button displayed alongside gallery
           - selecting a photo from this grid will allow for manual
             scrolling with image previews at the bottom
 -->
 
 <script setup lang="ts">
-//     const images = [
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-//   'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80',
-// ] 
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import { Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/autoplay'
+    import 'swiper/css/navigation';
+    import 'swiper/css/effect-coverflow'
+    const modules = [Navigation, Autoplay ,EffectCoverflow]
     
     const props = defineProps<{
+      summary: string
       images: string[]
     }>()
     const currentIndex = ref(0)
     const showGallery = ref(false)
     const showSlideshow = ref(false)
     const slideshowIndex = ref(0)
+
+    // gallery row organization
+    const chunkSizes = [1,2]  // pattern of imgs per row
+    const chunkedImages = computed(() => { // groups imgs by rows
+      const result: string[][] = []
+      let i = 0
+      let toggle = 0 // alter between chunk sizes
+      const imgs = props.images
+      while (i < imgs.length) {
+        let size = chunkSizes[toggle % chunkSizes.length]
+        if (i + size > imgs.length) {
+          size = imgs.length - i // handle 2-row when only 1 image left
+        }
+        result.push(imgs.slice(i, i + size))
+        i += size
+        toggle++
+      }
+      return result
+    })
+
+
     onMounted(() => {
         setInterval(() => {
             currentIndex.value = (currentIndex.value + 1) % props.images.length
-        }, 5000) // Change image every 5 seconds, loop to start
+        }, 5000) // change image every 5 seconds, loop to start
     })
+
+    // fix for redirecting to correct image on gallery
+    function getGlobalIndex(rowIndex: number, index: number): number {
+      let count = 0
+      for (let i = 0; i < rowIndex; i++) {
+        count += chunkedImages.value[i].length
+      }
+      return count + index
+    }
 
     function openGallery(){
       showGallery.value = true
@@ -67,54 +83,107 @@
     function prevSlide() {
       slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
     }
+
+    // for scrolling to booking section in parent
+    const emit = defineEmits<{
+      (e: 'scroll-to-section'): void
+    }>()
+
+    function scrollToBooking() {
+      closeAllModals()
+      emit('scroll-to-section')
+    }
+
+    // constrain body scrolling on modals
+    watch(showGallery, (val) => {
+      if (val) {
+        document.body.style.overflow = 'hidden'  // disable body scroll
+      } else {
+        document.body.style.overflow = ''       // enable body scroll
+      }
+    })
 </script>
 
 <template>
     <div class="hero">
         <!-- slideshow element -->
-        <div class="slideshow">
-        <img
-            v-for="(img, index) in images"
-            :key="img"
-            :src="img"
-            class="hero-image"
-            :class="{ active: index === currentIndex }"
-            alt="Hero Slide"
-        />
+
+        <div class="swiper">
+          <Swiper
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="0"
+            :centered-slides="true"
+            :autoplay="{
+              delay: 3500,
+              disableOnInteraction: false,
+            }"
+            :loop="true" 
+            :effect="'coverflow'"
+            :grab-cursor="true"
+            :auto-height="true"
+            :coverflow-effect="{
+              rotate: 0,
+              stretch: 0,
+              depth: 0,
+              modifier: 1,
+              slideShadows: false,
+            }"
+            :navigation="{ enabled : true }"
+            :breakpoints="{
+              700: {
+                slidesPerView: 2,
+              },
+              1285: {
+                slidesPerView: 3.5
+              }
+            }"
+          >
+            <SwiperSlide v-for="(img, i) in images" :key="i">
+              <img draggable="false" :src="img" alt="image">
+            </SwiperSlide>
+          </Swiper>
         </div>
-
-        <!-- gradient overlay for text visibility -->
-        <!-- <div class="gradient-overlay"></div> -->
-
-        <!-- <div class="hero-overlay">
-          <h1 class="hero-title">Welcome to [PROPERTY]!</h1>
-        </div> -->
 
         <button class="see-photos-btn" @click="openGallery">See all photos</button>
 
         <!-- gallery display -->
         <div v-if="showGallery" class="modal" @click.self="closeAllModals">
-        <div class="gallery-grid">
-            <img
-            v-for="(img, index) in images"
-            :key="img"
-            :src="img"
-            class="gallery-thumb"
-            @click="openSlideshow(index)"
-            />
-        </div>
+        <div class="gallery-container">
+            <div class="gallery-rows">
+              <div
+                v-for="(row, rowIndex) in chunkedImages"
+                :key="rowIndex"
+                class="gallery-row"
+                :class="{single: row.length === 1, double: row.length ===2 }"
+                >
+                  <img draggable="false"
+                    v-for="(img, index) in row"
+                    :key="img"
+                    :src="img"
+                    class="gallery-thumb"
+                    @click="openSlideshow(getGlobalIndex(rowIndex, index))"
+                    />
+              </div>
+            </div>
+            <div class="gallery-text">
+              <h1>About the Property</h1>
+              <p> {{ summary }} </p>
+              <button @click="scrollToBooking()">Book Now</button>
+            </div>
+          </div>
         </div>
 
         <!-- modal slideshow -->
         <div v-if="showSlideshow" class="modal slideshow-modal" @click.self="closeAllModals">
-            <img :src="images[slideshowIndex]" class="slideshow-image" />
+            <img :src="images[slideshowIndex]" class="slideshow-image" draggable="false"/>
             <button class="nav left" @click="prevSlide">‹</button>
             <button class="nav right" @click="nextSlide">›</button>
             <button class="close" @click="closeAllModals">×</button>
 
             <!-- image previews at bottom of slideshow -->
             <div class="thumbnail-strip">
-                <img
+                <img draggable="false"
                     v-for="(img, index) in images"
                     :key="img"
                     :src="img"
@@ -129,33 +198,45 @@
 
 <style scoped>
 p {
-    text-align:center;
+  text-align:left;
 }
 .hero {
-position: relative;
-width: 100%;
-height: 600px;
-overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.slideshow {
-position: absolute;
-width: 100%;
-height: 100%;
+.swiper {
+  position: relative;
+  height: 375px;
+}
+.swiper-slide {
+  height: 375px;
 }
 
-.hero-image {
-position: absolute;
-width: 100%;
-height: 100%;
-object-fit: cover;
-opacity: 0;
-transition: opacity 1s ease-in-out;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero-image.active {
-opacity: 1;
-z-index: 1;
+:deep(.swiper-slide) {
+  opacity: 0.6; /* dim non-active slides */
+  transition: opacity 0.5s ease; /* smooth fade effect */
+}
+
+:deep(.swiper-slide-active) {
+  opacity: 1;
+}
+
+:deep(.swiper-button-next) {
+  color: var(--accent-color);
+  right: 0px;
+}
+
+:deep(.swiper-button-prev) {
+  color: var(--accent-color);
+  left: 0px;
 }
 
 .gradient-overlay {
@@ -168,22 +249,12 @@ z-index: 1;
 }
 
 .hero-overlay {
-position: relative;
-z-index: 2;
-text-align: center;
-color: white;
-top: 50%;
-transform: translateY(-50%);
-}
-
-.hero-title {
-font-size: 3rem;
-margin-bottom: 1rem;
-color: var(--text-color-light);
-}
-.hero-subtitle {
-font-size: 1.5rem;
-color: var(--text-color-light);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .see-photos-btn {
@@ -205,36 +276,97 @@ color: var(--text-color-light);
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1001; /* cover navbar */
+  overscroll-behavior: contain;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.gallery-container {
+  display: flex;
   gap: 1rem;
-  max-width: 90%;
-  padding: 2rem;
+  background-color:var(--bg-color);
+  padding: 16px;
+  overscroll-behavior: contain;
+  width: 85vw;
+  max-width: 1200px;
+  border-radius: var(--secondary-border-radius);
+}
+
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  width: 40%;
+  padding: 16px;
+  color: var(--text-color-dark);
+  text-align: center;
+  position: relative;
+}
+
+.gallery-text button{
+  margin-top: 20px;
+  padding: 16px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  width: 70%;
+  border-radius: var(--secondary-border-radius);
+  /* margin-top: 100%; */
+  cursor: pointer;
+
+}
+
+.gallery-rows {
+  width: 60%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: var(--secondary-border-radius);
+  gap: 16px;
+  max-height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.gallery-row.single {
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+.gallery-row.double {
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  gap: 1rem;
 }
 
 .gallery-thumb {
   width: 100%;
-  height: 120px;
+  max-height: 220px;
   object-fit: cover;
   cursor: pointer;
   border-radius: var(--secondary-border-radius);
   transition: transform 0.2s ease;
+  max-width: 100%;
+}
+
+.gallery-row.double .gallery-thumb {
+  width: calc(50% - 0.5rem);
 }
 
 .gallery-thumb:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .slideshow-modal {
-  margin-top: 40px;
+  background-color: rgb(15, 15, 15);
+  /* margin-top: 40px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,7 +419,7 @@ color: var(--text-color-light);
   max-width: 90vw;
   overflow-x: auto;
   padding: 0.5rem 0;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .thumbnail-preview {
@@ -308,5 +440,37 @@ color: var(--text-color-light);
 .thumbnail-preview.active {
   opacity: 1;
   border-color: white;
+}
+
+@media (max-width: 800px){
+  .hero {
+    /* height: 250px; */
+  }
+  .gallery-container{
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--default-border-radius);
+    max-height: 80vh;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .gallery-rows {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .gallery-text p, h1{
+    display: none;
+  }
+  .gallery-text button {
+    width:100%;
+    outline: 8px solid var(--bg-color);
+  }
+  .slideshow-image {
+    height: auto;
+  }
+  .nav {
+    top: 90%;
+  }
 }
 </style>

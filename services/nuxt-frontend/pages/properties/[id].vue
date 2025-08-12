@@ -22,6 +22,13 @@ const property = computed(() => {
 // Load images asynchronously WITHOUT await (non-blocking)
 const images = ref<string[]>()
 const imagesLoading = ref(true)
+
+const targetSection = ref<HTMLElement | null>(null)
+
+function scrollToSection() {
+  targetSection.value?.scrollIntoView({ behavior: 'smooth' })
+}
+
 onMounted(async () => {
     try {
         await propertyStore.fetchImages(id)
@@ -37,9 +44,10 @@ onMounted(async () => {
 <template>
     <div v-if="property">
         <!-- Show hero immediately with loading state -->
-        <PropHero 
+        <PropHero @scroll-to-section="scrollToSection"
             v-if="images" 
             :images="images" 
+            :summary="property.summary"
         />
         <div v-else-if="imagesLoading" class="hero-loading">
             <p>Loading images...</p>
@@ -67,8 +75,9 @@ onMounted(async () => {
             <h3>Other Details</h3>
             <p>{{ property.details.other_details }}</p>
 
+            <h1 ref="targetSection" style="text-align: center">Booking</h1>
             <PropBooking :id="id" :max_capacity = "property.capacity.max"/>
-
+            
             <h1 style="text-align: center;">Reviews</h1>
             <ReviewCarousel :propertyId="id" />
 
@@ -93,9 +102,12 @@ h1, h2, h3 {
     padding-inline: 2rem;
 }
 
+h1{
+    font-size: xxx-large;
+}
 p {
     padding-inline: 3rem;
-    white-space: pre-wrap;
+    font-size: large;
     tab-size: 0;
 }
 
