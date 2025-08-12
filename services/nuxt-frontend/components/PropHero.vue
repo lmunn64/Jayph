@@ -198,7 +198,7 @@
 
 <style scoped>
 p {
-    text-align:center;
+  text-align:left;
 }
 .hero {
   position: relative;
@@ -286,15 +286,21 @@ p {
 
 .gallery-container {
   display: flex;
+  gap: 1rem;
   background-color:var(--bg-color);
   padding: 16px;
   overscroll-behavior: contain;
-  max-width: 90vw;
+  width: 85vw;
+  max-width: 1200px;
   border-radius: var(--secondary-border-radius);
 }
 
 .gallery-text {
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  width: 40%;
   padding: 16px;
   color: var(--text-color-dark);
   text-align: center;
@@ -302,24 +308,23 @@ p {
 }
 
 .gallery-text button{
+  margin-top: 20px;
   padding: 16px;
   border: none;
   background-color: var(--accent-color);
   color: var(--text-color-light);
-  width: 100%;
+  width: 70%;
   border-radius: var(--secondary-border-radius);
   /* margin-top: 100%; */
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
 }
 
 .gallery-rows {
-  max-width: 90%;
+  width: 60%;
   padding: 16px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   border-radius: var(--secondary-border-radius);
   gap: 16px;
@@ -331,11 +336,13 @@ p {
 .gallery-row.single {
   display: flex;
   justify-content: center;
+  width:100%;
 }
 
 .gallery-row.double {
   display:flex;
   justify-content: space-between;
+  width:100%;
   gap: 1rem;
 }
 
@@ -350,7 +357,7 @@ p {
 }
 
 .gallery-row.double .gallery-thumb {
-  width: 49%;
+  width: calc(50% - 0.5rem);
 }
 
 .gallery-thumb:hover {
@@ -435,27 +442,28 @@ p {
   border-color: white;
 }
 
-@media (max-width: 750px){
+@media (max-width: 800px){
   .hero {
     /* height: 250px; */
   }
   .gallery-container{
+    justify-content: center;
+    align-items: center;
     border-radius: var(--default-border-radius);
     max-height: 80vh;
     flex-direction: column;
     gap: 32px;
   }
   .gallery-rows {
+    width: 100%;
     max-width: 100%;
-    padding: 0px;
-  }
-  .gallery-thumb {
-    max-height: 120px;
+    padding: 10px;
   }
   .gallery-text p, h1{
     display: none;
   }
   .gallery-text button {
+    width:100%;
     outline: 8px solid var(--bg-color);
   }
   .slideshow-image {

@@ -102,9 +102,12 @@ h1, h2, h3 {
     padding-inline: 2rem;
 }
 
+h1{
+    font-size: xxx-large;
+}
 p {
     padding-inline: 3rem;
-    white-space: pre-wrap;
+    font-size: large;
     tab-size: 0;
 }
 
