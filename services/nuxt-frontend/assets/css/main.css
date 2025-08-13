@@ -3,7 +3,9 @@ body, button, input, select, textarea {
   white-space: pre-wrap;
   font-weight: 400; /* ExtraLight */
 }
-
+.body{
+  background-color: rgb(0, 0, 0);
+}
 body p {
   font-size: var(--paragraph-text-size);
 }

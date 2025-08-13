@@ -12,10 +12,18 @@ import Navbar from '~/components/NavBar.vue'
 
 <style scoped>
 .layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color-dark);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.layout > .footer {
+  margin-top: auto;
+  margin-bottom: -20px;
 }
 </style>

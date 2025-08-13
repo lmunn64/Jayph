@@ -10,6 +10,7 @@ interface Props {
     id: string
     max_capacity: number
 }
+
 const screenWidth = ref(window.innerWidth)
 
 const showGuestDropdown = ref(false)
@@ -27,18 +28,21 @@ const guestCounts = ref<Guests>({
     pets: 0
 })
 
+// calendar refs
 const promoCode = ref<string>()
-
 const promoForm = useTemplateRef('promo-form')
-
 const promoError = ref<boolean>()
-
 const promoMessage = ref<string>('')
+
+// HTML element of the price details
+const priceDetails = ref<HTMLElement | null>(null)
+
 // stored current quote, starts undefined
 const current_quote = ref<Quote_Response>()
 
 const is_fetching_quote = ref<boolean>(false)
 
+// calendar refs
 const calendar_data = ref<Calendar | null>(null)
 const calendarLoading = ref(true)
 const calendarError = ref()
@@ -47,7 +51,6 @@ let calendar: Calendar | null = calendar_data.value;
 
 // debouncer for watched booking details
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
-
 
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
     /** If user cancels in the middle of a call it will cancel the call and not display price */
@@ -164,6 +167,20 @@ const guestSummary = computed(() => {
   return parts.length > 0 ? parts.join(', ') : 'Guests'
 })
 
+// scroller for scrolling the price details into view
+watch(() => [is_fetching_quote.value, current_quote.value], async ([fetching, quote]) => {
+    if (!fetching && quote) {
+      await nextTick()
+      if (priceDetails.value) {
+        priceDetails.value.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        })
+      }
+    }
+  }
+)
+
 onMounted(async () => {
     window.addEventListener('resize', updateWidth)
     window.addEventListener('click', handleGuestClickOutside)
@@ -211,7 +228,7 @@ onUnmounted(() => {
                         <GuestSelector v-if="calendar_data" v-model="guestCounts" :max_capacity="bookingProps.max_capacity"/>
                     </div>
                 </div>
-                <div v-if = '!is_fetching_quote && current_quote'  class = "price-info"> 
+                <div v-if = '!is_fetching_quote && current_quote' class = "price-info" ref="priceDetails"> 
                     <h2>Price Details</h2>
                     <table class="price-table">
                         <tbody class="price-table-body">
@@ -330,12 +347,10 @@ h1{
     }
 }
 .price-info {
-    width: 90%;
+    width: 100%;
     flex-direction: column;
     justify-content: center; 
     align-items: flex-start;
-    /* border-style: dashed;
-    border-width: 1px; */
 }
 
 
@@ -345,9 +360,6 @@ h1{
     width: 100%;
     background-color: white;
     border-radius: var(--secondary-border-radius);
-    /* text-align: center; */
-    /* justify-content: center; */
-    /* align-items: center; */
     box-shadow: var(--primary-box-shadow);
 }
 
@@ -364,6 +376,7 @@ h1{
     .booking-info {
         width: 90%;
         padding: 10px 10px 10px 10px;
+        max-width: 530px;
         height: auto;
         margin-top: -1em;
         margin-bottom: 0;
