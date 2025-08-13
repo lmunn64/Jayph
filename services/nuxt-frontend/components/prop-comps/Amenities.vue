@@ -11,17 +11,10 @@
 import { categoryLabels, amenityCategories, getAmenityIcon } from '~/composables/amenitiesIcons';
 const props = defineProps<{amenities: string[]}>()
 
-const iconMap: Record<string, any> = {}
-const screenWidth = ref(window.innerWidth)
+const screenWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 0)
 
-function useIcon(icon: any, keys: string[]) {
-    keys.forEach(key => {
-        iconMap[key] = icon
-    })
-}
 const dropdownOpen = ref(false)
 // Organize amenities by categories
-
 
 const amenitiesRef = ref<HTMLElement | null>(null)
 
@@ -68,19 +61,19 @@ const visibleAmenities = computed(() => {
 })
 
 const updateWidth = () =>  {
-  screenWidth.value = window.innerWidth
+    screenWidth.value = window.innerWidth
 }
 
 const scrollToAmenities = () => {
-    nextTick(() => {
-        if (amenitiesRef.value) {
-            amenitiesRef.value.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'center'
-            })
-        }
-    })
+  nextTick(() => {
+    if (amenitiesRef.value) {
+      amenitiesRef.value.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'center'
+      })
+    }
+  })
 }
 
 const toggleExpanded = () => {

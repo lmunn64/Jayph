@@ -16,7 +16,7 @@
    <div class = 'nav'>
       <header class="navbar">
          <NuxtLink to="/">
-            <img src="/logo.png" alt="Logo" style="height:80px;" />
+            <img src="/logo.png" alt="Logo" style="height:var(--logo-height)" />
          </NuxtLink>
          <nav class="nav-links">
             <NuxtLink to="/">Home</NuxtLink> 
@@ -35,16 +35,17 @@
    top: 0;
    left: 0;
    right: 0;
-   height: 50px;
+   height: var(--navbar-height);
    display: flex;
    align-items: center;
    justify-content: space-evenly;
    padding: 1rem 1rem;
+   /* backdrop-filter: var(--blur); */
    background-color: var(--primary-color);
    z-index: 1000;
 }
 .nav {
-  padding-top: 80px;
+   padding-top: 100px;
 }
 a {
    color: var(--text-color-light);
@@ -55,6 +56,7 @@ a:hover {
 }
 .nav-links {
    display: flex;
+   font-size: var(--paragraph-text-size);
    gap: 1.5rem;
 }
 @media (max-width: 400px){
@@ -62,11 +64,9 @@ a:hover {
       display: flex;
       gap: 1rem;
    }
-   .navbar{
-   
-   justify-content: space-between;
-
-}
+   .navbar{ 
+      justify-content: space-between;
+   }
 }
 
 </style>

@@ -5,7 +5,7 @@
   --secondary-color: #5C946E;
   --accent-color: #4E848A;
   --skeleton-color: #e0e0e0;
-  --text-color-dark: #2e2e2e;
+  --text-color-dark: rgba(27, 30, 34, 0.9);
   --text-color-light: #faf9f6;
   --highlight-color: #5ba0aa;
   --bg-color: #ffffff;
@@ -13,7 +13,7 @@
 
   --primary-font: 'Muli';
  
-
+  --primary-z-index: 1;
   /** non-color asset settings */
   --default-border-radius: 16px;
   --secondary-border-radius: 8px;
@@ -34,6 +34,16 @@
   --subheader-mobile-text-size: 20px;
   --subsubheader-mobile-text-size: 20px;
 
+  --blur: blur(6px);
+
   /** animation */
   --skeleton-animation: skeleton-pulse 1.5s infinite;
+
+  /** navbar */
+  --logo-height: 125px;
+  --nav-background: rgba(0, 0, 0, 0.2); 
+  --navbar-height: 70px;
+
+  /** landing hero */
+  --landing-hero-height: 600px
 }

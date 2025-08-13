@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import type { Property_wTotal } from '~/types/property';
-import SkeletonSearchCard from './skeleton-components/SkeletonSearchCard.vue';
+import SkeletonSearchCard from '../skeleton-components/SkeletonSearchCard.vue';
 
 const props = defineProps<{
   enrichedProperties: Property_wTotal[]
@@ -35,7 +35,7 @@ const props = defineProps<{
         No properties found.
       </div>
       <div v-else class="grid-container">
-        <SearchPropCard
+        <SearchCompsSearchPropCard
           v-for="property in props.enrichedProperties"
           :key="property.property.id"
           :property="property"
@@ -44,7 +44,7 @@ const props = defineProps<{
       <h1 v-if="missingProperties.length === 1"> 1 unavailable property</h1>
       <h1 v-else> {{ missingProperties.length }} unavailable properties</h1>
       <div class="grid-container-unavailable">
-        <SearchPropCard
+        <SearchCompsSearchPropCard
           v-for="property in props.missingProperties"
           :key="property.property.id"
           :property="property"

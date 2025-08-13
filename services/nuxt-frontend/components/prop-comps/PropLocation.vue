@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import GMap from './GMap.vue';
 
 interface Props {
     getting_around : string | undefined
@@ -15,7 +14,7 @@ const locationProps = defineProps<Props>()
         <h2>Find us</h2>
         <p v-if = "locationProps.getting_around">{{ locationProps.getting_around }}</p>
         <div class = "map-wrapper">
-            <GMap :zoom = 13 :latitude = "locationProps.latitude" :longitude = "locationProps.longitude"/>
+            <MapCompsGMap :zoom = 13 :latitude = "locationProps.latitude" :longitude = "locationProps.longitude"/>
         </div>
     </div>
 </template>

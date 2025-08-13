@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { Underline } from 'lucide-vue-next';
-import VueCalendar from './VueCalendar.vue';
-import { ref } from 'vue'
+
 import type { Guests, Quote, Quote_Response, Fee, Discount} from '~/types/booking'
 import type { Calendar } from '~/types/calendar';
 import { User } from 'lucide-vue-next';
+import { ref, watch, nextTick } from 'vue'
 
 interface Props {
     id: string
     max_capacity: number
 }
 
-const screenWidth = ref(window.innerWidth)
+const screenWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 0)
 
 const showGuestDropdown = ref(false)
 

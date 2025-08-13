@@ -66,11 +66,11 @@
 <template>
     <!-- todo: pass previous search object to automatically 
         populate ListingSearch (if applicable) -->
-    <ListingSearch />
+    <SearchCompsListingSearch />
     <div class="wrapper">
         <!-- display property listings and map of all results side-by-side -->
-        <SearchResultProps :enrichedProperties="enrichedProperties ?? []" :missingProperties = "missingProperties ?? []" :loading="loading"/>
-        <SearchResultMap :enrichedProperties="enrichedProperties" :missingProperties = "missingProperties ?? []" :loading="loading"/>
+        <SearchCompsSearchResultProps :enrichedProperties="enrichedProperties ?? []" :missingProperties = "missingProperties ?? []" :loading="loading"/>
+        <SearchCompsSearchResultMap :enrichedProperties="enrichedProperties" :missingProperties = "missingProperties ?? []" :loading="loading"/>
     </div>
 </template>
 

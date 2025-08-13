@@ -26,7 +26,7 @@
   background-color: var(--secondary-color);
   color: var(--text-color-light);
   padding: 1.5rem 0;
-
+  z-index: var(--primary-z-index);
   text-align: center;
   font-size: 0.9rem;
 }

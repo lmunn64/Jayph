@@ -9,8 +9,8 @@
 -->
 
 <script setup lang="ts">
-import VueCalendar from './VueCalendar.vue'
-import GuestSelector from './GuestSelector.vue'
+import { VueCalendar } from '#components'
+import { GuestSelector } from '#components'
 import type { Search } from '~/types/booking'
 import { formatSingleDate } from '~/composables/useDateUtils'
 import { select } from '#build/ui'
@@ -239,14 +239,13 @@ const toggleSearchOpen = () =>{
   height: 150px;
   width: 100%;
   z-index: 10;
-  backdrop-filter: blur(6px);
+  backdrop-filter: var(--blur);
   background-color: var(--primary-color-20);
   color: var(--text-color-light);
 }
 .listing-container.fixed-position {
   background-color: var(--primary-color);
   backdrop-filter: none;
-  
   position: relative;
   bottom: auto;
   z-index: 1;

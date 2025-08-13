@@ -4,7 +4,7 @@
 
 <template>
     <div class="wrapper">
-        <BlogContainer />
+        <BlogCompsBlogContainer />
     </div>
 </template>
 

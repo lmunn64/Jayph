@@ -115,7 +115,7 @@ onMounted(() => {
       class="review-swiper"
     >
       <SwiperSlide v-for="review in state.reviews" :key="review.name">
-        <ReviewCard v-bind="review"  @toggle = "toggleReview" />
+        <ReviewCompsReviewCard v-bind="review"  @toggle = "toggleReview" />
       </SwiperSlide>
     </Swiper>
   </div>

@@ -73,7 +73,7 @@ import type { Blog } from '~/types/blog'
     <!-- blog cards -->
     <div class="blog-container">
         <template v-if="filteredBlogs.length > 0">
-            <BlogCard
+            <BlogCompsBlogCard
             v-for="(blog, index) in filteredBlogs"
             :key="index"
             :blog="blog"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PropLocation from '~/components/prop-comps/PropLocation.vue'
 import SkeletonPropHero from '~/components/skeleton-components/SkeletonPropHero.vue'
 import { usePropertyStore } from '~/stores/properties'
 import type { Calendar } from '~/types/calendar'
@@ -45,7 +46,7 @@ onMounted(async () => {
 <template>
     <div v-if="property">
         <!-- Show hero immediately with loading state -->
-        <PropHero @scroll-to-section="scrollToSection"
+        <PropCompsPropHero @scroll-to-section="scrollToSection"
             v-if="images" 
             :images="images" 
             :summary="property.summary"
@@ -60,7 +61,7 @@ onMounted(async () => {
 
             <!-- Rest of your content loads immediately -->
             
-            <Amenities :amenities="property.amenities"/>
+            <PropCompsAmenities :amenities="property.amenities"/>
 
             <h2>Space Overview</h2>
             <p>{{ property.details.space_overview }}</p>
@@ -77,10 +78,10 @@ onMounted(async () => {
             <p>{{ property.details.other_details }}</p>
 
             <h1 ref="targetSection" style="text-align: center">Booking</h1>
-            <PropBooking :id="id" :max_capacity = "property.capacity.max"/>
+            <PropCompsPropBooking :id="id" :max_capacity = "property.capacity.max"/>
             
             <h1 style="text-align: center;">Reviews</h1>
-            <ReviewCarousel :propertyId="id" />
+            <ReviewCompsReviewCarousel :propertyId="id" />
 
             <PropLocation v-if = "property.coordinates.latitude && property.coordinates.longitude" :getting_around ="property.details.getting_around" :latitude="property.coordinates.latitude" :longitude ="property.coordinates.longitude"/>
         </div>

@@ -1,5 +1,6 @@
 <script setup lang ='ts'>
-    import { usePropertyStore } from '~/stores/properties'
+import ReviewCarousel from '~/components/review-comps/ReviewCarousel.vue';
+import { usePropertyStore } from '~/stores/properties'
 
     const propertyStore = usePropertyStore()
 
@@ -11,13 +12,13 @@
   <!-- Hero component -->
   <div class="hero-section">
     <HeroContainer />
-    <ListingSearch />
+    <SearchCompsListingSearch/>
   </div>
   <div class="wrapper">  
 
     <!-- Properties components-->
     <div v-if="propertyStore.isLoaded">
-        <PropContainer :properties= "propertyStore.properties"/>
+        <PropCompsPropContainer :properties= "propertyStore.properties"/>
     </div>
     
     <!-- Reviews components -->
@@ -46,6 +47,7 @@ h1, h2, p {
   height: fit-content; /* Full viewport height */
 }
 .wrapper {
+  z-index: var(--primary-z-index);
   display: flex;
   flex-direction: column;
   justify-content: center;

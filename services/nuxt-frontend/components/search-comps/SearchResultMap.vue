@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Coordinates, Property_wTotal } from '~/types/property'
-import GMap from './GMap.vue'
-import SkeletonSearchMap from './skeleton-components/SkeletonSearchMap.vue'
+import GMap from '../map-comps/GMap.vue'
+import SkeletonSearchMap from '../skeleton-components/SkeletonSearchMap.vue'
 
 interface Props {
   enrichedProperties: Property_wTotal[]
@@ -83,7 +83,7 @@ const center = computed<string[]>(() => {
             <SkeletonSearchMap/>
         </div>
         <div v-else class="map">
-            <GMap :zoom = "zoom" :latitude = "center[0]" :longitude = "center[1]" :props_coords ="coordinates"/>
+            <MapCompsGMap :properties = "enrichedProperties" :zoom = "zoom" :latitude = "center[0]" :longitude = "center[1]" :props_coords ="coordinates"/>
         </div>
     </div>
 </template>

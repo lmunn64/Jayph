@@ -1,11 +1,14 @@
 <script setup lang="ts">
     import { ref } from 'vue'
-    import { GoogleMap, Circle, Marker, MarkerCluster, AdvancedMarker } from 'vue3-google-map'
-    import type { Coordinates } from '~/types/property';
-
+    import { GoogleMap, Circle, InfoWindow , MarkerCluster, AdvancedMarker } from 'vue3-google-map'
+    import type { Coordinates, Property_wTotal } from '~/types/property';
     const config = useRuntimeConfig()
+
+    const hoveredIndex = ref<number | null>(null)
+
     interface Props {
         props_coords?: Coordinates[]
+        properties?: Property_wTotal[]
         zoom: number
         // Used for center (when props_coords it will be either a kansas city coord, branson city coord or both zoomed out for view of all locations)
         latitude: string
@@ -42,22 +45,35 @@
         fillColor: '#FF0000',
         fillOpacity: 0.35, 
     }))
+
 </script>
 
 
 <template>
     <GoogleMap class = "prop-map"
-        :api-key="config.public.googleMapsApiKey"
+        :api-key="DEMO_MAP_ID"
         :center = "center"
         :map-id = "config.public.googleMapsId"
-        :zoom = "zoom"
+        :zoom = "zoom ? zoom : 14"
     >
-    <MarkerCluster v-if= "mapProps.props_coords !== undefined">
-      <AdvancedMarker
-        v-for="(location, i) in locations"
-        :key="i"
-        :options="{ position: location }"
-      />
+    <MarkerCluster v-if="mapProps.props_coords !== undefined">
+        <template  v-for="(location, i) in locations" :key="i">
+            <AdvancedMarker
+                :options="{ position: location }"
+                @click="hoveredIndex = i"
+            />
+            <InfoWindow
+            class = "mini"
+                v-if="hoveredIndex === i"
+                :options="{ position: location }"
+                @closeclick="hoveredIndex = null"
+            >
+            <MapCompsMapInfoPropCard 
+                :key="mapProps.properties![i].property.id"
+                :property="mapProps.properties![i]"
+                />
+            </InfoWindow>
+        </template>
     </MarkerCluster>
 
     <Circle v-if = "mapProps.props_coords === undefined" :options="circle" />
