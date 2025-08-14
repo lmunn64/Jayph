@@ -22,13 +22,13 @@
       summary: string
       images: string[]
     }>()
-    const currentIndex = ref(0)
-    const showGallery = ref(false)
-    const showSlideshow = ref(false)
-    const slideshowIndex = ref(0)
-
+    const currentIndex = ref<number>(0)
+    const showGallery = ref<boolean>(false)
+    const showSlideshow = ref<boolean>(false)
+    const slideshowIndex = ref<number>(0)
+    const slideshowImages : string[] = computed(() => props.images.slice(0, 10))
     // gallery row organization
-    const chunkSizes = [1,2]  // pattern of imgs per row
+    const chunkSizes : number[]= [1,2]  // pattern of imgs per row
     const chunkedImages = computed(() => { // groups imgs by rows
       const result: string[][] = []
       let i = 0
@@ -95,7 +95,7 @@
     }
 
     // constrain body scrolling on modals
-    watch(showGallery, (val) => {
+    watch(showGallery, (val : boolean) => {
       if (val) {
         document.body.style.overflow = 'hidden'  // disable body scroll
       } else {
@@ -139,7 +139,7 @@
               }
             }"
           >
-            <SwiperSlide v-for="(img, i) in images" :key="i">
+            <SwiperSlide v-for="(img, i) in slideshowImages" :key="i">
               <img draggable="false" :src="img" alt="image">
             </SwiperSlide>
           </Swiper>

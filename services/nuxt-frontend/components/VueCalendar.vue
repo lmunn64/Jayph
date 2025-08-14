@@ -3,8 +3,8 @@ import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import type { DatePickerInstance } from "@vuepic/vue-datepicker"
 import type { Calendar_Date, Calendar } from '~/types/calendar'
-import { addDays, max } from 'date-fns';
 import { formatSingleDate } from '~/composables/useDateUtils'
+
 const date = ref()
 const calendarContainer = ref()
 const isWideEnough = ref(false)
@@ -40,7 +40,6 @@ const props = withDefaults(defineProps<Props>(), {
 const checkWidth = () => {
   if (calendarContainer.value && calendarContainer.value.parentElement) {
     const parentWidth = calendarContainer.value.parentElement.offsetWidth
-    const parentHeight = calendarContainer.value.parentElement.offsetHeight
 
     // for search dropdown, use smaller width threshold
     if (props.forSearch) {
@@ -211,6 +210,7 @@ onUnmounted(() => {
                     :key="isWideEnough"
                     :highlight="checkInOnly"
                     no-today
+                    :hide-offset-dates="true"
                     :locale="'en-GB'"
                     month-name-format="long"
                     :disabled-dates="unavailableDates"

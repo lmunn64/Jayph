@@ -9,6 +9,7 @@
   --text-color-light: #faf9f6;
   --highlight-color: #5ba0aa;
   --bg-color: #f7f4f4;
+  --fg-color: #ffff;
   --text-color-dark-disabled: #2e2e2e3b;
 
   --primary-font: 'Muli';
@@ -24,12 +25,14 @@
   --primary-header-inline: 8px;
   --secondary-header-inline: 16px;
 
+  --main-title-text-size: 72px;
   --paragraph-text-size: 18px;
   --header-text-size: 48px;
   --subheader-text-size: 24px;
   --subsubheader-text-size: 20px;
   --paragraph-secondary-text-size: 20px;
 
+  --main-title-mobile-text-size: 64px;
   --paragraph-mobile-text-size: 17px;
   --header-mobile-text-size: 36px;
   --subheader-mobile-text-size: 20px;
@@ -41,9 +44,9 @@
   --skeleton-animation: skeleton-pulse 1.5s infinite;
 
   /** navbar */
-  --logo-height: 100px;
+  --logo-height: 80px;
   --nav-background: rgba(0, 0, 0, 0.2); 
-  --navbar-height: 70px;
+  --navbar-height: 25px;
 
   /** landing hero */
   --landing-hero-height: 600px

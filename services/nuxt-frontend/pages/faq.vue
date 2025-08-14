@@ -22,6 +22,7 @@ h1, h2 {
     max-width: 1000px;        
     padding-inline: 1rem;    
     margin: 0 auto;
+    outline: 1px solid rgba(196, 193, 190, 0.75);
     box-sizing: border-box; 
     background-color: var(--bg-color);
  }

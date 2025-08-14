@@ -51,7 +51,7 @@
 
 <template>
     <GoogleMap class = "prop-map"
-        :api-key="DEMO_MAP_ID"
+        :api-key="config.public.googleMapsApiKey"
         :center = "center"
         :map-id = "config.public.googleMapsId"
         :zoom = "zoom ? zoom : 14"

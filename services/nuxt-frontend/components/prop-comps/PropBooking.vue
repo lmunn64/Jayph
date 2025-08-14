@@ -168,8 +168,8 @@ const guestSummary = computed(() => {
 })
 
 // scroller for scrolling the price details into view
-watch(() => [is_fetching_quote.value, current_quote.value], async ([fetching, quote]) => {
-    if (!fetching && quote) {
+watch(() => [is_fetching_quote.value, current_quote.value], async ([fetching, quote] : [boolean, string]) => {
+    if (!fetching && quote && screenWidth.value < 951) {
       await nextTick()
       if (priceDetails.value) {
         priceDetails.value.scrollIntoView({ 

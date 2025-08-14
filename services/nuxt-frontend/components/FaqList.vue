@@ -85,6 +85,8 @@ function toggle(index: number) {
   gap: 1rem;
   background-color: white;
   padding: 2rem;
+      outline: 1px solid rgba(196, 193, 190, 0.75);
+
   margin-bottom: 2rem;
 }
 

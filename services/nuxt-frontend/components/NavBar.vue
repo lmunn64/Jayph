@@ -38,14 +38,14 @@
    height: var(--navbar-height);
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
-   padding: 1rem 1rem;
+   justify-content: space-between;
+   padding: 1rem 2rem;
    /* backdrop-filter: var(--blur); */
    background-color: var(--primary-color);
    z-index: 1000;
 }
 .nav {
-   padding-top: 100px;
+   padding-top: 55px;
 }
 a {
    color: var(--text-color-light);

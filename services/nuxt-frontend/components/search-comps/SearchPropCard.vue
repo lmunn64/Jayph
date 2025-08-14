@@ -29,7 +29,7 @@ const props = defineProps<{
                 <div class = "price-helper"> Total before taxes</div>
             </div>
             <div v-else class="price-container">
-                <div class = "price-helper"> Total before taxes</div>
+                <div class = "price-helper"> Available on other dates</div>
             </div>
         </div>
         

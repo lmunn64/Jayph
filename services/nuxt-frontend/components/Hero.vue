@@ -39,7 +39,9 @@ onMounted(() => {
     ></div>
     <div class="gradient-overlay"></div>
     <div class="hero-overlay">
-      <h1 class="hero-title">Approachable. Relaxing. Inspired Spaces. Come Stay Today!</h1>
+      <h1 class="hero-main-title" >Fountain City Stays</h1>
+
+      <h1 class="hero-title">Approachable. Relaxing. Inspired Spaces</h1>
       <p class="hero-subtitle">Our spaces are designed with you in mind. We wish to provide an atmosphere that makes you smile. </p>
     </div>
   </div>
@@ -78,16 +80,34 @@ onMounted(() => {
   z-index: 2;
   text-align: center;
   color: white;
-  top: 40%;
+  top: 35%;
   transform: translateY(-50%);
 }
+.hero-main-title {
+  font-size:var(--main-title-text-size);
+  margin-bottom: 0rem;
+  color: var(--text-color-light);
+}
+
 .hero-title {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--text-color-light);
 }
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: var(--paragraph-secondary-text-size);
   color: var(--text-color-light);
+}
+@media (max-width: 550px){
+  .hero-main-title {
+    font-size:var(--main-title-mobile-text-size);
+  }
+
+  .hero-title {
+    font-size:var(--header-mobile-text-size);
+  }
+  .hero-subtitle {
+    font-size: var(--paragraph-mobile-text-size)
+  }
 }
 </style>

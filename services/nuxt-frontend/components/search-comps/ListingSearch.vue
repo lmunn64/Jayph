@@ -384,7 +384,7 @@ const toggleSearchOpen = () =>{
     justify-content: center;
 }
 .search {
-    border: 2px solid white;
+    border: 0px solid white;
     background-color: var(--accent-color);
     color: var(--text-color-light);
 }

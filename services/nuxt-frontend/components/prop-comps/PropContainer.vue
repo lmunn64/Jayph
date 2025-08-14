@@ -9,7 +9,6 @@
 <script setup lang="ts">
     import type { Property } from '~/types/property';
 
-
     interface Props {
         properties: Property[]
     }
@@ -18,14 +17,14 @@
     const selectedLocation = ref('Kansas City') /* default selection */
 
     const filteredProperties = computed(() => {
-      return props.properties.filter(p => p.coordinates.city === selectedLocation.value)
+      return props.properties.filter((p: { coordinates: { city: string; }; })  => p.coordinates.city === selectedLocation.value)
     })
 </script>
 
 <template>
     <h1>Our Properties</h1>
 
-    <!-- select property with buttons -->
+    <!-- select property with buttons -->`
     <div class="filter-buttons">
       <button
         :class="{ active: selectedLocation === 'Kansas City' }"
@@ -88,12 +87,13 @@ h1, h2, h3 {
 .filter-buttons button {
   padding: 0.75rem 1rem;
   font-size: 1.25em;
-  border: 2px solid var(--border-color, #ccc);
+  border: 1px solid var(--border-color, #cccccc00);
   background-color: white;
   cursor: pointer;
   border-radius: var(--default-border-radius);
   transition: all 0.3s ease;
   box-sizing: border-box;
+  
   width: auto;
 }
 
@@ -111,7 +111,7 @@ h1, h2, h3 {
 }
 
 .filter-buttons button:hover {
-  border: 2px solid var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 .filter-buttons button.active {
