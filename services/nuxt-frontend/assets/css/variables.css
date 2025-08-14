@@ -8,12 +8,13 @@
   --text-color-dark: rgba(27, 30, 34, 0.9);
   --text-color-light: #faf9f6;
   --highlight-color: #5ba0aa;
-  --bg-color: #ffffff;
+  --bg-color: #f7f4f4;
   --text-color-dark-disabled: #2e2e2e3b;
 
   --primary-font: 'Muli';
  
   --primary-z-index: 1;
+  
   /** non-color asset settings */
   --default-border-radius: 16px;
   --secondary-border-radius: 8px;
@@ -40,7 +41,7 @@
   --skeleton-animation: skeleton-pulse 1.5s infinite;
 
   /** navbar */
-  --logo-height: 125px;
+  --logo-height: 100px;
   --nav-background: rgba(0, 0, 0, 0.2); 
   --navbar-height: 70px;
 

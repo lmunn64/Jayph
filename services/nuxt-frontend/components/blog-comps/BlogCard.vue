@@ -19,14 +19,6 @@ const props = defineProps<{ blog: Blog }>()
 
 const router = useRouter()
 
-// const dummyBlog = ref<Blog>({
-//     thumbnail: 'https://static.wixstatic.com/media/c3ce5f_69af9e1b18714883a459abdfd968df68~mv2.jpg/v1/fill/w_1367,h_1027,fp_0.50_0.50,q_90,enc_avif,quality_auto/c3ce5f_69af9e1b18714883a459abdfd968df68~mv2.jpg',
-//     date: 'Jul 28, 2023',
-//     tags: ['Summer', 'Fall', 'Hikes'],
-//     length: 2,
-//     title: 'Our Top 5 Best Hikes in the Great Northern uhhh',
-//     subtitle: 'Nestled in the picturesque northern region of the Catskill Mountains, Prattsville, NY, offers so many hiking opportunities for outdoor enthusiasts seeking to reconnect with nature. With its charming small-town atmosphere and breathtaking landscapes, Prattsville serves as an excellent base for exploring the surrounding wilderness. Here’s our top 5 best hikes that are sure to leave you with unforgettable memories of your visit in the Catskills this summer!'
-// })
 const emit = defineEmits<{
   (e: 'tagSelected', tag: string): void
 }>()
