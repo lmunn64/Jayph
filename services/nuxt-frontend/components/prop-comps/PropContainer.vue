@@ -24,7 +24,7 @@
 <template>
     <h1>Our Properties</h1>
 
-    <!-- select property with buttons -->`
+    <!-- select property with buttons -->
     <div class="filter-buttons">
       <button
         :class="{ active: selectedLocation === 'Kansas City' }"

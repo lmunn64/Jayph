@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const images = [
-  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80',
-]
+const found = Object.values(import.meta.glob('/content/hero-images/*.{jpg,jpeg,png,webp}', { eager: true, query: '?url', import: 'default' })) as string[]
+const images = found
+
 const currentIndex = ref(0)
 const prevIndex = ref(0)
 const fading = ref(false)
@@ -56,13 +54,11 @@ onMounted(() => {
 }
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center bottom; /* <-- This aligns the image bottom with the container bottom */
+
   transition: opacity 1s ease-in-out;
   z-index: 0;
   pointer-events: none;
@@ -103,6 +99,11 @@ onMounted(() => {
     font-size:var(--main-title-mobile-text-size);
   }
 
+  .hero-bg {
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
   .hero-title {
     font-size:var(--header-mobile-text-size);
   }

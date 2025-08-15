@@ -20,6 +20,7 @@ import Navbar from '~/components/NavBar.vue'
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-height: calc(var(--vh, 1vh) * 100); /* uses JS-set --vh when available */
 
 }
 

@@ -393,8 +393,11 @@ const toggleSearchOpen = () =>{
 }
 
 @media (max-width: 850px) {
+  .title{
+    font-size: var(--paragraph-text-size);
+  }
   .listing-container {
-    height: 140px;
+    height: 125px;
     transition: all .4s ease;
   }
 
