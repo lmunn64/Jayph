@@ -4,8 +4,8 @@ import { usePropertyStore } from '~/stores/properties'
 
     const propertyStore = usePropertyStore()
 
-    await propertyStore.fetchProperties()
-    
+    await useAsyncData('properties', () => propertyStore.fetchProperties())
+
 </script>
 
 <template>

@@ -6,7 +6,7 @@ export const usePropertyStore = defineStore('property', {
   state: () => ({
     properties: [] as Property[],
     isLoaded: false,
-    
+    isLoading: false,
     property_reviews: {} as Record<string, Review[]>,
 
     property_images: {} as Record<string, string[]>,
@@ -15,10 +15,11 @@ export const usePropertyStore = defineStore('property', {
   }),
   actions: {
     async fetchProperties() {
-      if (this.isLoaded) {
-        return
+      if (this.isLoaded || this.isLoading) {
+        return this.properties
       }
       try {
+        this.isLoading = true
         console.log("fetching properties from api gateway")
         const properties = await $fetch<Property[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
         this.properties = properties.map((el) => ({
@@ -54,10 +55,15 @@ export const usePropertyStore = defineStore('property', {
           }
         }))
         this.isLoaded = true
+        return this.properties
       } catch (error) {
         console.error("Error fetching properties:", error)
         this.isLoaded = false
+        return []
         // set an error state or message here
+      }
+      finally {
+        this.isLoading = false
       }
     },
     // use for later when reviews are set by Jaymi for the front page, use it the same on
