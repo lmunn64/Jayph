@@ -15,17 +15,21 @@ const emit = defineEmits(['delete-quote-response'])
 
 const selectedDates = defineModel({required: true})
 
+const firstDateSelected = ref<boolean>(false)
+
 const tempDisabledDates = ref<Date[] | undefined>([])
 
 const tempHighlightedDates = ref<Date[]>([])
 
 const tempHighlightedMaxDate = ref<Date[]>([])
 
-const minStayHighlightedDates = ref<Date[]>([])
+const minStayHighlightedDates = ref<Date[] | undefined>([])
 
 const isLoading = ref<boolean>(true)
 
 const maxDate = ref(new Date(new Date().setFullYear(new Date().getFullYear() + 2)))
+
+const hoveredDate = ref<Date | null>(null)
 
 interface Props {
     forSearch?: boolean 
@@ -52,7 +56,6 @@ const checkWidth = () => {
 }
 
 const handleDateUpdate = (selectedDate : Date[]) => {
-    console.log(selectedDate)
     if (selectedDate && Array.isArray(selectedDate) && selectedDate.length === 2) {
         const [startDate, endDate] = selectedDate
         if (startDate && endDate) {
@@ -71,18 +74,35 @@ const handleDateUpdate = (selectedDate : Date[]) => {
         clearDateBtn.value?.classList.remove('set')
     }
 }
+const getMinStay = (selectedDate : Date) => {
+    if(!props.cal_data){
+        return
+    }
+    const startDate = formatSingleDate(selectedDate)
 
+    const startDateObj : Calendar_Date | undefined = props.cal_data.dates.find(d => d.date === startDate)
+
+    if(!startDateObj){
+        return
+    }
+  
+    const min_stay = startDateObj.min_stay
+
+    if(min_stay > 1)
+        return min_stay
+
+    return undefined
+}
 // handle the selection of the first date in a calendar
 const handleDateSelection = (selectedDate : Date) =>{
     if(!props.cal_data){
         return
     }
-    
+    firstDateSelected.value = true
     //emit clearQuoteResponse in parent
     emit('delete-quote-response')
-
+    
     const startDate = formatSingleDate(selectedDate)
-    console.log(startDate)
 
     // Enable clear button
     clearDateBtn.value?.classList.add('set')
@@ -113,16 +133,22 @@ const handleDateSelection = (selectedDate : Date) =>{
 
     tempDisabledDates.value = props.cal_data.dates.filter((d, index, dArr) => index < startDateIndex || (maxDateIndex > 0 && index >= maxDateIndex))
     .map(d => new Date(d.date + 'T00:00:00'))
-
+    console.log(minStayHighlightedDates.value)
 }
-
 
 
 const clearTempDisabledDates = () => {
     //remove the temp disableds based on startDate
     if(tempDisabledDates.value){
         tempDisabledDates.value = undefined
-    }}
+    }
+}
+const clearMinStayHighlightedDates = () => {
+    //remove the temp disableds based on startDate
+    if(minStayHighlightedDates.value){
+        minStayHighlightedDates.value = undefined
+    }
+}
 
 const clearDate = () => {
     date.value = null
@@ -131,13 +157,12 @@ const clearDate = () => {
 
     // return the checkin only date to the calendar 
     tempHighlightedMaxDate.value.pop()
-    for(var i =0; i < minStayHighlightedDates.value.length; i++){
-        minStayHighlightedDates.value.pop()
-    }
     
+    clearMinStayHighlightedDates()
+
     selectedDates.value = null
     clearTempDisabledDates()
-
+    firstDateSelected.value = false
     //emit clearQuoteResponse in parent
     emit('delete-quote-response')
     
@@ -220,7 +245,24 @@ onUnmounted(() => {
                     :month-change-on-scroll="false"
                     @update:model-value="handleDateUpdate"
                     @range-start="handleDateSelection"
-                />
+                >
+                    <template #day="{ day, date }">
+                        <div
+                            @mouseover="hoveredDate = date"
+                            @mouseleave="hoveredDate = null"
+                            class = "day-container"
+                        >
+                            <div
+                                :class ="{visible : hoveredDate && hoveredDate.getTime() === date.getTime() && getMinStay(date) && !firstDateSelected}"
+                                class="calendar-popup"
+                                >
+                               {{ getMinStay(date)+"-night minimum" }}
+                            </div>
+                            {{ date.getDate() + " " }}
+                        </div>
+                    </template>
+                </VueDatePicker>
+                
             </div>
             <button class = "clear-dates-btn" @click="clearDate" ref = 'clear-date-btn'>Clear Dates</button>
 
@@ -300,13 +342,37 @@ onUnmounted(() => {
 .calendarContainer :deep(.dp__inner_nav){
     background-color: #fff;
 }
-
+.day-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.calendar-popup {
+    visibility: hidden;
+    position: absolute;
+    transform: translateY(125%);
+    width: 120px;
+    padding: 5px 0px;
+    border: 1px solid var(--dp-border-color);
+    border-radius: var(--secondary-border-radius);
+    background-color: var(--dp-background-color);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    box-shadow: var(--primary-box-shadow);
+}
+.calendar-popup.visible {
+    visibility:visible;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+}
 /** Checkin only dates */
 .calendarContainer :deep(.dp__calendar_item .dp__cell_highlight){
     cursor:not-allowed;
     pointer-events: none;
     color: #2125298a;
-
 }
 
 /** Don't allow clicks for end start and highlighted (max stay restricted) dates */

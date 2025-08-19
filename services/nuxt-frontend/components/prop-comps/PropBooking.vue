@@ -55,6 +55,7 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newPromo]) => {
     /** If user cancels in the middle of a call it will cancel the call and not display price */
     if (!newDates || !newDates[0] || !newDates[1]) {
+        console.log('clear dates')
         current_quote.value = undefined
         is_fetching_quote.value = false
         if (debounceTimer) clearTimeout(debounceTimer)
@@ -88,7 +89,7 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                         method: 'POST',
                         body: quotePayload,
                     })     
-                    if(quote_response){
+                    if(quote_response && is_fetching_quote.value){
                         current_quote.value = quote_response
                         console.log("Quote received: ", current_quote.value)
                         is_fetching_quote.value = false
@@ -168,7 +169,7 @@ const guestSummary = computed(() => {
 })
 
 // scroller for scrolling the price details into view
-watch(() => [is_fetching_quote.value, current_quote.value], async ([fetching, quote] : [boolean, string]) => {
+watch([is_fetching_quote, current_quote], async ([fetching, quote] : [boolean, Quote_Response | undefined]) => {
     if (!fetching && quote && screenWidth.value < 951) {
       await nextTick()
       if (priceDetails.value) {

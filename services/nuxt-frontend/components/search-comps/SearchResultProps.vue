@@ -24,7 +24,8 @@ const props = defineProps<{
 
 <template>
   <div class="property-list">
-    <h1> {{ enrichedProperties.length }} of {{ enrichedProperties.length + missingProperties.length }} properties available</h1>
+    <h1 v-if = "props.loading">Searching Properties</h1>
+    <h1 v-else> {{ enrichedProperties.length }} of {{ enrichedProperties.length + missingProperties.length }} properties available</h1>
     <div v-if="props.loading">
         <div class="grid-container">
         <SkeletonSearchCard v-for="n in 4" :key="n" />
