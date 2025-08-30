@@ -1,10 +1,13 @@
 <script setup lang ='ts'>
-import ReviewCarousel from '~/components/review-comps/ReviewCarousel.vue';
-import { usePropertyStore } from '~/stores/properties'
+  import ReviewCarousel from '~/components/review-comps/ReviewCarousel.vue';
+  import { usePropertyStore } from '~/stores/properties'
 
-    const propertyStore = usePropertyStore()
+  // isr at 5m
+  definePageMeta({ isr: 300 })
 
-    await useAsyncData('properties', () => propertyStore.fetchProperties())
+  const propertyStore = usePropertyStore()
+
+  await useAsyncData('properties:store', () => propertyStore.fetchProperties())
 
 </script>
 

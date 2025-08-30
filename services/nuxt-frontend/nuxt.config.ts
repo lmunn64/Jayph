@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig : {
+    apiBase: 'https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev',
     public : {
       googleMapsApiKey : process.env.GOOGLE_API_KEY,
       googleMapsId: process.env.GOOGLE_MAP_ID
