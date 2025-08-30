@@ -26,7 +26,7 @@
     const showGallery = ref<boolean>(false)
     const showSlideshow = ref<boolean>(false)
     const slideshowIndex = ref<number>(0)
-    const slideshowImages : string[] = computed(() => props.images.slice(0, 10))
+    const slideshowImages = computed<string[]>(() => props.images.slice(0, 10))
     // gallery row organization
     const chunkSizes : number[]= [1,2]  // pattern of imgs per row
     const chunkedImages = computed(() => { // groups imgs by rows

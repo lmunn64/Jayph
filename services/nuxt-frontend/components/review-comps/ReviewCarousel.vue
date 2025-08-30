@@ -63,16 +63,14 @@ const { data: reviewsData, error } = await useAsyncData<Review[]>(`reviews-${pro
 
 onMounted(() => {
   if (Array.isArray(reviewsData.value)) {
-    reviewsData.value.forEach((el: any) => {
-      state.reviews.push({
-        name: el.name,
-        img_src: el.img_src,
-        date: el.date,
-        platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
-        review_content: el.review_content,
-        rating: el.rating
-      })
-    })
+    state.reviews = reviewsData.value?.map((el : Review) => ({
+      name: el.name,
+      img_src: el.img_src,
+      date: el.date,
+      platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
+      review_content: el.review_content,
+      rating: el.rating
+    }))
     state.isLoading = false
   }
   else {
