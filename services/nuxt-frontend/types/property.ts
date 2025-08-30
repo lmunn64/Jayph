@@ -50,7 +50,7 @@ export interface Review {
     date: string
     platform: string
     review_content: string
-    rating: Float16Array
+    rating: number
 }
 
 export interface SearchedProperty {

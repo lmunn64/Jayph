@@ -24,6 +24,11 @@ const options = {
   month: "short" as const,
   day: "numeric" as const
 }
+const props = defineProps<{
+    checkinDate?: string,
+    checkoutDate?: string
+}>()
+
 const search = ref<Search>({
     location: '',
     checkinDate: '',
@@ -158,6 +163,12 @@ const formattedDatetoLocale = (date : string) : string =>{
   //assume YYYY-MM-DD
   const toFormat : Date = new Date(date + 'T00:00:00')
   return toFormat.toLocaleDateString(undefined, options)
+}
+
+// if there are check in or check out props sent, fill em up in ref
+if(props.checkinDate && props.checkoutDate){
+  search.value.checkinDate = props.checkinDate
+  search.value.checkoutDate = props.checkoutDate
 }
 
 onMounted(() => {

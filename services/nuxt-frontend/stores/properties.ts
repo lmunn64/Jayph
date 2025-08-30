@@ -14,48 +14,53 @@ export const usePropertyStore = defineStore('property', {
     
   }),
   actions: {
+    ingest(raw : Property[]){
+      if (this.isLoaded) return this.properties
+        this.properties = raw.map((el) => ({
+        id: el.id,
+        name: el.name,
+        picture_url: el.picture_url,
+        coordinates: {
+          city: el.coordinates.city,
+          state: el.coordinates.state,
+          latitude: el.coordinates.latitude,
+          longitude: el.coordinates.longitude,
+        },
+        amenities: el.amenities,
+        description: el.description,
+        summary: el.summary,
+        capacity: {
+          max: el.capacity.max,
+          bedrooms: el.capacity.bedrooms,
+          beds: el.capacity.beds,
+          bathrooms: el.capacity.bathrooms,
+        },
+        house_rules: {
+          pets_allowed: el.house_rules.pets_allowed,
+          smoking_allowed: el.house_rules.smoking_allowed,
+          events_allowed: el.house_rules.events_allowed,
+        },
+        details : {
+          space_overview: el.details.space_overview,
+          guest_access: el.details.guest_access,
+          other_details: el.details.other_details,
+          neighborhood_description: el.details.neighborhood_description,
+          getting_around: el.details.getting_around
+        }
+      }))
+      this.isLoaded = true
+      return this.properties
+    },
     async fetchProperties() {
-      if (this.isLoaded || this.isLoading) {
+      if(this.isLoaded) return this.properties
+      if(this.isLoading){
+        await new Promise(r => setTimeout(r, 30))
         return this.properties
       }
+      this.isLoading = true
       try {
-        this.isLoading = true
-        console.log("fetching properties from api gateway")
-        const properties = await $fetch<Property[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties')
-        this.properties = properties.map((el) => ({
-          id: el.id,
-          name: el.name,
-          picture_url: el.picture_url,
-          coordinates: {
-            city: el.coordinates.city,
-            state: el.coordinates.state,
-            latitude: el.coordinates.latitude,
-            longitude: el.coordinates.longitude,
-          },
-          amenities: el.amenities,
-          description: el.description,
-          summary: el.summary,
-          capacity: {
-            max: el.capacity.max,
-            bedrooms: el.capacity.bedrooms,
-            beds: el.capacity.beds,
-            bathrooms: el.capacity.bathrooms,
-          },
-          house_rules: {
-            pets_allowed: el.house_rules.pets_allowed,
-            smoking_allowed: el.house_rules.smoking_allowed,
-            events_allowed: el.house_rules.events_allowed,
-          },
-          details : {
-            space_overview: el.details.space_overview,
-            guest_access: el.details.guest_access,
-            other_details: el.details.other_details,
-            neighborhood_description: el.details.neighborhood_description,
-            getting_around: el.details.getting_around
-          }
-        }))
-        this.isLoaded = true
-        return this.properties
+        const raw = await $fetch<Property[]>('/api/properties')
+        return this.ingest(raw)
       } catch (error) {
         console.error("Error fetching properties:", error)
         this.isLoaded = false
@@ -75,18 +80,24 @@ export const usePropertyStore = defineStore('property', {
     async fetchReviews(propId : string){
       if(this.property_reviews[propId]){
         console.log("Returning cached property reviews")
-        return 
+        return this.property_reviews[propId]
       }
-      console.log("fetching propery reviews from api gateway")
-      const prop_reviews = await $fetch<Review[]>(`https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${propId}/reviews`)
-      this.property_reviews[propId] = prop_reviews.map((el) => ({
-        name: el.name,
-        img_src: el.img_src,
-        date: el.date,
-        platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
-        review_content: el.review_content,
-        rating: el.rating
-      }))
+      try{     
+        console.log("fetching propery reviews from api gateway")
+        const prop_reviews = await $fetch<Review[]>(`/api/property-reviews/${propId}`)
+        this.property_reviews[propId] = prop_reviews.map((el) => ({
+          name: el.name,
+          img_src: el.img_src,
+          date: el.date,
+          platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
+          review_content: el.review_content,
+          rating: el.rating
+        }))
+        return this.property_reviews[propId]
+      } catch (error) {
+        this.property_reviews[propId] = []
+        return []
+      }
     },
     async fetchImages(propId : string){
       if(this.property_images[propId]){

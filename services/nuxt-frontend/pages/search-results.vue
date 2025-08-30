@@ -12,26 +12,46 @@
     const searchedProperties = ref<SearchedProperty[]>([])
 
     const loading = ref(true)
+    let abort: AbortController | null = null
+
+    // get the query value in url
+    function pickQueryValue(q: Record<string, any>, ...keys: string[]): string {
+        for (const k of keys) {
+            const v = q[k]
+            if (v !== undefined && v !== null && v !== '') {
+            return Array.isArray(v) ? v[0] : String(v)
+            }
+        }
+        return ''
+    }
+    
+    const checkinDate = computed(() =>
+        pickQueryValue(route.query as Record<string, any>, 'start_date')
+    )
+
+    const checkoutDate = computed(() =>
+        pickQueryValue(route.query as Record<string, any>, 'end_date')
+    )
 
     async function fetchSearchedProperties() {
         loading.value = true
-        const query = route.fullPath.split('?')[1] || ''
-        console.log(query)
+        if (abort) abort.abort()
+        abort = new AbortController()
         try {
-            const response = await $fetch<SearchedProperty[]>('https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/search?' + query)
-            if(response){
-                searchedProperties.value = response
-                console.log('Fetched properties:', searchedProperties.value)
-            }
+            // Forward all current query params
+            const data = await $fetch<SearchedProperty[]>('/api/properties/search', {
+                params: route.query,
+                signal: abort.signal
+            })
+            searchedProperties.value = data
         } catch (error) {
-            console.log(error)
-            console.log('Could not fetch properties')
-            
+            if ((error as Error).name !== 'AbortError') {
+                console.error('Search fetch failed', error)
+            }
         } finally {
-            loading.value = false
+            if (!abort?.signal.aborted) loading.value = false
         }
     }
-
     // properties obtained from search including all property info
     const enrichedProperties = computed<Property_wTotal[]>(() => {
         return searchedProperties.value.map(sp => {
@@ -53,20 +73,15 @@
         }))
     })
 
-
     watch(() => route.query, () => {
         fetchSearchedProperties()
-    })
+    }, { immediate: true })
 
-    onMounted(() => {
-        fetchSearchedProperties()
-    })
+    onUnmounted(() => abort?.abort())
 </script>
 
 <template>
-    <!-- todo: pass previous search object to automatically 
-        populate ListingSearch (if applicable) -->
-    <SearchCompsListingSearch />
+    <SearchCompsListingSearch :checkinDate="checkinDate" :checkoutDate="checkoutDate"/>
     <div class="wrapper">
         <!-- display property listings and map of all results side-by-side -->
         <SearchCompsSearchResultProps :enrichedProperties="enrichedProperties ?? []" :missingProperties = "missingProperties ?? []" :loading="loading"/>

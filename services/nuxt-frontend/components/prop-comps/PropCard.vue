@@ -8,7 +8,7 @@
         - clicking card will redirect to property page -->
 
 <script setup lang = 'ts'>
-    const thumbnail = "https://media.tenor.com/P4HGr5rklqYAAAAM/spongebob.gif";
+    const thumbnail = "https://archive.org/download/placeholder-image/placeholder-image.jpg";
     import { Bed, User, Bath } from 'lucide-vue-next';
     interface Props {
         id: string
