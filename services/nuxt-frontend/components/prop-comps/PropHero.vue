@@ -8,192 +8,202 @@
           - selecting a photo from this grid will allow for manual
             scrolling with image previews at the bottom
 -->
-
 <script setup lang="ts">
-    import { Swiper, SwiperSlide } from 'swiper/vue';
-    import { Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
-    import 'swiper/css';
-    import 'swiper/css/autoplay'
-    import 'swiper/css/navigation';
-    import 'swiper/css/effect-coverflow'
-    const modules = [Navigation, Autoplay ,EffectCoverflow]
-    
-    const props = defineProps<{
-      summary: string
-      images: string[]
-    }>()
-    const currentIndex = ref<number>(0)
-    const showGallery = ref<boolean>(false)
-    const showSlideshow = ref<boolean>(false)
-    const slideshowIndex = ref<number>(0)
-    const slideshowImages = computed<string[]>(() => props.images.slice(0, 10))
-    // gallery row organization
-    const chunkSizes : number[]= [1,2]  // pattern of imgs per row
-    const chunkedImages = computed(() => { // groups imgs by rows
-      const result: string[][] = []
-      let i = 0
-      let toggle = 0 // alter between chunk sizes
-      const imgs = props.images
-      while (i < imgs.length) {
-        let size = chunkSizes[toggle % chunkSizes.length]
-        if (i + size > imgs.length) {
-          size = imgs.length - i // handle 2-row when only 1 image left
-        }
-        result.push(imgs.slice(i, i + size))
-        i += size
-        toggle++
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { ref, onMounted, onUnmounted } from 'vue'
+  import { Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/autoplay'
+  import 'swiper/css/navigation';
+  import 'swiper/css/effect-coverflow'
+
+  const modules = [Navigation, Autoplay ,EffectCoverflow]
+  
+  const props = defineProps<{
+    summary: string
+    images: string[]
+  }>()
+  const currentIndex = ref<number>(0)
+  const showGallery = ref<boolean>(false)
+  const showSlideshow = ref<boolean>(false)
+  const slideshowIndex = ref<number>(0)
+  const slideshowImages = computed<string[]>(() => props.images.slice(0, 10))
+  // gallery row organization
+  const chunkSizes : number[]= [1,2]  // pattern of imgs per row
+  const chunkedImages = computed(() => { // groups imgs by rows
+    const result: string[][] = []
+    let i = 0
+    let toggle = 0 // alter between chunk sizes
+    const imgs = props.images
+    while (i < imgs.length) {
+      let size = chunkSizes[toggle % chunkSizes.length]
+      if (i + size > imgs.length) {
+        size = imgs.length - i // handle 2-row when only 1 image left
       }
-      return result
-    })
-
-
-    onMounted(() => {
-        setInterval(() => {
-            currentIndex.value = (currentIndex.value + 1) % props.images.length
-        }, 5000) // change image every 5 seconds, loop to start
-    })
-
-    // fix for redirecting to correct image on gallery
-    function getGlobalIndex(rowIndex: number, index: number): number {
-      let count = 0
-      for (let i = 0; i < rowIndex; i++) {
-        count += chunkedImages.value[i].length
-      }
-      return count + index
+      result.push(imgs.slice(i, i + size))
+      i += size
+      toggle++
     }
+    return result
+  })
 
-    function openGallery(){
-      showGallery.value = true
+  let slideTimer : ReturnType<typeof setInterval> | null = null
+
+  // fix for redirecting to correct image on gallery
+  function getGlobalIndex(rowIndex: number, index: number): number {
+    let count = 0
+    for (let i = 0; i < rowIndex; i++) {
+      count += chunkedImages.value[i].length
     }
+    return count + index
+  }
 
-    function openSlideshow(index: number) {
-      slideshowIndex.value = index
-      showSlideshow.value = true
+  function openGallery(){
+    showGallery.value = true
+  }
+
+  function openSlideshow(index: number) {
+    slideshowIndex.value = index
+    showSlideshow.value = true
+  }
+
+  function closeAllModals() {
+    showGallery.value = false
+    showSlideshow.value = false
+  }
+
+  function nextSlide() {
+    slideshowIndex.value = (slideshowIndex.value + 1) % props.images.length
+  }
+
+  function prevSlide() {
+    slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
+  }
+
+  // for scrolling to booking section in parent
+  const emit = defineEmits<{
+    (e: 'scroll-to-section'): void
+  }>()
+
+  function scrollToBooking() {
+    closeAllModals()
+    emit('scroll-to-section')
+  }
+
+  // constrain body scrolling on modals
+  watch(showGallery, (val : boolean) => {
+    if (val) {
+      document.body.style.overflow = 'hidden'  // disable body scroll
+    } else {
+      document.body.style.overflow = ''       // enable body scroll
     }
+  })
 
-    function closeAllModals() {
-      showGallery.value = false
-      showSlideshow.value = false
+  onMounted(() => {
+    slideTimer = setInterval(() => {
+        currentIndex.value = (currentIndex.value + 1) % props.images.length
+    }, 5000) // change image every 5 seconds, loop to start
+  })
+  
+  // setInterval cleanup
+  onUnmounted(() =>{
+    if(slideTimer){
+      clearInterval(slideTimer)
+      slideTimer = null
     }
-
-    function nextSlide() {
-      slideshowIndex.value = (slideshowIndex.value + 1) % props.images.length
-    }
-
-    function prevSlide() {
-      slideshowIndex.value = (slideshowIndex.value - 1 + props.images.length) % props.images.length
-    }
-
-    // for scrolling to booking section in parent
-    const emit = defineEmits<{
-      (e: 'scroll-to-section'): void
-    }>()
-
-    function scrollToBooking() {
-      closeAllModals()
-      emit('scroll-to-section')
-    }
-
-    // constrain body scrolling on modals
-    watch(showGallery, (val : boolean) => {
-      if (val) {
-        document.body.style.overflow = 'hidden'  // disable body scroll
-      } else {
-        document.body.style.overflow = ''       // enable body scroll
-      }
-    })
+  })
 </script>
 
 <template>
-    <div class="hero">
-        <!-- slideshow element -->
+  <div class="hero">
+      <!-- slideshow element -->
 
-        <div class="swiper">
-          <Swiper
-            :modules="modules"
-            :slides-per-view="1"
-            :space-between="0"
-            :centered-slides="true"
-            :autoplay="{
-              delay: 3500,
-              disableOnInteraction: false,
-            }"
-            :loop="true" 
-            :effect="'coverflow'"
-            :grab-cursor="true"
-            :auto-height="true"
-            :coverflow-effect="{
-              rotate: 0,
-              stretch: 0,
-              depth: 0,
-              modifier: 1,
-              slideShadows: false,
-            }"
-            
-            :breakpoints="{
-              700: {
-                slidesPerView: 2,
-              },
-              1285: {
-                slidesPerView: 3.5
-              }
-            }"
-          >
-            <SwiperSlide v-for="(img, i) in slideshowImages" :key="i">
-              <img draggable="false" :src="img" alt="image">
-            </SwiperSlide>
-          </Swiper>
-        </div>
+      <div class="swiper">
+        <Swiper
+          :modules="modules"
+          :slides-per-view="1"
+          :space-between="0"
+          :centered-slides="true"
+          :autoplay="{
+            delay: 3500,
+            disableOnInteraction: false,
+          }"
+          :loop="true" 
+          :effect="'coverflow'"
+          :grab-cursor="true"
+          :auto-height="true"
+          :coverflow-effect="{
+            rotate: 0,
+            stretch: 0,
+            depth: 0,
+            modifier: 1,
+            slideShadows: false,
+          }"
+          
+          :breakpoints="{
+            700: {
+              slidesPerView: 2,
+            },
+            1285: {
+              slidesPerView: 3.5
+            }
+          }"
+        >
+          <SwiperSlide v-for="(img, i) in slideshowImages" :key="i">
+            <img draggable="false" :src="img" alt="image">
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
-        <button class="see-photos-btn" @click="openGallery">See all photos</button>
+      <button class="see-photos-btn" @click="openGallery">See all photos</button>
 
-        <!-- gallery display -->
-        <div v-if="showGallery" class="modal" @click.self="closeAllModals">
-        <div class="gallery-container">
-            <div class="gallery-rows">
-              <div
-                v-for="(row, rowIndex) in chunkedImages"
-                :key="rowIndex"
-                class="gallery-row"
-                :class="{single: row.length === 1, double: row.length ===2 }"
-                >
-                  <img draggable="false"
-                    v-for="(img, index) in row"
-                    :key="img"
-                    :src="img"
-                    class="gallery-thumb"
-                    @click="openSlideshow(getGlobalIndex(rowIndex, index))"
-                    />
-              </div>
-            </div>
-            <div class="gallery-text">
-              <h1>About the Property</h1>
-              <p> {{ summary }} </p>
-              <button @click="scrollToBooking()">Book Now</button>
+      <!-- gallery display -->
+      <div v-if="showGallery" class="modal" @click.self="closeAllModals">
+      <div class="gallery-container">
+          <div class="gallery-rows">
+            <div
+              v-for="(row, rowIndex) in chunkedImages"
+              :key="rowIndex"
+              class="gallery-row"
+              :class="{single: row.length === 1, double: row.length ===2 }"
+              >
+                <img draggable="false"
+                  v-for="(img, index) in row"
+                  :key="img"
+                  :src="img"
+                  class="gallery-thumb"
+                  @click="openSlideshow(getGlobalIndex(rowIndex, index))"
+                  />
             </div>
           </div>
+          <div class="gallery-text">
+            <h1>About the Property</h1>
+            <p> {{ summary }} </p>
+            <button @click="scrollToBooking()">Book Now</button>
+          </div>
         </div>
+      </div>
 
-        <!-- modal slideshow -->
-        <div v-if="showSlideshow" class="modal slideshow-modal" @click.self="closeAllModals">
-            <img :src="images[slideshowIndex]" class="slideshow-image" draggable="false"/>
-            <button class="nav left" @click="prevSlide">‹</button>
-            <button class="nav right" @click="nextSlide">›</button>
-            <button class="close" @click="closeAllModals">×</button>
+      <!-- modal slideshow -->
+      <div v-if="showSlideshow" class="modal slideshow-modal" @click.self="closeAllModals">
+          <img :src="images[slideshowIndex]" class="slideshow-image" draggable="false"/>
+          <button class="nav left" @click="prevSlide">‹</button>
+          <button class="nav right" @click="nextSlide">›</button>
+          <button class="close" @click="closeAllModals">×</button>
 
-            <!-- image previews at bottom of slideshow -->
-            <div class="thumbnail-strip">
-                <img draggable="false"
-                    v-for="(img, index) in images"
-                    :key="img"
-                    :src="img"
-                    class="thumbnail-preview"
-                    :class="{ active: index === slideshowIndex }"
-                    @click.stop="slideshowIndex = index"
-                />
-            </div>
-        </div>
-    </div>
+          <!-- image previews at bottom of slideshow -->
+          <div class="thumbnail-strip">
+              <img draggable="false"
+                  v-for="(img, index) in images"
+                  :key="img"
+                  :src="img"
+                  class="thumbnail-preview"
+                  :class="{ active: index === slideshowIndex }"
+                  @click.stop="slideshowIndex = index"
+              />
+          </div>
+      </div>
+  </div>
 </template>
 
 <style scoped>

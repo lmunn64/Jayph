@@ -6,7 +6,8 @@ export default defineCachedEventHandler(async (event) => {
   const filteredEntries = Object.entries(q).filter(([k]) => allowed.includes(k))
   const qs = new URLSearchParams(filteredEntries as [string, string][]).toString()
 
-  const url = 'https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/search' + (qs ? `?${qs}` : '')
+  const { apiBase } = useRuntimeConfig()
+  const url = `${apiBase}/api_properties/search` + (qs ? `?${qs}` : '')
   const data = await $fetch(url)
   return data
 }, {

@@ -1,23 +1,33 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+  import { ref, onMounted, onUnmounted } from 'vue'
 
-const found = Object.values(import.meta.glob('/content/hero-images/*.{jpg,jpeg,png,webp}', { eager: true, query: '?url', import: 'default' })) as string[]
-const images = found
+  const found = Object.values(import.meta.glob('/content/hero-images/*.{jpg,jpeg,png,webp}', { eager: true, query: '?url', import: 'default' })) as string[]
+  const images = found
 
-const currentIndex = ref(0)
-const prevIndex = ref(0)
-const fading = ref(false)
+  const currentIndex = ref(0)
+  const prevIndex = ref(0)
+  const fading = ref(false)
 
-onMounted(() => {
-  setInterval(() => {
-    fading.value = true
-    prevIndex.value = currentIndex.value
-    setTimeout(() => {
-      currentIndex.value = (currentIndex.value + 1) % images.length
-      fading.value = false
-    }, 1000) // match CSS transition duration
-  }, 5000)
-})
+  let slideTimer : ReturnType<typeof setInterval> | null = null
+
+  onMounted(() => {
+    slideTimer = setInterval(() => {
+      fading.value = true
+      prevIndex.value = currentIndex.value
+      setTimeout(() => {
+        currentIndex.value = (currentIndex.value + 1) % images.length
+        fading.value = false
+      }, 1000) // match CSS transition duration
+    }, 5000)
+  })
+
+  // setInterval cleanup
+  onUnmounted(()=>{{
+    if(slideTimer) {
+      clearInterval(slideTimer)
+      slideTimer = null
+    }
+  }})
 </script>
 
 <template>

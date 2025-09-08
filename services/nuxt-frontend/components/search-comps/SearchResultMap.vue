@@ -14,7 +14,6 @@ const searchMapProps = defineProps<Props>()
 const zoom = ref<number>(0)
 
 const coordinates = computed<Coordinates[]>(() => {
-    console.log("Coordinates updated")
     // use enriched coordinates if populated
     if (searchMapProps.enrichedProperties.length > 0) {
         return searchMapProps.enrichedProperties.map(d => {
@@ -32,9 +31,9 @@ const coordinates = computed<Coordinates[]>(() => {
 
 const get_midpoint = (coords: Coordinates[]) => {
     const num_coords = coords.length
-
     var sum_lat = 0
     var sum_long = 0
+
     for(var i = 0; i < num_coords; i++){
         sum_lat += parseFloat(coords.at(i)?.latitude!)
         sum_long += parseFloat(coords.at(i)?.longitude!)
@@ -56,13 +55,10 @@ const get_center_coord = (coords: Coordinates[]) : string[] => {
         zoom.value = 15
         return get_midpoint(coords)
     }
-        
     if(coords.every((c)=> c.city == "Branson West")){
         zoom.value = 15
         return get_midpoint(coords)
     }
-        
-
     /** else its either both branson and kansas city or neither, so show whole map */
     zoom.value = 8
     return ['37.8736461', ' -93.8935481']

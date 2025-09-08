@@ -82,7 +82,7 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                 if(newPromo != undefined)
                     quotePayload.promo_code = newPromo
                 console.log('quote being generated...: ', quotePayload)                
-                try{                    
+                try {                    
                     const quote_response = await $fetch<Quote_Response>(
                     `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/quote`,
                     {
@@ -106,7 +106,6 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                         promoMessage.value = "Invalid promo code, try again"
                     }
                 }
-           
         }, 700)
      }
 }, { deep: true })
@@ -198,8 +197,11 @@ onMounted(async () => {
 onUnmounted(() => {
     window.removeEventListener('resize', updateWidth)
     window.removeEventListener('click', handleGuestClickOutside)
+    if(debounceTimer){
+        clearTimeout(debounceTimer)
+        debounceTimer = null
+    }
 })
-
 </script>
 
 <template>

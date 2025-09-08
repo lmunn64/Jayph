@@ -20,7 +20,6 @@
          </NuxtLink>
          <nav class="nav-links">
             <NuxtLink to="/">Home</NuxtLink> 
-            <NuxtLink to="/about">About</NuxtLink>
             <NuxtLink to="/faq">FAQ</NuxtLink> 
             <NuxtLink to="/blog">Blog</NuxtLink>
          </nav>

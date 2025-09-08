@@ -1,7 +1,7 @@
 <!-- 
     MapInfoPropCard component
     contains:
-        property card to be used for the clickable map 
+        property card to be used for the clickable map icon
 -->
 
 <script setup lang="ts">
