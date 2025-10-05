@@ -462,19 +462,29 @@ p {
     border-radius: var(--default-border-radius);
     max-height: 80vh;
     flex-direction: column;
-    gap: 32px;
   }
   .gallery-rows {
     width: 100%;
     max-width: 100%;
-    padding: 10px;
+    padding: 0px;
+    border-radius: var(--secondary-border-radius);;
+  }
+  .gallery-row {
+    min-height: 15vh;
+    border-radius: var(--default-border-radius);
+  }
+  .gallery-text {
+    padding: 0;
+    width: 100%;
   }
   .gallery-text p, h1{
     display: none;
   }
   .gallery-text button {
     width:100%;
-    outline: 8px solid var(--bg-color);
+    height: 100%;
+    /* outline: 8px solid var(--bg-color); */
+    margin: 0 auto;
   }
   .slideshow-image {
     height: auto;

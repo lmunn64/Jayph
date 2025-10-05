@@ -16,12 +16,18 @@
    <div class = 'nav'>
       <header class="navbar">
          <NuxtLink to="/">
-            <img src="/logo.png" alt="Logo" style="height:var(--logo-height)" />
+            <picture>
+               <source srcset="/Logo1_Transparent_White.png" media="(max-width: 600px)" />
+               <!-- Larger screens -->
+               <source srcset="/Logo2_Transparent_White.png" media="(min-width: 601px)" />
+               <img src="/Logo2_Transparent_White.png" alt="Logo" style="height: var(--logo-height)" />
+            </picture>
          </NuxtLink>
          <nav class="nav-links">
             <NuxtLink to="/">Home</NuxtLink> 
-            <NuxtLink to="/faq">FAQ</NuxtLink> 
-            <NuxtLink to="/blog">Blog</NuxtLink>
+            <!-- <NuxtLink to="/faq">FAQ</NuxtLink>  -->
+            <!-- <NuxtLink to="/blog">Blog</NuxtLink> -->
+            <NuxtLink to="/about">About</NuxtLink>
          </nav>
       </header>
    </div>

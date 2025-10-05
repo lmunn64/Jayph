@@ -49,7 +49,7 @@
     <div class="hero-overlay">
       <h1 class="hero-main-title" >Fountain City Stays</h1>
 
-      <h1 class="hero-title">Approachable. Relaxing. Inspired Spaces</h1>
+      <h1 class="hero-title">Approachable. Relaxing. Inspired Spaces.</h1>
       <p class="hero-subtitle">Our spaces are designed with you in mind. We wish to provide an atmosphere that makes you smile. </p>
     </div>
   </div>
