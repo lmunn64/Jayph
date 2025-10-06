@@ -36,6 +36,7 @@ from app.modules.date import format_date_ISO
 from app.modules.image_link_enlarger import get_enlarged_URL
 from app.models.search import Property_Total
 from app.modules.name import get_review_name
+from app.modules.tax import get_total_tax
 
 ## time to live for reviews and images
 CACHE_TTL = 60 * 60
@@ -370,7 +371,8 @@ async def gen_quote(uuid : str, item: Quote):
             sub_total = data.get("financials").get("totals").get("sub_total").get("formatted"),
             fees = [Fee(**fee) for fee in data.get("financials").get("fees")],
             discounts= [Discount(**disc) for disc in data.get("financials").get("discounts")],
-            total_before_tax= data.get("financials").get("totals").get("total_without_taxes").get("formatted")
+            tax= get_total_tax(data.get("financials").get("taxes")),
+            total= data.get("financials").get("totals").get("total").get("formatted")
         )
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')

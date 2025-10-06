@@ -6,7 +6,6 @@ export default defineNuxtConfig({
       preset: 'netlify'
   },
   app : {
-    baseURL: '/Jayph/',
     head: {
       link: [
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700&display=swap' }

@@ -84,7 +84,7 @@ watch([selectedDates, guestCounts, promoCode], async ([newDates, newGuests, newP
                 console.log('quote being generated...: ', quotePayload)                
                 try {                    
                     const quote_response = await $fetch<Quote_Response>(
-                    `https://jwayz3cdd5.execute-api.eu-north-1.amazonaws.com/dev/api_properties/${bookingProps.id}/quote`,
+                    `/api/properties/quote/${bookingProps.id}`,
                     {
                         method: 'POST',
                         body: quotePayload,
@@ -247,13 +247,17 @@ onUnmounted(() => {
                                 <td class="td-start">{{ discount.label }}</td>
                                 <td class="td-end">{{ discount.formatted }}</td>
                             </tr>
+                            <tr v-if = 'current_quote.tax'>
+                                <td class="td-start">Taxes</td>
+                                <td class="td-end">{{ current_quote.tax }}</td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="total-table">
                         <tbody class="price-table-body">
                             <tr>
-                                <td class="td-total-start">Total Before Taxes</td>
-                                <td class="td-total-end">{{ current_quote.total_before_tax }}</td>
+                                <td class="td-total-start">Total Price</td>
+                                <td class="td-total-end">{{ current_quote.total }}</td>
                             </tr>
                         </tbody>
                     </table>

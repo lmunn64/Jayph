@@ -43,7 +43,8 @@ export interface Quote_Response{
     sub_total: string
     fees: Fee[]
     discounts: Discount[]
-    total_before_tax: string
+    tax: string
+    total: string
 }
 
     

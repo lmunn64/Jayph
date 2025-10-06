@@ -467,7 +467,7 @@ p {
     width: 100%;
     max-width: 100%;
     padding: 0px;
-    border-radius: var(--secondary-border-radius);;
+    border-radius: var(--secondary-border-radius);
   }
   .gallery-row {
     min-height: 15vh;

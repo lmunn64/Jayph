@@ -29,7 +29,8 @@ class Quote_Response(BaseModel):
     sub_total: str
     fees: list[Fee]
     discounts: list[Discount]
-    total_before_tax: str
+    tax: str
+    total: str
     
 
     
