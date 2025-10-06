@@ -2,8 +2,8 @@ export default defineEventHandler(async (event) => {
   const { propId } = event.context.params!
   const body = await readBody(event)
   
-  // const { apiBase } = useRuntimeConfig()
-  const apiBase  = 'http://127.0.0.1:8000'
+  const { apiBase } = useRuntimeConfig()
+  
   try {
     const quote = await $fetch(`${apiBase}/api_properties/${propId}/quote`, {
       method: 'POST',
