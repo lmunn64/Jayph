@@ -50,6 +50,7 @@ onMounted(async () => {
             v-if="images" 
             :images="images" 
             :summary="property.summary"
+            :details="property.details"
         />
         <div v-else-if="imagesLoading">
             <SkeletonPropHero/>

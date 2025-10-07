@@ -16,11 +16,13 @@
   import 'swiper/css/autoplay'
   import 'swiper/css/navigation';
   import 'swiper/css/effect-coverflow'
+import type { Details } from '~/types/property';
 
   const modules = [Navigation, Autoplay ,EffectCoverflow]
   
   const props = defineProps<{
     summary: string
+    details: Details
     images: string[]
   }>()
   const currentIndex = ref<number>(0)
@@ -138,8 +140,8 @@
             depth: 0,
             modifier: 1,
             slideShadows: false,
-          }"
-          
+          }" 
+          :navigation="{ enabled: true }"
           :breakpoints="{
             700: {
               slidesPerView: 2,
@@ -176,9 +178,19 @@
                   />
             </div>
           </div>
-          <div class="gallery-text">
-            <h1>About the Property</h1>
-            <p> {{ summary }} </p>
+          <div class="gallery-details">
+            <div class="gallery-text">
+              <h1>About the Property</h1>
+              <p> {{ summary }} </p>
+              <h2>Space Overview</h2>
+              <p>{{ details.space_overview }}</p>
+              <div v-if="details.neighborhood_description"> 
+                  <h3>About the Neighborhood</h3>
+                  <p>{{ details.neighborhood_description }}</p>
+              </div>
+              <h3>Other Details</h3>
+              <p>{{ details.other_details }}</p>
+            </div>
             <button @click="scrollToBooking()">Book Now</button>
           </div>
         </div>
@@ -240,13 +252,15 @@ p {
 }
 
 :deep(.swiper-button-next) {
-  color: var(--accent-color);
-  right: 0px;
+  color: white;
+  right: 8px;
+  filter: drop-shadow(0 0 5px black);
 }
 
 :deep(.swiper-button-prev) {
-  color: var(--accent-color);
-  left: 0px;
+  color: white;
+  left: 8px;
+  filter: drop-shadow(0 0 5px black);
 }
 
 .gradient-overlay {
@@ -302,10 +316,11 @@ p {
   overscroll-behavior: contain;
   width: 85vw;
   max-width: 1200px;
+  height: 85vh;
   border-radius: var(--secondary-border-radius);
 }
 
-.gallery-text {
+.gallery-details {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -316,8 +331,13 @@ p {
   text-align: center;
   position: relative;
 }
-
-.gallery-text button{
+.gallery-text {
+  /* max-height: 100%; */
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.gallery-details button{
   margin-top: 20px;
   padding: 16px;
   border: none;
@@ -473,14 +493,14 @@ p {
     min-height: 15vh;
     border-radius: var(--default-border-radius);
   }
-  .gallery-text {
+  .gallery-details {
     padding: 0;
     width: 100%;
   }
-  .gallery-text p, h1{
+  .gallery-text{
     display: none;
   }
-  .gallery-text button {
+  .gallery-details button {
     width:100%;
     height: 100%;
     /* outline: 8px solid var(--bg-color); */
