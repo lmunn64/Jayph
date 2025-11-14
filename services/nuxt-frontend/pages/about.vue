@@ -3,6 +3,9 @@
 </script>
 
 <template>
+  <div class="hero">
+   <AboutHero />
+  </div>
   <div class="wrapper">
     <AboutContainer />
   </div>
