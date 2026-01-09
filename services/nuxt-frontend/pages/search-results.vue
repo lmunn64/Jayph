@@ -36,6 +36,7 @@
     const location = computed(() =>
         pickQueryValue(route.query as Record<string, any>, 'location')
     )
+    
 
     const adults = computed<number | undefined>(() => {
         const v = pickQueryValue(route.query as Record<string, any>, 'adults')
@@ -62,6 +63,7 @@
         if (abort) abort.abort()
         abort = new AbortController()
         try {
+            console.log('Fetching search with params:', route.query)
             // Forward all current query params
             const data = await $fetch<SearchedProperty[]>('/api/properties/search', {
                 params: route.query,
@@ -77,24 +79,56 @@
         }
     }
     // properties obtained from search including all property info
-    const enrichedProperties = computed<Property_wTotal[]>(() => {
-        return searchedProperties.value.map(sp => {
-            const fullProperty = propertyStore.properties.find(p => p.id === sp.uuid)
-            return fullProperty ? {
-                property: fullProperty,
-                total_before_taxes: String(sp.total_before_taxes),
-            } : undefined
-        }).filter(p => p !== undefined)
-    })
+    // const enrichedProperties = computed<Property_wTotal[]>(() => {
+    //     return searchedProperties.value.map(sp => {
+    //         const fullProperty = propertyStore.properties.find(p => p.id === sp.uuid)
+    //         return fullProperty ? {
+    //             property: fullProperty,
+    //             total_before_taxes: String(sp.total_before_taxes),
+    //         } : undefined
+    //     }).filter(p => p !== undefined)
+    // })
+
 
     // all other properties not available in search
+    // const missingProperties = computed<Property_wTotal[]>(() => {
+    //     return propertyStore.properties
+    //     .filter(p => !searchedProperties.value.map(sp => sp.uuid).includes(p.id))
+    //     .map(p => ({
+    //         property: p,
+    //         total_before_taxes: '',
+    //     }))
+    // })
+
+    // temporary fix - remove unfiltered properties from improper location query
+    const enrichedProperties = computed<Property_wTotal[]>(() => {
+        const qLocation = (location?.value ?? '').toString().trim().toLowerCase()
+        return searchedProperties.value.map(sp => {
+            const fullProperty = propertyStore.properties.find(p => p.id === sp.uuid)
+            if (!fullProperty) return undefined
+
+            if (qLocation) {
+                const propCity = String(fullProperty.coordinates?.city ?? '')
+                    .trim()
+                    .toLowerCase()
+                if (propCity !== qLocation) return undefined
+            }
+
+            return {
+                property: fullProperty,
+                total_before_taxes: String(sp.total_before_taxes),
+            }
+        }).filter((p): p is Property_wTotal => p !== undefined)
+    })
+
     const missingProperties = computed<Property_wTotal[]>(() => {
+        const includedIds = new Set(enrichedProperties.value.map(ep => ep.property.id))
         return propertyStore.properties
-        .filter(p => !searchedProperties.value.map(sp => sp.uuid).includes(p.id))
-        .map(p => ({
-            property: p,
-            total_before_taxes: '',
-        }))
+            .filter(p => !includedIds.has(p.id))
+            .map(p => ({
+                property: p,
+                total_before_taxes: '',
+            }))
     })
 
     watch(() => route.query, () => {
