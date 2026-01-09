@@ -25,8 +25,13 @@ const options = {
   day: "numeric" as const
 }
 const props = defineProps<{
+    location?: string,
     checkinDate?: string,
-    checkoutDate?: string
+    checkoutDate?: string,
+    adults?: number,
+    children?: number,
+    infants?: number,
+    pets?: number
 }>()
 
 const search = ref<Search>({
@@ -166,9 +171,27 @@ const formattedDatetoLocale = (date : string) : string =>{
 }
 
 // if there are check in or check out props sent, fill em up in ref
-if(props.checkinDate && props.checkoutDate){
+if (props.checkinDate) {
   search.value.checkinDate = props.checkinDate
+}
+if (props.checkoutDate) {
   search.value.checkoutDate = props.checkoutDate
+}
+if (props.checkinDate && props.checkoutDate) {
+  selectedDates.value = [props.checkinDate, props.checkoutDate]
+}
+
+// initialize location from props if provided
+if (props.location) {
+  search.value.location = props.location
+}
+
+// initialize guest counts from props if provided
+guestCounts.value = {
+  adults: props.adults ?? guestCounts.value.adults,
+  children: props.children ?? guestCounts.value.children,
+  infants: props.infants ?? guestCounts.value.infants,
+  pets: props.pets ?? guestCounts.value.pets
 }
 
 onMounted(() => {

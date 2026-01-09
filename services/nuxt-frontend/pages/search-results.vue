@@ -33,6 +33,30 @@
         pickQueryValue(route.query as Record<string, any>, 'end_date')
     )
 
+    const location = computed(() =>
+        pickQueryValue(route.query as Record<string, any>, 'location')
+    )
+
+    const adults = computed<number | undefined>(() => {
+        const v = pickQueryValue(route.query as Record<string, any>, 'adults')
+        return v ? Number(v) : undefined
+    })
+
+    const children = computed<number | undefined>(() => {
+        const v = pickQueryValue(route.query as Record<string, any>, 'children')
+        return v ? Number(v) : undefined
+    })
+
+    const infants = computed<number | undefined>(() => {
+        const v = pickQueryValue(route.query as Record<string, any>, 'infants')
+        return v ? Number(v) : undefined
+    })
+
+    const pets = computed<number | undefined>(() => {
+        const v = pickQueryValue(route.query as Record<string, any>, 'pets')
+        return v ? Number(v) : undefined
+    })
+
     async function fetchSearchedProperties() {
         loading.value = true
         if (abort) abort.abort()
@@ -81,7 +105,15 @@
 </script>
 
 <template>
-    <SearchCompsListingSearch :checkinDate="checkinDate" :checkoutDate="checkoutDate"/>
+    <SearchCompsListingSearch
+      :location="location"
+      :checkinDate="checkinDate"
+      :checkoutDate="checkoutDate"
+      :adults="adults"
+      :children="children"
+      :infants="infants"
+      :pets="pets"
+    />
     <div class="wrapper">
         <!-- display property listings and map of all results side-by-side -->
         <SearchCompsSearchResultProps :enrichedProperties="enrichedProperties ?? []" :missingProperties = "missingProperties ?? []" :loading="loading"/>
