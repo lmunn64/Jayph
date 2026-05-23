@@ -60,10 +60,6 @@ onMounted(async () => {
             <h1>{{ property.name }}</h1>
             <p class = "summary">{{ property.summary }}</p>
 
-            <!-- Rest of your content loads immediately -->
-            
-            <PropCompsAmenities :amenities="property.amenities"/>
-
             <h2>Space Overview</h2>
             <p>{{ property.details.space_overview }}</p>
 
@@ -77,6 +73,10 @@ onMounted(async () => {
 
             <h3>Other Details</h3>
             <p>{{ property.details.other_details }}</p>
+
+            <PropCompsAmenities :amenities="property.amenities"/>
+
+            <hr />
 
             <h1 ref="targetSection" style="text-align: center">Booking</h1>
             <PropCompsPropBooking :id="id" :max_capacity = "property.capacity.max"/>
@@ -99,6 +99,11 @@ onMounted(async () => {
     align-items: center;
     justify-content: center;
     background-color: #f5f5f5;
+}
+hr {
+    width: 100%;
+    color: var(--skeleton-color);
+    margin-top: 2rem;
 }
 
 h1, h2{
