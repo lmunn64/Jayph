@@ -7,6 +7,7 @@ import type { Calendar } from '~/types/calendar'
 const route = useRoute()
 const id = route.params.id as string
 const propertyStore = usePropertyStore()
+const hasChildRoute = computed(() => route.matched.length > 1)
 
 // Load properties first (blocking)
 const {data: properties} = await useAsyncData('properties', async () => {
@@ -44,7 +45,8 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div v-if="property">
+    <NuxtPage v-if="hasChildRoute" />
+    <div v-else-if="property">
         <!-- Show hero immediately with loading state -->
         <PropCompsPropHero @scroll-to-section="scrollToSection"
             v-if="images" 
