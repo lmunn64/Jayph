@@ -10,6 +10,9 @@ class Review(BaseModel):
     review_content: Optional[str]
     rating: float
     date: str
+    reviewed_at: Optional[str] = None
+    property_id: Optional[str] = None
+    property_name: Optional[str] = None
 
 
 

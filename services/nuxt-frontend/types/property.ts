@@ -45,12 +45,16 @@ export interface Property_wTotal{
 }
     
 export interface Review {
+    id?: string
     name: string
     img_src: string
     date: string
+    reviewed_at?: string
     platform: string
     review_content: string
     rating: number
+    property_id?: string
+    property_name?: string
 }
 
 export interface SearchedProperty {

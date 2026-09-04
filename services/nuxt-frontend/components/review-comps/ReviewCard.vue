@@ -60,7 +60,7 @@
             <div class="header-info">
                 <h3> {{ review.name }} </h3>
                 <div class="rating-row">
-                        <FontAwesomeIcon style="color: var(--accent-color)" icon="star" v-for="n in 5" :key="n"/>
+                    <FontAwesomeIcon style="color: var(--accent-color)" icon="star" v-for="n in 5" :key="n" v-show="n <= Math.round(review.rating)"/>
                 </div>
             </div>
         </div>

@@ -86,18 +86,25 @@ export const usePropertyStore = defineStore('property', {
         console.log("fetching propery reviews from api gateway")
         const prop_reviews = await $fetch<Review[]>(`/api/properties/reviews/${propId}`)
         this.property_reviews[propId] = prop_reviews.map((el) => ({
+          id: el.id,
           name: el.name,
           img_src: el.img_src,
           date: el.date,
+          reviewed_at: el.reviewed_at,
           platform: el.platform.charAt(0).toUpperCase() + el.platform.slice(1),
           review_content: el.review_content,
-          rating: el.rating
+          rating: el.rating,
+          property_id: el.property_id,
+          property_name: el.property_name
         }))
         return this.property_reviews[propId]
       } catch (error) {
         this.property_reviews[propId] = []
         return []
       }
+    },
+    async fetchAggregateReviews(limit = 10, rating = 5) {
+      return await $fetch<Review[]>(`/api/properties/reviews?limit=${limit}&rating=${rating}`)
     },
     async fetchImages(propId : string){
       if(this.property_images[propId]){

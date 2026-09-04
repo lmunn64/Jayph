@@ -1,7 +1,10 @@
 export default defineCachedEventHandler(async (event) =>{
     const {propId} = event.context.params! 
     const { apiBase } = useRuntimeConfig()
-    return await $fetch(`${apiBase}/api_properties/${propId}/reviews`)
+    const endpoint = apiBase.includes('localhost')
+        ? `/properties/${propId}/reviews`
+        : `/api_properties/${propId}/reviews`
+    return await $fetch(`${apiBase}${endpoint}`)
 },
 {
     maxAge: 10,

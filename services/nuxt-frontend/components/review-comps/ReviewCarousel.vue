@@ -46,6 +46,13 @@ const props = defineProps<{
 
 if(props.propertyId){
   await useAsyncData(`reviews-${props.propertyId}`, () => propertyStore.fetchReviews(props.propertyId!), { server: true })
+} else {
+  const { data, error } = await useAsyncData('homepage-reviews', () => propertyStore.fetchAggregateReviews(10, 5), { server: true })
+  state.reviews = data.value ?? []
+  state.isLoading = false
+  if (error.value) {
+    state.reviews = index_reviews as Review[]
+  }
 }
 
 const reviews = computed<Review[]>(()=>{
@@ -57,8 +64,11 @@ const reviews = computed<Review[]>(()=>{
     }
     state.isLoading = true
   }
+  if (state.reviews.length) {
+    return state.reviews
+  }
   state.isLoading = false
-  return index_reviews
+  return index_reviews as Review[]
 })
 </script>
 
@@ -95,7 +105,7 @@ const reviews = computed<Review[]>(()=>{
       }"
       class="review-swiper"
     >
-      <SwiperSlide v-for="review in reviews" :key="review.name">
+      <SwiperSlide v-for="review in reviews" :key="review.id ?? `${review.name}-${review.date}`">
         <ReviewCompsReviewCard v-bind="review"  @toggle = "toggleReview" />
       </SwiperSlide>
     </Swiper>

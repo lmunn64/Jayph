@@ -8,6 +8,8 @@ properties_cache = {
     'property_reviews': {},  # type: Dict[str, List[Review]]
     
     'property_reviews_last_updated': {}, # type: Dict[str, float]
+    'aggregate_reviews': None,  # type: List[Review] | None
+    'aggregate_reviews_last_updated': None,
 
     'property_images_last_updated': {}, # type: Dict[str, float]
 }

@@ -60,7 +60,7 @@ Non External API property endpoints
 
 """
 @router.get('/properties', response_model=List[Property], tags=['properties'])
-def get_properties():
+def get_local_properties():
     """
     Returns all validated properties as a list of Property objects from the local test_json file.
 
@@ -83,7 +83,12 @@ def get_properties():
             id = item.get("id"),
             name = item.get('public_name'),
             picture_url = get_enlarged_URL(item.get('picture')),
-            address = Address(**item.get('address', {})),
+            coordinates = Coordinates(
+                city = item.get('address', {}).get('city'),
+                state = item.get('address', {}).get('state'),
+                latitude = item.get('address', {}).get('coordinates', {}).get('latitude'),
+                longitude = item.get('address', {}).get('coordinates', {}).get('longitude')
+            ),
             amenities = item.get('amenities'),
             description = item.get('description'),
             summary = item.get('summary'),
@@ -130,7 +135,7 @@ def get_images(uuid: str):
     return images
 
 @router.get('/properties/{uuid}/reviews', response_model=List[Review], tags=['properties'])
-def get_reviews(uuid: str):
+def get_local_reviews(uuid: str):
     """
     Returns all validated reviews for a given property by its UUID from the local test_json file.
 
@@ -155,6 +160,7 @@ def get_reviews(uuid: str):
             name= item.get('guest').get('first_name') + " " + item.get('guest').get('last_name'),
             img_src= "",
             date= format_date_ISO(item.get('reviewed_at')),
+            reviewed_at= item.get('reviewed_at'),
             review_content= item.get('public').get('review'),
             rating= item.get('public').get('rating'),
             platform= item.get('platform')
@@ -172,7 +178,7 @@ External API property endpoints
 
 """
 @router.get('/api_properties', response_model=List[Property], tags=['hospitable properties'])
-async def get_properties():
+async def get_external_properties():
     """
     Fetches and returns all validated properties from the external Hospitable API.
 
@@ -264,22 +270,26 @@ async def get_reviews(uuid: str):
         print('returning ${uuid} cached reviews')
         return properties_cache['property_reviews'][uuid]
     try:
-        response = requests.get(f"https://public.api.hospitable.com/v2/properties/{uuid}/reviews?include=guest",
-                                headers={"Authorization": f"Bearer {PAT}"})
-        if response.status_code != 200:
-            print(response.json())
-            raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
-    
-        content = response.json()
-        reviews = [Review(
-            id = item.get('id'),
-            name= get_review_name(item.get('guest').get('first_name'), item.get('guest').get('last_name')),
-            img_src= "",
-            date= format_date_ISO(item.get('reviewed_at')),
-            review_content= item.get('public').get('review'),
-            rating= item.get('public').get('rating'),
-            platform= item.get('platform')
-        ) for item in content.get('data')]
+        reviews = []
+        next_url = f"https://public.api.hospitable.com/v2/properties/{uuid}/reviews?include=guest"
+        while next_url:
+            response = requests.get(next_url, headers={"Authorization": f"Bearer {PAT}"})
+            if response.status_code != 200:
+                print(response.json())
+                raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
+
+            content = response.json()
+            reviews.extend(Review(
+                id = item.get('id'),
+                name= get_review_name(item.get('guest').get('first_name'), item.get('guest').get('last_name')),
+                img_src= "",
+                date= format_date_ISO(item.get('reviewed_at')),
+                reviewed_at= item.get('reviewed_at'),
+                review_content= item.get('public').get('review'),
+                rating= item.get('public').get('rating'),
+                platform= item.get('platform')
+            ) for item in content.get('data', []))
+            next_url = content.get('links', {}).get('next')
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
     except AttributeError as e:
@@ -287,6 +297,66 @@ async def get_reviews(uuid: str):
     properties_cache['property_reviews'][uuid] = reviews
     properties_cache['property_reviews_last_updated'][uuid] = now
     return reviews
+
+@router.get('/api_properties/reviews/aggregate', response_model=List[Review], tags=['hospitable reviews'])
+async def get_aggregate_reviews(
+    limit: int = Query(10, ge=1, le=100),
+    rating: float = Query(5, ge=0, le=5)
+):
+    """Return the newest reviews at the requested rating across listed properties."""
+    now = time.time()
+    cached_reviews = properties_cache.get('aggregate_reviews')
+    last_updated = properties_cache.get('aggregate_reviews_last_updated')
+    if cached_reviews is None or last_updated is None or now - last_updated >= CACHE_TTL:
+        try:
+            listed_properties = await get_external_properties()
+            aggregate_reviews = []
+            for property in listed_properties:
+                try:
+                    property_reviews = await get_reviews(property.id)
+                    aggregate_reviews.extend(
+                        review.copy(update={
+                            'property_id': property.id,
+                            'property_name': property.name,
+                        })
+                        for review in property_reviews
+                    )
+                except Exception as error:
+                    print(f"Unable to fetch reviews for {property.id}: {error}")
+            aggregate_reviews.sort(
+                key=lambda review: review.reviewed_at or '',
+                reverse=True
+            )
+            properties_cache['aggregate_reviews'] = aggregate_reviews
+            properties_cache['aggregate_reviews_last_updated'] = now
+            cached_reviews = aggregate_reviews
+        except Exception as error:
+            raise HTTPException(status_code=502, detail='Unable to fetch aggregate reviews') from error
+
+    return [review for review in cached_reviews if review.rating == rating][:limit]
+
+@router.get('/properties/reviews/aggregate', response_model=List[Review], tags=['local reviews'])
+def get_local_aggregate_reviews(
+    limit: int = Query(10, ge=1, le=100),
+    rating: float = Query(5, ge=0, le=5)
+):
+    """Return the newest fixture reviews at the requested rating across listed properties."""
+    listed_properties = get_local_properties()
+    aggregate_reviews = []
+    for property in listed_properties:
+        property_reviews = get_local_reviews(property.id)
+        aggregate_reviews.extend(
+            review.copy(update={
+                'property_id': property.id,
+                'property_name': property.name,
+            })
+            for review in property_reviews
+        )
+    aggregate_reviews.sort(
+        key=lambda review: review.reviewed_at or '',
+        reverse=True
+    )
+    return [review for review in aggregate_reviews if review.rating == rating][:limit]
 
 @router.get('/api_properties/{uuid}/calendar', response_model=Calendar, tags=['hospitable properties'])
 async def get_calendar(uuid : str, start_date : Optional[str] = Query(None), end_date : Optional[str] = Query(None)):

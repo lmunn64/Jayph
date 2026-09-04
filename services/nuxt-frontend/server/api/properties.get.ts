@@ -1,6 +1,7 @@
 export default defineCachedEventHandler(async ()=> {
     const { apiBase } = useRuntimeConfig()
-    return await $fetch(`${apiBase}/api_properties`)
+    const endpoint = apiBase.includes('localhost') ? '/properties' : '/api_properties'
+    return await $fetch(`${apiBase}${endpoint}`)
 }, {
     maxAge: 10,
     staleMaxAge: 40,
