@@ -45,7 +45,9 @@ const props = defineProps<{
 
 
 if(props.propertyId){
-  await useAsyncData(`reviews-${props.propertyId}`, () => propertyStore.fetchReviews(props.propertyId!), { server: true })
+  const { data } = await useAsyncData(`reviews-${props.propertyId}`, () => propertyStore.fetchReviews(props.propertyId!), { server: true })
+  state.reviews = data.value ?? []
+  state.isLoading = false
 } else {
   const { data, error } = await useAsyncData('homepage-reviews', () => propertyStore.fetchAggregateReviews(10, 5), { server: true })
   state.reviews = data.value ?? []
@@ -57,12 +59,7 @@ if(props.propertyId){
 
 const reviews = computed<Review[]>(()=>{
   if(props.propertyId){
-    if (propertyStore.property_reviews[props.propertyId]){
-      state.isLoading = false
-      return propertyStore.property_reviews[props.propertyId]
-      
-    }
-    state.isLoading = true
+    return state.reviews
   }
   if (state.reviews.length) {
     return state.reviews

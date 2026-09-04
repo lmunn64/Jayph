@@ -279,16 +279,22 @@ async def get_reviews(uuid: str):
                 raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
 
             content = response.json()
-            reviews.extend(Review(
-                id = item.get('id'),
-                name= get_review_name(item.get('guest').get('first_name'), item.get('guest').get('last_name')),
-                img_src= "",
-                date= format_date_ISO(item.get('reviewed_at')),
-                reviewed_at= item.get('reviewed_at'),
-                review_content= item.get('public').get('review'),
-                rating= item.get('public').get('rating'),
-                platform= item.get('platform')
-            ) for item in content.get('data', []))
+            for item in content.get('data', []):
+                guest = item.get('guest') or {}
+                public_review = item.get('public') or {}
+                reviewed_at = item.get('reviewed_at')
+                first_name = guest.get('first_name') or 'Guest'
+                last_name = guest.get('last_name')
+                reviews.append(Review(
+                    id = item.get('id'),
+                    name= get_review_name(first_name, last_name),
+                    img_src= "",
+                    date= format_date_ISO(reviewed_at) if reviewed_at else "",
+                    reviewed_at= reviewed_at,
+                    review_content= public_review.get('review'),
+                    rating= public_review.get('rating') or 0,
+                    platform= item.get('platform') or 'Unknown'
+                ))
             next_url = content.get('links', {}).get('next')
     except ValidationError as e:
         raise HTTPException(status_code=409, detail ='Validation error: External API has returned unexpected response format')
