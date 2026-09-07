@@ -10,7 +10,11 @@
 
 <script setup lang="ts">
     import type { Review } from "~/types/property"
-
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
+    
+    library.add(fas)
+    
     const review = defineProps<Review>()
 
     const emit = defineEmits(['toggle'])
