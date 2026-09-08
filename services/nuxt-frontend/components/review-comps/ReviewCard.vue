@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
     import type { Review } from "~/types/property"
-    import fas from '@fortawesome/free-solid-svg-icons'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
 
     const review = defineProps<Review>()
 
