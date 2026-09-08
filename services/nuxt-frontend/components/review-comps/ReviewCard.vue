@@ -10,8 +10,13 @@
 
 <script setup lang="ts">
     import type { Review } from "~/types/property"
-    import { fas } from '@fortawesome/free-solid-svg-icons'
+   import { library } from '@fortawesome/fontawesome-svg-core'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome' // or '@fortawesome/react-fontawesome'
+    // Import the star icon explicitly
+    import { faStar } from '@fortawesome/free-solid-svg-icons'
 
+    // Add the icon to the library so it can be referenced by string names
+    library.add(faStar)
     const review = defineProps<Review>()
 
     const emit = defineEmits(['toggle'])
