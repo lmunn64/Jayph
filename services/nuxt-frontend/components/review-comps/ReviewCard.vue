@@ -9,14 +9,10 @@
 -->
 
 <script setup lang="ts">
-    import type { Review } from "~/types/property"
-   import { library } from '@fortawesome/fontawesome-svg-core'
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome' // or '@fortawesome/react-fontawesome'
-    // Import the star icon explicitly
-    import { faStar } from '@fortawesome/free-solid-svg-icons'
+    import type { Review } from "~/types/property";
+    import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+    import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-    // Add the icon to the library so it can be referenced by string names
-    library.add(faStar)
     const review = defineProps<Review>()
 
     const emit = defineEmits(['toggle'])
@@ -66,8 +62,14 @@
             <div class="header-info">
                 <h3> {{ review.name }} </h3>
                 <div class="rating-row">
-                    <FontAwesomeIcon style="color: var(--accent-color)" icon="star" v-for="n in 5" :key="n" v-show="n <= Math.round(review.rating)"/>
-                </div>
+                <FontAwesomeIcon
+                    v-for="n in 5"
+                    :key="n"
+                    :icon="faStar"
+                    :style="{ color: 'var(--accent-color)' }"
+                    v-show="n <= Math.round(review.rating)"
+                />
+            </div>
             </div>
         </div>
         <div class="review-info">
