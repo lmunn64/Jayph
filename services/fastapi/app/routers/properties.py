@@ -191,7 +191,7 @@ async def get_external_properties():
         print('returning cached properties')
         return properties_cache.get('all_properties')
     try:
-        response = requests.get('https://public.api.hospitable.com/v2/properties?include=details',
+        response = requests.get('https://public.api.hospitable.com/v2/properties?include=details&per_page=20',
                                 headers={"Authorization": f"Bearer {PAT}"})
         if response.status_code != 200:
             raise HTTPException(status_code = 401, detail = 'Forbidden call to external API')
